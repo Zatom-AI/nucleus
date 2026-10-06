@@ -1,0 +1,15 @@
+{
+  "mat_chain_A_unconditional_length14": {
+    "contig": "14M"
+  },
+  "mat_chain_A_sequence_fixed_structure_design": {
+    "input": "input_cifs/train_0001.cif",
+    "contig": "A1",
+    "select_fixed_atoms": false
+  },
+  "mat_chain_A_structure_fixed_sequence_design": {
+    "input": "input_cifs/train_0001.cif",
+    "contig": "A1",
+    "select_unfixed_sequence": true
+  }
+}

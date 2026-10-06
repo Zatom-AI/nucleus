@@ -1,0 +1,57 @@
+data_omat24_train_1m_force_repr_000_atoms10_model_0
+#
+_entry.id       omat24_train_1m_force_repr_000_atoms10_model_0
+_entry.author   unknown_user
+_entry.date     2026-09-04
+_entry.time     18:05:49
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+ATOM LI LI1 . LIG A 0 1 . 1 LIG A LI1 0 3.465735912322998 1.0 ? 0.8056640625      0.9708251953125    0.9766845703125 6.4038806    3.808957     3.9905925  1
+ATOM LI LI2 . LIG A 0 1 . 1 LIG A LI2 1 3.465735912322998 1.0 ? 0.2451171875      0.96484375         0.04345703125   1.9236157    3.8437374    0.17755917 1
+ATOM H  H3  . LIG A 0 1 . 1 LIG A H3  2 3.465735912322998 1.0 ? 0.427734375       0.416015625        0.3515625       3.4162107    1.6364117    1.4364338  1
+ATOM H  H4  . LIG A 0 1 . 1 LIG A H4  3 3.465735912322998 1.0 ? 0.90625           0.423828125        0.390625        7.287541     1.6651032    1.5960375  1
+ATOM F  F5  . LIG A 0 1 . 1 LIG A F5  4 3.465735912322998 1.0 ? 0.53125           0.1748046875       0.06884765625   4.2863617    0.6925552    0.28130162 1
+ATOM H  H6  . LIG A 0 1 . 1 LIG A H6  5 3.465735912322998 1.0 ? 0.63671875        0.0034637451171875 0.965087890625  5.095158     -0.046818748 3.9432101  1
+ATOM F  F7  . LIG A 0 1 . 1 LIG A F7  6 3.465735912322998 1.0 ? 0.7509765625      0.576171875        0.556640625     6.0109277    2.262011     2.2743535  1
+ATOM H  H8  . LIG A 0 1 . 1 LIG A H8  7 3.465735912322998 1.0 ? 0.98626708984375  0.11474609375      0.2216796875    7.9644976    0.44352326   0.9057513  1
+ATOM H  H9  . LIG A 0 1 . 1 LIG A H9  8 3.465735912322998 1.0 ? 0.007781982421875 0.93994140625      0.88134765625   -0.048270334 3.6918244    3.6010597  1
+ATOM H  H10 . LIG A 0 1 . 1 LIG A H10 9 3.465735912322998 1.0 ? 0.2451171875      0.572265625        0.513671875     1.918219     2.2491376    2.0987892  1
+#
+_cell.length_a      8.096327332602824
+_cell.length_b      3.987079031574582
+_cell.length_c      4.0868073859311345
+_cell.angle_alpha   90.86752319335938
+_cell.angle_beta    90.86752319335938
+_cell.angle_gamma   90.86752319335938
+_cell.volume        131.87916180732677
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

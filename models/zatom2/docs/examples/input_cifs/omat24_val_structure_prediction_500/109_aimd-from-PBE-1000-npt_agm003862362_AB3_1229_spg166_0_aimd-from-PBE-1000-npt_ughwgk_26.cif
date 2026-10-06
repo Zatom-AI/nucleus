@@ -1,0 +1,51 @@
+data_omat24_val_109_agm003862362_AB3_1229_spg166_0_aimd-from-PBE-1000-npt_ughwgk_26
+#
+_entry.id       omat24_val_109_agm003862362_AB3_1229_spg166_0_aimd-from-PBE-1000-npt_ughwgk_26
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Al Al1 . LIG A 1 1 . 1 LIG A Al1 0.0 1.0 ? 0.8703961700000001  0.7028936           0.66390966           18.518875 2.9207802 1.6533015  1 1
+HETATM Al Al2 . LIG A 1 1 . 1 LIG A Al2 0.0 1.0 ? 0.49805098999999975 0.5571869800000001  0.43563035999999994  12.300672 2.191979  1.0846822  1 2
+HETATM Al Al3 . LIG A 1 1 . 1 LIG A Al3 0.0 1.0 ? 0.1830468500000001  0.29347169999999995 0.29183437           6.303237  1.241696  0.7281162  1 3
+HETATM Ir Ir1 . LIG A 1 1 . 1 LIG A Ir1 0.0 1.0 ? 0.9927720300000002  0.9924831199999998  0.015247259999999999 16.664982 2.8508184 0.02550279 1 4
+#
+_cell.length_a      8.578009836975063
+_cell.length_b      8.57800983713308
+_cell.length_c      8.578009835286926
+_cell.angle_alpha   19.562843785390363
+_cell.angle_beta    19.562843794926067
+_cell.angle_gamma   19.562843806848626
+_cell.volume        61.881967438001446
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

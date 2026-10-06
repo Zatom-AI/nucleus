@@ -1,0 +1,57 @@
+data_omat24_val_430_agm001504675_ABCD2_2_spg123_4_0_rattled-300-subsampled_3ukeh6
+#
+_entry.id       omat24_val_430_agm001504675_ABCD2_2_spg123_4_0_rattled-300-subsampled_3ukeh6
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Na Na1 . LIG A 1 1 . 1 LIG A Na1 0.0 1.0 ? 0.2581952804791428 0.5344616927728651   0.6489837282658684  2.599477   2.6742024  2.901116    1 1
+HETATM Na Na2 . LIG A 1 1 . 1 LIG A Na2 0.0 1.0 ? 0.7920768334496914 0.5203816835274964   0.6153866227718652  7.9745283  2.6037524  2.7509286   1 2
+HETATM Mg Mg1 . LIG A 1 1 . 1 LIG A Mg1 0.0 1.0 ? 0.0249235486586343 0.568956519445571    0.0033948253430367  0.2509271  2.8467987  0.015175699 1 3
+HETATM Mg Mg2 . LIG A 1 1 . 1 LIG A Mg2 0.0 1.0 ? 0.5085434994893703 0.5878424231675652   0.0507003373093369  5.119951   2.9412951  0.2266429   1 4
+HETATM Cu Cu1 . LIG A 1 1 . 1 LIG A Cu1 0.0 1.0 ? 0.9777195951083826 0.046871571468209104 0.45546936247525593 9.843555   0.23452395 2.0360594   1 5
+HETATM Cu Cu2 . LIG A 1 1 . 1 LIG A Cu2 0.0 1.0 ? 0.2898205778115397 0.0365902337763657   0.3621463799968012  2.9178765  0.18308084 1.6188829   1 6
+HETATM Cu Cu3 . LIG A 1 1 . 1 LIG A Cu3 0.0 1.0 ? 0.5924778070948875 0.0499139026565061   0.4102097225225734  5.9649906  0.24974638 1.8337377   1 7
+HETATM Cu Cu4 . LIG A 1 1 . 1 LIG A Cu4 0.0 1.0 ? 0.8055579177100612 0.9927719049079826   0.0407328094346013  8.110254   4.9673777  0.18208562  1 8
+HETATM Tc Tc1 . LIG A 1 1 . 1 LIG A Tc1 0.0 1.0 ? 0.0390503201892969 0.9986996187202521   0.9261590901382846  0.39315364 4.997037   4.1401577   1 9
+HETATM Tc Tc2 . LIG A 1 1 . 1 LIG A Tc2 0.0 1.0 ? 0.5562949443404506 0.9365822246471467   0.8559513837519931  5.6007066  4.68623    3.8263118   1 10
+#
+_cell.length_a      10.06787211586272
+_cell.length_b      5.003543596094737
+_cell.length_c      4.470244442657529
+_cell.angle_alpha   90.0
+_cell.angle_beta    90.0
+_cell.angle_gamma   90.0
+_cell.volume        225.18872942869683
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

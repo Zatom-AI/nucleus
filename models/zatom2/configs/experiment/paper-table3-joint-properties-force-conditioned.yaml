@@ -1,0 +1,9 @@
+# @package _global_
+# Table 3: OMol25 + OMat24 generation/structure/MLIP pretraining.
+
+defaults:
+  - pretrain-joint-properties
+  - _self_
+
+name: paper-table3-omol25-omat24-joint-properties-force-conditioned
+tags: [paper, table-3, pretrain, omol25, omat24, joint-properties, force-conditioned]

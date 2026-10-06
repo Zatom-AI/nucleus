@@ -1,0 +1,52 @@
+data_omat24_val_342_agm002438398_ABC3_0_spg221_0_aimd-from-PBE-1000-nvt_zbcjph_39
+#
+_entry.id       omat24_val_342_agm002438398_ABC3_0_spg221_0_aimd-from-PBE-1000-nvt_zbcjph_39
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Ca Ca1 . LIG A 1 1 . 1 LIG A Ca1 0.0 1.0 ? 0.93447614          0.51197657 0.0042455          4.939467   2.706213   0.022440923 1 1
+HETATM Ca Ca2 . LIG A 1 1 . 1 LIG A Ca2 0.0 1.0 ? 0.04320103          0.9306471  0.51613605         0.2283526  4.9192276  2.7281992   1 2
+HETATM Ca Ca3 . LIG A 1 1 . 1 LIG A Ca3 0.0 1.0 ? 0.49408920999999995 0.11502424 0.9370661799999999 2.6116636  0.60799676 4.9531574   1 3
+HETATM Ni Ni1 . LIG A 1 1 . 1 LIG A Ni1 0.0 1.0 ? 0.02093939          0.01267083 0.01729779         0.11068172 0.06697565 0.0914329   1 4
+HETATM Se Se1 . LIG A 1 1 . 1 LIG A Se1 0.0 1.0 ? 0.49876664          0.46132138 0.50874116         2.6363876  2.438459   2.6891112   1 5
+#
+_cell.length_a      5.28581397
+_cell.length_b      5.28581397
+_cell.length_c      5.28581397
+_cell.angle_alpha   90.0
+_cell.angle_beta    90.0
+_cell.angle_gamma   90.0
+_cell.volume        147.6847401678643
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

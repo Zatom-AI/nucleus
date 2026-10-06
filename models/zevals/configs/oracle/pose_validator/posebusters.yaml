@@ -1,0 +1,7 @@
+# @package oracle.pose_validator
+# PoseBusters pose validator — geometry, clash, stereo, and energy checks.
+
+_target_: zevals.oracles.pose_validators.posebusters.PoseBustersValidator
+table: dock           # check mode: "dock" (protein+ligand) | "gen" (ligand only) | "redock"
+add_hydrogens: true   # add explicit hydrogens before checking
+full_report: true     # include per-check breakdown in PoseValidationResult.details

@@ -1,0 +1,42 @@
+general_metrics:
+  _target_: rfd3.metrics.design_metrics.AtomArrayMetrics
+  compute_for_diffused_region_only: True
+  compute_ss_adherence_if_possible: False
+
+molecule_generation_metrics:
+  _target_: nucleus.metrics.molecule_generation.MoleculeGenerationMetrics
+  # Set this to a train-set .smi file if you want novelty against the full training corpus.
+  reference_smiles_path: null
+  use_ground_truth_as_reference: True
+  compute_posebusters: True
+
+material_generation_metrics:
+  _target_: nucleus.metrics.material_generation.MaterialGenerationMetrics
+  # Set this to a precomputed fingerprint cache from scripts/prepare_omat24_reference_fingerprints.py.
+  reference_structures_path: null
+  reference_fingerprints_path: ${paths.data.data_dir}/omat24/subsets/train_1M_fingerprints.npy
+  use_ground_truth_as_reference: False
+  novelty_use_fingerprint: True
+
+structure_prediction_metrics:
+  _target_: nucleus.metrics.structure_prediction.ZevalsStructurePredictionMetrics
+  molecule_top_k: [1]
+  structure_ltol: 0.3
+  structure_stol: 0.5
+  structure_angle_tol: 10.0
+  material_top_k: [1]
+  scale: True
+  compute_uma_forces: False
+  uma_checkpoint: uma-s-1p2
+  uma_molecule_task: omol
+  uma_material_task: omat
+  uma_device: null
+  uma_batch_size: 8
+
+metadata_metrics:
+  _target_: rfd3.metrics.design_metrics.MetadataMetrics
+
+hbond_metrics:
+ _target_: rfd3.metrics.hbonds_hbplus_metrics.HbondMetrics
+ cutoff_HA_dist: 3
+ cutoff_DA_distance: 3.5

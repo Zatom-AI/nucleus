@@ -1,0 +1,6 @@
+{
+  "mol_chain_C_protein_conditional_length45": {
+    "input": "input_cifs/1hsg.cif",
+    "contig": "A1-99,/0,B1-99,/0,45m"
+  }
+}

@@ -1,0 +1,9 @@
+_target_: zevals.oracles.structure_search.riboseek.RiboSeekPrefilteredSearcher
+database_path: ${oc.env:ZEVALS_RIBOSEEK_DB}
+top_n: 256
+prefilter_candidates: 1000
+tmp_dir: /tmp/zevals/riboseek
+refinement_searcher:
+  _target_: zevals.oracles.structure_search.usalign.USalignSearcher
+  binary_path: null
+  tmp_dir: /tmp/zevals/usalign_refinement

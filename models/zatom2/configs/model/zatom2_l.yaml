@@ -1,0 +1,12 @@
+# Double-depth Zatom-2-L: 273,535,494 generation parameters, or 276,032,262
+# parameters (approximately 280M) when the optional MLIP head is enabled.
+
+defaults:
+  - zatom2_base
+  - _self_
+
+net:
+  diffusion_module:
+    # Double the token-trunk depth while preserving feature widths and heads.
+    token_trunk:
+      n_blocks: 36

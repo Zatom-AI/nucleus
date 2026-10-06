@@ -1,0 +1,24 @@
+# @package _global_
+# RNA generation evaluation — default oracle: Boltz-2 + NA-MPNN + USalign.
+# Use `oracle/structure_predictor=esmfold2_rna` for the fastest independent
+# sensitivity oracle, or `rhofold` for the RNA-specialist sensitivity oracle.
+
+defaults:
+  - oracle/structure_predictor: boltz_rna
+  - oracle/inverse_folder: na_mpnn
+  - oracle/structure_search: usalign
+  - _self_
+
+pipeline:
+  _target_: zevals.pipeline.rna.RNAEvalPipeline
+  structure_predictor: ${oracle.structure_predictor}
+  inverse_folder: ${oracle.inverse_folder}
+  structure_searcher: ${oracle.structure_search}
+  sc_tm_threshold: 0.45           # RNA-FrameFlow convention
+  sc_atom: C1'                     # per-residue reference atom for scTM alignment
+                                  # (C1' default; e.g. C4'/P for other conventions)
+  novelty_tm_threshold: 0.45
+  target_db: ${oc.env:ZEVALS_RNA_TARGET_DB,null}  # directory of held-out reference structures
+  output_dir: /tmp/zevals/rna
+  mmseqs_bin: mmseqs
+  tm_align_bin: TMalign

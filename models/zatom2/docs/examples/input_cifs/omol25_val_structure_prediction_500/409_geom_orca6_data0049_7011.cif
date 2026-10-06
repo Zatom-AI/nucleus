@@ -1,0 +1,69 @@
+data_omol25_val_geom_orca6_409_data0049_7011
+#
+_entry.id       omol25_val_geom_orca6_409_data0049_7011
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM O  O1  . LIG A 1 1 . 1 LIG A O1  nan 1.0 ? -0.384497 -3.207762 1.105158  1 1
+HETATM C  C1  . LIG A 1 1 . 1 LIG A C1  nan 1.0 ? 0.339262  -2.193788 1.147916  1 2
+HETATM N  N1  . LIG A 1 1 . 1 LIG A N1  nan 1.0 ? 1.613262  -2.010052 0.575714  1 3
+HETATM C  C2  . LIG A 1 1 . 1 LIG A C2  nan 1.0 ? 2.385629  -1.100542 0.399925  1 4
+HETATM N  N2  . LIG A 1 1 . 1 LIG A N2  nan 1.0 ? 2.225648  -0.119183 0.960566  1 5
+HETATM C  C3  . LIG A 1 1 . 1 LIG A C3  nan 1.0 ? 2.997369  0.962243  0.989492  1 6
+HETATM C  C4  . LIG A 1 1 . 1 LIG A C4  nan 1.0 ? 4.028129  0.847414  0.222254  1 7
+HETATM C  C5  . LIG A 1 1 . 1 LIG A C5  nan 1.0 ? 4.277963  -0.183514 -0.792689 1 8
+HETATM C  C6  . LIG A 1 1 . 1 LIG A C6  nan 1.0 ? 3.350004  -1.207822 -0.580721 1 9
+HETATM Cl CL1 . LIG A 1 1 . 1 LIG A CL1 nan 1.0 ? 3.626173  -2.751385 -1.374654 1 10
+HETATM H  H1  . LIG A 1 1 . 1 LIG A H1  nan 1.0 ? 5.059956  -0.102012 -1.34732  1 11
+HETATM C  C7  . LIG A 1 1 . 1 LIG A C7  nan 1.0 ? 4.985518  2.201938  -0.20622  1 12
+HETATM F  F1  . LIG A 1 1 . 1 LIG A F1  nan 1.0 ? 6.239051  1.721646  0.493397  1 13
+HETATM F  F2  . LIG A 1 1 . 1 LIG A F2  nan 1.0 ? 4.613347  3.366942  0.34174   1 14
+HETATM F  F3  . LIG A 1 1 . 1 LIG A F3  nan 1.0 ? 5.468384  2.254034  -1.505426 1 15
+HETATM H  H2  . LIG A 1 1 . 1 LIG A H2  nan 1.0 ? 2.797038  1.902742  1.655633  1 16
+HETATM H  H3  . LIG A 1 1 . 1 LIG A H3  nan 1.0 ? 1.713099  -3.088464 0.10097   1 17
+HETATM C  C8  . LIG A 1 1 . 1 LIG A C8  nan 1.0 ? -0.382893 -1.054579 2.033509  1 18
+HETATM H  H4  . LIG A 1 1 . 1 LIG A H4  nan 1.0 ? 0.437546  -0.040379 1.813755  1 19
+HETATM O  O2  . LIG A 1 1 . 1 LIG A O2  nan 1.0 ? -1.673234 -0.598568 1.605721  1 20
+HETATM C  C9  . LIG A 1 1 . 1 LIG A C9  nan 1.0 ? -1.800543 -0.552527 0.079012  1 21
+HETATM O  O3  . LIG A 1 1 . 1 LIG A O3  nan 1.0 ? -0.952517 -0.674708 -0.433028 1 22
+HETATM C  C10 . LIG A 1 1 . 1 LIG A C10 nan 1.0 ? -3.121801 -0.03457  -0.219517 1 23
+HETATM N  N3  . LIG A 1 1 . 1 LIG A N3  nan 1.0 ? -4.025053 0.31493   0.807472  1 24
+HETATM C  C11 . LIG A 1 1 . 1 LIG A C11 nan 1.0 ? -5.197294 0.799554  0.006258  1 25
+HETATM C  C12 . LIG A 1 1 . 1 LIG A C12 nan 1.0 ? -6.02252  1.098112  1.220726  1 26
+HETATM C  C13 . LIG A 1 1 . 1 LIG A C13 nan 1.0 ? -7.359192 1.267577  0.872114  1 27
+HETATM C  C14 . LIG A 1 1 . 1 LIG A C14 nan 1.0 ? -7.742811 1.56506   -0.501499 1 28
+HETATM C  C15 . LIG A 1 1 . 1 LIG A C15 nan 1.0 ? -7.000866 0.940491  -1.332892 1 29
+HETATM C  C16 . LIG A 1 1 . 1 LIG A C16 nan 1.0 ? -5.57635  0.540601  -1.043124 1 30
+HETATM C  C17 . LIG A 1 1 . 1 LIG A C17 nan 1.0 ? -4.660224 0.242679  -2.117013 1 31
+HETATM C  C18 . LIG A 1 1 . 1 LIG A C18 nan 1.0 ? -3.451857 -0.257146 -1.778862 1 32
+HETATM H  H5  . LIG A 1 1 . 1 LIG A H5  nan 1.0 ? -2.629206 -0.540881 -2.312231 1 33
+HETATM H  H6  . LIG A 1 1 . 1 LIG A H6  nan 1.0 ? -4.975655 -0.043945 -3.131494 1 34
+HETATM H  H7  . LIG A 1 1 . 1 LIG A H7  nan 1.0 ? -7.265203 0.870896  -2.474936 1 35
+HETATM H  H8  . LIG A 1 1 . 1 LIG A H8  nan 1.0 ? -8.742304 1.909682  -0.688616 1 36
+HETATM H  H9  . LIG A 1 1 . 1 LIG A H9  nan 1.0 ? -8.040863 1.799364  1.452421  1 37
+HETATM H  H10 . LIG A 1 1 . 1 LIG A H10 nan 1.0 ? -5.769643 1.122993  2.520642  1 38
+HETATM H  H11 . LIG A 1 1 . 1 LIG A H11 nan 1.0 ? -0.499904 -1.260876 3.008764  1 39
+#

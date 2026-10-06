@@ -1,0 +1,5 @@
+# @package _global_
+
+defaults:
+  - inference_engine: zatom2
+  - _self_

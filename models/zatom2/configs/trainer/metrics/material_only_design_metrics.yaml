@@ -1,0 +1,42 @@
+general_metrics:
+  _target_: rfd3.metrics.design_metrics.AtomArrayMetrics
+  compute_for_diffused_region_only: True
+  compute_ss_adherence_if_possible: False
+
+material_generation_metrics:
+  _target_: nucleus.metrics.material_generation.MaterialGenerationMetrics
+  # Set this to a precomputed fingerprint cache from scripts/prepare_omat24_reference_fingerprints.py.
+  reference_structures_path: null
+  reference_fingerprints_path: ${paths.data.omat24_train_fingerprints}
+  use_ground_truth_as_reference: False
+  novelty_use_fingerprint: True
+  # UMA near-DFT residual-force check (optional). Off by default: it needs the
+  # `zevals[uma]` extra (fairchem-core) and gated Hugging Face UMA weights.
+  # See models/zevals/docs/UMA-guide.md. No `uma_*` key is logged while off.
+  compute_uma_forces: False
+  uma_checkpoint: uma-s-1p2
+  uma_task: omat          # periodic heads only: omat | omc | odac | oc20
+  uma_device: null
+  uma_batch_size: 8
+
+structure_prediction_metrics:
+  _target_: nucleus.metrics.structure_prediction.ZevalsStructurePredictionMetrics
+  molecule_top_k: [1]
+  structure_ltol: 0.3
+  structure_stol: 0.5
+  structure_angle_tol: 10.0
+  material_top_k: [1]
+  compute_uma_forces: False
+  uma_checkpoint: uma-s-1p2
+  uma_molecule_task: omol
+  uma_material_task: omat
+  uma_device: null
+  uma_batch_size: 8
+
+metadata_metrics:
+  _target_: rfd3.metrics.design_metrics.MetadataMetrics
+
+hbond_metrics:
+  _target_: rfd3.metrics.hbonds_hbplus_metrics.HbondMetrics
+  cutoff_HA_dist: 3
+  cutoff_DA_distance: 3.5

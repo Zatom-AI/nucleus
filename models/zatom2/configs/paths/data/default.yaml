@@ -1,0 +1,44 @@
+# path to directory with data (other than LMDB data)
+data_dir: ${oc.env:NUCLEUS_DATA_PATH,${paths.root_dir}/data}/
+
+# path to directory with OMol25 *.aselmdb shards
+omol25_data_dir: ${oc.env:OMOL25_DATA_DIR,${paths.data.data_dir}/omol25/raw/train_4M}
+omol25_bond_sidecar_path: ${oc.env:OMOL25_BOND_SIDECAR_PATH,${paths.data.data_dir}/omol25/sidecars/train_4M_all_bonds.lmdb}
+omol25_connected_indices: ${paths.data.data_dir}/omol25/subsets/train_4M_connected_indices.txt
+omol25_geom_all_indices: ${paths.data.data_dir}/omol25/subsets/train_4M_geom_orca6_indices.txt
+omol25_geom_train_indices: ${paths.data.data_dir}/omol25/subsets/train_4M_geom_orca6_train_indices.txt
+omol25_geom_train_low_force_indices: ${paths.data.data_dir}/omol25/subsets/train_4M_geom_orca6_train_low_force_indices.txt
+omol25_geom_val_indices: ${paths.data.data_dir}/omol25/subsets/train_4M_geom_orca6_val_indices.txt
+omol25_geom_test_indices: ${paths.data.data_dir}/omol25/subsets/train_4M_geom_orca6_test_indices.txt
+omol25_geom_train_smiles: ${paths.data.data_dir}/omol25/subsets/train_4M_geom_orca6_train_smiles.txt
+omol25_geom_train_fpsim2: ${paths.data.data_dir}/omol25/subsets/train_4M_geom_orca6_train_smiles_fpsim2.h5
+omol25_geom_train_afd_records: ${paths.data.data_dir}/omol25/geom_orca6_rdkit_conformers.pt
+omol25_train_fpsim2: ${paths.data.data_dir}/omol25/subsets/omol25_train_4M_smiles_obabel_fpsim2.h5
+
+# path to directory with OMat24 *.aselmdb shards
+omat24_data_dir: ${oc.env:OMAT24_DATA_DIR,${paths.data.data_dir}/omat24/raw/train}
+omat24_train_fingerprints: ${paths.data.data_dir}/omat24/subsets/train_1M_fingerprints.npy
+
+# Zatom-2 (Table 2) benchmark training splits, stored as *.aselmdb shards.
+qm9_data_dir: ${oc.env:QM9_DATA_DIR,${paths.data.data_dir}/qm9/raw/train_100k}
+mp20_data_dir: ${oc.env:MP20_DATA_DIR,${paths.data.data_dir}/mp_20/raw/train_27138}
+
+# versioned, training-split-only elemental references and target normalization
+atomistic_property_statistics: ${oc.env:ZATOM2_PROPERTY_STATS_PATH,${paths.data.data_dir}/atomistic_property_statistics.v1.json}
+
+# path to directory with PDB training splits
+pdb_data_dir: ${oc.env:ATOMWORKS_DATA_PATH,${paths.data.data_dir}}/pdb
+pdb_parquet_dir: ${oc.env:ATOMWORKS_DATA_PATH,${paths.data.data_dir}}/pdb_metadata
+
+# path to which to save examples that fail during the Transform pipeline (null = do not save)
+failed_examples_dir: null
+
+# path to directory with design benchmark data and models
+design_benchmark_data_dir: ${paths.data.data_dir}/zatom2/benchmarks
+design_model_weight_dir: ${paths.data.data_dir}/zatom2/models
+
+# path to directory with cached residue data
+residue_cache_dir: null
+
+# path to directory with cached cif files for PDB and CCD entries
+cif_cache_dir: ${paths.data.data_dir}/zatom2/cif_cache

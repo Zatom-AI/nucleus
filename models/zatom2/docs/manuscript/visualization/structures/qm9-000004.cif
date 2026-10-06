@@ -1,0 +1,49 @@
+data_qm9-000004
+#
+_entry.id       qm9-000004
+_entry.author   unknown_user
+_entry.date     2026-09-13
+_entry.time     00:30:58
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.is_motif_atom_with_fixed_seq 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+ATOM O O1  . LIG A 0 1 . 1 LIG A O1  0  3.465735912322998 1.0 ? False 1.5640788    -1.8094648  -1.6918275  1
+ATOM C C2  . LIG A 0 1 . 1 LIG A C2  1  3.465735912322998 1.0 ? False 1.1978866    -0.6047296  -1.0468445  1
+ATOM C C3  . LIG A 0 1 . 1 LIG A C3  2  3.465735912322998 1.0 ? False 1.3691773    -0.43962768 0.4621948   1
+ATOM C C4  . LIG A 0 1 . 1 LIG A C4  3  3.465735912322998 1.0 ? False 0.9253276    0.9943762   0.5383393   1
+ATOM C C5  . LIG A 0 1 . 1 LIG A C5  4  3.465735912322998 1.0 ? False 1.3411373    1.6996794   -0.78474605 1
+ATOM C C6  . LIG A 0 1 . 1 LIG A C6  5  3.465735912322998 1.0 ? False 1.7837381    0.6277374   -1.8176417  1
+ATOM N N7  . LIG A 0 1 . 1 LIG A N7  6  3.465735912322998 1.0 ? False 0.6105429    0.60182315  -2.7599065  1
+ATOM C C8  . LIG A 0 1 . 1 LIG A C8  7  3.465735912322998 1.0 ? False -0.1432685   0.09621433  -1.5327004  1
+ATOM C C9  . LIG A 0 1 . 1 LIG A C9  8  3.465735912322998 1.0 ? False -0.104769714 1.2718356   -0.54902315 1
+ATOM H H10 . LIG A 0 1 . 1 LIG A H10 9  3.465735912322998 1.0 ? False 1.010292     -2.5254502  -1.2785133  1
+ATOM H H11 . LIG A 0 1 . 1 LIG A H11 10 3.465735912322998 1.0 ? False 0.7142091    -1.1275827  1.0154108   1
+ATOM H H12 . LIG A 0 1 . 1 LIG A H12 11 3.465735912322998 1.0 ? False 2.410955     -0.6132896  0.75300634  1
+ATOM H H13 . LIG A 0 1 . 1 LIG A H13 12 3.465735912322998 1.0 ? False 0.8812819    1.5578305   1.4498304   1
+ATOM H H14 . LIG A 0 1 . 1 LIG A H14 13 3.465735912322998 1.0 ? False 1.6486894    2.726361    -0.81068295 1
+ATOM H H15 . LIG A 0 1 . 1 LIG A H15 14 3.465735912322998 1.0 ? False 2.788217     0.66635656  -2.206426   1
+ATOM H H16 . LIG A 0 1 . 1 LIG A H16 15 3.465735912322998 1.0 ? False 0.7708024    -0.18999778 -3.35331    1
+ATOM H H17 . LIG A 0 1 . 1 LIG A H17 16 3.465735912322998 1.0 ? False -1.0704104   -0.43953598 -1.6935325  1
+ATOM H H18 . LIG A 0 1 . 1 LIG A H18 17 3.465735912322998 1.0 ? False -0.93323004  1.9495547   -0.42679983 1
+#

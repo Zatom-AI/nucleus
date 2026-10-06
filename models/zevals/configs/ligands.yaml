@@ -1,0 +1,12 @@
+# @package _global_
+# Protein-conditioned ligand evaluation — default oracle: PoseBusters.
+# Override via: oracle/pose_validator=<custom> (no leading `+`)
+
+defaults:
+  - oracle/pose_validator: posebusters
+  - _self_
+
+pipeline:
+  _target_: zevals.pipeline.ligands.LigandEvalPipeline
+  pose_validator: ${oracle.pose_validator}
+  rmsd_threshold: 2.0       # Å; poses within this RMSD of crystal are "successful"

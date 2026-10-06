@@ -1,0 +1,20 @@
+# @package oracle.inverse_folder
+# SolubleMPNN, as bundled by the LigandMPNN repo's get_model_params.sh
+# (`solublempnn_v_48_0XX.pt`). Architecturally identical to the plain
+# (non-CA-only) ProteinMPNN model already vendored under
+# oracles.inverse_folders._protein_mpnn — verified checkpoint-compatible
+# (same state_dict keys/shapes, same ProteinFeatures math), so this just
+# reuses ProteinMPNNFolder with the LigandMPNN-repo checkpoint naming.
+
+_target_:        zevals.oracles.inverse_folders.protein_mpnn.ProteinMPNNFolder
+weights_dir:     null          # dir from get_model_params.sh (holds solublempnn_v_48_0XX.pt)
+                                # null falls back to `zevals setup --checkpoints
+                                # soluble_mpnn`'s default cache location before raising an error
+model_name:      solublempnn_v_48_020   # solublempnn_v_48_{002,010,020,030}
+model_variant:   vanilla       # not CA-only; same architecture as plain ProteinMPNN
+num_sequences:   8
+temperature:     0.1
+backbone_noise:  0.02
+batch_size:      null
+device:          null
+tmp_dir:         /tmp/zevals/soluble_mpnn

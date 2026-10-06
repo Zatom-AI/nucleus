@@ -1,0 +1,53 @@
+data_omat24_train_1m_force_repr_008_atoms6_model_0
+#
+_entry.id       omat24_train_1m_force_repr_008_atoms6_model_0
+_entry.author   unknown_user
+_entry.date     2026-09-04
+_entry.time     18:05:59
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+ATOM HO HO1 . LIG A 0 1 . 1 LIG A HO1 0 3.465735912322998 1.0 ? 0.4140625      0.720703125    0.580078125   6.0028    3.829218   2.3648942  1
+ATOM PA PA2 . LIG A 0 1 . 1 LIG A PA2 1 3.465735912322998 1.0 ? 0.810546875    0.74609375     0.8369140625  8.908862  4.2781863  3.4119768  1
+ATOM IR IR3 . LIG A 0 1 . 1 LIG A IR3 2 3.465735912322998 1.0 ? 0.1044921875   0.995361328125 0.951171875   6.298112  5.487839   3.8777893  1
+ATOM IR IR4 . LIG A 0 1 . 1 LIG A IR4 3 3.465735912322998 1.0 ? 0.1201171875   0.759765625    0.126953125   3.2379825 3.393005   0.5175694  1
+ATOM IR IR5 . LIG A 0 1 . 1 LIG A IR5 4 3.465735912322998 1.0 ? 0.1630859375   0.228515625    0.224609375   2.1900752 1.2681897  0.9156997  1
+ATOM IR IR6 . LIG A 0 1 . 1 LIG A IR6 5 3.465735912322998 1.0 ? 0.976806640625 0.171875       0.05615234375 5.7678905 0.80401456 0.22892493 1
+#
+_cell.length_a      5.216627089411621
+_cell.length_b      5.163106932180264
+_cell.length_c      5.216627089411621
+_cell.angle_alpha   57.74340057373047
+_cell.angle_beta    55.281471252441406
+_cell.angle_gamma   55.281471252441406
+_cell.volume        90.25613965305217
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

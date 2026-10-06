@@ -1,0 +1,256 @@
+[project]
+name = "zatom-nucleus"
+dynamic = ["version"]
+description = "Shared utilities and training infrastructure for atomistic foundation models."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+authors = [
+    { name = "Zatom-AI", email = "acmwhb@lbl.gov" },
+]
+license = { file = "LICENSE.md" }
+
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: BSD License",
+]
+dependencies = [
+    # ... configuration & CLI
+    "rootutils>=1.0.7,<1.1",
+    "hydra-core>=1.3.0,<1.4",
+    "hydra-colorlog>=1.2.0",
+    "environs>=11.0.0,<12",
+    # ... logging
+    "wandb>=0.15.10,<1",
+    "rich>=13.9.4",
+    # ... typing & documentation
+    "jaxtyping>=0.2.17,<1",
+    "beartype>=0.18.0,<1",
+    "typer>=0.20.0,<1",
+    "huggingface-hub>=1.0.0,<2",
+    # ... ml tools (core)
+    "torch==2.13.0",
+    "torchdata @ git+https://github.com/meta-pytorch/data.git@e640e6fc91792e1c92cdabb603ee5be63919934a",
+    "lightning>=2.5.0",
+    "loralib>=0.1.1",
+    "einops>=0.8.0,<1",
+    "einx>=0.1.0,<1",
+    "opt_einsum>=3.4.0,<4",
+    "dm-tree>=0.1.6,<1",
+    "zstandard",
+    "pandas",
+    "pyarrow",
+    # "biotite",
+    "toolz",
+    # custom dependencies
+    "atomworks[ase,ml,openbabel] @ git+https://github.com/amorehead/atomworks.git@b2e3576a12943639cd2234c9097b70302e6e8f56",
+    "rc-foundry @ git+https://github.com/RosettaCommons/foundry.git@cd4d94fb0c2c86e77412b32fa2b7c651abefa471",
+    "pydantic",
+    "cuequivariance==0.10.0; sys_platform == 'linux'",
+    "cuequivariance-torch==0.10.0; sys_platform == 'linux'",
+    "cuequivariance-ops-cu13==0.10.0; sys_platform == 'linux'",
+    "cuequivariance-ops-torch-cu13==0.10.0; sys_platform == 'linux'",
+]
+
+
+[project.optional-dependencies]
+# Mirrors models/zevals/pyproject.toml's own [molecules]+[materials]+[proteins]
+# extras (zevals is vendored directly into this wheel via
+# [tool.hatch.build.targets.wheel].packages below, not installed as a separate
+# pip dependency, so its own dependency declarations aren't picked up
+# automatically — keep this list in sync with models/zevals/pyproject.toml).
+zevals = [
+    "fpsim2",
+    "huggingface-hub",
+    "posebusters",
+    "pydantic>=2.8",
+    "rdkit",
+    "torch-geometric",
+    "tqdm",
+    "pymatgen",
+    "smact",
+    "matminer>=0.10",
+    "transformers>=4.51",
+    "accelerate",
+    "prody",
+    "biopython",
+    "biotite",
+    "riboseek==0.1.0",
+]
+zatom2 = [
+    "pydantic>=2.8",
+]
+all = [
+    "zatom-nucleus[zevals]",
+    "zatom-nucleus[zatom2]",
+]
+dev = [
+    # Linters & formatters
+    "ruff==0.8.3",
+    "ipdb",
+    # Debugger/interactive
+    "debugpy>=1.8.5,<2",
+    "ipykernel>=6.29.4,<7",
+    # Testing tools
+    "pytest>=8.2.0,<9", # testing framework
+    "pytest-testmon>=2.1.1,<3", # run only tests related to changed code
+    "pytest-xdist>=3.6.1,<4", # run tests in parallel
+    "pytest-dotenv>=0.5.2,<1", # load environment variables from .env file
+    "pytest-cov>=4.1.0,<5", # generate coverage report
+    "pytest-benchmark>=5.0.0,<6", # benchmark tests for speed
+    "pre-commit",
+    # custom dependencies
+    "atomworks[ase,dev,ml,openbabel] @ git+https://github.com/amorehead/atomworks.git@b2e3576a12943639cd2234c9097b70302e6e8f56",
+]
+[project.urls]
+Homepage = "https://zatom-ai.github.io/nucleus/"
+Repository = "https://github.com/Zatom-AI/nucleus"
+Issues = "https://github.com/Zatom-AI/nucleus/issues"
+
+[project.scripts]
+zevals = "zevals.cli:main"
+zatom2 = "zatom2.cli:app"
+nucleus = "nucleus_cli.download_checkpoints:app"
+
+[tool.uv]
+override-dependencies = [
+    # Override the [option] argument mistakenly specified for `pandarallel` in the `smact` package
+    "pandarallel>=1.6.5"
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu132", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu132"
+url = "https://download.pytorch.org/whl/cu132"
+explicit = true
+
+# Build settings ----------------------------------------------------------------------
+[build-system]
+requires = [
+    "hatchling",
+    "hatch-vcs == 0.4",
+]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "0.0.0"
+local-scheme = "no-local-version"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/nucleus/version.py"
+tag-pattern = "^v(?P<version>.*)$"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = [
+  "src/nucleus",
+  "src/nucleus_cli",
+  "models/zevals/src/zevals",
+  "models/zatom2/src/zatom2",
+]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/", "models/zatom2/", "models/zevals/", "scripts/", "tests/", "data/", "docs/", "README.md", "LICENSE.md", "THIRD_PARTY_NOTICES.md", "CITATION.cff", "pyproject.toml", "uv.lock", ".project-root", ".env.example"]
+exclude = ["**/__pycache__", "**/*.pyc", "**/.pytest_cache"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"data/atomistic_property_statistics.v1.json" = "nucleus/data/atomistic_property_statistics.v1.json"
+"models/zevals/configs" = "zevals/configs"
+"models/zevals/scripts" = "zevals/scripts"
+"models/zatom2/configs" = "zatom2/configs"
+
+# Formatting & linting settings -------------------------------------------------------
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py310"
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "env",
+    ".venv",
+    "venv",
+    "*.ipynb",
+    "dev.py",
+    "archive",
+]
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+docstring-code-format = true
+docstring-code-line-length = 88
+
+[tool.ruff.lint]
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Sort imports
+extend-select = ["I", "F401"]
+
+ignore = [
+    "F722", # for jaxtyping shape annotation
+    "F821", # temporary to avoid jaxtyping warnings, see: https://github.com/astral-sh/ruff/issues/17386
+    "E741",  # enable us to use variables like "L"
+]
+
+[tool.pyright]
+typeCheckingMode = "off"
+
+[tool.pytest.ini_options]
+norecursedirs = ["logs"]
+
+[dependency-groups]
+dev = [
+    "build>=1.3.0",
+    "hatchling>=1.28.0",
+]

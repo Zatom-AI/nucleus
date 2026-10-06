@@ -1,0 +1,50 @@
+_target_: nucleus.utils.geom.build_geom_pipeline
+is_inference: false
+return_atom_array: false
+sigma_data: ${model.net.diffusion_module.sigma_data}
+noise_process: ${model.net.diffusion_module.f_pred}
+diffusion_batch_size: ${datasets.diffusion_batch_size_train}
+randomly_augment: ${datasets.randomly_augment}
+remove_hydrogens: ${datasets.remove_hydrogens}
+# Preserve the reference geometry up to a rigid rotation/centering.
+sigma_perturb: 0.0
+sigma_perturb_com: 0.0
+n_atoms_per_token: 14
+central_atom: CB
+association_scheme: ${datasets.global_transform_args.association_scheme}
+center_option: diffuse
+
+generate_conformers: false
+generate_conformers_for_non_protein_only: false
+provide_reference_conformer_when_unmasked: false
+ground_truth_conformer_policy: IGNORE
+provide_elements_for_unindexed_components: true
+use_element_for_atom_names_of_atomized_tokens: true
+residue_cache_dir: null
+
+train_conditions: ${datasets.global_transform_args.train_conditions}
+meta_conditioning_probabilities: ${datasets.global_transform_args.meta_conditioning_probabilities}
+mean_force_norm_conditioning_probability: 0.0
+enable_atomistic_property_targets: false
+enable_hbplus_features: false
+
+# Every atom is a token. Oversize molecules raise rather than being cropped.
+crop_size: ${datasets.crop_size}
+max_atoms_in_crop: ${datasets.max_atoms_in_crop}
+allowed_types: [is_ligand]
+crop_spatial_probability: 1.0
+crop_contiguous_probability: 0.0
+dna_contact_crop_probability: 0.0
+crop_center_cutoff_distance: 15.0
+zero_occ_on_exposure_after_cropping: false
+b_factor_min: null
+keep_full_binder_in_spatial_crop: false
+max_binder_length: 170
+max_ppi_hotspots_frac_to_provide: 0.0
+ppi_hotspot_max_distance: 4.5
+max_ss_frac_to_provide: 0.0
+min_ss_island_len: 1
+max_ss_island_len: 10
+
+atom_1d_features: ${model.net.token_initializer.atom_1d_features}
+token_1d_features: ${model.net.token_initializer.token_1d_features}

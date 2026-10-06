@@ -1,0 +1,6 @@
+_target_: nucleus.metrics.losses.SequenceLoss
+max_t: 1
+objective: ${model.net.diffusion_module.f_pred}
+sigma_data: ${model.net.diffusion_module.sigma_data}
+sequence_weight: 0.1
+atom_type_weight: 0.1

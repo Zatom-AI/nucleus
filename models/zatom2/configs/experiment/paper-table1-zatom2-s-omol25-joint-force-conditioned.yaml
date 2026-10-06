@@ -1,0 +1,33 @@
+# @package _global_
+# Table 1: Zatom-2-S OMol25 unconditional and structure-prediction pretraining.
+
+defaults:
+  - paper-table3-joint-force-conditioned
+  - override /model: zatom2_s
+  - _self_
+
+name: paper-table1-zatom2-s-omol25-joint-force-conditioned
+tags: [paper, table-1, pretrain, zatom2-s, omol25, unconditional, structure-prediction, force-conditioned]
+
+datasets:
+  train:
+    omol25:
+      probability: 1.0
+    omat24: null
+  val:
+    omat24_generation: null
+    omat24_structure_prediction: null
+
+trainer:
+  n_examples_per_epoch: 3986754
+  metrics:
+    material_generation_metrics: null
+  validate_loader_every_n_epochs:
+    omat24_generation: null
+    omat24_structure_prediction: null
+
+callbacks:
+  log_grouped_zevals_structure_prediction_metrics_callback:
+    dataset_names: [omol25_structure_prediction]
+  log_materials_afd_validation_metrics_callback:
+    enabled: false

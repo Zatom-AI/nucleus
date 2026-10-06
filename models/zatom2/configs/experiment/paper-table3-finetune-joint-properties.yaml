@@ -1,0 +1,47 @@
+# @package _global_
+# Table 3: 40-epoch MLIP-heavy OMol25 + OMat24 multi-task fine-tuning.
+
+defaults:
+  - paper-table3-joint-properties-force-conditioned
+  - _self_
+
+name: paper-table3-finetune-omol25-omat24-properties
+tags: [paper, table-3, finetune, omol25, omat24, mlip, energy, forces]
+
+datasets:
+  # Full precision approximately doubles activation memory relative to the
+  # bf16-mixed pretraining runs. Halve the per-rank token budget instead of the
+  # physical world size so epoch-checkpoint rank-local state remains compatible.
+  # The launch wrappers double gradient accumulation to preserve the effective
+  # optimizer token batch.
+  max_num_tokens: 3584
+  global_transform_args:
+    # Retain a small rehearsal stream from the force-conditioned pretraining
+    # distribution so MLIP specialization does not erase generative behavior.
+    mean_force_norm_conditioning_probability: 0.8
+    train_conditions:
+      unconditional:
+        frequency: 0.1
+      structure_prediction:
+        frequency: 0.1
+      mlip:
+        frequency: 0.8
+  train:
+    omol25:
+      probability: 0.5
+    omat24:
+      probability: 0.5
+
+trainer:
+  # MLIP energy/force regression is sensitive to autocast precision.
+  precision: 32-true
+  # Checkpoints retain the pretraining epoch counter. 120 total therefore runs
+  # 40 additional epochs after the canonical 80-epoch pretraining schedule.
+  max_epochs: 120
+  n_examples_per_epoch: 4996604
+  log_shared_backbone_gradient_cosines: false
+  loss:
+    atomistic_property_loss:
+      # Fine-tuning inherits the pretraining global step, so make the intended
+      # no-warmup continuation explicit and identical across source models.
+      warmup_steps: 0

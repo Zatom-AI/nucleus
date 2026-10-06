@@ -1,0 +1,21 @@
+# @package _global_
+# OMol25 + OMat24 structure prediction from fixed atom identities.
+
+defaults:
+  - pretrain
+  - _self_
+
+name: pretrain-omol25-omat24-structure-prediction
+tags: [pretrain, omol25, omat24, structure-prediction]
+
+datasets:
+  global_transform_args:
+    train_conditions:
+      unconditional:
+        frequency: 0.0
+      island:
+        frequency: 0.0
+      sequence_design:
+        frequency: 0.0
+      structure_prediction:
+        frequency: 1.0

@@ -1,0 +1,5 @@
+# @package _global_
+
+inference_sampler:
+  use_classifier_free_guidance: true
+  cfg_feature_mode: force_only

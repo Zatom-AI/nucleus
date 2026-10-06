@@ -1,0 +1,60 @@
+data_omat24_val_248_agm003358029_A2B3C8_244_spg166_0_0_rattled-1000_90djle
+#
+_entry.id       omat24_val_248_agm003358029_A2B3C8_244_spg166_0_0_rattled-1000_90djle
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Cs Cs1 . LIG A 1 1 . 1 LIG A Cs1 0.0 1.0 ? 0.9383149903549325  0.9242485749768505  0.0544024283327715 10.357541 6.3143616 0.88710827  1 1
+HETATM Cs Cs2 . LIG A 1 1 . 1 LIG A Cs2 0.0 1.0 ? 0.8254242717674957  0.7961626177884255  0.7906692229811654 12.019028 7.0771422 12.892976   1 2
+HETATM Cs Cs3 . LIG A 1 1 . 1 LIG A Cs3 0.0 1.0 ? 0.13576889353129928 0.3112391637135943  0.1908226194594178 2.9141731 2.506199  3.1116316   1 3
+HETATM Na Na1 . LIG A 1 1 . 1 LIG A Na1 0.0 1.0 ? 0.6809271201981417  0.6811599793594567  0.0002566184400976 7.399608  4.5658865 0.004184525 1 4
+HETATM Na Na2 . LIG A 1 1 . 1 LIG A Na2 0.0 1.0 ? 0.321505068604985   0.40475225347152843 0.0155697646430397 3.8756626 2.7470453 0.25388694  1 5
+HETATM Na Na3 . LIG A 1 1 . 1 LIG A Na3 0.0 1.0 ? 0.1860898933033681  0.6341325256939144  0.4266939041525077 5.454125  5.189704  6.957845    1 6
+HETATM Na Na4 . LIG A 1 1 . 1 LIG A Na4 0.0 1.0 ? 0.7497422796899543  0.1433857178388038  0.4169120864752287 7.479418  1.8790447 6.798339    1 7
+HETATM Na Na5 . LIG A 1 1 . 1 LIG A Na5 0.0 1.0 ? 0.7755362697137755  0.6747225794203615  0.3700728591607358 9.518409  5.337071  6.0345592   1 8
+HETATM Na Na6 . LIG A 1 1 . 1 LIG A Na6 0.0 1.0 ? 0.3886284267407022  0.7318020202237676  0.6156215616153915 8.006877  6.260328  10.038577   1 9
+HETATM Na Na7 . LIG A 1 1 . 1 LIG A Na7 0.0 1.0 ? 0.8351227953547352  0.2629854912136338  0.5933903942137206 9.244982  3.0692377 9.676066    1 10
+HETATM Na Na8 . LIG A 1 1 . 1 LIG A Na8 0.0 1.0 ? 0.19056420489183515 0.2793235330431473  0.6327286660796787 4.9441133 3.265362  10.317533   1 11
+HETATM Sn Sn1 . LIG A 1 1 . 1 LIG A Sn1 0.0 1.0 ? 0.542024328539327   0.6963835971157266  0.2101449894154186 7.323841  5.13009   3.4267101   1 12
+HETATM Sn Sn2 . LIG A 1 1 . 1 LIG A Sn2 0.0 1.0 ? 0.44355417737994435 0.35949008509925323 0.7411695819259805 7.4612727 4.0414457 12.085814   1 13
+#
+_cell.length_a      7.014400368846707
+_cell.length_b      7.729227152813728
+_cell.length_c      16.93406844484237
+_cell.angle_alpha   76.67576764365296
+_cell.angle_beta    76.33051620657068
+_cell.angle_gamma   60.127269836282444
+_cell.volume        766.604066144236
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

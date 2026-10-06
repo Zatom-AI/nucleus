@@ -1,0 +1,181 @@
+[project]
+name = "zevals"
+dynamic = ["version"]
+description = "Self-consistency and structure validation pipelines for Zatom generative models."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+authors = [
+    { name = "Zatom-AI", email = "mail.rishabh.anand@gmail.com" },
+]
+license = { file = "LICENSE.md" }
+
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: BSD License",
+]
+
+# Minimal shared dependencies — domain extras pull in the rest.
+dependencies = [
+    "hydra-core>=1.3.0,<1.4",
+    "omegaconf>=2.3.0",
+    "numpy",
+    "rich>=13.9.4",
+]
+
+[project.optional-dependencies]
+# Small-molecule metrics (RDKit + FPSim2).
+molecules = [
+    "zevals[atomistic]",
+    "fpsim2",
+    "rdkit",
+    "posebusters",
+]
+# Protein-conditioned ligand metrics (PoseBusters + molecule deps).
+ligands = [
+    "zevals[molecules]",
+    "posebusters",
+]
+# Protein design metrics (ESMFold, ProteinMPNN, LigandMPNN, SolubleMPNN).
+proteins = [
+    "transformers>=4.51",
+    "accelerate",
+    "torch",
+    "prody",
+    "biopython",
+    "biotite",
+]
+# ESMFold2 forward-folding oracle. Kept as a separate extra because it pulls
+# git deps (no PyPI release yet) — installing plain `zevals[proteins]` should
+# not force VCS dependencies on users who only need ESMFold v1.
+#
+# ESMFold2 lives in Biohub's `transformers` FORK (the `esmfold2`/`esmc` model
+# code is not in stock PyPI transformers), and the `esm` package provides the
+# input builders. `esm` already depends on the fork transitively, but we name
+# the fork explicitly here so the requirement is visible and not silently
+# satisfied only via `esm`. uv unifies the fork URL with `zevals[proteins]`'s
+# stock `transformers>=4.51` pin (the direct URL wins and satisfies the range).
+proteins-esmfold2 = [
+    "zevals[proteins]",
+    "esm @ git+https://github.com/Biohub/esm.git@26b0bc2b771e3e419ea74f445a5f35cc094a1509",
+    "transformers @ git+https://github.com/Biohub/transformers.git@ef32577f55da19a4989cd7b22e004dc43a4998cb",
+]
+# RNA structural-alphabet prefilter. Boltz/USalign remain separately staged
+# subprocess tools; Biopython is inherited from the protein-domain utilities.
+rna = [
+    "zevals[proteins]",
+    "riboseek==0.1.0",
+]
+# Crystal / materials metrics. LeMat-GenBench itself is intentionally excluded:
+# its torch/PyG/MLIP dependency stack runs in a separately locked subprocess
+# environment; see docs/LeMat-GenBench-guide.md.
+materials = [
+    "zevals[atomistic]",
+    "pymatgen",
+    "smact",
+    # matminer<0.10 imports pymatgen.core.periodic_table._pt_data, a private
+    # attribute newer pymatgen no longer exposes — unpinned, uv can resolve
+    # an old matminer against a new pymatgen and break materials/crystal.py's
+    # import at module load time. Verified 0.10.1 is compatible.
+    "matminer>=0.10",
+]
+# UMA near-DFT force metrics (optional, opt-in per pipeline config).
+#
+# Install this in a SEPARATE environment from a trainer that needs a newer
+# torch: fairchem-core 2.21 pins torch~=2.8.0 and numpy<2.5, and its numba
+# dependency will not build against a newer numpy. UMA weights are gated —
+# request access at https://huggingface.co/facebook/UMA, then `hf auth login`.
+uma = [
+    "fairchem-core==2.21.0",
+    "torch~=2.8.0",
+    "numpy>=2.0,<2.5",
+    "ase>=3.26.0",
+]
+# Atomistic distribution metrics (AFD).
+atomistic = [
+    "huggingface-hub",
+    "torch>=2.2.0,<3",
+    "torch-geometric",
+    "tqdm",
+]
+# Full install — all domain extras. `uma` is deliberately NOT included: its
+# torch~=2.8 / numpy<2.5 pins would downgrade the training environment.
+all = [
+    "zevals[atomistic]",
+    "zevals[molecules]",
+    "zevals[ligands]",
+    "zevals[proteins]",
+    "zevals[rna]",
+    "zevals[materials]",
+]
+
+[project.scripts]
+zevals = "zevals.cli:main"
+
+[tool.uv]
+override-dependencies = [
+    # Override the [option] argument mistakenly specified for `pandarallel` in the `smact` package
+    "pandarallel>=1.6.5"
+]
+
+# Build settings ----------------------------------------------------------------------
+[build-system]
+requires = [
+    "hatchling",
+    "hatch-vcs == 0.4",
+]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "0.0.0"
+local-scheme = "no-local-version"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/zevals/version.py"
+tag-pattern = "^v(?P<version>.*)$"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = [
+  "src/zevals",
+]
+
+[tool.hatch.build.targets.wheel.force-include]
+"configs" = "zevals/configs"
+"scripts" = "zevals/scripts"
+
+# Formatting & linting settings -------------------------------------------------------
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+extend-select = ["I", "F401"]
+ignore = ["F722", "F821", "E741"]
+
+[tool.pyright]
+typeCheckingMode = "off"
+
+[dependency-groups]
+dev = [
+    "build>=1.3.0",
+    "hatchling>=1.28.0",
+    "pytest>=8.0.0",
+]

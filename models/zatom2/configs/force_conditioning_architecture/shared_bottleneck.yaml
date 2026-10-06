@@ -1,0 +1,7 @@
+# @package _global_
+
+# Legacy route: force statistics share the token-initializer bottleneck.
+model:
+  net:
+    token_initializer:
+      force_conditioning_residual_embedding: false

@@ -1,0 +1,9 @@
+_target_: nucleus.metrics.losses.MaterialGeometryLoss
+max_t: 1
+objective: ${model.net.diffusion_module.f_pred}
+sigma_data: ${model.net.diffusion_module.sigma_data}
+# active_mean restores averaging over valid material system/diffusion-view pairs.
+reduction: system_mean
+fractional_coord_weight: 10.0
+lattice_lengths_weight: 1.0
+lattice_angles_weight: 1.0

@@ -1,0 +1,95 @@
+{
+  "joint": {
+    "n": 1472,
+    "counts": {
+      "omat24": 704,
+      "omol25": 768
+    },
+    "random_label_expectation": 0.5006059172996778,
+    "10nn_purity_element_fractions": 0.9796875,
+    "without_properties": {
+      "explained_variance_ratio": [
+        0.5002782236478582,
+        0.21022449494685472
+      ],
+      "10nn_purity_embedding": 1.0
+    },
+    "with_properties": {
+      "explained_variance_ratio": [
+        0.8154893507898469,
+        0.12030655645931389
+      ],
+      "10nn_purity_embedding": 0.9970788043478261
+    }
+  },
+  "omol25": {
+    "n": 768,
+    "counts": {
+      "Biomolecules": 128,
+      "Electrolytes": 128,
+      "Metal complexes": 128,
+      "Neutral organics": 128,
+      "Reactivity": 128,
+      "SPICE": 128
+    },
+    "random_label_expectation": 0.16558018252933507,
+    "10nn_purity_element_fractions": 0.46341145833333336,
+    "without_properties": {
+      "explained_variance_ratio": [
+        0.5121877423994441,
+        0.3492470440745999
+      ],
+      "10nn_purity_embedding": 0.6825520833333333
+    },
+    "with_properties": {
+      "explained_variance_ratio": [
+        0.9538401387202728,
+        0.01659363148826988
+      ],
+      "10nn_purity_embedding": 0.696484375
+    }
+  },
+  "omat24": {
+    "n": 704,
+    "counts": {
+      "aimd-from-PBE-1000-npt": 64,
+      "aimd-from-PBE-1000-nvt": 64,
+      "aimd-from-PBE-3000-npt": 64,
+      "aimd-from-PBE-3000-nvt": 64,
+      "rattled-1000": 64,
+      "rattled-1000-subsampled": 64,
+      "rattled-300": 64,
+      "rattled-300-subsampled": 64,
+      "rattled-500": 64,
+      "rattled-500-subsampled": 64,
+      "rattled-relax": 64
+    },
+    "random_label_expectation": 0.08961593172119488,
+    "10nn_purity_element_fractions": 0.09985795454545454,
+    "without_properties": {
+      "explained_variance_ratio": [
+        0.4429140750859983,
+        0.13521836066635703
+      ],
+      "10nn_purity_embedding": 0.24985795454545454
+    },
+    "with_properties": {
+      "explained_variance_ratio": [
+        0.860815664480162,
+        0.05675362071386444
+      ],
+      "10nn_purity_embedding": 0.24431818181818182
+    }
+  },
+  "archive_sha256": {
+    "without_properties": "4bf1042cbe2f4b35ee670f0173f14341358ac61c502915e8bb3f742d4f18c44e",
+    "with_properties": "54903df46659f666e1c81d1b8a8554be87f1d4c8c9a62205a70082efc0938508"
+  },
+  "analysis_script_sha256": "412703783bb88cca22bb4ba30fb80b3bce05d11f1a231c7c43878adf432b66d1",
+  "matched_input_sha256_verified": true,
+  "software": {
+    "numpy": "2.4.6",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.11.0"
+  }
+}

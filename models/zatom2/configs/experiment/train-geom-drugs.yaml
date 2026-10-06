@@ -1,0 +1,60 @@
+# @package _global_
+# Unconditional atom-identity and coordinate generation on Zatom-AI/geom.
+defaults:
+  - override /datasets: geom_drugs
+  - override /paths/data: geom
+  - override /trainer/metrics: geom_drugs_generation_metrics
+  - override /model/schedulers@model.lr_scheduler: exponential
+  - _self_
+
+name: train-geom-drugs-unconditional
+tags: [geom-drugs, unconditional, train]
+ckpt_path: null
+
+model:
+  lr_scheduler_interval: epoch
+  optimizer:
+    lr: 1.0e-3
+
+trainer:
+  # Every training conformer in Zatom-AI/geom at 855cd36632b30787b913743ec21903283dba41c8.
+  # 243,480 molecules; all of their up to five released conformers are separate samples.
+  n_examples_per_epoch: 1172577
+  max_epochs: 400
+  grad_accum_steps: 1
+  prevalidate: false
+  validate_every_n_epochs: 8
+  checkpoint_every_n_epochs: null
+  checkpoint_every_n_steps: 300
+  checkpoint_before_validation: true
+  checkpoint_keep_last_n: 10
+  checkpoint_retention_root: ${paths.log_dir}/${task_name}/${name}
+  loss:
+    # Train atom identities alongside coordinates. Retain the material loss
+    # so inactive material heads stay connected for distributed training.
+    sequence_loss:
+      sequence_weight: 0.0
+      atom_type_weight: 0.1
+      max_t: 1.0
+
+dataloader:
+  train:
+    dataloader_params:
+      batch_size: 256
+      num_workers: 8
+      prefetch_factor: 1
+      # Share one tensor buffer per dtype to avoid exhausting mmap regions.
+      coalesce_worker_tensors: true
+      # Bound prefetched worker payloads; retain the 256-example packing window.
+      worker_chunk_size: 32
+    n_fallback_retries: 4
+
+callbacks:
+  log_dataset_sampling_ratios_callback:
+    fallback_dataset_name: geom
+  log_composite_validation_metrics_callback:
+    enabled: false
+  log_grouped_zevals_structure_prediction_metrics_callback:
+    enabled: false
+  dump_validation_structures_callback:
+    dump_every_n: 2

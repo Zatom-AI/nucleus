@@ -1,0 +1,15 @@
+# @package _global_
+# Figure 1: Zatom-2-L on fixed 500k OMol25 + 500k OMat24 subsets.
+
+defaults:
+  - paper-figure1-zatom2-500k-each-joint-properties-force-conditioned
+  - override /model: zatom2_l
+  - _self_
+
+name: paper-figure1-zatom2-l-omol25-500k-omat24-500k-joint-properties-force-conditioned
+tags: [paper, figure-1, scaling, pretrain, zatom2-l, omol25-500k, omat24-500k, joint-properties, force-conditioned]
+
+datasets:
+  # Match the Table 3 Zatom-2-L memory envelope. The corresponding launcher
+  # doubles gradient accumulation to preserve the base run's global token budget.
+  max_num_tokens: 3584

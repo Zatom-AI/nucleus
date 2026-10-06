@@ -1,0 +1,3028 @@
+{
+  "molstar_version": "5.11.0",
+  "molstar_bundle_sha256": "7fad5561c74bc900930fb57d6ab028d1aafdda82223a901bf932b1098e84f1f3",
+  "qm9_mp20_checkpoint": {
+    "sha256": "412e14210ffe4bb7d50d87c64bdea658a767238ea87f56888dd6c06734d02e55",
+    "size_bytes": 2240024773,
+    "source_path": "logs/train/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925.ckpt"
+  },
+  "protein_checkpoint": {
+    "name": "joint_properties_fc",
+    "checkpoint": "checkpoints/paper-table4-scope-from-joint-properties-force-conditioned/step-00130000.ckpt",
+    "raw_step": 130000,
+    "local_step": 30000,
+    "selection_source": "artifacts/scope/self_consistency/paper_table4/paper-table4-scope-from-joint-properties-force-conditioned_step-00130000_esmfold2_n96_seed1",
+    "selection_metrics": {
+      "n_shards_with_details": 1,
+      "n_backbones": 96,
+      "n_refolds": 768,
+      "designable_count": 91,
+      "designability": 0.9479166666666666,
+      "mean_min_scRMSD": 0.930021526947309,
+      "median_min_scRMSD": 0.8186592057944011,
+      "mean_max_scTM": 0.9441760416666667,
+      "median_max_scTM": 0.95305,
+      "sc_rmsd_threshold": 1.5
+    },
+    "selection_novelty": {
+      "self_consistency_root": "artifacts/scope/self_consistency/paper_table4/paper-table4-scope-from-joint-properties-force-conditioned_step-00130000_esmfold2_n96_seed1",
+      "target_db": "artifacts/scope/foldseek_dbs/scope2k_train/db",
+      "target_name": "scope2k_train",
+      "query_set": "all",
+      "n_total_backbones": 96,
+      "n_designable": 91,
+      "n_queries": 96,
+      "novelty_mean_best_tm": 0.7596635416666667,
+      "novel_rate_tm_below_0.5": 0.0,
+      "lower_mean_best_tm_is_more_novel": true
+    }
+  },
+  "selection": {
+    "molecules": "First nine distinct molecular formulae in ascending sample-ID order with connected, sanitizable neutral RDKit graphs inferred from the saved coordinates (RDKit 2026.03.6); no coordinate optimization. This is an illustration filter, not the benchmark validity calculation.",
+    "materials": "First nine distinct unit-cell compositions in saved LeMat-GenBench valid_structure_ids order; staged decompressed bytes verified equal to original sample. No stability/novelty filtering or relaxation.",
+    "proteins": "First lexicographic designable sample nearest each target length 60, 90, 120 within each category: helix-rich (alpha >=0.6, beta <0.1), mixed (alpha >=0.2, beta >=0.2), sheet-rich (beta >=0.4, alpha <0.1). Fractions and best-of-eight CA scRMSD <1.5 Angstrom from saved evaluation; not recomputed. Rendered PDBs are generated backbones, not refolds.",
+    "omol25": "Stratified by conditioning-source OMol25 data_id: first source filename and largest saved output by atom count for biomolecules (filename order breaks size ties), first two source filenames for elytes, first eligible filename for the other eight subsets. Connectivity eligibility is defined in omol25_connectivity_filter. Twelve outputs cover all ten subsets; no sanitization, formula uniqueness, stability or transition-state filter. Generated coordinates and atom identities unchanged. Labels describe source provenance, not classification.",
+    "omat24": "First nine distinct generated unit-cell compositions with at most 40 atoms in ascending source filename order (size restriction for visual legibility). Finite lattice parameters and positive saved volume checked; no validity, stability, uniqueness, or novelty filtering. No coordinate optimization or relaxation."
+  },
+  "samples": [
+    {
+      "domain": "molecules",
+      "sample_id": "qm9-000000",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/qm9/samples/qm9-000000.cif.gz",
+      "source_sha256": "e8216d935eb3b4f21820ba65c96868798cc1b4740e2cb1c679f19570eef3c945",
+      "file": "structures/qm9-000000.cif",
+      "sha256": "6250a6077089cae70b562a1e2ac39ca06aad144dfd34cc11454a6347da2096c3",
+      "formula": "C6H4N2O",
+      "atom_count": 13,
+      "selection_smiles": "O=C1C=Cc2cncn21",
+      "seed": 674009348
+    },
+    {
+      "domain": "molecules",
+      "sample_id": "qm9-000001",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/qm9/samples/qm9-000001.cif.gz",
+      "source_sha256": "41293f8cf8c00d57e6318782a34d89dbe3ec599681e126ff2bae95af959fa0ae",
+      "file": "structures/qm9-000001.cif",
+      "sha256": "cd5cc94034073a8f34dea3dd6291eb9066f869c49d434943c0d23ab7f50a8bb8",
+      "formula": "C5H5NO3",
+      "atom_count": 14,
+      "selection_smiles": "O=c1ccnc(CO)o1",
+      "seed": 4267549317
+    },
+    {
+      "domain": "molecules",
+      "sample_id": "qm9-000002",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/qm9/samples/qm9-000002.cif.gz",
+      "source_sha256": "cf78db13291b057a37648f2da819c3b3d9db5b55ff9a60f1e7f81b2a6e50c29d",
+      "file": "structures/qm9-000002.cif",
+      "sha256": "346bee67a5d8839e5d8c46960b99f835e702f4d6041c4228a4790d35cfc6a18a",
+      "formula": "C5H6N2O2",
+      "atom_count": 15,
+      "selection_smiles": "COc1cncnc1O",
+      "seed": 2585356012
+    },
+    {
+      "domain": "molecules",
+      "sample_id": "qm9-000003",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/qm9/samples/qm9-000003.cif.gz",
+      "source_sha256": "35f97b233c0a8de485a6ed7cdf63b7f6cb8fb3572f3dbb1eae2d2b830c5071ca",
+      "file": "structures/qm9-000003.cif",
+      "sha256": "2bf4a1677e3ea13e252f0b82a22ae18dca2e91ce6c0631d70b809e97356c3580",
+      "formula": "C4H5N3O",
+      "atom_count": 13,
+      "selection_smiles": "Nc1cn[nH]c(=O)c1",
+      "seed": 674009348
+    },
+    {
+      "domain": "molecules",
+      "sample_id": "qm9-000004",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/qm9/samples/qm9-000004.cif.gz",
+      "source_sha256": "f1b1ca8772e44b8652d071c8af7df0e332ae1037704cff1a3a12bccf3c43adb9",
+      "file": "structures/qm9-000004.cif",
+      "sha256": "05b1eb52108192e12208dd66825bc1c187df4819124b5be23749ba9ae1f5ed8c",
+      "formula": "C7H9NO",
+      "atom_count": 18,
+      "selection_smiles": "O[C@]12C[C@H]3[C@@H]4[C@H]3[C@H]1N[C@@H]42",
+      "seed": 940692947
+    },
+    {
+      "domain": "molecules",
+      "sample_id": "qm9-000006",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/qm9/samples/qm9-000006.cif.gz",
+      "source_sha256": "048db25083ec0609a30b1cc864e0e64bf1e49df775561d28c097d3301ab8b4a7",
+      "file": "structures/qm9-000006.cif",
+      "sha256": "80f15dd3632d4d7219cb8398b1e3695bf20d160461f8f5e04e69cf98720f2598",
+      "formula": "C7H14O2",
+      "atom_count": 23,
+      "selection_smiles": "CCCO[C@@H](O)C1CC1",
+      "seed": 583285046
+    },
+    {
+      "domain": "molecules",
+      "sample_id": "qm9-000007",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/qm9/samples/qm9-000007.cif.gz",
+      "source_sha256": "7898892c83188697d7d9d99441208a43501ec59eab2b72975313fd1da10481d1",
+      "file": "structures/qm9-000007.cif",
+      "sha256": "1ded2fc32065dca5a9b11bb690189cf45b968f662b294f8d0d2b688ec6307c33",
+      "formula": "C8H14O",
+      "atom_count": 23,
+      "selection_smiles": "COC[C@@H]1C=CCCC1",
+      "seed": 583285046
+    },
+    {
+      "domain": "molecules",
+      "sample_id": "qm9-000010",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/qm9/samples/qm9-000010.cif.gz",
+      "source_sha256": "5f901a4b589168cf7efaa98d295da62deb4d818816f707ff2f839f2478f1df03",
+      "file": "structures/qm9-000010.cif",
+      "sha256": "4d20a1bb11a1c59968681b872ff860bb819dfac2f16690c157cd7205aa4d2611",
+      "formula": "C4H6N2O3",
+      "atom_count": 15,
+      "selection_smiles": "[H]/N=C1\\O[C@@H](O)C(=O)N1C",
+      "seed": 2585356012
+    },
+    {
+      "domain": "molecules",
+      "sample_id": "qm9-000011",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/qm9/samples/qm9-000011.cif.gz",
+      "source_sha256": "6c4ef3413559731cc2174d375d64647774debe0d759dffeb9e9fb30494225429",
+      "file": "structures/qm9-000011.cif",
+      "sha256": "f71419b0345f0b97007b6d199f0a22d7b02bc0e5c0dc0c4d1443bd139fc3ba13",
+      "formula": "C4H8N4O",
+      "atom_count": 17,
+      "selection_smiles": "Cn1nc(N)n(C)c1=O",
+      "seed": 504206676
+    },
+    {
+      "domain": "materials",
+      "sample_id": "mp20-000000",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/mp20/samples/mp20-000000.cif.gz",
+      "source_sha256": "e367f506b12325f6476664fe28ee58211bb76e79905c1260a5675d2882f6a29f",
+      "file": "structures/mp20-000000.cif",
+      "sha256": "b083d1b0e1efde0cc938a3e4e345c0a4799812aa506558d3a10a869a70dd07b1",
+      "formula": "BeCoFeSi",
+      "atom_count": 4,
+      "lemat_valid": true,
+      "lemat_input_index": 0,
+      "lattice": [
+        3.798183133333451,
+        3.798183133333451,
+        4.093732455723218,
+        61.32438659667969,
+        61.32438659667969,
+        58.19102478027344
+      ],
+      "seed": 3190051786
+    },
+    {
+      "domain": "materials",
+      "sample_id": "mp20-000001",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/mp20/samples/mp20-000001.cif.gz",
+      "source_sha256": "c6e8d02e48d596bb33607b066b44ced6f4e8cb174edbd1f7b21a1b5f596d68c2",
+      "file": "structures/mp20-000001.cif",
+      "sha256": "6be56a4d41ca923203581730912ef71b3de6f3070d48b382e7d76af4f2da7c38",
+      "formula": "Pd3Ti",
+      "atom_count": 4,
+      "lemat_valid": true,
+      "lemat_input_index": 1,
+      "lattice": [
+        4.025091230244017,
+        4.025091230244017,
+        4.324248468089702,
+        97.58187103271484,
+        98.47711181640625,
+        88.62940216064453
+      ],
+      "seed": 3190051786
+    },
+    {
+      "domain": "materials",
+      "sample_id": "mp20-000002",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/mp20/samples/mp20-000002.cif.gz",
+      "source_sha256": "af111f5a195dd61eb81fedc472899a136a3a5ef8251dda0567b5998d369bdfc2",
+      "file": "structures/mp20-000002.cif",
+      "sha256": "2c60937f893f2eda59695076580e92e1e3552591b5c781e20ada8c2689e3e13d",
+      "formula": "LiS2Sb",
+      "atom_count": 4,
+      "lemat_valid": true,
+      "lemat_input_index": 2,
+      "lattice": [
+        4.18563230328816,
+        4.116667489461658,
+        5.458877513663903,
+        87.73416137695312,
+        89.97227478027344,
+        92.21038818359375
+      ],
+      "seed": 3190051786
+    },
+    {
+      "domain": "materials",
+      "sample_id": "mp20-000004",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/mp20/samples/mp20-000004.cif.gz",
+      "source_sha256": "e7db2025dfd141e022320aa69526a60cb738940d6249a5d9c731b94e78fc304a",
+      "file": "structures/mp20-000004.cif",
+      "sha256": "65117a87fd6dcf36ee9906d74ffcc8dedc1af3a7ab185d7bde33fa53dd70373a",
+      "formula": "Cl6KLiRbSb",
+      "atom_count": 10,
+      "lemat_valid": true,
+      "lemat_input_index": 4,
+      "lattice": [
+        7.800936398866167,
+        7.768180989208536,
+        7.735439448296858,
+        59.98151397705078,
+        59.98151397705078,
+        59.98151397705078
+      ],
+      "seed": 6863333
+    },
+    {
+      "domain": "materials",
+      "sample_id": "mp20-000005",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/mp20/samples/mp20-000005.cif.gz",
+      "source_sha256": "466ba1568d5fa1cafb8dba96bb83d45df3bc4207f2a29dc1ffa97410044858b7",
+      "file": "structures/mp20-000005.cif",
+      "sha256": "979d03ae3a578a50d85b3d3c4652871efc59646d6d3ce44fa624334948234fa0",
+      "formula": "Cs2F6NaTl",
+      "atom_count": 10,
+      "lemat_valid": true,
+      "lemat_input_index": 5,
+      "lattice": [
+        6.825247006408655,
+        6.793011417895679,
+        6.76079740298752,
+        59.98151397705078,
+        59.98151397705078,
+        59.98151397705078
+      ],
+      "seed": 6863333
+    },
+    {
+      "domain": "materials",
+      "sample_id": "mp20-000007",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/mp20/samples/mp20-000007.cif.gz",
+      "source_sha256": "c00bc0d80d461440c5d8ff70428352c55b7c4f6fbc9a246d7a2a91e0de089d71",
+      "file": "structures/mp20-000007.cif",
+      "sha256": "8ba0bed3b0e93ff908f61d3f38e3bfa7a1a7fb5e74b54347f79ccf979fb582d6",
+      "formula": "CaCu3O12V4",
+      "atom_count": 20,
+      "lemat_valid": true,
+      "lemat_input_index": 7,
+      "lattice": [
+        6.417839334788266,
+        6.379442234432596,
+        6.379442234432596,
+        108.77245330810547,
+        109.66769409179688,
+        110.56294250488281
+      ],
+      "seed": 3192349678
+    },
+    {
+      "domain": "materials",
+      "sample_id": "mp20-000008",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/mp20/samples/mp20-000008.cif.gz",
+      "source_sha256": "3d92373f9185b59505b65b41c8a42e7860a4b3e7bb58d8cca5b8f59655845aee",
+      "file": "structures/mp20-000008.cif",
+      "sha256": "a9983892dfed5b27cd95061ab3565363e6ac04467c8e5565bcf58dbc8d145ddf",
+      "formula": "LiPd2Pt",
+      "atom_count": 4,
+      "lemat_valid": true,
+      "lemat_input_index": 8,
+      "lattice": [
+        4.093732455723218,
+        4.093732455723218,
+        4.139629394279231,
+        90.86752319335938,
+        90.86752319335938,
+        89.97227478027344
+      ],
+      "seed": 3190051786
+    },
+    {
+      "domain": "materials",
+      "sample_id": "mp20-000010",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/mp20/samples/mp20-000010.cif.gz",
+      "source_sha256": "f2c719dbfbc96349c831b443af0a352600cfeb6d140adcc904a38ffca2cbf9f9",
+      "file": "structures/mp20-000010.cif",
+      "sha256": "1c1b45c196836235d82ddf2da5c101f15c2ea1eef5cccfa66380f5d666ea063c",
+      "formula": "CuReTi2",
+      "atom_count": 4,
+      "lemat_valid": true,
+      "lemat_input_index": 10,
+      "lattice": [
+        3.21361756697624,
+        3.2243871927198215,
+        6.6223115991363315,
+        89.97227478027344,
+        91.31513977050781,
+        90.86752319335938
+      ],
+      "seed": 3190051786
+    },
+    {
+      "domain": "materials",
+      "sample_id": "mp20-000011",
+      "source": "logs/evaluation/table2/paper-table2-qm9-mp20-unconditional-without-force-conditioning-epoch-9925-unrelaxed/mp20/samples/mp20-000011.cif.gz",
+      "source_sha256": "8878ed3ba49e1aa45ab6896a385eb79b10a0fc9ad61d86b3a50a689e8142e52f",
+      "file": "structures/mp20-000011.cif",
+      "sha256": "d0cf3d97a6b6ceb0b76e43d9e9dcd4722b1365d8b7fb971e3206f59d547a932c",
+      "formula": "Hg6Tm2",
+      "atom_count": 8,
+      "lemat_valid": true,
+      "lemat_input_index": 11,
+      "lattice": [
+        5.0712971687316895,
+        6.515951156616211,
+        6.515951156616211,
+        120.8582763671875,
+        90.86752319335938,
+        89.52465057373047
+      ],
+      "seed": 2898005666
+    },
+    {
+      "domain": "proteins",
+      "sample_id": "scope_len060_rep00_0_model_0",
+      "source": "logs/analysis/scope_best_20260919/joint_properties_fc/shards/shard_02/backbones/scope_len060_rep00_0_model_0.pdb",
+      "source_sha256": "f317256477e83762bebf8e4aefc995d8808e05b6a02b8945ce2f85233d189f8c",
+      "file": "structures/scope_len060_rep00_0_model_0.pdb",
+      "sha256": "f317256477e83762bebf8e4aefc995d8808e05b6a02b8945ce2f85233d189f8c",
+      "category": "helix-rich",
+      "length": 60,
+      "min_scRMSD": 0.5707212324500506,
+      "max_scTM": 0.9568,
+      "alpha_fraction": 0.7333333333333333,
+      "beta_fraction": 0.0,
+      "metrics_source": "logs/analysis/scope_best_20260919/joint_properties_fc/per_backbone_metrics.csv",
+      "metrics_source_sha256": "5e47180c0dd0e2f34da1a83cacf093b1b9048429196bd4532730f4a79b51e3a2"
+    },
+    {
+      "domain": "proteins",
+      "sample_id": "scope_len090_rep00_0_model_0",
+      "source": "logs/analysis/scope_best_20260919/joint_properties_fc/shards/shard_08/backbones/scope_len090_rep00_0_model_0.pdb",
+      "source_sha256": "42707b9a1f8988866b82f67d7fab123e45fa44d560ea771e78765553b6b8511e",
+      "file": "structures/scope_len090_rep00_0_model_0.pdb",
+      "sha256": "42707b9a1f8988866b82f67d7fab123e45fa44d560ea771e78765553b6b8511e",
+      "category": "helix-rich",
+      "length": 90,
+      "min_scRMSD": 1.3178809915634462,
+      "max_scTM": 0.8924,
+      "alpha_fraction": 0.7555555555555555,
+      "beta_fraction": 0.0,
+      "metrics_source": "logs/analysis/scope_best_20260919/joint_properties_fc/per_backbone_metrics.csv",
+      "metrics_source_sha256": "5e47180c0dd0e2f34da1a83cacf093b1b9048429196bd4532730f4a79b51e3a2"
+    },
+    {
+      "domain": "proteins",
+      "sample_id": "scope_len120_rep03_0_model_0",
+      "source": "logs/analysis/scope_best_20260919/joint_properties_fc/shards/shard_01/backbones/scope_len120_rep03_0_model_0.pdb",
+      "source_sha256": "984e56d3e0c2a2992e0e2f71cc148247be175b83f7f6d274392e233d878803ea",
+      "file": "structures/scope_len120_rep03_0_model_0.pdb",
+      "sha256": "984e56d3e0c2a2992e0e2f71cc148247be175b83f7f6d274392e233d878803ea",
+      "category": "helix-rich",
+      "length": 120,
+      "min_scRMSD": 0.7023700591690236,
+      "max_scTM": 0.9718,
+      "alpha_fraction": 0.7833333333333333,
+      "beta_fraction": 0.025,
+      "metrics_source": "logs/analysis/scope_best_20260919/joint_properties_fc/per_backbone_metrics.csv",
+      "metrics_source_sha256": "5e47180c0dd0e2f34da1a83cacf093b1b9048429196bd4532730f4a79b51e3a2"
+    },
+    {
+      "domain": "proteins",
+      "sample_id": "scope_len060_rep06_0_model_0",
+      "source": "logs/analysis/scope_best_20260919/joint_properties_fc/shards/shard_08/backbones/scope_len060_rep06_0_model_0.pdb",
+      "source_sha256": "adf23cb41b51994ec87651f3919e0c7b1b0a64e3a6536ac57c91bbca2270b3ee",
+      "file": "structures/scope_len060_rep06_0_model_0.pdb",
+      "sha256": "adf23cb41b51994ec87651f3919e0c7b1b0a64e3a6536ac57c91bbca2270b3ee",
+      "category": "mixed",
+      "length": 60,
+      "min_scRMSD": 0.8103977133007086,
+      "max_scTM": 0.9224,
+      "alpha_fraction": 0.2,
+      "beta_fraction": 0.2,
+      "metrics_source": "logs/analysis/scope_best_20260919/joint_properties_fc/per_backbone_metrics.csv",
+      "metrics_source_sha256": "5e47180c0dd0e2f34da1a83cacf093b1b9048429196bd4532730f4a79b51e3a2"
+    },
+    {
+      "domain": "proteins",
+      "sample_id": "scope_len090_rep04_0_model_0",
+      "source": "logs/analysis/scope_best_20260919/joint_properties_fc/shards/shard_12/backbones/scope_len090_rep04_0_model_0.pdb",
+      "source_sha256": "1c37e60b38d0bdc144ae42169f6fce593ade99e6357c1abde92a0abdbdf0a5da",
+      "file": "structures/scope_len090_rep04_0_model_0.pdb",
+      "sha256": "1c37e60b38d0bdc144ae42169f6fce593ade99e6357c1abde92a0abdbdf0a5da",
+      "category": "mixed",
+      "length": 90,
+      "min_scRMSD": 0.701464118278384,
+      "max_scTM": 0.9625,
+      "alpha_fraction": 0.2,
+      "beta_fraction": 0.4,
+      "metrics_source": "logs/analysis/scope_best_20260919/joint_properties_fc/per_backbone_metrics.csv",
+      "metrics_source_sha256": "5e47180c0dd0e2f34da1a83cacf093b1b9048429196bd4532730f4a79b51e3a2"
+    },
+    {
+      "domain": "proteins",
+      "sample_id": "scope_len120_rep04_0_model_0",
+      "source": "logs/analysis/scope_best_20260919/joint_properties_fc/shards/shard_02/backbones/scope_len120_rep04_0_model_0.pdb",
+      "source_sha256": "c525e02a92f0d5c972ba152316aacfb49fed8cfbc20d245349b97ce73e46f415",
+      "file": "structures/scope_len120_rep04_0_model_0.pdb",
+      "sha256": "c525e02a92f0d5c972ba152316aacfb49fed8cfbc20d245349b97ce73e46f415",
+      "category": "mixed",
+      "length": 120,
+      "min_scRMSD": 0.6996611468769045,
+      "max_scTM": 0.9719,
+      "alpha_fraction": 0.425,
+      "beta_fraction": 0.31666666666666665,
+      "metrics_source": "logs/analysis/scope_best_20260919/joint_properties_fc/per_backbone_metrics.csv",
+      "metrics_source_sha256": "5e47180c0dd0e2f34da1a83cacf093b1b9048429196bd4532730f4a79b51e3a2"
+    },
+    {
+      "domain": "proteins",
+      "sample_id": "scope_len063_rep04_0_model_0",
+      "source": "logs/analysis/scope_best_20260919/joint_properties_fc/shards/shard_13/backbones/scope_len063_rep04_0_model_0.pdb",
+      "source_sha256": "d1ed6e98860c4d03a1c21dc06c6551dc26b685239a40cbcfdc257348fe13b9b3",
+      "file": "structures/scope_len063_rep04_0_model_0.pdb",
+      "sha256": "d1ed6e98860c4d03a1c21dc06c6551dc26b685239a40cbcfdc257348fe13b9b3",
+      "category": "sheet-rich",
+      "length": 63,
+      "min_scRMSD": 0.7447010010509134,
+      "max_scTM": 0.9357,
+      "alpha_fraction": 0.0,
+      "beta_fraction": 0.4603174603174603,
+      "metrics_source": "logs/analysis/scope_best_20260919/joint_properties_fc/per_backbone_metrics.csv",
+      "metrics_source_sha256": "5e47180c0dd0e2f34da1a83cacf093b1b9048429196bd4532730f4a79b51e3a2"
+    },
+    {
+      "domain": "proteins",
+      "sample_id": "scope_len090_rep07_0_model_0",
+      "source": "logs/analysis/scope_best_20260919/joint_properties_fc/shards/shard_15/backbones/scope_len090_rep07_0_model_0.pdb",
+      "source_sha256": "f6a1bdec9ed1f804d929bedee240aef0dfe819d30136d6e46f4f72e1dec0741d",
+      "file": "structures/scope_len090_rep07_0_model_0.pdb",
+      "sha256": "f6a1bdec9ed1f804d929bedee240aef0dfe819d30136d6e46f4f72e1dec0741d",
+      "category": "sheet-rich",
+      "length": 90,
+      "min_scRMSD": 1.3538494646632122,
+      "max_scTM": 0.8992,
+      "alpha_fraction": 0.0,
+      "beta_fraction": 0.5111111111111111,
+      "metrics_source": "logs/analysis/scope_best_20260919/joint_properties_fc/per_backbone_metrics.csv",
+      "metrics_source_sha256": "5e47180c0dd0e2f34da1a83cacf093b1b9048429196bd4532730f4a79b51e3a2"
+    },
+    {
+      "domain": "proteins",
+      "sample_id": "scope_len120_rep12_0_model_0",
+      "source": "logs/analysis/scope_best_20260919/joint_properties_fc/shards/shard_10/backbones/scope_len120_rep12_0_model_0.pdb",
+      "source_sha256": "5aa4959f393dd665f612ec1224aaf6468155a64344621a96ac84d4b7356b16bb",
+      "file": "structures/scope_len120_rep12_0_model_0.pdb",
+      "sha256": "5aa4959f393dd665f612ec1224aaf6468155a64344621a96ac84d4b7356b16bb",
+      "category": "sheet-rich",
+      "length": 120,
+      "min_scRMSD": 1.4251894294511054,
+      "max_scTM": 0.9167,
+      "alpha_fraction": 0.08333333333333333,
+      "beta_fraction": 0.4666666666666667,
+      "metrics_source": "logs/analysis/scope_best_20260919/joint_properties_fc/per_backbone_metrics.csv",
+      "metrics_source_sha256": "5e47180c0dd0e2f34da1a83cacf093b1b9048429196bd4532730f4a79b51e3a2"
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0004_atoms74_hydrogens34_model_0",
+      "display_id": "omol25-0004",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0004_atoms74_hydrogens34_model_0.cif.gz",
+      "source_sha256": "38e9d8e969c7d51458ce6b4469660eae8cf0703911c5dcf460a7dbe21736605a",
+      "file": "structures/omol25_train_4m_force_repr_0004_atoms74_hydrogens34_model_0.cif",
+      "sha256": "b0775e65ead7cc56a8c19c9fc8a53bb8c82a9f77e149cafebf4a703082fc7550",
+      "formula": "C18H38N8O10",
+      "atom_count": 74,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "74m",
+        "total_charge": -2,
+        "spin_multiplicity": 1,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 4,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 2634954,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 4,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 1.0260795639360911,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 1.282438838027705,
+          "num_atoms_with_hydrogens": 74,
+          "num_hydrogens": 34,
+          "mean_force_norm": 1.2347040711575086,
+          "has_mean_force_norm": true,
+          "force_rms": 1.6076069591149118,
+          "force_p95": 3.3266559044557016,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "Biomolecules",
+      "source_subset": "biomolecules",
+      "conditioning_source": {
+        "source_row_index": 2634954,
+        "example_id": "data0052:43553",
+        "shard": "data0052.aselmdb",
+        "db_id": 43553,
+        "data_id": "biomolecules",
+        "source": "pdb_fragments_300K/5lyx_ABS01_state0_-2_1_CHEMBL276139_ligstate1_-2_1/orca.tar.zst",
+        "reference_formula": "C25H34N6O9",
+        "reference_atom_count": 74,
+        "reference_mean_force_norm_eV_per_angstrom": 1.2347040711575086
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0878_atoms177_hydrogens62_model_0",
+      "display_id": "omol25-0878",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0878_atoms177_hydrogens62_model_0.cif.gz",
+      "source_sha256": "00d331c7e2932b3db9056c67df70b1136f1597109efb87e8fc61e28001ba842f",
+      "file": "structures/omol25_train_4m_force_repr_0878_atoms177_hydrogens62_model_0.cif",
+      "sha256": "3b8f69d9208eda61253aa883d268320f4601e2b5f01dc60e4e6e6d511b09cec2",
+      "formula": "C51H62N21O38P5",
+      "atom_count": 177,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "177m",
+        "total_charge": -5,
+        "spin_multiplicity": 1,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 878,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 2561577,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 3,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.7697202898444774,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 1.0260795639360911,
+          "num_atoms_with_hydrogens": 177,
+          "num_hydrogens": 62,
+          "mean_force_norm": 0.8847560487977142,
+          "has_mean_force_norm": true,
+          "force_rms": 1.0455282818699272,
+          "force_p95": 1.8394436534584921,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "Biomolecules",
+      "source_subset": "biomolecules",
+      "conditioning_source": {
+        "source_row_index": 2561577,
+        "example_id": "data0051:20010",
+        "shard": "data0051.aselmdb",
+        "db_id": 20010,
+        "source": "rna/4v5s_DB100_eqeq_frame0_-5_1/orca.tar.zst",
+        "reference_formula": "C49H62N22O39P5",
+        "reference_atom_count": 177,
+        "reference_mean_force_norm_eV_per_angstrom": 0.884756048797714,
+        "data_id": "biomolecules"
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0093_atoms14_hydrogens7_model_0",
+      "display_id": "omol25-0093",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0093_atoms14_hydrogens7_model_0.cif.gz",
+      "source_sha256": "93f623e963e41003495011b6102214a88318f767f9466bd42681778a840c74e9",
+      "file": "structures/omol25_train_4m_force_repr_0093_atoms14_hydrogens7_model_0.cif",
+      "sha256": "8c15ff9000ef9c1518733cb09aefdf6e860e4c65498da715df5da59796368dd1",
+      "formula": "C6H8",
+      "atom_count": 14,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "14m",
+        "total_charge": 0,
+        "spin_multiplicity": 1,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 93,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 2455288,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 3,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.7697202898444774,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 1.0260795639360911,
+          "num_atoms_with_hydrogens": 14,
+          "num_hydrogens": 7,
+          "mean_force_norm": 0.9093330334342228,
+          "has_mean_force_norm": true,
+          "force_rms": 1.1021409355945762,
+          "force_p95": 1.9833782652039278,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "SPICE",
+      "source_subset": "spice",
+      "conditioning_source": {
+        "source_row_index": 2455288,
+        "example_id": "data0049:13389",
+        "shard": "data0049.aselmdb",
+        "db_id": 13389,
+        "data_id": "spice",
+        "source": "spice/SPICE_PubChem_Set_2_Single_Points_Dataset_v1_3_spice_104022903_28_0_1/orca.tar.zst",
+        "reference_formula": "C2H7O2PS2",
+        "reference_atom_count": 14,
+        "reference_mean_force_norm_eV_per_angstrom": 0.9093330334342227
+      },
+      "connectivity_filter": {
+        "sample_id": "omol25_train_4m_force_repr_0093_atoms14_hydrogens7_model_0",
+        "source_subset": "spice",
+        "reference_component_sizes": [
+          14
+        ],
+        "generated_component_sizes": [
+          14
+        ],
+        "connectivity_required": true,
+        "accepted": true
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0005_atoms16_hydrogens7_model_0",
+      "display_id": "omol25-0005",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0005_atoms16_hydrogens7_model_0.cif.gz",
+      "source_sha256": "2ea9932512432da64afb92450bef288cf20e3bef8b2041c6b65c469515715f2b",
+      "file": "structures/omol25_train_4m_force_repr_0005_atoms16_hydrogens7_model_0.cif",
+      "sha256": "4372eb2cd252ffca7b00a17311966f4b069d8f6f8d6d8612087f7aaafe615f82",
+      "formula": "C4H9NO2",
+      "atom_count": 16,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "16m",
+        "total_charge": 1,
+        "spin_multiplicity": 3,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 5,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 1858805,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 3,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.7697202898444774,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 1.0260795639360911,
+          "num_atoms_with_hydrogens": 16,
+          "num_hydrogens": 7,
+          "mean_force_norm": 0.9823598424732553,
+          "has_mean_force_norm": true,
+          "force_rms": 1.26758280948914,
+          "force_p95": 2.129606716436912,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "Electrolytes",
+      "source_subset": "elytes",
+      "conditioning_source": {
+        "source_row_index": 1858805,
+        "example_id": "data0037:14914",
+        "shard": "data0037.aselmdb",
+        "db_id": 14914,
+        "data_id": "elytes",
+        "source": "electrolytes_reactivity/146126_15_1_3/orca.tar.zst",
+        "reference_formula": "C5H7HgO3",
+        "reference_atom_count": 16,
+        "reference_mean_force_norm_eV_per_angstrom": 0.9823598424732551
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0006_atoms85_hydrogens40_model_0",
+      "display_id": "omol25-0006",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0006_atoms85_hydrogens40_model_0.cif.gz",
+      "source_sha256": "2ae7059611f8cb02a4153285d98daeed908c01ee92b5eff671e22d96eba1cfe6",
+      "file": "structures/omol25_train_4m_force_repr_0006_atoms85_hydrogens40_model_0.cif",
+      "sha256": "1b18dc9e95823b168aa692eb7d5bd61319b31916ba3b7dcf683695dfd9706001",
+      "formula": "C22H56N3O4",
+      "atom_count": 85,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "85m",
+        "total_charge": 0,
+        "spin_multiplicity": 1,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 6,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 2744757,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 13,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 3.3333130307606162,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 3.58967230485223,
+          "num_atoms_with_hydrogens": 85,
+          "num_hydrogens": 40,
+          "mean_force_norm": 3.433953232317882,
+          "has_mean_force_norm": true,
+          "force_rms": 4.0498021008296385,
+          "force_p95": 7.763590562345823,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "Electrolytes",
+      "source_subset": "elytes",
+      "conditioning_source": {
+        "source_row_index": 2744757,
+        "example_id": "data0055:3854",
+        "shard": "data0055.aselmdb",
+        "db_id": 3854,
+        "data_id": "elytes",
+        "source": "rpmd/38_C3H4O3_3_group_24_shell_48_0_1/orca.tar.zst",
+        "reference_formula": "C21H40O21S3",
+        "reference_atom_count": 85,
+        "reference_mean_force_norm_eV_per_angstrom": 3.433953232317882
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0000_atoms29_hydrogens10_model_0",
+      "display_id": "omol25-0000",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0000_atoms29_hydrogens10_model_0.cif.gz",
+      "source_sha256": "8eda75dce3f6ee762fb44219c1a1b2b0518ab00a580e8aa328c187d84ac92ba4",
+      "file": "structures/omol25_train_4m_force_repr_0000_atoms29_hydrogens10_model_0.cif",
+      "sha256": "ab7561f2a8a1cf91473f1a051e0d8b2ecf222ca8d80dd6fa953716368c5c0c58",
+      "formula": "C10H3F12O3Pd",
+      "atom_count": 29,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "29m",
+        "total_charge": -2,
+        "spin_multiplicity": 3,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 0,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 3848281,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 0,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.0006424675696358,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 0.25700174166124967,
+          "num_atoms_with_hydrogens": 29,
+          "num_hydrogens": 10,
+          "mean_force_norm": 0.0980438041527001,
+          "has_mean_force_norm": true,
+          "force_rms": 0.14361099500337648,
+          "force_p95": 0.29121295992573687,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "Metal complexes",
+      "source_subset": "metal_complexes",
+      "conditioning_source": {
+        "source_row_index": 3848281,
+        "example_id": "data0077:11030",
+        "shard": "data0077.aselmdb",
+        "db_id": 11030,
+        "data_id": "metal_complexes",
+        "source": "omol/metal_organics/restart5to6/job_1741331763_002af142b4e9/orca.tar.zst",
+        "reference_formula": "C12H10PdSe6",
+        "reference_atom_count": 29,
+        "reference_mean_force_norm_eV_per_angstrom": 0.09804380415270011
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0013_atoms17_hydrogens7_model_0",
+      "display_id": "omol25-0013",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0013_atoms17_hydrogens7_model_0.cif.gz",
+      "source_sha256": "5a90d3de082ebe3c992f87047fd099382f0c7b8784e9d20c091dde0bfe70c62d",
+      "file": "structures/omol25_train_4m_force_repr_0013_atoms17_hydrogens7_model_0.cif",
+      "sha256": "7099f298a5a31fd55afa7c6ed1df7a11f8eae28520a49ab4c92648f3469de8c0",
+      "formula": "C4H11NO",
+      "atom_count": 17,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "17m",
+        "total_charge": 0,
+        "spin_multiplicity": 1,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 13,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 3599655,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 8,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 2.0515166603025468,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 2.307875934394161,
+          "num_atoms_with_hydrogens": 17,
+          "num_hydrogens": 7,
+          "mean_force_norm": 2.063591793135817,
+          "has_mean_force_norm": true,
+          "force_rms": 2.384990802833544,
+          "force_p95": 4.280902883402659,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "Reactivity",
+      "source_subset": "reactivity",
+      "conditioning_source": {
+        "source_row_index": 3599655,
+        "example_id": "data0072:11574",
+        "shard": "data0072.aselmdb",
+        "db_id": 11574,
+        "data_id": "reactivity",
+        "source": "ani1xbb/aniBB_017_295249_0_1/orca.tar.zst",
+        "reference_formula": "C5H7F2NO2",
+        "reference_atom_count": 17,
+        "reference_mean_force_norm_eV_per_angstrom": 2.063591793135817
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0001_atoms15_hydrogens8_model_0",
+      "display_id": "omol25-0001",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0001_atoms15_hydrogens8_model_0.cif.gz",
+      "source_sha256": "7930d3dba14360325e32dce3a1113bc0ea57e16e62b75a9a4a40f35f7b4a949d",
+      "file": "structures/omol25_train_4m_force_repr_0001_atoms15_hydrogens8_model_0.cif",
+      "sha256": "7dafb2fe3356247565f40a2f8e323df7473463e8052e5ce3503f469feef40371",
+      "formula": "C7H8",
+      "atom_count": 15,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "15m",
+        "total_charge": 0,
+        "spin_multiplicity": 1,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 1,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 1029571,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 0,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.0006424675696358,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 0.25700174166124967,
+          "num_atoms_with_hydrogens": 15,
+          "num_hydrogens": 8,
+          "mean_force_norm": 0.13839273984533446,
+          "has_mean_force_norm": true,
+          "force_rms": 0.14223652389917077,
+          "force_p95": 0.18428975623538785,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "Transition-1x",
+      "source_subset": "trans1x",
+      "conditioning_source": {
+        "source_row_index": 1029571,
+        "example_id": "data0020:32872",
+        "shard": "data0020.aselmdb",
+        "db_id": 32872,
+        "data_id": "trans1x",
+        "source": "trans1x/t1x_rxn6629_522_257_0_1/orca.tar.zst",
+        "reference_formula": "C6H8O",
+        "reference_atom_count": 15,
+        "reference_mean_force_norm_eV_per_angstrom": 0.13839273984533446
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0028_atoms20_hydrogens11_model_0",
+      "display_id": "omol25-0028",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0028_atoms20_hydrogens11_model_0.cif.gz",
+      "source_sha256": "edfe6fe906f0a8eaa6b77a6c9eee4abdf6a3d806a23e66b2fd9bf4876ddd0389",
+      "file": "structures/omol25_train_4m_force_repr_0028_atoms20_hydrogens11_model_0.cif",
+      "sha256": "98a50f85f5ac9fe9ec87232ef893ba73c724c1c27d5a53bfca9abd527f8b28cd",
+      "formula": "C6H13N",
+      "atom_count": 20,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "20m",
+        "total_charge": 0,
+        "spin_multiplicity": 1,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 28,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 972624,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 1,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.25700174166124967,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 0.5133610157528635,
+          "num_atoms_with_hydrogens": 20,
+          "num_hydrogens": 11,
+          "mean_force_norm": 0.3208350904966873,
+          "has_mean_force_norm": true,
+          "force_rms": 0.36477015449794004,
+          "force_p95": 0.609843196790723,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "RGD1",
+      "source_subset": "rgd",
+      "conditioning_source": {
+        "source_row_index": 972624,
+        "example_id": "data0019:25760",
+        "shard": "data0019.aselmdb",
+        "db_id": 25760,
+        "data_id": "rgd",
+        "source": "rgd_uks/MR_343537_0_0_0_1/orca.tar.zst",
+        "reference_formula": "C7H11NO",
+        "reference_atom_count": 20,
+        "reference_mean_force_norm_eV_per_angstrom": 0.32083509049668735
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0040_atoms9_hydrogens4_model_0",
+      "display_id": "omol25-0040",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0040_atoms9_hydrogens4_model_0.cif.gz",
+      "source_sha256": "2363e321b33e6c64286cc39b4a5b617ad773797670eac9094d960b9220ab5eff",
+      "file": "structures/omol25_train_4m_force_repr_0040_atoms9_hydrogens4_model_0.cif",
+      "sha256": "3bcce6ab68f792903762c8c12a4bcceb00187b9f3fd55dc4f89a123ae69ba8b1",
+      "formula": "C3H4F2",
+      "atom_count": 9,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "9m",
+        "total_charge": 0,
+        "spin_multiplicity": 1,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 40,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 1522528,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 11,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 2.820594482577388,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 3.076953756669002,
+          "num_atoms_with_hydrogens": 9,
+          "num_hydrogens": 4,
+          "mean_force_norm": 2.9615676446894463,
+          "has_mean_force_norm": true,
+          "force_rms": 3.1377852992372723,
+          "force_p95": 4.881172601610588,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "ANI-2x",
+      "source_subset": "ani2x",
+      "conditioning_source": {
+        "source_row_index": 1522528,
+        "example_id": "data0030:27479",
+        "shard": "data0030.aselmdb",
+        "db_id": 27479,
+        "data_id": "ani2x",
+        "source": "ani2x/ani2x_009_431957_0_1/orca.tar.zst",
+        "reference_formula": "CH4N2OS",
+        "reference_atom_count": 9,
+        "reference_mean_force_norm_eV_per_angstrom": 2.9615676446894463
+      },
+      "connectivity_filter": {
+        "sample_id": "omol25_train_4m_force_repr_0040_atoms9_hydrogens4_model_0",
+        "source_subset": "ani2x",
+        "reference_component_sizes": [
+          9
+        ],
+        "generated_component_sizes": [
+          9
+        ],
+        "connectivity_required": true,
+        "accepted": true
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0003_atoms59_hydrogens38_model_0",
+      "display_id": "omol25-0003",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0003_atoms59_hydrogens38_model_0.cif.gz",
+      "source_sha256": "ec6001e9aa22650f8ea69f3c268aad640447ec57342d19b45b50813c8cf98559",
+      "file": "structures/omol25_train_4m_force_repr_0003_atoms59_hydrogens38_model_0.cif",
+      "sha256": "15fb132c98b6ab0fa0e493ad2bb578ddc69c9159630889dae0cdf24dbeba098c",
+      "formula": "C19H26N8O6",
+      "atom_count": 59,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "59m",
+        "total_charge": 0,
+        "spin_multiplicity": 1,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 3,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 1973550,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 0,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.0006424675696358,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 0.25700174166124967,
+          "num_atoms_with_hydrogens": 59,
+          "num_hydrogens": 38,
+          "mean_force_norm": 0.2118968337102124,
+          "has_mean_force_norm": true,
+          "force_rms": 0.2608214500531172,
+          "force_p95": 0.5127778906875954,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "GEOM",
+      "source_subset": "geom_orca6",
+      "conditioning_source": {
+        "source_row_index": 1973550,
+        "example_id": "data0039:29991",
+        "shard": "data0039.aselmdb",
+        "db_id": 29991,
+        "data_id": "geom_orca6",
+        "source": "geom_orca6/geom_104694116_0_1/orca.tar.zst",
+        "reference_formula": "C19H38O2",
+        "reference_atom_count": 59,
+        "reference_mean_force_norm_eV_per_angstrom": 0.2118968337102124
+      },
+      "connectivity_filter": {
+        "sample_id": "omol25_train_4m_force_repr_0003_atoms59_hydrogens38_model_0",
+        "source_subset": "geom_orca6",
+        "reference_component_sizes": [
+          59
+        ],
+        "generated_component_sizes": [
+          59
+        ],
+        "connectivity_required": true,
+        "accepted": true
+      }
+    },
+    {
+      "domain": "molecules",
+      "gallery": "omol25",
+      "sample_id": "omol25_train_4m_force_repr_0111_atoms59_hydrogens28_model_0",
+      "display_id": "omol25-0111",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omol25_generation/omol25_train_4m_force_repr_0111_atoms59_hydrogens28_model_0.cif.gz",
+      "source_sha256": "e5716b385b2a40ca59b027815fd7e419b85f664b0035499c746c0028981d2b1e",
+      "file": "structures/omol25_train_4m_force_repr_0111_atoms59_hydrogens28_model_0.cif",
+      "sha256": "f1cb49d53d050875c157168a25da8d4d94995e4839d6126d5e3c48624fee1534",
+      "formula": "C20H35N3O",
+      "atom_count": 59,
+      "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+      "input_manifest_sha256": "7e69a94f6a780e4ce4f5d7fb7c40ff6ab6b5e99b0ac0e42e00eb3bfd1c797f69",
+      "generation_input": {
+        "contig": "59m",
+        "total_charge": 0,
+        "spin_multiplicity": 1,
+        "extra": {
+          "source_distribution": "omol25_train_4m_mean_force_norm_multinomial_over_all_rows",
+          "mean_force_norm_filter_operator": null,
+          "mean_force_norm_filter_threshold": null,
+          "sample_seed": 42,
+          "sample_index": 111,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "all",
+          "source_row_index": 1488756,
+          "num_reference_rows": 3986754,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 1,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.25700174166124967,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 0.5133610157528635,
+          "num_atoms_with_hydrogens": 59,
+          "num_hydrogens": 28,
+          "mean_force_norm": 0.2813585457707007,
+          "has_mean_force_norm": true,
+          "force_rms": 0.3705400354292856,
+          "force_p95": 0.7794109500400553,
+          "has_force_rms_p95": true
+        }
+      },
+      "category_label": "OrbNet Denali",
+      "source_subset": "orbnet_denali",
+      "conditioning_source": {
+        "source_row_index": 1488756,
+        "example_id": "data0029:43542",
+        "shard": "data0029.aselmdb",
+        "db_id": 43542,
+        "data_id": "orbnet_denali",
+        "source": "orbnet_denali/orbnet_CHEMBL4093833_conformers_a79cd4ed27da312a60f15154f62b48ad3a0cfdc83cc9b50bfdbfc4395cb66432_876048_0_1/orca.tar.zst",
+        "reference_formula": "C24H28N4O3",
+        "reference_atom_count": 59,
+        "reference_mean_force_norm_eV_per_angstrom": 0.28135854577070074
+      },
+      "connectivity_filter": {
+        "sample_id": "omol25_train_4m_force_repr_0111_atoms59_hydrogens28_model_0",
+        "source_subset": "orbnet_denali",
+        "reference_component_sizes": [
+          59
+        ],
+        "generated_component_sizes": [
+          59
+        ],
+        "connectivity_required": true,
+        "accepted": true
+      }
+    },
+    {
+      "domain": "materials",
+      "gallery": "omat24",
+      "sample_id": "omat24_train_1m_force_repr_000_atoms10_model_0",
+      "display_id": "omat24-0000",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omat24_generation/omat24_train_1m_force_repr_000_atoms10_model_0.cif.gz",
+      "source_sha256": "02adbd0ba1c129d8f850c00e8e5435cec0a59e3293f3148f70d6d77b5b482dd5",
+      "file": "structures/omat24_train_1m_force_repr_000_atoms10_model_0.cif",
+      "sha256": "29192b02f785a77d5126692a94ea5ad72d68284dd10adf3e03db8c5aab95e6d0",
+      "formula": "H6F2Li2",
+      "atom_count": 10,
+      "input_manifest": "models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json",
+      "input_manifest_sha256": "2db9600318f93cc69629d9de2ae5457556f36fee60cd3f2a803f09248523f4a5",
+      "generation_input": {
+        "contig": "10M",
+        "extra": {
+          "source_distribution": "omat24_train_1m_mean_force_norm_multinomial_over_all_rows",
+          "sample_seed": 42,
+          "sample_index": 0,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "train",
+          "source_subsets": [
+            "rattled-relax",
+            "rattled-300",
+            "rattled-500",
+            "rattled-1000",
+            "aimd-from-PBE-1000-nvt",
+            "aimd-from-PBE-1000-npt",
+            "aimd-from-PBE-3000-nvt",
+            "aimd-from-PBE-3000-npt",
+            "rattled-300-subsampled",
+            "rattled-500-subsampled",
+            "rattled-1000-subsampled"
+          ],
+          "source_subset": "rattled-500",
+          "source_data_id": "rattled-500",
+          "source_shard": "rattled-500/train.aselmdb",
+          "source_global_index": 198893,
+          "source_row_index": 35456,
+          "source_db_id": 35457,
+          "source_example_id": "train:35457",
+          "num_reference_rows": 1009850,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 0,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.0,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 2.0611416157181375,
+          "num_atoms": 10,
+          "num_hydrogens": 0,
+          "parent_id": "agm001515276_ABCD2_2_spg123",
+          "sid": "agm001515276_ABCD2_2_spg123_3_0_rattled-500_3230nv",
+          "calc_id": "rattled-500",
+          "task_type": "Static",
+          "composition_reduced": "In2 Ga1 Si1 Cl1",
+          "has_mean_force_norm": true,
+          "mean_force_norm": 1.427047303578395,
+          "mean_force_norm_units": "eV/angstrom",
+          "force_rms": 2.0188028655949193,
+          "force_p95": 4.084917774550787,
+          "has_force_rms_p95": true
+        }
+      },
+      "lattice": [
+        8.096327332602824,
+        3.987079031574582,
+        4.0868073859311345,
+        90.86752319335938,
+        90.86752319335938,
+        90.86752319335938
+      ],
+      "cell_volume": 131.87916180732677,
+      "validity_filter": null
+    },
+    {
+      "domain": "materials",
+      "gallery": "omat24",
+      "sample_id": "omat24_train_1m_force_repr_001_atoms18_model_0",
+      "display_id": "omat24-0001",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omat24_generation/omat24_train_1m_force_repr_001_atoms18_model_0.cif.gz",
+      "source_sha256": "b5837977770b30d462943c552542f21a171bdcc86132b58a496148a3a845e662",
+      "file": "structures/omat24_train_1m_force_repr_001_atoms18_model_0.cif",
+      "sha256": "46ce9a0fb38452f596b1b88bedb5c36bf20866bbcfb72d498f1d40b68b39ffa2",
+      "formula": "DyGa4Pd4TbTm8",
+      "atom_count": 18,
+      "input_manifest": "models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json",
+      "input_manifest_sha256": "2db9600318f93cc69629d9de2ae5457556f36fee60cd3f2a803f09248523f4a5",
+      "generation_input": {
+        "contig": "18M",
+        "extra": {
+          "source_distribution": "omat24_train_1m_mean_force_norm_multinomial_over_all_rows",
+          "sample_seed": 42,
+          "sample_index": 1,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "train",
+          "source_subsets": [
+            "rattled-relax",
+            "rattled-300",
+            "rattled-500",
+            "rattled-1000",
+            "aimd-from-PBE-1000-nvt",
+            "aimd-from-PBE-1000-npt",
+            "aimd-from-PBE-3000-nvt",
+            "aimd-from-PBE-3000-npt",
+            "rattled-300-subsampled",
+            "rattled-500-subsampled",
+            "rattled-1000-subsampled"
+          ],
+          "source_subset": "aimd-from-PBE-1000-npt",
+          "source_data_id": "aimd-from-PBE-1000-npt",
+          "source_shard": "aimd-from-PBE-1000-npt/train.aselmdb",
+          "source_global_index": 712015,
+          "source_row_index": 164844,
+          "source_db_id": 164845,
+          "source_example_id": "train:164845",
+          "num_reference_rows": 1009850,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 0,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.0,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 2.0611416157181375,
+          "num_atoms": 18,
+          "num_hydrogens": 0,
+          "parent_id": "agm005618543_AB2C6_1347_spg12",
+          "sid": "agm005618543_AB2C6_1347_spg12_0_aimd-from-PBE-1000-npt_tkirpi_5",
+          "calc_id": "aimd-from-PBE-1000-npt",
+          "task_type": "Molecular Dynamics",
+          "composition_reduced": "Li6 Tl1 Au2",
+          "has_mean_force_norm": true,
+          "mean_force_norm": 0.4300121496024876,
+          "mean_force_norm_units": "eV/angstrom",
+          "force_rms": 0.48776094794596875,
+          "force_p95": 0.824309943781014,
+          "has_force_rms_p95": true
+        }
+      },
+      "lattice": [
+        5.30556570596265,
+        9.290320997715357,
+        8.933178700423143,
+        95.79137420654297,
+        91.31513977050781,
+        89.0770263671875
+      ],
+      "cell_volume": 437.91508916933026,
+      "validity_filter": null
+    },
+    {
+      "domain": "materials",
+      "gallery": "omat24",
+      "sample_id": "omat24_train_1m_force_repr_002_atoms10_model_0",
+      "display_id": "omat24-0002",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omat24_generation/omat24_train_1m_force_repr_002_atoms10_model_0.cif.gz",
+      "source_sha256": "6fd5128d3496f383c4708c69b692aec50c193d4b26a5925188eb7d8fef257e0e",
+      "file": "structures/omat24_train_1m_force_repr_002_atoms10_model_0.cif",
+      "sha256": "5e30768377828d13c3ee711ccb27a925fcdc1ace4c8992c613a5c5ee7e9b6ee9",
+      "formula": "Mn2NiP3TiV2Zn",
+      "atom_count": 10,
+      "input_manifest": "models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json",
+      "input_manifest_sha256": "2db9600318f93cc69629d9de2ae5457556f36fee60cd3f2a803f09248523f4a5",
+      "generation_input": {
+        "contig": "10M",
+        "extra": {
+          "source_distribution": "omat24_train_1m_mean_force_norm_multinomial_over_all_rows",
+          "sample_seed": 42,
+          "sample_index": 2,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "train",
+          "source_subsets": [
+            "rattled-relax",
+            "rattled-300",
+            "rattled-500",
+            "rattled-1000",
+            "aimd-from-PBE-1000-nvt",
+            "aimd-from-PBE-1000-npt",
+            "aimd-from-PBE-3000-nvt",
+            "aimd-from-PBE-3000-npt",
+            "rattled-300-subsampled",
+            "rattled-500-subsampled",
+            "rattled-1000-subsampled"
+          ],
+          "source_subset": "aimd-from-PBE-1000-nvt",
+          "source_data_id": "aimd-from-PBE-1000-nvt",
+          "source_shard": "aimd-from-PBE-1000-nvt/train.aselmdb",
+          "source_global_index": 359555,
+          "source_row_index": 13896,
+          "source_db_id": 13897,
+          "source_example_id": "train:13897",
+          "num_reference_rows": 1009850,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 0,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.0,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 2.0611416157181375,
+          "num_atoms": 10,
+          "num_hydrogens": 0,
+          "parent_id": "agm005817619_AB2C2_30_spg72",
+          "sid": "agm005817619_AB2C2_30_spg72_0_aimd-from-PBE-1000-nvt_vkr1es_6",
+          "calc_id": "aimd-from-PBE-1000-nvt",
+          "task_type": "Molecular Dynamics",
+          "composition_reduced": "Tl2 Ge1 Se2",
+          "has_mean_force_norm": true,
+          "mean_force_norm": 0.16219315220744415,
+          "mean_force_norm_units": "eV/angstrom",
+          "force_rms": 0.20296072619497035,
+          "force_p95": 0.3639066327488461,
+          "has_force_rms_p95": true
+        }
+      },
+      "lattice": [
+        6.922080131632945,
+        6.76079740298752,
+        2.7136204722778894,
+        89.0770263671875,
+        87.73416137695312,
+        88.62940216064453
+      ],
+      "cell_volume": 126.84392048702033,
+      "validity_filter": null
+    },
+    {
+      "domain": "materials",
+      "gallery": "omat24",
+      "sample_id": "omat24_train_1m_force_repr_003_atoms9_model_0",
+      "display_id": "omat24-0003",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omat24_generation/omat24_train_1m_force_repr_003_atoms9_model_0.cif.gz",
+      "source_sha256": "3cdf54725a56f2651b7519143973602184f690ab30054931df0b96e1e2c0017c",
+      "file": "structures/omat24_train_1m_force_repr_003_atoms9_model_0.cif",
+      "sha256": "57ac47748746578b718934e73d1882b54ee3a4130ccd901d998b32342ed4a8b0",
+      "formula": "FeMgNaO6",
+      "atom_count": 9,
+      "input_manifest": "models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json",
+      "input_manifest_sha256": "2db9600318f93cc69629d9de2ae5457556f36fee60cd3f2a803f09248523f4a5",
+      "generation_input": {
+        "contig": "9M",
+        "extra": {
+          "source_distribution": "omat24_train_1m_mean_force_norm_multinomial_over_all_rows",
+          "sample_seed": 42,
+          "sample_index": 3,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "train",
+          "source_subsets": [
+            "rattled-relax",
+            "rattled-300",
+            "rattled-500",
+            "rattled-1000",
+            "aimd-from-PBE-1000-nvt",
+            "aimd-from-PBE-1000-npt",
+            "aimd-from-PBE-3000-nvt",
+            "aimd-from-PBE-3000-npt",
+            "rattled-300-subsampled",
+            "rattled-500-subsampled",
+            "rattled-1000-subsampled"
+          ],
+          "source_subset": "aimd-from-PBE-1000-nvt",
+          "source_data_id": "aimd-from-PBE-1000-nvt",
+          "source_shard": "aimd-from-PBE-1000-nvt/train.aselmdb",
+          "source_global_index": 349774,
+          "source_row_index": 4115,
+          "source_db_id": 4116,
+          "source_example_id": "train:4116",
+          "num_reference_rows": 1009850,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 0,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.0,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 2.0611416157181375,
+          "num_atoms": 9,
+          "num_hydrogens": 0,
+          "parent_id": "agm003501396_AB2C6_1_spg189",
+          "sid": "agm003501396_AB2C6_1_spg189_0_aimd-from-PBE-1000-nvt_755z02_47",
+          "calc_id": "aimd-from-PBE-1000-nvt",
+          "task_type": "Molecular Dynamics",
+          "composition_reduced": "Tb6 Bi2 Te1",
+          "has_mean_force_norm": true,
+          "mean_force_norm": 0.8443668792165201,
+          "mean_force_norm_units": "eV/angstrom",
+          "force_rms": 0.8914659844728663,
+          "force_p95": 1.2027010121471253,
+          "has_force_rms_p95": true
+        }
+      },
+      "lattice": [
+        4.800619404074321,
+        4.918050817834615,
+        5.184749912116226,
+        82.810302734375,
+        80.57218933105469,
+        81.01980590820312
+      ],
+      "cell_volume": 118.652142257494,
+      "validity_filter": null
+    },
+    {
+      "domain": "materials",
+      "gallery": "omat24",
+      "sample_id": "omat24_train_1m_force_repr_004_atoms5_model_0",
+      "display_id": "omat24-0004",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omat24_generation/omat24_train_1m_force_repr_004_atoms5_model_0.cif.gz",
+      "source_sha256": "5f9238cae8acca47b6c4b5b28281a895ec427a8d7631b88a8298a8bfc44fe2e6",
+      "file": "structures/omat24_train_1m_force_repr_004_atoms5_model_0.cif",
+      "sha256": "c3d84ac80afae450ca903f12549c2c94ada6594584b27182dc5b8b8bc332b99d",
+      "formula": "Hf2O2Pb",
+      "atom_count": 5,
+      "input_manifest": "models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json",
+      "input_manifest_sha256": "2db9600318f93cc69629d9de2ae5457556f36fee60cd3f2a803f09248523f4a5",
+      "generation_input": {
+        "contig": "5M",
+        "extra": {
+          "source_distribution": "omat24_train_1m_mean_force_norm_multinomial_over_all_rows",
+          "sample_seed": 42,
+          "sample_index": 4,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "train",
+          "source_subsets": [
+            "rattled-relax",
+            "rattled-300",
+            "rattled-500",
+            "rattled-1000",
+            "aimd-from-PBE-1000-nvt",
+            "aimd-from-PBE-1000-npt",
+            "aimd-from-PBE-3000-nvt",
+            "aimd-from-PBE-3000-npt",
+            "rattled-300-subsampled",
+            "rattled-500-subsampled",
+            "rattled-1000-subsampled"
+          ],
+          "source_subset": "aimd-from-PBE-1000-nvt",
+          "source_data_id": "aimd-from-PBE-1000-nvt",
+          "source_shard": "aimd-from-PBE-1000-nvt/train.aselmdb",
+          "source_global_index": 407685,
+          "source_row_index": 62026,
+          "source_db_id": 62027,
+          "source_example_id": "train:62027",
+          "num_reference_rows": 1009850,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 0,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.0,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 2.0611416157181375,
+          "num_atoms": 5,
+          "num_hydrogens": 3,
+          "parent_id": "agm002492041_ABC3_0_spg221",
+          "sid": "agm002492041_ABC3_0_spg221_0_aimd-from-PBE-1000-nvt_2mbne3_15",
+          "calc_id": "aimd-from-PBE-1000-nvt",
+          "task_type": "Molecular Dynamics",
+          "composition_reduced": "Nb1 H3 Pb1",
+          "has_mean_force_norm": true,
+          "mean_force_norm": 0.9594909820869233,
+          "mean_force_norm_units": "eV/angstrom",
+          "force_rms": 1.0767556110299876,
+          "force_p95": 1.6370143671783695,
+          "has_force_rms_p95": true
+        }
+      },
+      "lattice": [
+        4.091468750773791,
+        3.8744365911331085,
+        6.165609337074498,
+        77.4388198852539,
+        80.57218933105469,
+        87.28653717041016
+      ],
+      "cell_volume": 94.10311436791281,
+      "validity_filter": null
+    },
+    {
+      "domain": "materials",
+      "gallery": "omat24",
+      "sample_id": "omat24_train_1m_force_repr_006_atoms16_model_0",
+      "display_id": "omat24-0006",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omat24_generation/omat24_train_1m_force_repr_006_atoms16_model_0.cif.gz",
+      "source_sha256": "ba1874c10fa5eb26ff30ab3e3dadfa7d5c05950a4d03abff123c043680ca155d",
+      "file": "structures/omat24_train_1m_force_repr_006_atoms16_model_0.cif",
+      "sha256": "c9200f5b9bfcd9b3bc292c3bdfebbc1f36445ba56d8409ad48d3c228f6922742",
+      "formula": "C4B5Be7",
+      "atom_count": 16,
+      "input_manifest": "models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json",
+      "input_manifest_sha256": "2db9600318f93cc69629d9de2ae5457556f36fee60cd3f2a803f09248523f4a5",
+      "generation_input": {
+        "contig": "16M",
+        "extra": {
+          "source_distribution": "omat24_train_1m_mean_force_norm_multinomial_over_all_rows",
+          "sample_seed": 42,
+          "sample_index": 6,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "train",
+          "source_subsets": [
+            "rattled-relax",
+            "rattled-300",
+            "rattled-500",
+            "rattled-1000",
+            "aimd-from-PBE-1000-nvt",
+            "aimd-from-PBE-1000-npt",
+            "aimd-from-PBE-3000-nvt",
+            "aimd-from-PBE-3000-npt",
+            "rattled-300-subsampled",
+            "rattled-500-subsampled",
+            "rattled-1000-subsampled"
+          ],
+          "source_subset": "rattled-1000",
+          "source_data_id": "rattled-1000",
+          "source_shard": "rattled-1000/train.aselmdb",
+          "source_global_index": 285476,
+          "source_row_index": 53154,
+          "source_db_id": 53155,
+          "source_example_id": "train:53155",
+          "num_reference_rows": 1009850,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 3,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 6.183424847154413,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 8.24456646287255,
+          "num_atoms": 16,
+          "num_hydrogens": 0,
+          "parent_id": "agm001307645_ABCD_1_spg216",
+          "sid": "agm001307645_ABCD_1_spg216_0_0_rattled-1000_odg5d9",
+          "calc_id": "rattled-1000",
+          "task_type": "Static",
+          "composition_reduced": "Pa1 Mn1 Si1 Os1",
+          "has_mean_force_norm": true,
+          "mean_force_norm": 7.380563882167513,
+          "mean_force_norm_units": "eV/angstrom",
+          "force_rms": 9.65768229232912,
+          "force_p95": 18.867154645164174,
+          "has_force_rms_p95": true
+        }
+      },
+      "lattice": [
+        5.922149568004019,
+        5.429009435656646,
+        4.8807044413422,
+        89.97227478027344,
+        90.86752319335938,
+        79.67694091796875
+      ],
+      "cell_volume": 154.36290952410042,
+      "validity_filter": null
+    },
+    {
+      "domain": "materials",
+      "gallery": "omat24",
+      "sample_id": "omat24_train_1m_force_repr_007_atoms16_model_0",
+      "display_id": "omat24-0007",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omat24_generation/omat24_train_1m_force_repr_007_atoms16_model_0.cif.gz",
+      "source_sha256": "915b0ac2f449e5f3832d56b89167b7fd81e7b4fbc8de9f536a961320dcf66eef",
+      "file": "structures/omat24_train_1m_force_repr_007_atoms16_model_0.cif",
+      "sha256": "72bae63b5556b34a4162d7a2c685cdfcb622e258cecd0ad31530a58db4cbb175",
+      "formula": "H14BO",
+      "atom_count": 16,
+      "input_manifest": "models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json",
+      "input_manifest_sha256": "2db9600318f93cc69629d9de2ae5457556f36fee60cd3f2a803f09248523f4a5",
+      "generation_input": {
+        "contig": "16M",
+        "extra": {
+          "source_distribution": "omat24_train_1m_mean_force_norm_multinomial_over_all_rows",
+          "sample_seed": 42,
+          "sample_index": 7,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "train",
+          "source_subsets": [
+            "rattled-relax",
+            "rattled-300",
+            "rattled-500",
+            "rattled-1000",
+            "aimd-from-PBE-1000-nvt",
+            "aimd-from-PBE-1000-npt",
+            "aimd-from-PBE-3000-nvt",
+            "aimd-from-PBE-3000-npt",
+            "rattled-300-subsampled",
+            "rattled-500-subsampled",
+            "rattled-1000-subsampled"
+          ],
+          "source_subset": "rattled-500-subsampled",
+          "source_data_id": "rattled-500-subsampled",
+          "source_shard": "rattled-500-subsampled/train.aselmdb",
+          "source_global_index": 964971,
+          "source_row_index": 33272,
+          "source_db_id": 33273,
+          "source_example_id": "train:33273",
+          "num_reference_rows": 1009850,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 2,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 4.122283231436275,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 6.183424847154413,
+          "num_atoms": 16,
+          "num_hydrogens": 0,
+          "parent_id": "agm005186397_ABCD_165_spg99",
+          "sid": "agm005186397_ABCD_165_spg99_3_0_rattled-500-subsampled_st1sbt",
+          "calc_id": "rattled-500-subsampled",
+          "task_type": "Static",
+          "composition_reduced": "La1 Tb1 Al1 Zn1",
+          "has_mean_force_norm": true,
+          "mean_force_norm": 4.484672913455828,
+          "mean_force_norm_units": "eV/angstrom",
+          "force_rms": 5.333998383934418,
+          "force_p95": 9.450212529339783,
+          "has_force_rms_p95": true
+        }
+      },
+      "lattice": [
+        4.7465322745206855,
+        4.982133351069881,
+        6.901124983052354,
+        93.55326080322266,
+        93.55326080322266,
+        90.86752319335938
+      ],
+      "cell_volume": 162.5404486987209,
+      "validity_filter": null
+    },
+    {
+      "domain": "materials",
+      "gallery": "omat24",
+      "sample_id": "omat24_train_1m_force_repr_008_atoms6_model_0",
+      "display_id": "omat24-0008",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omat24_generation/omat24_train_1m_force_repr_008_atoms6_model_0.cif.gz",
+      "source_sha256": "5c03981873b3dedbe71aa9f105ef4b93910e784dc13e03a922dcf14d057b91f6",
+      "file": "structures/omat24_train_1m_force_repr_008_atoms6_model_0.cif",
+      "sha256": "477b5f370e6daf5e97f33cefaf89d92e21be8a02885fad09e8baf45b01b647a0",
+      "formula": "HoIr4Pa",
+      "atom_count": 6,
+      "input_manifest": "models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json",
+      "input_manifest_sha256": "2db9600318f93cc69629d9de2ae5457556f36fee60cd3f2a803f09248523f4a5",
+      "generation_input": {
+        "contig": "6M",
+        "extra": {
+          "source_distribution": "omat24_train_1m_mean_force_norm_multinomial_over_all_rows",
+          "sample_seed": 42,
+          "sample_index": 8,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "train",
+          "source_subsets": [
+            "rattled-relax",
+            "rattled-300",
+            "rattled-500",
+            "rattled-1000",
+            "aimd-from-PBE-1000-nvt",
+            "aimd-from-PBE-1000-npt",
+            "aimd-from-PBE-3000-nvt",
+            "aimd-from-PBE-3000-npt",
+            "rattled-300-subsampled",
+            "rattled-500-subsampled",
+            "rattled-1000-subsampled"
+          ],
+          "source_subset": "aimd-from-PBE-1000-nvt",
+          "source_data_id": "aimd-from-PBE-1000-nvt",
+          "source_shard": "aimd-from-PBE-1000-nvt/train.aselmdb",
+          "source_global_index": 511352,
+          "source_row_index": 165693,
+          "source_db_id": 165694,
+          "source_example_id": "train:165694",
+          "num_reference_rows": 1009850,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 0,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.0,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 2.0611416157181375,
+          "num_atoms": 6,
+          "num_hydrogens": 0,
+          "parent_id": "agm001172757_ABC4_12_spg216",
+          "sid": "agm001172757_ABC4_12_spg216_0_aimd-from-PBE-1000-nvt_1ek2hx_29",
+          "calc_id": "aimd-from-PBE-1000-nvt",
+          "task_type": "Molecular Dynamics",
+          "composition_reduced": "Ce1 Ir4 Pb1",
+          "has_mean_force_norm": true,
+          "mean_force_norm": 1.1080533826128653,
+          "mean_force_norm_units": "eV/angstrom",
+          "force_rms": 1.2162312478699895,
+          "force_p95": 1.7648102852896368,
+          "has_force_rms_p95": true
+        }
+      },
+      "lattice": [
+        5.216627089411621,
+        5.163106932180264,
+        5.216627089411621,
+        57.74340057373047,
+        55.281471252441406,
+        55.281471252441406
+      ],
+      "cell_volume": 90.25613965305217,
+      "validity_filter": null
+    },
+    {
+      "domain": "materials",
+      "gallery": "omat24",
+      "sample_id": "omat24_train_1m_force_repr_009_atoms5_model_0",
+      "display_id": "omat24-0009",
+      "source": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/val_structures/predictions/epoch_75/omat24_generation/omat24_train_1m_force_repr_009_atoms5_model_0.cif.gz",
+      "source_sha256": "3990488f5e7af363a8a496633f497f3d6f1c91abd1b2069e78f7fe390bb3da30",
+      "file": "structures/omat24_train_1m_force_repr_009_atoms5_model_0.cif",
+      "sha256": "8915992d6d48132d00547fb53e3cbc6d09497ac5bc0e6d7b3889f2e69d9c1826",
+      "formula": "Al2AuCuRu",
+      "atom_count": 5,
+      "input_manifest": "models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json",
+      "input_manifest_sha256": "2db9600318f93cc69629d9de2ae5457556f36fee60cd3f2a803f09248523f4a5",
+      "generation_input": {
+        "contig": "5M",
+        "extra": {
+          "source_distribution": "omat24_train_1m_mean_force_norm_multinomial_over_all_rows",
+          "sample_seed": 42,
+          "sample_index": 9,
+          "sample_size": 1000,
+          "sample_with_replacement": true,
+          "source_split": "train",
+          "source_subsets": [
+            "rattled-relax",
+            "rattled-300",
+            "rattled-500",
+            "rattled-1000",
+            "aimd-from-PBE-1000-nvt",
+            "aimd-from-PBE-1000-npt",
+            "aimd-from-PBE-3000-nvt",
+            "aimd-from-PBE-3000-npt",
+            "rattled-300-subsampled",
+            "rattled-500-subsampled",
+            "rattled-1000-subsampled"
+          ],
+          "source_subset": "aimd-from-PBE-1000-npt",
+          "source_data_id": "aimd-from-PBE-1000-npt",
+          "source_shard": "aimd-from-PBE-1000-npt/train.aselmdb",
+          "source_global_index": 744742,
+          "source_row_index": 197571,
+          "source_db_id": 197572,
+          "source_example_id": "train:197572",
+          "num_reference_rows": 1009850,
+          "num_mean_force_norm_bins": 150,
+          "mean_force_norm_bin_index": 0,
+          "mean_force_norm_bin_lower_eV_per_angstrom": 0.0,
+          "mean_force_norm_bin_upper_eV_per_angstrom": 2.0611416157181375,
+          "num_atoms": 5,
+          "num_hydrogens": 0,
+          "parent_id": "agm001428909_ABCD2_23_spg123",
+          "sid": "agm001428909_ABCD2_23_spg123_0_aimd-from-PBE-1000-npt_g0qeqo_13",
+          "calc_id": "aimd-from-PBE-1000-npt",
+          "task_type": "Molecular Dynamics",
+          "composition_reduced": "La2 Ta1 C1 Br1",
+          "has_mean_force_norm": true,
+          "mean_force_norm": 0.9055153389859931,
+          "mean_force_norm_units": "eV/angstrom",
+          "force_rms": 1.0137887976416797,
+          "force_p95": 1.5732397431186322,
+          "has_force_rms_p95": true
+        }
+      },
+      "lattice": [
+        4.360515228214244,
+        4.409839607159758,
+        4.8586696441470245,
+        94.89613342285156,
+        94.00088500976562,
+        92.21038818359375
+      ],
+      "cell_volume": 92.767209301812,
+      "validity_filter": null
+    }
+  ],
+  "omol25_omat24_run": {
+    "run_directory": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157",
+    "validation_epoch": 75,
+    "checkpoint_path": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/ckpt/epoch-0075.ckpt",
+    "configuration_path": "logs/train/paper-table3-omol25-omat24-joint-properties-force-conditioned/2026-09-04_16-35_JOB_57928157/.hydra/config.yaml",
+    "configuration_sha256": "f2d4a0900e320c0ca32189cc0887996846b57ff2e3c137cc47045441aa4f9b3e",
+    "sampling": "Saved force-conditioned generation validation predictions; no inference or relaxation rerun."
+  },
+  "omol25_subset_provenance": {
+    "input_manifest": "models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json",
+    "source_dataset": "OMol25 train_4M",
+    "join": "source_row_index in generation_input.extra, indexed into ASELMDBDataset over lexicographically sorted *.aselmdb shards, excluding ._* files. Source metadata: extra_info.data_id and extra_info.source.",
+    "verification": "For all 1,000 source records, reference atom count, charge, and spin equal generation input values, and recomputed mean atomic force norm matches input value within absolute tolerance 1e-10 eV/angstrom.",
+    "cohort_subset_counts": {
+      "ani2x": 46,
+      "biomolecules": 210,
+      "elytes": 195,
+      "geom_orca6": 55,
+      "metal_complexes": 211,
+      "orbnet_denali": 13,
+      "reactivity": 181,
+      "rgd": 21,
+      "spice": 11,
+      "trans1x": 57
+    },
+    "category_interpretation": "Atom count, charge, spin and mean atomic force norm are supplied to generation; source category and reference composition/coordinates are not fixed. Transition-1x and RGD1 contain reaction-path geometries; generated outputs are not validated transition states.",
+    "reference": "https://arxiv.org/html/2505.08762v2"
+  },
+  "omol25_connectivity_filter": {
+    "rdkit_version": "2026.03.3",
+    "method": "DetermineConnectivity(useHueckel=False, useVdw=True, covFactor=1.3); GetMolFrags; all atoms including hydrogens. No bond-order assignment, sanitization, fragment removal, or coordinate optimization.",
+    "policy": "Require one generated component for GEOM. For ANI-2x, OrbNet Denali and SPICE require one component when the reference graph is connected. Other subsets remain unfiltered to allow complexes, clusters and reactions.",
+    "candidates_in_filename_order": [
+      {
+        "sample_id": "omol25_train_4m_force_repr_0002_atoms83_hydrogens46_model_0",
+        "source_subset": "geom_orca6",
+        "reference_component_sizes": [
+          83
+        ],
+        "generated_component_sizes": [
+          35,
+          16,
+          16,
+          16
+        ],
+        "connectivity_required": true,
+        "accepted": false
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0003_atoms59_hydrogens38_model_0",
+        "source_subset": "geom_orca6",
+        "reference_component_sizes": [
+          59
+        ],
+        "generated_component_sizes": [
+          59
+        ],
+        "connectivity_required": true,
+        "accepted": true
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0034_atoms13_hydrogens5_model_0",
+        "source_subset": "ani2x",
+        "reference_component_sizes": [
+          13
+        ],
+        "generated_component_sizes": [
+          12,
+          1
+        ],
+        "connectivity_required": true,
+        "accepted": false
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0040_atoms9_hydrogens4_model_0",
+        "source_subset": "ani2x",
+        "reference_component_sizes": [
+          9
+        ],
+        "generated_component_sizes": [
+          9
+        ],
+        "connectivity_required": true,
+        "accepted": true
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0093_atoms14_hydrogens7_model_0",
+        "source_subset": "spice",
+        "reference_component_sizes": [
+          14
+        ],
+        "generated_component_sizes": [
+          14
+        ],
+        "connectivity_required": true,
+        "accepted": true
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0111_atoms59_hydrogens28_model_0",
+        "source_subset": "orbnet_denali",
+        "reference_component_sizes": [
+          59
+        ],
+        "generated_component_sizes": [
+          59
+        ],
+        "connectivity_required": true,
+        "accepted": true
+      }
+    ]
+  },
+  "omol25_biomolecule_size_selection": {
+    "panel": "b",
+    "rule": "Largest generated atom count (including hydrogens) among the 210 biomolecule-source outputs in the existing 1,000-output epoch_75 OMol25 cohort; ascending source filename breaks ties. No new inference, connectivity filtering, fragment removal or optimization.",
+    "source_subset": "biomolecules",
+    "cohort_size": 1000,
+    "biomolecule_count": 210,
+    "selected_sample_id": "omol25_train_4m_force_repr_0878_atoms177_hydrogens62_model_0",
+    "selected_atom_count": 177,
+    "verification": "All 210 saved biomolecule outputs parsed with finite coordinates and atom counts matching their generation input and source reference. Source charge, spin and mean atomic force norm checked against generation input; absolute force-norm tolerance 1e-10 eV/angstrom.",
+    "candidates_descending_atom_count": [
+      {
+        "sample_id": "omol25_train_4m_force_repr_0878_atoms177_hydrogens62_model_0",
+        "atom_count": 177,
+        "source_row_index": 2561577
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0151_atoms171_hydrogens89_model_0",
+        "atom_count": 171,
+        "source_row_index": 1563953
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0556_atoms170_hydrogens85_model_0",
+        "atom_count": 170,
+        "source_row_index": 3702302
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0287_atoms165_hydrogens95_model_0",
+        "atom_count": 165,
+        "source_row_index": 3531683
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0244_atoms159_hydrogens76_model_0",
+        "atom_count": 159,
+        "source_row_index": 1148429
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0442_atoms157_hydrogens83_model_0",
+        "atom_count": 157,
+        "source_row_index": 73951
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0306_atoms156_hydrogens70_model_0",
+        "atom_count": 156,
+        "source_row_index": 3804660
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0745_atoms154_hydrogens74_model_0",
+        "atom_count": 154,
+        "source_row_index": 3911284
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0546_atoms152_hydrogens80_model_0",
+        "atom_count": 152,
+        "source_row_index": 2061425
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0555_atoms152_hydrogens82_model_0",
+        "atom_count": 152,
+        "source_row_index": 331009
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0522_atoms150_hydrogens78_model_0",
+        "atom_count": 150,
+        "source_row_index": 2059911
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0458_atoms145_hydrogens72_model_0",
+        "atom_count": 145,
+        "source_row_index": 2731767
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0354_atoms144_hydrogens70_model_0",
+        "atom_count": 144,
+        "source_row_index": 3958396
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0035_atoms143_hydrogens69_model_0",
+        "atom_count": 143,
+        "source_row_index": 320198
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0664_atoms141_hydrogens52_model_0",
+        "atom_count": 141,
+        "source_row_index": 3125725
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0888_atoms141_hydrogens74_model_0",
+        "atom_count": 141,
+        "source_row_index": 2059836
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0316_atoms137_hydrogens76_model_0",
+        "atom_count": 137,
+        "source_row_index": 2618263
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0514_atoms136_hydrogens74_model_0",
+        "atom_count": 136,
+        "source_row_index": 2442389
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0683_atoms136_hydrogens70_model_0",
+        "atom_count": 136,
+        "source_row_index": 2845301
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0914_atoms136_hydrogens65_model_0",
+        "atom_count": 136,
+        "source_row_index": 2656278
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0018_atoms134_hydrogens66_model_0",
+        "atom_count": 134,
+        "source_row_index": 3300955
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0082_atoms134_hydrogens66_model_0",
+        "atom_count": 134,
+        "source_row_index": 3785369
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0870_atoms134_hydrogens66_model_0",
+        "atom_count": 134,
+        "source_row_index": 910561
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0847_atoms133_hydrogens68_model_0",
+        "atom_count": 133,
+        "source_row_index": 215644
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0949_atoms133_hydrogens49_model_0",
+        "atom_count": 133,
+        "source_row_index": 10609
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0827_atoms129_hydrogens69_model_0",
+        "atom_count": 129,
+        "source_row_index": 2486418
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0189_atoms127_hydrogens63_model_0",
+        "atom_count": 127,
+        "source_row_index": 72782
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0048_atoms126_hydrogens60_model_0",
+        "atom_count": 126,
+        "source_row_index": 2377823
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0594_atoms126_hydrogens61_model_0",
+        "atom_count": 126,
+        "source_row_index": 877838
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0611_atoms125_hydrogens71_model_0",
+        "atom_count": 125,
+        "source_row_index": 3732560
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0153_atoms123_hydrogens57_model_0",
+        "atom_count": 123,
+        "source_row_index": 2979356
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0241_atoms123_hydrogens60_model_0",
+        "atom_count": 123,
+        "source_row_index": 1277386
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0464_atoms123_hydrogens66_model_0",
+        "atom_count": 123,
+        "source_row_index": 1735534
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0770_atoms123_hydrogens65_model_0",
+        "atom_count": 123,
+        "source_row_index": 1554098
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0803_atoms123_hydrogens63_model_0",
+        "atom_count": 123,
+        "source_row_index": 623816
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0708_atoms122_hydrogens66_model_0",
+        "atom_count": 122,
+        "source_row_index": 1756357
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0053_atoms120_hydrogens59_model_0",
+        "atom_count": 120,
+        "source_row_index": 3570426
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0324_atoms120_hydrogens58_model_0",
+        "atom_count": 120,
+        "source_row_index": 2026396
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0892_atoms120_hydrogens67_model_0",
+        "atom_count": 120,
+        "source_row_index": 3896774
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0996_atoms119_hydrogens56_model_0",
+        "atom_count": 119,
+        "source_row_index": 475237
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0718_atoms118_hydrogens56_model_0",
+        "atom_count": 118,
+        "source_row_index": 1845403
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0749_atoms118_hydrogens67_model_0",
+        "atom_count": 118,
+        "source_row_index": 283632
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0063_atoms117_hydrogens54_model_0",
+        "atom_count": 117,
+        "source_row_index": 1374381
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0049_atoms116_hydrogens64_model_0",
+        "atom_count": 116,
+        "source_row_index": 3733087
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0548_atoms116_hydrogens62_model_0",
+        "atom_count": 116,
+        "source_row_index": 3683994
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0274_atoms115_hydrogens63_model_0",
+        "atom_count": 115,
+        "source_row_index": 2232259
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0145_atoms113_hydrogens56_model_0",
+        "atom_count": 113,
+        "source_row_index": 3812795
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0197_atoms113_hydrogens61_model_0",
+        "atom_count": 113,
+        "source_row_index": 2934409
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0507_atoms113_hydrogens60_model_0",
+        "atom_count": 113,
+        "source_row_index": 3070411
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0766_atoms112_hydrogens55_model_0",
+        "atom_count": 112,
+        "source_row_index": 3821199
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0058_atoms110_hydrogens54_model_0",
+        "atom_count": 110,
+        "source_row_index": 2978504
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0185_atoms110_hydrogens58_model_0",
+        "atom_count": 110,
+        "source_row_index": 288302
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0533_atoms110_hydrogens56_model_0",
+        "atom_count": 110,
+        "source_row_index": 2974638
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0021_atoms109_hydrogens60_model_0",
+        "atom_count": 109,
+        "source_row_index": 2133543
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0158_atoms109_hydrogens59_model_0",
+        "atom_count": 109,
+        "source_row_index": 2015359
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0692_atoms109_hydrogens55_model_0",
+        "atom_count": 109,
+        "source_row_index": 1938842
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0325_atoms108_hydrogens56_model_0",
+        "atom_count": 108,
+        "source_row_index": 1162258
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0423_atoms108_hydrogens58_model_0",
+        "atom_count": 108,
+        "source_row_index": 2464329
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0724_atoms108_hydrogens59_model_0",
+        "atom_count": 108,
+        "source_row_index": 427255
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0353_atoms107_hydrogens52_model_0",
+        "atom_count": 107,
+        "source_row_index": 2939288
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0844_atoms106_hydrogens53_model_0",
+        "atom_count": 106,
+        "source_row_index": 3586765
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0897_atoms106_hydrogens48_model_0",
+        "atom_count": 106,
+        "source_row_index": 543103
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0902_atoms106_hydrogens54_model_0",
+        "atom_count": 106,
+        "source_row_index": 3984149
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0966_atoms105_hydrogens55_model_0",
+        "atom_count": 105,
+        "source_row_index": 1951635
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0605_atoms104_hydrogens35_model_0",
+        "atom_count": 104,
+        "source_row_index": 3953300
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0768_atoms104_hydrogens51_model_0",
+        "atom_count": 104,
+        "source_row_index": 936479
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0283_atoms103_hydrogens53_model_0",
+        "atom_count": 103,
+        "source_row_index": 2720129
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0463_atoms103_hydrogens35_model_0",
+        "atom_count": 103,
+        "source_row_index": 2504228
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0945_atoms103_hydrogens56_model_0",
+        "atom_count": 103,
+        "source_row_index": 361387
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0735_atoms102_hydrogens52_model_0",
+        "atom_count": 102,
+        "source_row_index": 1408904
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0834_atoms102_hydrogens51_model_0",
+        "atom_count": 102,
+        "source_row_index": 521161
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0523_atoms101_hydrogens49_model_0",
+        "atom_count": 101,
+        "source_row_index": 499577
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0980_atoms101_hydrogens54_model_0",
+        "atom_count": 101,
+        "source_row_index": 1656804
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0991_atoms101_hydrogens35_model_0",
+        "atom_count": 101,
+        "source_row_index": 2731705
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0235_atoms100_hydrogens49_model_0",
+        "atom_count": 100,
+        "source_row_index": 268213
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0170_atoms98_hydrogens36_model_0",
+        "atom_count": 98,
+        "source_row_index": 1575486
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0494_atoms96_hydrogens50_model_0",
+        "atom_count": 96,
+        "source_row_index": 1101250
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0625_atoms96_hydrogens46_model_0",
+        "atom_count": 96,
+        "source_row_index": 2515610
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0958_atoms96_hydrogens48_model_0",
+        "atom_count": 96,
+        "source_row_index": 1794939
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0309_atoms93_hydrogens39_model_0",
+        "atom_count": 93,
+        "source_row_index": 304867
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0326_atoms93_hydrogens54_model_0",
+        "atom_count": 93,
+        "source_row_index": 3579788
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0956_atoms91_hydrogens39_model_0",
+        "atom_count": 91,
+        "source_row_index": 1317057
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0022_atoms90_hydrogens37_model_0",
+        "atom_count": 90,
+        "source_row_index": 1612874
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0804_atoms89_hydrogens43_model_0",
+        "atom_count": 89,
+        "source_row_index": 1033484
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0284_atoms87_hydrogens45_model_0",
+        "atom_count": 87,
+        "source_row_index": 158037
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0785_atoms87_hydrogens46_model_0",
+        "atom_count": 87,
+        "source_row_index": 1139739
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0126_atoms86_hydrogens46_model_0",
+        "atom_count": 86,
+        "source_row_index": 2893201
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0836_atoms85_hydrogens44_model_0",
+        "atom_count": 85,
+        "source_row_index": 1300290
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0146_atoms84_hydrogens48_model_0",
+        "atom_count": 84,
+        "source_row_index": 2129419
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0678_atoms83_hydrogens44_model_0",
+        "atom_count": 83,
+        "source_row_index": 1416644
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0933_atoms83_hydrogens46_model_0",
+        "atom_count": 83,
+        "source_row_index": 2030168
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0099_atoms81_hydrogens46_model_0",
+        "atom_count": 81,
+        "source_row_index": 3763607
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0450_atoms79_hydrogens44_model_0",
+        "atom_count": 79,
+        "source_row_index": 1739901
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0863_atoms78_hydrogens37_model_0",
+        "atom_count": 78,
+        "source_row_index": 471870
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0051_atoms77_hydrogens41_model_0",
+        "atom_count": 77,
+        "source_row_index": 1384626
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0004_atoms74_hydrogens34_model_0",
+        "atom_count": 74,
+        "source_row_index": 2634954
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0359_atoms73_hydrogens36_model_0",
+        "atom_count": 73,
+        "source_row_index": 324569
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0662_atoms72_hydrogens27_model_0",
+        "atom_count": 72,
+        "source_row_index": 129503
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0920_atoms72_hydrogens40_model_0",
+        "atom_count": 72,
+        "source_row_index": 1019239
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0489_atoms71_hydrogens39_model_0",
+        "atom_count": 71,
+        "source_row_index": 2169249
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0068_atoms70_hydrogens25_model_0",
+        "atom_count": 70,
+        "source_row_index": 1101135
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0761_atoms70_hydrogens40_model_0",
+        "atom_count": 70,
+        "source_row_index": 1678683
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0988_atoms70_hydrogens27_model_0",
+        "atom_count": 70,
+        "source_row_index": 2991557
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0115_atoms69_hydrogens29_model_0",
+        "atom_count": 69,
+        "source_row_index": 2311457
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0193_atoms69_hydrogens39_model_0",
+        "atom_count": 69,
+        "source_row_index": 2777825
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0267_atoms69_hydrogens26_model_0",
+        "atom_count": 69,
+        "source_row_index": 1631696
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0503_atoms69_hydrogens25_model_0",
+        "atom_count": 69,
+        "source_row_index": 2532488
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0404_atoms65_hydrogens24_model_0",
+        "atom_count": 65,
+        "source_row_index": 832478
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0173_atoms61_hydrogens41_model_0",
+        "atom_count": 61,
+        "source_row_index": 1506148
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0194_atoms59_hydrogens39_model_0",
+        "atom_count": 59,
+        "source_row_index": 1936514
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0039_atoms58_hydrogens38_model_0",
+        "atom_count": 58,
+        "source_row_index": 1519064
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0756_atoms57_hydrogens37_model_0",
+        "atom_count": 57,
+        "source_row_index": 3044233
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0459_atoms52_hydrogens34_model_0",
+        "atom_count": 52,
+        "source_row_index": 1273988
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0868_atoms47_hydrogens30_model_0",
+        "atom_count": 47,
+        "source_row_index": 280150
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0754_atoms42_hydrogens26_model_0",
+        "atom_count": 42,
+        "source_row_index": 2654654
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0816_atoms36_hydrogens24_model_0",
+        "atom_count": 36,
+        "source_row_index": 1116119
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0131_atoms31_hydrogens20_model_0",
+        "atom_count": 31,
+        "source_row_index": 1309548
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0266_atoms29_hydrogens13_model_0",
+        "atom_count": 29,
+        "source_row_index": 1906133
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0065_atoms28_hydrogens18_model_0",
+        "atom_count": 28,
+        "source_row_index": 3984646
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0972_atoms25_hydrogens17_model_0",
+        "atom_count": 25,
+        "source_row_index": 1291078
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0530_atoms24_hydrogens16_model_0",
+        "atom_count": 24,
+        "source_row_index": 3688583
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0948_atoms24_hydrogens14_model_0",
+        "atom_count": 24,
+        "source_row_index": 1910947
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0124_atoms23_hydrogens15_model_0",
+        "atom_count": 23,
+        "source_row_index": 980288
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0207_atoms23_hydrogens15_model_0",
+        "atom_count": 23,
+        "source_row_index": 976521
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0299_atoms23_hydrogens15_model_0",
+        "atom_count": 23,
+        "source_row_index": 1882291
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0928_atoms23_hydrogens15_model_0",
+        "atom_count": 23,
+        "source_row_index": 1986272
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0987_atoms23_hydrogens13_model_0",
+        "atom_count": 23,
+        "source_row_index": 2654180
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0395_atoms22_hydrogens14_model_0",
+        "atom_count": 22,
+        "source_row_index": 769787
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0399_atoms22_hydrogens12_model_0",
+        "atom_count": 22,
+        "source_row_index": 1066448
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0595_atoms22_hydrogens15_model_0",
+        "atom_count": 22,
+        "source_row_index": 3837601
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0909_atoms22_hydrogens14_model_0",
+        "atom_count": 22,
+        "source_row_index": 725373
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0198_atoms21_hydrogens14_model_0",
+        "atom_count": 21,
+        "source_row_index": 3475446
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0415_atoms21_hydrogens12_model_0",
+        "atom_count": 21,
+        "source_row_index": 1714581
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0416_atoms21_hydrogens14_model_0",
+        "atom_count": 21,
+        "source_row_index": 1637285
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0465_atoms21_hydrogens12_model_0",
+        "atom_count": 21,
+        "source_row_index": 3312038
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0736_atoms21_hydrogens13_model_0",
+        "atom_count": 21,
+        "source_row_index": 1786028
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0757_atoms21_hydrogens13_model_0",
+        "atom_count": 21,
+        "source_row_index": 3910000
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0388_atoms20_hydrogens13_model_0",
+        "atom_count": 20,
+        "source_row_index": 3246646
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0486_atoms20_hydrogens14_model_0",
+        "atom_count": 20,
+        "source_row_index": 225997
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0509_atoms20_hydrogens13_model_0",
+        "atom_count": 20,
+        "source_row_index": 1894080
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0679_atoms20_hydrogens13_model_0",
+        "atom_count": 20,
+        "source_row_index": 1328092
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0705_atoms20_hydrogens12_model_0",
+        "atom_count": 20,
+        "source_row_index": 1868157
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0808_atoms20_hydrogens14_model_0",
+        "atom_count": 20,
+        "source_row_index": 3330642
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0812_atoms20_hydrogens12_model_0",
+        "atom_count": 20,
+        "source_row_index": 1606752
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0846_atoms20_hydrogens13_model_0",
+        "atom_count": 20,
+        "source_row_index": 2397718
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0894_atoms20_hydrogens14_model_0",
+        "atom_count": 20,
+        "source_row_index": 3108757
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0007_atoms19_hydrogens12_model_0",
+        "atom_count": 19,
+        "source_row_index": 398857
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0012_atoms19_hydrogens12_model_0",
+        "atom_count": 19,
+        "source_row_index": 2164339
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0061_atoms19_hydrogens11_model_0",
+        "atom_count": 19,
+        "source_row_index": 1569482
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0425_atoms19_hydrogens13_model_0",
+        "atom_count": 19,
+        "source_row_index": 2081697
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0542_atoms19_hydrogens12_model_0",
+        "atom_count": 19,
+        "source_row_index": 1105147
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0832_atoms19_hydrogens12_model_0",
+        "atom_count": 19,
+        "source_row_index": 1157920
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0011_atoms18_hydrogens12_model_0",
+        "atom_count": 18,
+        "source_row_index": 57268
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0220_atoms18_hydrogens12_model_0",
+        "atom_count": 18,
+        "source_row_index": 3712849
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0263_atoms18_hydrogens11_model_0",
+        "atom_count": 18,
+        "source_row_index": 3975366
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0319_atoms18_hydrogens12_model_0",
+        "atom_count": 18,
+        "source_row_index": 2295447
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0418_atoms18_hydrogens11_model_0",
+        "atom_count": 18,
+        "source_row_index": 157855
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0500_atoms18_hydrogens11_model_0",
+        "atom_count": 18,
+        "source_row_index": 3322081
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0501_atoms18_hydrogens12_model_0",
+        "atom_count": 18,
+        "source_row_index": 2580145
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0540_atoms18_hydrogens12_model_0",
+        "atom_count": 18,
+        "source_row_index": 174235
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0661_atoms18_hydrogens12_model_0",
+        "atom_count": 18,
+        "source_row_index": 2126060
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0699_atoms18_hydrogens11_model_0",
+        "atom_count": 18,
+        "source_row_index": 1402941
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0713_atoms18_hydrogens12_model_0",
+        "atom_count": 18,
+        "source_row_index": 3968210
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0730_atoms18_hydrogens12_model_0",
+        "atom_count": 18,
+        "source_row_index": 1199929
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0753_atoms18_hydrogens11_model_0",
+        "atom_count": 18,
+        "source_row_index": 3301049
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0797_atoms18_hydrogens12_model_0",
+        "atom_count": 18,
+        "source_row_index": 254712
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0828_atoms18_hydrogens11_model_0",
+        "atom_count": 18,
+        "source_row_index": 2588468
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0935_atoms18_hydrogens10_model_0",
+        "atom_count": 18,
+        "source_row_index": 1229851
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0979_atoms18_hydrogens13_model_0",
+        "atom_count": 18,
+        "source_row_index": 3406369
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0095_atoms17_hydrogens11_model_0",
+        "atom_count": 17,
+        "source_row_index": 3139350
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0104_atoms17_hydrogens11_model_0",
+        "atom_count": 17,
+        "source_row_index": 1659189
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0407_atoms17_hydrogens11_model_0",
+        "atom_count": 17,
+        "source_row_index": 2018642
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0412_atoms17_hydrogens11_model_0",
+        "atom_count": 17,
+        "source_row_index": 838805
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0531_atoms17_hydrogens11_model_0",
+        "atom_count": 17,
+        "source_row_index": 706516
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0864_atoms17_hydrogens11_model_0",
+        "atom_count": 17,
+        "source_row_index": 3985821
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0953_atoms17_hydrogens11_model_0",
+        "atom_count": 17,
+        "source_row_index": 1022117
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0273_atoms16_hydrogens10_model_0",
+        "atom_count": 16,
+        "source_row_index": 2392543
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0499_atoms16_hydrogens11_model_0",
+        "atom_count": 16,
+        "source_row_index": 1935157
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0579_atoms16_hydrogens9_model_0",
+        "atom_count": 16,
+        "source_row_index": 3555392
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0636_atoms16_hydrogens12_model_0",
+        "atom_count": 16,
+        "source_row_index": 1386175
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0855_atoms16_hydrogens11_model_0",
+        "atom_count": 16,
+        "source_row_index": 3306353
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0934_atoms16_hydrogens9_model_0",
+        "atom_count": 16,
+        "source_row_index": 730125
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0130_atoms15_hydrogens9_model_0",
+        "atom_count": 15,
+        "source_row_index": 1499769
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0554_atoms15_hydrogens8_model_0",
+        "atom_count": 15,
+        "source_row_index": 3908933
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0559_atoms15_hydrogens9_model_0",
+        "atom_count": 15,
+        "source_row_index": 487709
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0740_atoms15_hydrogens8_model_0",
+        "atom_count": 15,
+        "source_row_index": 1934509
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0937_atoms15_hydrogens10_model_0",
+        "atom_count": 15,
+        "source_row_index": 2501083
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0080_atoms14_hydrogens9_model_0",
+        "atom_count": 14,
+        "source_row_index": 3941887
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0106_atoms14_hydrogens8_model_0",
+        "atom_count": 14,
+        "source_row_index": 1265773
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0234_atoms14_hydrogens8_model_0",
+        "atom_count": 14,
+        "source_row_index": 2940984
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0348_atoms14_hydrogens9_model_0",
+        "atom_count": 14,
+        "source_row_index": 3799571
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0362_atoms14_hydrogens9_model_0",
+        "atom_count": 14,
+        "source_row_index": 2931310
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0376_atoms14_hydrogens8_model_0",
+        "atom_count": 14,
+        "source_row_index": 3706604
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0496_atoms14_hydrogens10_model_0",
+        "atom_count": 14,
+        "source_row_index": 395743
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0591_atoms14_hydrogens8_model_0",
+        "atom_count": 14,
+        "source_row_index": 549895
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0178_atoms13_hydrogens9_model_0",
+        "atom_count": 13,
+        "source_row_index": 1167193
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0256_atoms13_hydrogens7_model_0",
+        "atom_count": 13,
+        "source_row_index": 1334599
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0286_atoms13_hydrogens9_model_0",
+        "atom_count": 13,
+        "source_row_index": 2911141
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0610_atoms13_hydrogens8_model_0",
+        "atom_count": 13,
+        "source_row_index": 3695910
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0841_atoms13_hydrogens8_model_0",
+        "atom_count": 13,
+        "source_row_index": 3982312
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0081_atoms12_hydrogens8_model_0",
+        "atom_count": 12,
+        "source_row_index": 3540990
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0564_atoms12_hydrogens8_model_0",
+        "atom_count": 12,
+        "source_row_index": 2085022
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0883_atoms12_hydrogens7_model_0",
+        "atom_count": 12,
+        "source_row_index": 1879334
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0613_atoms11_hydrogens7_model_0",
+        "atom_count": 11,
+        "source_row_index": 1539421
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0205_atoms10_hydrogens7_model_0",
+        "atom_count": 10,
+        "source_row_index": 1298429
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0479_atoms10_hydrogens7_model_0",
+        "atom_count": 10,
+        "source_row_index": 1156626
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0688_atoms10_hydrogens6_model_0",
+        "atom_count": 10,
+        "source_row_index": 53460
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0769_atoms8_hydrogens5_model_0",
+        "atom_count": 8,
+        "source_row_index": 1050749
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0101_atoms6_hydrogens4_model_0",
+        "atom_count": 6,
+        "source_row_index": 1740069
+      },
+      {
+        "sample_id": "omol25_train_4m_force_repr_0016_atoms5_hydrogens3_model_0",
+        "atom_count": 5,
+        "source_row_index": 1252517
+      }
+    ]
+  }
+}

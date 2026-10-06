@@ -1,0 +1,100 @@
+# base training dataset for training AF3 design models (atom14 variants):
+# protein subsampling only.
+
+defaults:
+  # Grab datasets
+  - /datasets/train/omol25/omol25@datasets.train.omol25
+  - /datasets/train/omat24/omat24@datasets.train.omat24
+  
+  # Customized validation datasets
+  - val/unconditional@val.unconditional
+  - val/unconditional_deep@val.unconditional_deep
+  - val/indexed@val.indexed
+
+  # Customized train masks
+  - conditions/unconditional@global_transform_args.train_conditions.unconditional
+  - conditions/island@global_transform_args.train_conditions.island
+  - conditions/sequence_design@global_transform_args.train_conditions.sequence_design
+  - conditions/structure_prediction@global_transform_args.train_conditions.structure_prediction
+
+  - _self_
+
+# Create a dictionary used for transform arguments
+pipeline_target: nucleus.transforms.pipelines.build_atom14_base_pipeline
+
+# Base config overrides:
+diffusion_batch_size_train: 32
+diffusion_batch_size_inference: 8
+max_num_tokens: null  # diffusion_batch_size * total tokens per dynamically packed training batch.
+randomly_augment: True
+randomly_translate_fractional_coordinates: False  # Requires a lattice-aware minimum-image backbone; keep disabled for Zatom-2.
+crop_size: 384
+n_recycles_train: 2
+n_recycles_validation: 1
+max_atoms_in_crop: 3840  # ~10x crop size.
+enable_atomistic_property_targets: false
+record_rotation_pairs: false
+
+# Global transform arguments are necessary for arguments shared between training and inference
+global_transform_args:
+  n_atoms_per_token: 14
+  central_atom: CB
+  sigma_perturb: 2.0
+  sigma_perturb_com: 1.0
+  association_scheme: dense
+  center_option: diffuse  # options are ["all", "motif", "diffuse"]
+  mean_force_norm_conditioning_probability: 0.8
+  mean_force_norm_conditioning_tasks: null
+
+  # Reference conformer policy
+  generate_conformers: True
+  generate_conformers_for_non_protein_only: True
+  provide_reference_conformer_when_unmasked: True
+  ground_truth_conformer_policy: IGNORE  # Other options: REPLACE, ADD, FALLBACK. See atomworks.enums for details
+  provide_elements_for_unindexed_components: True
+  use_element_for_atom_names_of_atomized_tokens: True  # TODO: correct name, implies unindexed do too
+
+  # PPI Cropping
+  keep_full_binder_in_spatial_crop: False
+  max_binder_length: 170
+
+  # PPI Hotspots
+  max_ppi_hotspots_frac_to_provide: 0.2
+  ppi_hotspot_max_distance: 4.5
+
+  # Secondary structure features
+  max_ss_frac_to_provide: 0.4
+  min_ss_island_len: 1
+  max_ss_island_len: 10
+
+  train_conditions:
+    unconditional:
+      frequency: 5.0
+    sequence_design:
+      frequency: 2.0
+    structure_prediction:
+      frequency: 2.0
+    island:
+      frequency: 1.0
+
+  # Used to create simple boolean flags for downstream conditioning
+  meta_conditioning_probabilities:
+    calculate_hbonds: 0.2
+    calculate_rasa: 0.6
+
+    keep_protein_motif_rasa: 0.1  # Small to prevent noisy input to model
+    hbond_subsample: 0.5
+    
+    # fully indexed training
+    unindex_leak_global_index: 0.10
+    unindex_insert_random_break: 0.10
+    unindex_remove_random_break: 0.10
+
+    # Probability of adding 1d secondary structure conditioning
+    add_1d_ss_features: 0.1
+    featurize_plddt: 0.9  # Applied for monomer distillation only
+    add_global_is_non_loopy_feature: 0.99
+
+    # PPI
+    add_ppi_hotspots: 0.75
+    full_binder_crop: 0.75

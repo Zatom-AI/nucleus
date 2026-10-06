@@ -1,0 +1,13 @@
+# Half-depth Zatom-2-S: 73,097,862 generation parameters (approximately 80M),
+# or 75,594,630 parameters when the optional MLIP head is enabled.
+
+defaults:
+  - zatom2_base
+  - _self_
+
+net:
+  diffusion_module:
+    # The token trunk dominates parameter count. Halving its depth from 18 to 9
+    # preserves all feature widths and attention-head dimensions.
+    token_trunk:
+      n_blocks: 9

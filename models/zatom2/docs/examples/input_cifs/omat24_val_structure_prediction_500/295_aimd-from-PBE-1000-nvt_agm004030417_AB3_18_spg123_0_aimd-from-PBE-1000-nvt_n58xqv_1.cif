@@ -1,0 +1,51 @@
+data_omat24_val_295_agm004030417_AB3_18_spg123_0_aimd-from-PBE-1000-nvt_n58xqv_1
+#
+_entry.id       omat24_val_295_agm004030417_AB3_18_spg123_0_aimd-from-PBE-1000-nvt_n58xqv_1
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Be Be1 . LIG A 1 1 . 1 LIG A Be1 0.0 1.0 ? 0.012359410000000001 0.9845807200000001 0.0009478000000000002 -0.0085526835  2.4799411 0.007945901 1 1
+HETATM Si Si1 . LIG A 1 1 . 1 LIG A Si1 0.0 1.0 ? 0.49345225           0.50562943         0.7944440600000001    1.2222674      1.2933416 6.6602383   1 2
+HETATM Si Si2 . LIG A 1 1 . 1 LIG A Si2 0.0 1.0 ? 0.01576871           0.99530197         0.50035284            -0.00039921183 2.5070786 4.1947184   1 3
+HETATM Si Si3 . LIG A 1 1 . 1 LIG A Si3 0.0 1.0 ? 0.48681267           0.5040169400000001 0.20489893000000003   1.2056121      1.2890115 1.7177745   1 4
+#
+_cell.length_a      2.5185918221578993
+_cell.length_b      2.5185918240033596
+_cell.length_c      8.38352092
+_cell.angle_alpha   90.0
+_cell.angle_beta    90.0
+_cell.angle_gamma   89.9933020184483
+_cell.volume        53.17922788865919
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "Please cite the Zatom-2 preprint. arXiv identifier pending."
+type: software
+title: "Nucleus: Zatom-2 and Zevals"
+authors:
+  - name: Zatom-AI
+repository-code: https://github.com/Zatom-AI/nucleus
+url: https://zatom-ai.github.io/nucleus/
+preferred-citation:
+  type: unpublished
+  title: "Zatom-2: Multitask Pretraining on Atomistic Data for Generative Modeling across Domains"
+  year: 2026
+  authors:
+    - family-names: Cretu
+      given-names: Miruna
+    - family-names: Abrudan
+      given-names: Alex
+    - family-names: Panescu
+      given-names: Antonia
+    - family-names: Perez
+      given-names: Tynan
+    - family-names: Anand
+      given-names: Rishabh
+    - family-names: Erichson
+      given-names: N. Benjamin
+    - family-names: Mahoney
+      given-names: Michael W.
+    - family-names: Blau
+      given-names: Samuel
+    - family-names: Jacobson
+      given-names: Joseph
+    - family-names: Gómez-Bombarelli
+      given-names: Rafael
+    - family-names: Ying
+      given-names: Rex
+    - family-names: Knowles
+      given-names: Tuomas
+    - family-names: Liò
+      given-names: Pietro
+    - family-names: Morehead
+      given-names: Alex

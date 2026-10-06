@@ -1,0 +1,22 @@
+name: Release checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+      - run: python scripts/check_release.py
+      - run: uv run --no-project --with pytest --with hydra-core --with hydra-colorlog --with pydantic --with typer --with python-dotenv pytest --confcutdir=tests/release tests/release -q
+      - run: uv build --wheel --sdist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: python-distributions
+          path: dist/zatom_nucleus-*

@@ -1,0 +1,144 @@
+# @package _global_
+# Shared production settings for the Zatom-2 Tables 1-3 pretraining runs.
+
+defaults:
+  - pretrain
+  - /datasets/val/omol25@datasets.val.omol25_generation
+  - /datasets/val/omat24@datasets.val.omat24_generation
+  - /datasets/val/omol25@datasets.val.omol25_structure_prediction
+  - /datasets/val/omat24@datasets.val.omat24_structure_prediction
+  - override /trainer/metrics: paper_generation_metrics
+  - override /logger: csv
+  - _self_
+
+name: paper-pretrain-omol25-omat24-joint
+tags: [paper, pretrain, omol25, omat24, flow-matching]
+
+dataloader:
+  train:
+    dataloader_params:
+      batch_size: 256
+      num_workers: 8
+      prefetch_factor: 1
+      coalesce_worker_tensors: true
+      persistent_workers: true
+      sanitize_coordinate_nans: true
+      worker_chunk_size: 32
+  val:
+    dataloader_params:
+      num_workers: 8
+
+datasets:
+  # D=2 keeps the effective batch contract identical across the controlled
+  # Tables 1-3 comparisons. Property training additionally records the two
+  # independently rotated views as a TransIP pair.
+  diffusion_batch_size_train: 2
+  diffusion_batch_size_inference: 1
+  crop_size: 512
+  max_atoms_in_crop: 5120
+  # 8192 and 8000 both drove 80 GiB A100s to allocator exhaustion with the
+  # variable-length OMol25 batches. Keep 12.5% headroom for rare rank-local
+  # shapes and allocator fragmentation during long paper runs.
+  max_num_tokens: 7168
+  randomly_augment: true
+  # The Euclidean backbone has no minimum-image/lattice-aware geometry, so a
+  # wrapped cell cut is not a valid input symmetry.
+  randomly_translate_fractional_coordinates: false
+  global_transform_args:
+    mean_force_norm_conditioning_probability: 0.8
+    mean_force_norm_conditioning_tasks: [unconditional, structure_prediction]
+  val:
+    unconditional: null
+    unconditional_deep: null
+    indexed: null
+    omol25_generation:
+      dataset:
+        data: ${paths.root_dir}/models/zatom2/docs/examples/omol25_train_4m_mean_force_norm_1000_with_hydrogens_with_forces.json
+        name: omol25-generation
+        transform:
+          mean_force_norm_conditioning_probability: 1.0
+          mean_force_norm_conditioning_tasks: [unconditional]
+    omat24_generation:
+      dataset:
+        data: ${paths.root_dir}/models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json
+        name: omat24-generation
+        transform:
+          mean_force_norm_conditioning_probability: 1.0
+          mean_force_norm_conditioning_tasks: [unconditional]
+    omol25_structure_prediction:
+      dataset:
+        data: ${paths.root_dir}/models/zatom2/docs/examples/omol25_val_structure_prediction_500.json
+        name: omol25-structure-prediction
+        bond_sidecar_path: ${paths.root_dir}/data/omol25/sidecars/val_all_bonds.lmdb
+        transform:
+          mean_force_norm_conditioning_probability: 1.0
+          mean_force_norm_conditioning_tasks: [structure_prediction]
+    omat24_structure_prediction:
+      dataset:
+        data: ${paths.root_dir}/models/zatom2/docs/examples/omat24_val_structure_prediction_500.json
+        name: omat24-structure-prediction
+        transform:
+          mean_force_norm_conditioning_probability: 1.0
+          mean_force_norm_conditioning_tasks: [structure_prediction]
+
+model:
+  compile_model: false
+  lr_scheduler: null
+  optimizer:
+    lr: 1e-4
+  net:
+    attn_backend: cueq
+
+trainer:
+  grad_accum_steps: 1
+  checkpoint_every_n_epochs: null
+  checkpoint_every_n_steps: 750
+  checkpoint_before_validation: true
+  checkpoint_keep_last_n: 100
+  checkpoint_retention_root: ${paths.log_dir}/${task_name}/${name}
+  coordinate_sanitization_log_every_n_steps: 100
+  max_epochs: 80
+  n_examples_per_epoch: 4996604
+  tensor_validation_every_n_steps: 1000
+  validate_every_n_epochs: 1
+  validate_loader_every_n_epochs:
+    omol25_generation: 5
+    omat24_generation: 5
+    omol25_structure_prediction: 5
+    omat24_structure_prediction: 5
+  validate_first_epoch: false
+  metrics:
+    molecule_generation_metrics:
+      compute_uma_forces: true
+    material_generation_metrics:
+      compute_uma_forces: true
+    structure_prediction_metrics:
+      _target_: nucleus.metrics.structure_prediction.ZevalsStructurePredictionMetrics
+      required_tags_all: [structure_prediction]
+      molecule_top_k: [1]
+      structure_ltol: 0.3
+      structure_stol: 0.5
+      structure_angle_tol: 10.0
+      material_top_k: [1]
+      scale: true
+      compute_uma_forces: true
+      uma_checkpoint: uma-s-1p2
+      uma_molecule_task: omol
+      uma_material_task: omat
+      uma_device: null
+      uma_batch_size: 8
+
+callbacks:
+  log_grouped_zevals_structure_prediction_metrics_callback:
+    enabled: true
+    dataset_names: [omol25_structure_prediction, omat24_structure_prediction]
+  log_molecule_afd_validation_metrics_callback:
+    enabled: true
+    afd_reference_records_path: ${paths.data.omol25_geom_train_afd_records}
+    afd_model_name: Ty-Perez/ct-scd-geom10
+    afd_feature_cache_dir: ${paths.data.data_dir}/omol25/afd_feature_cache
+    dataset_names: [omol25_generation]
+  log_materials_afd_validation_metrics_callback:
+    enabled: true
+    afd_model_name: Ty-Perez/ct-scd-amp20
+    dataset_names: [omat24_generation]

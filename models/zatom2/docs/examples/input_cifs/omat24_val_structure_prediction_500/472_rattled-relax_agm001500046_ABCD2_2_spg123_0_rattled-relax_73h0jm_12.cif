@@ -1,0 +1,52 @@
+data_omat24_val_472_agm001500046_ABCD2_2_spg123_0_rattled-relax_73h0jm_12
+#
+_entry.id       omat24_val_472_agm001500046_ABCD2_2_spg123_0_rattled-relax_73h0jm_12
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM La La1 . LIG A 1 1 . 1 LIG A La1 0.0 1.0 ? 0.02856436           0.50759862           0.91968208         -0.058288824 2.752748    4.687712   1 1
+HETATM Sb Sb1 . LIG A 1 1 . 1 LIG A Sb1 0.0 1.0 ? 0.93259133           0.99618366           0.4679025700000001 4.533359     -0.12449912 2.2587204  1 2
+HETATM Sb Sb2 . LIG A 1 1 . 1 LIG A Sb2 0.0 1.0 ? 0.51841064           0.9577364899999999   0.09164547         2.4892447    5.3691864   0.24459508 1 3
+HETATM Rh Rh1 . LIG A 1 1 . 1 LIG A Rh1 0.0 1.0 ? 0.026588789999999994 0.040369239999999994 0.9614924999999999 -0.045786105 0.110455744 4.97193    1 4
+HETATM Cl Cl1 . LIG A 1 1 . 1 LIG A Cl1 0.0 1.0 ? 0.52378613           0.49415061999999993  0.62520525         2.44848      2.687721    3.0752366  1 5
+#
+_cell.length_a      4.955492785315055
+_cell.length_b      5.646836744731161
+_cell.length_c      5.18662695203228
+_cell.angle_alpha   92.76967457756662
+_cell.angle_beta    94.06030471099656
+_cell.angle_gamma   91.17196652919658
+_cell.volume        144.5617296796401
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

@@ -1,0 +1,42 @@
+data_omol25_val_orbnet_denali_399_data0032_17864
+#
+_entry.id       omol25_val_orbnet_denali_399_data0032_17864
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM C  C1  . LIG A 1 1 . 1 LIG A C1  nan 1.0 ? 3.347323 -0.926078 -1.118503 1 1
+HETATM C  C2  . LIG A 1 1 . 1 LIG A C2  nan 1.0 ? 2.574149 -0.189897 -0.029471 1 2
+HETATM O  O1  . LIG A 1 1 . 1 LIG A O1  nan 1.0 ? 1.158208 -0.227351 -0.291804 1 3
+HETATM C  C3  . LIG A 1 1 . 1 LIG A C3  nan 1.0 ? 3.045709 1.317086  0.001312  1 4
+HETATM O  O2  . LIG A 1 1 . 1 LIG A O2  nan 1.0 ? 2.144767 2.178441  -0.224383 1 5
+HETATM O  O3  . LIG A 1 1 . 1 LIG A O3  nan 1.0 ? 4.230638 1.504018  0.223145  1 6
+HETATM Li LI1 . LIG A 1 1 . 1 LIG A LI1 nan 1.0 ? 0.652948 1.479793  -0.579739 1 7
+HETATM H  H1  . LIG A 1 1 . 1 LIG A H1  nan 1.0 ? 4.414516 -0.765665 -0.96649  1 8
+HETATM H  H2  . LIG A 1 1 . 1 LIG A H2  nan 1.0 ? 3.068169 -0.535642 -2.100527 1 9
+HETATM H  H3  . LIG A 1 1 . 1 LIG A H3  nan 1.0 ? 3.150512 -1.997509 -1.09376  1 10
+HETATM H  H4  . LIG A 1 1 . 1 LIG A H4  nan 1.0 ? 2.772133 -0.645869 0.954905  1 11
+HETATM H  H5  . LIG A 1 1 . 1 LIG A H5  nan 1.0 ? 0.833129 -1.138228 -0.287085 1 12
+#

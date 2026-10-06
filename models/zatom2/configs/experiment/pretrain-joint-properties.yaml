@@ -1,0 +1,89 @@
+# @package _global_
+# Joint generative/property pretraining for OMol25 + OMat24.
+
+defaults:
+  - paper-pretrain-base
+  - /datasets/val/omol25@datasets.val.omol25_mlip
+  - /datasets/val/omat24@datasets.val.omat24_mlip
+  - /datasets/conditions/mlip@datasets.global_transform_args.train_conditions.mlip
+  - /trainer/loss/losses/atomistic_property_loss@trainer.loss.atomistic_property_loss
+  - override /trainer/metrics: joint_generation_property_metrics
+  - _self_
+
+name: paper-pretrain-omol25-omat24-joint-properties-force-conditioned
+tags: [paper, pretrain, omol25, omat24, joint-properties, force-conditioned, flow-matching]
+
+datasets:
+  diffusion_batch_size_train: 2
+  enable_atomistic_property_targets: true
+  record_rotation_pairs: true
+  randomly_augment: true
+  global_transform_args:
+    train_conditions:
+      unconditional:
+        frequency: 0.34
+      island:
+        frequency: 0.0
+      sequence_design:
+        frequency: 0.0
+      structure_prediction:
+        frequency: 0.33
+      mlip:
+        frequency: 0.33
+  train:
+    omol25:
+      probability: 0.5
+    omat24:
+      probability: 0.5
+    pdb: null
+  # The MLIP loaders share exactly the same held-out structures as their
+  # structure-prediction companions, but fix coordinates/types and add labels.
+  val:
+    omol25_mlip:
+      dataset:
+        data: ${paths.root_dir}/models/zatom2/docs/examples/omol25_val_energy_force_prediction_500.json
+        name: omol25-mlip
+    omat24_mlip:
+      dataset:
+        data: ${paths.root_dir}/models/zatom2/docs/examples/omat24_val_energy_force_prediction_500.json
+        name: omat24-mlip
+
+model:
+  net:
+    token_initializer:
+      token_1d_features:
+        total_charge: 1
+        spin_multiplicity: 1
+        has_total_charge: 1
+        has_spin_multiplicity: 1
+    diffusion_module:
+      f_pred: flow_matching
+      atomistic_property_head:
+        enabled: true
+        statistics_path: ${paths.data.atomistic_property_statistics}
+        energy_hidden_dim: ${model.net.c_s}
+        latent_equivariance:
+          enabled: true
+          hidden_multiplier: 2.0
+
+trainer:
+  log_shared_backbone_gradient_cosines: true
+  shared_backbone_gradient_cosine_log_every_n_steps: 250
+  validate_loader_every_n_epochs:
+    omol25_mlip: 1
+    omat24_mlip: 1
+  loss:
+    material_geometry_loss:
+      # The corrected valid-only reduction made the historical 10/1/1 weights
+      # dominate joint property training. These calibrated weights retain material
+      # geometry supervision while protecting force learning.
+      fractional_coord_weight: 0.25
+      lattice_lengths_weight: 0.05
+      lattice_angles_weight: 0.05
+    atomistic_property_loss:
+      # Preserve generation and structure-prediction performance while retaining
+      # MLIP supervision during joint training.
+      weight: 1.0
+      # Match the TransIP paper's 5:15:5 energy:force:equivariance ratio after the
+      # repository's common /50 rescaling.
+      latent_equivariance_weight: 0.1

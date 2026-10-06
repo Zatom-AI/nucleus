@@ -1,0 +1,46 @@
+data_omol25_val_orbnet_denali_124_data0067_17308
+#
+_entry.id       omol25_val_orbnet_denali_124_data0067_17308
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM O  O1  . LIG A 1 1 . 1 LIG A O1  nan 1.0 ? 3.558539  0.713036  -0.848762 1 1
+HETATM C  C1  . LIG A 1 1 . 1 LIG A C1  nan 1.0 ? 2.543536  0.396839  -0.364264 1 2
+HETATM N  N1  . LIG A 1 1 . 1 LIG A N1  nan 1.0 ? 1.494008  1.231035  0.027665  1 3
+HETATM C  C2  . LIG A 1 1 . 1 LIG A C2  nan 1.0 ? 0.357426  0.458657  0.148248  1 4
+HETATM C  C3  . LIG A 1 1 . 1 LIG A C3  nan 1.0 ? 0.50205   -0.91222  -0.028264 1 5
+HETATM C  C4  . LIG A 1 1 . 1 LIG A C4  nan 1.0 ? -0.750915 -1.627237 -0.083257 1 6
+HETATM C  C5  . LIG A 1 1 . 1 LIG A C5  nan 1.0 ? -1.996637 -0.95937  0.120236  1 7
+HETATM Br BR1 . LIG A 1 1 . 1 LIG A BR1 nan 1.0 ? -3.74218  -1.805113 -0.107469 1 8
+HETATM C  C6  . LIG A 1 1 . 1 LIG A C6  nan 1.0 ? -1.978286 0.397861  0.197785  1 9
+HETATM Br BR2 . LIG A 1 1 . 1 LIG A BR2 nan 1.0 ? -3.590754 1.380262  0.200804  1 10
+HETATM C  C7  . LIG A 1 1 . 1 LIG A C7  nan 1.0 ? -0.844636 1.180558  0.378571  1 11
+HETATM Br BR3 . LIG A 1 1 . 1 LIG A BR3 nan 1.0 ? -0.926162 3.013273  0.612753  1 12
+HETATM C  C8  . LIG A 1 1 . 1 LIG A C8  nan 1.0 ? 2.015862  -0.982783 -0.013007 1 13
+HETATM O  O2  . LIG A 1 1 . 1 LIG A O2  nan 1.0 ? 2.700456  -1.960061 0.228603  1 14
+HETATM H  H1  . LIG A 1 1 . 1 LIG A H1  nan 1.0 ? 1.419566  2.17289   -0.318973 1 15
+HETATM H  H2  . LIG A 1 1 . 1 LIG A H2  nan 1.0 ? -0.593538 -2.642386 -0.191083 1 16
+#

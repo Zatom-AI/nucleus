@@ -1,0 +1,26 @@
+# @package _global_
+# Unconditional small-molecule evaluation.
+
+pipeline:
+  _target_: zevals.pipeline.molecules.MoleculeEvalPipeline
+  reference_fingerprint_path: null   # path to FPSim2 reference DB; null disables FPSim2 novelty
+  reference_smiles_path: null        # exact-match fallback used only when reference_fingerprint_path is null
+  novelty_n_threads: 1
+  fingerprint_radius: 2
+  fingerprint_bits: 2048
+  compute_posebusters: true          # 3D conformer geometry checks (needs samples with a real conformer)
+  compute_uff_force_norm: true       # 3D conformer stability check (needs samples with a real conformer)
+  # GEOM-style COV/MAT requires samples_dir/<target_id>/*.sdf and a matching
+  # ground_truth_dir. Set an explicit benchmark threshold (e.g. 0.5 QM9, 1.25
+  # original GEOM-Drugs); disabled because this unconditional config has no GT.
+  compute_conformer_ensemble_metrics: false
+  conformer_rmsd_threshold: null
+  conformer_generated_per_reference: 2  # GEOM/GeoDiff benchmark budget
+
+  # UMA near-DFT force check (optional). Off by default: it needs the `uma`
+  # extra (fairchem-core) and gated Hugging Face weights. See docs/UMA-guide.md.
+  compute_uma_forces: false
+  uma_checkpoint: uma-s-1p2          # or uma-s-1p1, uma-m-1p1, or a local .pt path
+  uma_task: omol                     # molecules head: aperiodic, charge aware. Do not use omat here.
+  uma_device: null                   # null/"auto" picks CUDA when available; "cuda" or "cpu" to force
+  uma_batch_size: 8                  # molecules per forward pass; lower it on GPU OOM

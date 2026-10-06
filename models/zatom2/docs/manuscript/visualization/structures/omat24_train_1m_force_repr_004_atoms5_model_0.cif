@@ -1,0 +1,52 @@
+data_omat24_train_1m_force_repr_004_atoms5_model_0
+#
+_entry.id       omat24_train_1m_force_repr_004_atoms5_model_0
+_entry.author   unknown_user
+_entry.date     2026-09-04
+_entry.time     18:06:11
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+ATOM HF HF1 . LIG A 0 1 . 1 LIG A HF1 0 3.465735912322998 1.0 ? 0.7939453125  0.85546875   0.8369140625   4.25056   4.3941684  4.973754   1
+ATOM HF HF2 . LIG A 0 1 . 1 LIG A HF2 1 3.465735912322998 1.0 ? 0.1396484375  0.146484375  0.2431640625   0.8438206 0.88169557 1.4451163  1
+ATOM PB PB3 . LIG A 0 1 . 1 LIG A PB3 2 3.465735912322998 1.0 ? 0.1328125     0.8271484375 0.603515625    1.3046385 3.982421   3.5866742  1
+ATOM O  O4  . LIG A 0 1 . 1 LIG A O4  3 3.465735912322998 1.0 ? 0.11572265625 0.720703125  0.045654296875 0.6517761 2.8482895  0.27132204 1
+ATOM O  O5  . LIG A 0 1 . 1 LIG A O5  4 3.465735912322998 1.0 ? 0.767578125   0.2265625    0.1201171875   3.3033912 1.0323153  0.71385264 1
+#
+_cell.length_a      4.091468750773791
+_cell.length_b      3.8744365911331085
+_cell.length_c      6.165609337074498
+_cell.angle_alpha   77.4388198852539
+_cell.angle_beta    80.57218933105469
+_cell.angle_gamma   87.28653717041016
+_cell.volume        94.10311436791281
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

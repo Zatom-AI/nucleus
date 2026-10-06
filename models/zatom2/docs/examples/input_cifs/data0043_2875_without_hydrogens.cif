@@ -1,0 +1,32 @@
+data_ground_truth_omol25_data0043_2875
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+HETATM C  C1  . LIG A 1 1 . 1 LIG A C1  0 nan 1.0 ? -0.184861 2.040856  0.093765  1
+HETATM C  C2  . LIG A 1 1 . 1 LIG A C2  1 nan 1.0 ? -0.523902 -1.652945 1.01401   1
+HETATM C  C3  . LIG A 1 1 . 1 LIG A C3  2 nan 1.0 ? 0.871833  -0.853261 -0.733694 1
+HETATM C  C4  . LIG A 1 1 . 1 LIG A C4  3 nan 1.0 ? -0.098935 0.611306  0.829885  1
+HETATM C  C5  . LIG A 1 1 . 1 LIG A C5  4 nan 1.0 ? -1.589639 -0.363429 -1.12102  1
+HETATM N  N1  . LIG A 1 1 . 1 LIG A N1  5 nan 1.0 ? -0.273488 -0.539988 0.082115  1
+HETATM Br BR1 . LIG A 1 1 . 1 LIG A BR1 6 nan 1.0 ? -3.091986 0.282235  -0.064363 1
+#

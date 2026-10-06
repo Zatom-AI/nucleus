@@ -1,0 +1,5 @@
+# @package _global_
+# Backward-compatible alias for the unconditional GEOM experiment.
+defaults:
+  - train-geom-drugs
+  - _self_

@@ -1,0 +1,12 @@
+# @package _global_
+
+model:
+  net:
+    token_initializer:
+      token_1d_features:
+        mean_force_norm: null
+        has_mean_force_norm: null
+        force_rms_p95: 2
+        has_force_rms_p95: 1
+    diffusion_module:
+      force_conditioning_method: rms_and_p95

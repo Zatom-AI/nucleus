@@ -1,0 +1,16 @@
+# @package _global_
+# Table 3: Zatom-2-L generation/structure/MLIP representation pretraining.
+
+defaults:
+  - paper-table3-joint-properties-force-conditioned
+  - override /model: zatom2_l
+  - _self_
+
+name: paper-table3-zatom2-l-omol25-omat24-joint-properties-force-conditioned
+tags: [paper, table-3, pretrain, zatom2-l, omol25, omat24, joint-properties, force-conditioned]
+
+datasets:
+  # Zatom-2-L doubles the token-trunk depth. Halve the per-rank token budget
+  # relative to the 7,168-token base-model runs; its launchers double gradient
+  # accumulation to preserve the same capped global token budget.
+  max_num_tokens: 3584

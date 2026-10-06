@@ -1,0 +1,53 @@
+data_omat24_val_393_agm002131770_ABC_4728_spg6_0_aimd-from-PBE-1000-nvt_jem40i_14
+#
+_entry.id       omat24_val_393_agm002131770_ABC_4728_spg6_0_aimd-from-PBE-1000-nvt_jem40i_14
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Y  Y1  . LIG A 1 1 . 1 LIG A Y1  0.0 1.0 ? 0.26671781999999994 0.2252942  0.69617476          0.7593355  0.8322131 6.0641627 1 1
+HETATM Y  Y2  . LIG A 1 1 . 1 LIG A Y2  0.0 1.0 ? 0.73961246          0.7574104  0.29984865999999993 2.6490207  2.7977946 2.6131358 1 2
+HETATM Mo Mo1 . LIG A 1 1 . 1 LIG A Mo1 0.0 1.0 ? 0.20102739          0.29060493 0.0650987           0.72547144 1.0734642 0.5674061 1 3
+HETATM Mo Mo2 . LIG A 1 1 . 1 LIG A Mo2 0.0 1.0 ? 0.80289485          0.74159792 0.9312648299999999  2.6738214  2.739385  8.11285   1 4
+HETATM S  S1  . LIG A 1 1 . 1 LIG A S1  0.0 1.0 ? 0.25519135          0.22271932 0.36578369          0.8265888  0.8227018 3.186458  1 5
+HETATM S  S2  . LIG A 1 1 . 1 LIG A S2  0.0 1.0 ? 0.71552218          0.72888437 0.6561219099999999  2.4407651  2.6924224 5.7162013 1 6
+#
+_cell.length_a      3.7167270859576043
+_cell.length_b      3.69389501
+_cell.length_c      8.716297640571124
+_cell.angle_alpha   90.0
+_cell.angle_beta    92.16017738492042
+_cell.angle_gamma   90.0
+_cell.volume        119.58274919389231
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

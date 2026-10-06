@@ -1,0 +1,615 @@
+\begin{thebibliography}{69}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Albergo \& Vanden-Eijnden(2023)Albergo and Vanden-Eijnden]{albergo}
+Michael~Samuel Albergo and Eric Vanden-Eijnden.
+\newblock Building normalizing flows with stochastic interpolants.
+\newblock In \emph{The Eleventh International Conference on Learning
+  Representations}, 2023.
+\newblock URL \url{https://openreview.net/forum?id=li7qeBbCR1t}.
+
+\bibitem[Axelrod \& G{\'o}mez-Bombarelli(2022)Axelrod and
+  G{\'o}mez-Bombarelli]{axelrod2022geom}
+Simon Axelrod and Rafael G{\'o}mez-Bombarelli.
+\newblock {GEOM, energy-annotated molecular conformations for property
+  prediction and molecular generation}.
+\newblock \emph{Scientific Data}, 9\penalty0 (1):\penalty0 185, 2022.
+\newblock \doi{10.1038/s41597-022-01288-4}.
+\newblock URL \url{https://doi.org/10.1038/s41597-022-01288-4}.
+
+\bibitem[Barroso-Luque et~al.(2024)Barroso-Luque, Shuaibi, Fu, Wood, Dzamba,
+  Gao, Rizvi, Zitnick, and Ulissi]{barrosoluque2024omat24}
+Luis Barroso-Luque, Muhammed Shuaibi, Xiang Fu, Brandon~M. Wood, Misko Dzamba,
+  Meng Gao, Ammar Rizvi, C.~Lawrence Zitnick, and Zachary~W. Ulissi.
+\newblock {Open Materials 2024 ({OMat24}) Inorganic Materials Dataset and
+  Models}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2410.12771}.
+
+\bibitem[Batatia et~al.(2022)Batatia, Kovacs, Simm, Ortner, and
+  Csanyi]{Batatia2022mace}
+Ilyes Batatia, David~Peter Kovacs, Gregor N.~C. Simm, Christoph Ortner, and
+  Gabor Csanyi.
+\newblock {MACE}: Higher order equivariant message passing neural networks for
+  fast and accurate force fields.
+\newblock In Alice~H. Oh, Alekh Agarwal, Danielle Belgrave, and Kyunghyun Cho
+  (eds.), \emph{Advances in Neural Information Processing Systems}, 2022.
+\newblock URL \url{https://openreview.net/forum?id=YPpSngE-ZU}.
+
+\bibitem[Betala et~al.(2025)Betala, Gleason, Ramlaoui, Xu, Channing, Levy,
+  Fourrier, Kazeev, Joshi, Kaba, Therrien, Hernandez-Garcia, Mercado, Krishnan,
+  and Duval]{betala2025lematgenbench}
+Siddharth Betala, Samuel~P. Gleason, Ali Ramlaoui, Andy Xu, Georgia Channing,
+  Daniel Levy, Cl{\'e}mentine Fourrier, Nikita Kazeev, Chaitanya~K. Joshi,
+  S{\'e}kou-Oumar Kaba, F{\'e}lix Therrien, Alex Hernandez-Garcia, Roc{\'i}o
+  Mercado, N.~M.~Anoop Krishnan, and Alexandre Duval.
+\newblock {LeMat-GenBench}: A unified evaluation framework for crystal
+  generative models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2512.04562}.
+
+\bibitem[Butcher et~al.(2025)Butcher, Krishna, Mitra, Brent, Li, Corley, Kim,
+  Funk, Mathis, Salike, Muraishi, Eisenach, Thompson, Chen, Politanska, Sehgal,
+  Coventry, Zhang, Qiang, Didi, Kazman, DiMaio, and
+  Baker]{butcher2025rfdiffusion3}
+Jasper Butcher, Rohith Krishna, Raktim Mitra, Rafael~I. Brent, Yanjing Li,
+  Nathaniel Corley, Paul~T. Kim, Jonathan Funk, Simon Mathis, Saman Salike,
+  Aiko Muraishi, Helen Eisenach, Tuscan~Rock Thompson, Jie Chen, Yuliya
+  Politanska, Enisha Sehgal, Brian Coventry, Odin Zhang, Bo~Qiang, Kieran Didi,
+  Max Kazman, Frank DiMaio, and David Baker.
+\newblock De novo design of all-atom biomolecular interactions with
+  {RFdiffusion3}.
+\newblock \emph{bioRxiv}, 2025.
+\newblock \doi{10.1101/2025.09.18.676967}.
+\newblock URL
+  \url{https://www.biorxiv.org/content/10.1101/2025.09.18.676967v2}.
+
+\bibitem[Buttenschoen et~al.(2024)Buttenschoen, Morris, and
+  Deane]{buttenschoen2024posebusters}
+Martin Buttenschoen, Garrett~M. Morris, and Charlotte~M. Deane.
+\newblock {PoseBusters}: {AI}-based docking methods fail to generate physically
+  valid poses or generalise to novel sequences.
+\newblock \emph{Chemical Science}, 15\penalty0 (9):\penalty0 3130--3139, 2024.
+\newblock \doi{10.1039/D3SC04185A}.
+
+\bibitem[Cali{\'n}ski \& Harabasz(1974)Cali{\'n}ski and
+  Harabasz]{calinski1974dendrite}
+Tadeusz Cali{\'n}ski and Jerzy Harabasz.
+\newblock A dendrite method for cluster analysis.
+\newblock \emph{Communications in Statistics-theory and Methods}, 3\penalty0
+  (1):\penalty0 1--27, 1974.
+
+\bibitem[Candido et~al.(2026)Candido, Hayes, Derry, Rao, Lin, Verkuil, Wu, Lee,
+  Bruguera, Keval, Kopylov, Pak, Wu, Thomas, Mataraso, Hsu, Trotman-Grant,
+  Fatras, dos Santos~Costa, Badkundri, Akin, Oktay, Deaton, Montabana, Sitwala,
+  Yu, Wiggert, Carlin, Goering, Blazejewski, Sandora, Hla, Jia, Kloker,
+  Sofroniew, Uehara, Pannu, Bachas, Liu, Sercu, and Rives]{candido2026esmfold2}
+Salvatore Candido, Thomas Hayes, Alexander Derry, Roshan Rao, Zeming Lin,
+  Robert Verkuil, Bryan~Z. Wu, Jin~Sub Lee, Elise~S. Bruguera, Jehan~A. Keval,
+  Mykhailo Kopylov, John~E. Pak, Wesley Wu, Neil Thomas, Samson Mataraso, Alvin
+  Hsu, Ashton~C. Trotman-Grant, Kilian Fatras, Allan dos Santos~Costa, Rohil
+  Badkundri, Halil Akin, Deniz Oktay, Jonathan Deaton, Elizabeth Montabana,
+  Hrishita Sitwala, Yue Yu, Marius Wiggert, Dylan~Alexander Carlin, Anthony~W.
+  Goering, Tomasz Blazejewski, McCullen Sandora, Michael Hla, Tina~Z. Jia,
+  Leon~H. Kloker, Nicholas~J. Sofroniew, Masatoshi Uehara, Jassi Pannu, Sharrol
+  Bachas, Daniel~S. Liu, Tom Sercu, and Alexander Rives.
+\newblock Language modeling materializes a world model of protein biology.
+\newblock \emph{bioRxiv}, 2026.
+\newblock \doi{10.64898/2026.06.03.729735}.
+
+\bibitem[Chandonia et~al.(2022)Chandonia, Guan, Lin, Yu, Fox, and
+  Brenner]{chandonia2022scope}
+John-Marc Chandonia, Lindsey Guan, Shiangyi Lin, Changhua Yu, Naomi~K. Fox, and
+  Steven~E. Brenner.
+\newblock {SCOPe}: Improvements to the structural classification of
+  proteins---extended database to facilitate variant interpretation and machine
+  learning.
+\newblock \emph{Nucleic Acids Research}, 50\penalty0 (D1):\penalty0 D553--D559,
+  2022.
+\newblock \doi{10.1093/nar/gkab1054}.
+
+\bibitem[Dauparas et~al.(2022)Dauparas, Anishchenko, Bennett, Bai, Ragotte,
+  Milles, Wicky, Courbet, de~Haas, Bethel, Leung, Huddy, Pellock, Tischer,
+  Chan, Koepnick, Nguyen, Kang, Sankaran, Bera, King, and
+  Baker]{dauparas2022proteinmpnn}
+Justas Dauparas, Ivan Anishchenko, Nathaniel Bennett, Hunter Bai, Robert~J.
+  Ragotte, Lukas~F. Milles, Basile I.~M. Wicky, Alexis Courbet, Rob~J. de~Haas,
+  Neville Bethel, Po-Ssu J.~Y. Leung, Timothy~F. Huddy, Sam Pellock, Doug
+  Tischer, Frederick Chan, Brian Koepnick, Hannah Nguyen, Alex Kang, Banumathi
+  Sankaran, Asim~K. Bera, Neil~P. King, and David Baker.
+\newblock Robust deep learning--based protein sequence design using
+  {ProteinMPNN}.
+\newblock \emph{Science}, 378\penalty0 (6615):\penalty0 49--56, 2022.
+\newblock \doi{10.1126/science.add2187}.
+
+\bibitem[Davies et~al.(2019)Davies, Butler, Jackson, Skelton, Morita, and
+  Walsh]{davies2019smact}
+Daniel~W. Davies, Keith~T. Butler, Adam~J. Jackson, Jonathan~M. Skelton, Kazuki
+  Morita, and Aron Walsh.
+\newblock {SMACT}: Semiconducting materials by analogy and chemical theory.
+\newblock \emph{Journal of Open Source Software}, 4\penalty0 (38):\penalty0
+  1361, 2019.
+\newblock \doi{10.21105/joss.01361}.
+
+\bibitem[Didi(2026)]{didi2026r4g}
+Kieran Didi.
+\newblock The unification of representation learning and generative modelling.
+\newblock Blog post, 2026.
+\newblock URL \url{https://kdidi.netlify.app/blog/ml/2025-12-31-r4g/}.
+\newblock Living survey; literature cutoff 2026-09-07.
+
+\bibitem[Edamadaka et~al.(2025)Edamadaka, Yang, Li, and
+  Gómez-Bombarelli]{edamadaka2025universallyconvergingrepresentationsmatter}
+Sathya Edamadaka, Soojung Yang, Ju~Li, and Rafael Gómez-Bombarelli.
+\newblock Universally converging representations of matter across scientific
+  foundation models, 2025.
+\newblock URL \url{https://arxiv.org/abs/2512.03750}.
+
+\bibitem[Elhag et~al.(2025)Elhag, Raja, Morehead, Blau, Zhao, Tyrchan,
+  Nittinger, Morris, and Bronstein]{elhag2025learning}
+Ahmed~A Elhag, Arun Raja, Alex Morehead, Samuel~M Blau, Hongtao Zhao, Christian
+  Tyrchan, Eva Nittinger, Garrett~M Morris, and Michael~M Bronstein.
+\newblock Learning inter-atomic potentials without explicit equivariance.
+\newblock \emph{arXiv preprint arXiv:2510.00027}, 2025.
+
+\bibitem[Feng et~al.(2025)Feng, Ni, Lu, Ma, Ma, and Lan]{feng2025unigem}
+Shikun Feng, Yuyan Ni, Yan Lu, Zhi-Ming Ma, Wei-Ying Ma, and Yanyan Lan.
+\newblock {UniGEM}: A unified approach to generation and property prediction
+  for molecules.
+\newblock In \emph{International Conference on Learning Representations}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=Lb91pXwZMR}.
+
+\bibitem[Félix et~al.(2025)Félix, Dalke, Landrum, and
+  Bushuiev]{eloy_felix_2025_14652272}
+Eloy Félix, Andrew Dalke, Greg Landrum, and Roman Bushuiev.
+\newblock chembl/fpsim2: 0.7.3, January 2025.
+\newblock URL \url{https://doi.org/10.5281/zenodo.14652272}.
+
+\bibitem[Geffner et~al.(2025)Geffner, Didi, Zhang, Reidenbach, Cao, Yim,
+  Geiger, Dallago, Kucukbenli, Vahdat, et~al.]{geffner2025proteina}
+Tomas Geffner, Kieran Didi, Zuobai Zhang, Danny Reidenbach, Zhonglin Cao, Jason
+  Yim, Mario Geiger, Christian Dallago, Emine Kucukbenli, Arash Vahdat, et~al.
+\newblock Proteina: Scaling flow-based protein structure generative models.
+\newblock In \emph{International Conference on Learning Representations},
+  volume 2025, pp.\  98803--98851, 2025.
+
+\bibitem[Geffner et~al.(2026)Geffner, Didi, Cao, Reidenbach, Zhang, Dallago,
+  Kucukbenli, Kreis, and Vahdat]{laproteina}
+Tomas Geffner, Kieran Didi, Zhonglin Cao, Danny Reidenbach, Zuobai Zhang,
+  Christian Dallago, Emine Kucukbenli, Karsten Kreis, and Arash Vahdat.
+\newblock {La-Proteina}: Atomistic protein generation via partially latent flow
+  matching.
+\newblock In \emph{The Fourteenth International Conference on Learning
+  Representations}, 2026.
+\newblock URL \url{https://openreview.net/forum?id=RDerF20JYT}.
+
+\bibitem[Had{\v z}i~Veljkovi{\'c} et~al.(2026)Had{\v z}i~Veljkovi{\'c},
+  Rosenthal, Lon{\v c}ari{\'c}, and van~de Meent]{hadziveljkovic2026crystalite}
+Tin Had{\v z}i~Veljkovi{\'c}, Joshua Rosenthal, Ivor Lon{\v c}ari{\'c}, and
+  Jan-Willem van~de Meent.
+\newblock Crystalite: A lightweight transformer for efficient crystal modeling.
+\newblock \emph{arXiv preprint arXiv:2604.02270}, 2026.
+\newblock \doi{10.48550/arXiv.2604.02270}.
+\newblock URL \url{https://arxiv.org/abs/2604.02270}.
+
+\bibitem[Heusel et~al.(2017)Heusel, Ramsauer, Unterthiner, Nessler, and
+  Hochreiter]{FID-paper}
+Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, and Sepp
+  Hochreiter.
+\newblock {GANs} trained by a two time-scale update rule converge to a local
+  nash equilibrium.
+\newblock \emph{Advances in neural information processing systems}, 30, 2017.
+
+\bibitem[Hoogeboom et~al.(2022)Hoogeboom, Satorras, Vignac, and
+  Welling]{hoogeboom2022equivariant}
+Emiel Hoogeboom, V{\i}ctor~Garcia Satorras, Cl{\'e}ment Vignac, and Max
+  Welling.
+\newblock Equivariant diffusion for molecule generation in {3D}.
+\newblock In \emph{International Conference on Machine Learning}, pp.\
+  8867--8887, 2022.
+
+\bibitem[Irwin et~al.(2025)Irwin, Tibo, Janet, and Olsson]{irwin2025semlaflow}
+Ross Irwin, Alessandro Tibo, Jon~Paul Janet, and Simon Olsson.
+\newblock {SemlaFlow} -- efficient {3D} molecular generation with latent
+  attention and equivariant flow matching.
+\newblock In \emph{The 28th International Conference on Artificial Intelligence
+  and Statistics}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=bee2G6pEh0}.
+
+\bibitem[Jiao et~al.(2023)Jiao, Huang, Lin, Han, Chen, Lu, and
+  Liu]{jiao2023crystal}
+Rui Jiao, Wenbing Huang, Peijia Lin, Jiaqi Han, Pin Chen, Yutong Lu, and Yang
+  Liu.
+\newblock Crystal structure prediction by joint equivariant diffusion.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  36:\penalty0 17464--17497, 2023.
+
+\bibitem[Joshi et~al.(2025)Joshi, Fu, Liao, Gharakhanyan, Miller, Sriram, and
+  Ulissi]{joshi2025allatom}
+Chaitanya~K. Joshi, Xiang Fu, Yi-Lun Liao, Vahe Gharakhanyan, Benjamin~Kurt
+  Miller, Anuroop Sriram, and Zachary~Ward Ulissi.
+\newblock All-atom diffusion transformers: Unified generative modelling of
+  molecules and materials.
+\newblock In \emph{International Conference on Machine Learning}, 2025.
+
+\bibitem[Jumper et~al.(2021)Jumper, Evans, Pritzel, Green, Figurnov,
+  Ronneberger, Tunyasuvunakool, Bates, {\v{Z}}{\'\i}dek, Potapenko,
+  et~al.]{jumper2021highly}
+John Jumper, Richard Evans, Alexander Pritzel, Tim Green, Michael Figurnov,
+  Olaf Ronneberger, Kathryn Tunyasuvunakool, Russ Bates, Augustin
+  {\v{Z}}{\'\i}dek, Anna Potapenko, et~al.
+\newblock Highly accurate protein structure prediction with alphafold.
+\newblock \emph{nature}, 596\penalty0 (7873):\penalty0 583--589, 2021.
+
+\bibitem[Karras et~al.(2022)Karras, Aittala, Aila, and Laine]{karras2022edm}
+Tero Karras, Miika Aittala, Timo Aila, and Samuli Laine.
+\newblock Elucidating the design space of diffusion-based generative models.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~35, pp.\  26565--26577, 2022.
+\newblock URL \url{https://arxiv.org/abs/2206.00364}.
+
+\bibitem[Landrum(2013)]{landrum2013rdkit}
+Greg Landrum.
+\newblock {RDKit}: Open-source cheminformatics.
+\newblock \emph{Release}, 1\penalty0 (1--79):\penalty0 4, 2013.
+
+\bibitem[Le et~al.(2024)Le, Cremer, No{\'e}, Clevert, and
+  Sch{\"u}tt]{le2024navigating}
+Tuan Le, Julian Cremer, Frank No{\'e}, Djork-Arn{\'e} Clevert, and Kristof~T.
+  Sch{\"u}tt.
+\newblock Navigating the design space of equivariant diffusion-based generative
+  models for de novo {3D} molecule generation.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
+
+\bibitem[Levine et~al.(2025)Levine, Shuaibi, Spotte-Smith, Taylor, Hasyim,
+  Michel, Batatia, Cs{\'a}nyi, Dzamba, Eastman, Frey, Fu, Gharakhanyan,
+  Krishnapriyan, Rackers, Raja, Rizvi, Rosen, Ulissi, Vargas, Zitnick, Blau,
+  and Wood]{levine2025omol25}
+Daniel~S. Levine, Muhammed Shuaibi, Evan Walter~Clark Spotte-Smith, Michael~G.
+  Taylor, Muhammad~R. Hasyim, Kyle Michel, Ilyes Batatia, G{\'a}bor Cs{\'a}nyi,
+  Misko Dzamba, Peter Eastman, Nathan~C. Frey, Xiang Fu, Vahe Gharakhanyan,
+  Aditi~S. Krishnapriyan, Joshua~A. Rackers, Sanjeev Raja, Ammar Rizvi,
+  Andrew~S. Rosen, Zachary Ulissi, Santiago Vargas, C.~Lawrence Zitnick,
+  Samuel~M. Blau, and Brandon~M. Wood.
+\newblock {The Open Molecules 2025 ({OMol25}) Dataset, Evaluations, and
+  Models}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.08762}.
+
+\bibitem[Li \& Walsh(2026)Li and Walsh]{li2026platonic}
+Zhenzhu Li and Aron Walsh.
+\newblock Platonic representation of foundation machine learning interatomic
+  potentials.
+\newblock \emph{Nature Machine Intelligence}, 8:\penalty0 830--840, 2026.
+\newblock \doi{10.1038/s42256-026-01235-7}.
+\newblock URL \url{https://www.nature.com/articles/s42256-026-01235-7}.
+
+\bibitem[Lin \& AlQuraishi(2023)Lin and AlQuraishi]{lin2023genie}
+Yeqing Lin and Mohammed AlQuraishi.
+\newblock Generating novel, designable, and diverse protein structures by
+  equivariantly diffusing oriented residue clouds.
+\newblock \emph{arXiv preprint arXiv:2301.12485}, 2023.
+\newblock \doi{10.48550/arXiv.2301.12485}.
+\newblock URL \url{https://arxiv.org/abs/2301.12485}.
+
+\bibitem[Lipman et~al.(2023)Lipman, Chen, Ben-Hamu, Nickel, and
+  Le]{lipman2023flow}
+Yaron Lipman, Ricky T.~Q. Chen, Heli Ben-Hamu, Maximilian Nickel, and Matt Le.
+\newblock Flow matching for generative modeling.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock URL \url{https://openreview.net/forum?id=PqvMRDCJT9t}.
+
+\bibitem[Liu et~al.(2022)Liu, Wang, Liu, Lasenby, Guo, and
+  Tang]{liu2022graphmvp}
+Shengchao Liu, Hanchen Wang, Weiyang Liu, Joan Lasenby, Hongyu Guo, and Jian
+  Tang.
+\newblock Pre-training molecular graph representation with {3D} geometry.
+\newblock In \emph{International Conference on Learning Representations}, 2022.
+
+\bibitem[Liu et~al.(2026)Liu, Zhou, and Fan]{liu2026goflow}
+Yunqing Liu, Yi~Zhou, and Wenqi Fan.
+\newblock Geometric flow matching for molecular conformation generation via
+  manifold decomposition.
+\newblock \emph{arXiv preprint arXiv:2605.25577}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2605.25577}.
+
+\bibitem[Mariani et~al.(2013)Mariani, Biasini, Barbato, and
+  Schwede]{mariani2013lddt}
+Valerio Mariani, Marco Biasini, Alessandro Barbato, and Torsten Schwede.
+\newblock {lDDT: a local superposition-free score for comparing protein
+  structures and models using distance difference tests}.
+\newblock \emph{Bioinformatics}, 29\penalty0 (21):\penalty0 2722--2728, 2013.
+
+\bibitem[Miller et~al.(2024)Miller, Chen, Sriram, and Wood]{miller2024flowmm}
+Benjamin~Kurt Miller, Ricky T.~Q. Chen, Anuroop Sriram, and Brandon~M. Wood.
+\newblock {FlowMM}: Generating materials with riemannian flow matching.
+\newblock In \emph{International Conference on Machine Learning}, 2024.
+
+\bibitem[Morehead et~al.(2026)Morehead, Cretu, Panescu, Anand, Weiler, Perez,
+  Blau, Farrell, Bhimji, Jain, Sahasrabuddhe, Li{\`o}, Jaakkola,
+  G{\'o}mez-Bombarelli, Ying, Erichson, and Mahoney]{morehead2026zatom1}
+Alex Morehead, Miruna Cretu, Antonia Panescu, Rishabh Anand, Maurice Weiler,
+  Tynan Perez, Samuel Blau, Steven Farrell, Wahid Bhimji, Anubhav Jain,
+  Hrushikesh Sahasrabuddhe, Pietro Li{\`o}, Tommi Jaakkola, Rafael
+  G{\'o}mez-Bombarelli, Rex Ying, N.~Benjamin Erichson, and Michael~W. Mahoney.
+\newblock {Zatom-1}: Towards a multimodal foundation model for {3D} molecules
+  and materials, 2026.
+\newblock URL \url{https://arxiv.org/abs/2602.22251}.
+
+\bibitem[Neumann et~al.(2024)Neumann, Gin, Rhodes, Bennett, Li, Choubisa,
+  Hussey, and Godwin]{neumann2024orb}
+Mark Neumann, James Gin, Benjamin Rhodes, Steven Bennett, Zhiyi Li, Hitarth
+  Choubisa, Arthur Hussey, and Jonathan Godwin.
+\newblock {Orb}: A fast, scalable neural network potential, 2024.
+\newblock URL \url{https://arxiv.org/abs/2410.22570}.
+
+\bibitem[O'Boyle et~al.(2011)O'Boyle, Banck, James, Morley, Vandermeersch, and
+  Hutchison]{oboyle2011openbabel}
+Noel~M. O'Boyle, Michael Banck, Craig~A. James, Chris Morley, Tim
+  Vandermeersch, and Geoffrey~R. Hutchison.
+\newblock {Open Babel}: An open chemical toolbox.
+\newblock \emph{Journal of Cheminformatics}, 3:\penalty0 33, 2011.
+\newblock \doi{10.1186/1758-2946-3-33}.
+\newblock URL \url{https://pubmed.ncbi.nlm.nih.gov/21982300/}.
+
+\bibitem[Ong et~al.(2013)Ong, Richards, Jain, Hautier, Kocher, Cholia, Gunter,
+  Chevrier, Persson, and Ceder]{ong2013pymatgen}
+Shyue~Ping Ong, William~Davidson Richards, Anubhav Jain, Geoffroy Hautier,
+  Michael Kocher, Shreyas Cholia, Dan Gunter, Vincent~L. Chevrier, Kristin~A.
+  Persson, and Gerbrand Ceder.
+\newblock {Python Materials Genomics ({pymatgen}): A Robust, Open-Source Python
+  Library for Materials Analysis}.
+\newblock \emph{Computational Materials Science}, 68:\penalty0 314--319, 2013.
+\newblock \doi{10.1016/j.commatsci.2012.10.028}.
+
+\bibitem[Pan et~al.(2021)Pan, Ganose, Horton, Aykol, Persson, Zimmermann, and
+  Jain]{pan2021benchmarking}
+Hillary Pan, Alex~M Ganose, Matthew Horton, Muratahan Aykol, Kristin~A Persson,
+  Nils~ER Zimmermann, and Anubhav Jain.
+\newblock Benchmarking coordination number prediction algorithms on inorganic
+  crystal structures.
+\newblock \emph{Inorganic chemistry}, 60\penalty0 (3):\penalty0 1590--1603,
+  2021.
+
+\bibitem[Peebles \& Xie(2023)Peebles and Xie]{peebles2023scalable}
+William Peebles and Saining Xie.
+\newblock Scalable diffusion models with transformers.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pp.\  4195--4205, 2023.
+\newblock \doi{10.1109/ICCV51070.2023.00387}.
+
+\bibitem[Perez \& G{\'o}mez-Bombarelli(2026{\natexlab{a}})Perez and
+  G{\'o}mez-Bombarelli]{perez2026atomisticgenevals}
+Tynan Perez and Rafael G{\'o}mez-Bombarelli.
+\newblock Distributional evaluations for atomistic generations: a set of
+  methods and technical reports for evaluating atomistic generative models.
+\newblock \url{https://github.com/TyJPerez/AtomisticGenEvals},
+  2026{\natexlab{a}}.
+
+\bibitem[Perez \& G{\'o}mez-Bombarelli(2026{\natexlab{b}})Perez and
+  G{\'o}mez-Bombarelli]{perez2026scd}
+Tynan Perez and Rafael G{\'o}mez-Bombarelli.
+\newblock Self-conditioned denoising for atomistic representation learning,
+  2026{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2603.17196}.
+
+\bibitem[Pinede et~al.(2025)Pinede, Yang, Nam, and
+  Gomez-Bombarelli]{pinede2025unifying}
+Lucas Pinede, Soojung Yang, Juno Nam, and Rafael Gomez-Bombarelli.
+\newblock {Unifying Force Prediction and Molecular Conformation Generation
+  Through Representation Alignment}.
+\newblock In \emph{ICML 2025 Generative AI and Biology (GenBio) Workshop},
+  2025.
+\newblock URL \url{https://openreview.net/forum?id=yzkHGHvC74}.
+
+\bibitem[Qu et~al.(2026)Qu, Wood, Krishnapriyan, and Ulissi]{qu2026allscaip}
+Eric Qu, Brandon~M. Wood, Aditi~S. Krishnapriyan, and Zachary~Ward Ulissi.
+\newblock A recipe for scalable attention-based {ML} potentials: unlocking
+  long-range accuracy with all-to-all node attention.
+\newblock In \emph{Forty-third International Conference on Machine Learning},
+  2026.
+\newblock URL \url{https://openreview.net/forum?id=oZg9YF9dkz}.
+
+\bibitem[Qu et~al.(2025)Qu, Guan, Ma, Zhai, Wu, and Wang]{qu2025pallatom}
+Wei Qu, Jiawei Guan, Rui Ma, Ke~Zhai, Weikun Wu, and Haobo Wang.
+\newblock {P(all-atom)} is unlocking new path for protein design.
+\newblock In \emph{Proceedings of the 42nd International Conference on Machine
+  Learning}, volume 267 of \emph{Proceedings of Machine Learning Research},
+  pp.\  50786--50816. PMLR, 2025.
+\newblock URL \url{https://proceedings.mlr.press/v267/qu25c.html}.
+
+\bibitem[Ramakrishnan et~al.(2014)Ramakrishnan, Dral, Rupp, and von
+  Lilienfeld]{ramakrishnan2014quantum}
+Raghunathan Ramakrishnan, Pavlo~O. Dral, Matthias Rupp, and O.~Anatole von
+  Lilienfeld.
+\newblock {Quantum Chemistry Structures and Properties of 134 Kilo Molecules}.
+\newblock \emph{Scientific Data}, 1\penalty0 (1):\penalty0 140022, 2014.
+\newblock \doi{10.1038/sdata.2014.22}.
+
+\bibitem[Sehnal et~al.(2021)Sehnal, Bittrich, Deshpande, Svobodov{\'a}, Berka,
+  Bazgier, Velankar, Burley, Ko{\v c}a, and Rose]{sehnal2021molstar}
+David Sehnal, Sebastian Bittrich, Mandar Deshpande, Radka Svobodov{\'a}, Karel
+  Berka, V{\'a}clav Bazgier, Sameer Velankar, Stephen~K. Burley, Jaroslav Ko{\v
+  c}a, and Alexander~S. Rose.
+\newblock {Mol* Viewer}: Modern web app for {3D} visualization and analysis of
+  large biomolecular structures.
+\newblock \emph{Nucleic Acids Research}, 49\penalty0 (W1):\penalty0 W431--W437,
+  2021.
+\newblock \doi{10.1093/nar/gkab314}.
+\newblock URL \url{https://doi.org/10.1093/nar/gkab314}.
+
+\bibitem[Shi et~al.(2021)Shi, Luo, Xu, and Tang]{shi2021learning}
+Chence Shi, Shitong Luo, Minkai Xu, and Jian Tang.
+\newblock Learning gradient fields for molecular conformation generation.
+\newblock In \emph{Proceedings of the 38th International Conference on Machine
+  Learning}, volume 139 of \emph{Proceedings of Machine Learning Research},
+  pp.\  9558--9568. PMLR, 2021.
+\newblock URL \url{https://proceedings.mlr.press/v139/shi21b.html}.
+
+\bibitem[Sriram et~al.(2024)Sriram, Miller, Chen, and Wood]{sriram2024flowllm}
+Anuroop Sriram, Benjamin~K. Miller, Ricky~T. Chen, and Brandon~M. Wood.
+\newblock {FlowLLM}: Flow matching for material generation with large language
+  models as base distributions.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  37:\penalty0 46025--46046, 2024.
+
+\bibitem[Stark et~al.(2025)Stark, Faltings, Choi, Xie, Hur, O'Donnell,
+  Bushuiev, U{\c{c}}ar, Passaro, Mao, Reveiz, Bushuiev, Pluskal, Sivic, Kreis,
+  Vahdat, Ray, Goldstein, Savinov, Hambalek, Gupta, Taquiri-Diaz, Zhang,
+  Hatstat, Arada, Kim, Tackie-Yarboi, Boselli, Schnaider, Liu, Li, Hnisz,
+  Sabatini, DeGrado, Wohlwend, Corso, Barzilay, and
+  Jaakkola]{stark2025boltzgen}
+Hannes Stark, Felix Faltings, MinGyu Choi, Yuxin Xie, Eunsu Hur, Timothy~John
+  O'Donnell, Anton Bushuiev, Talip U{\c{c}}ar, Saro Passaro, Weian Mao, Mateo
+  Reveiz, Roman Bushuiev, Tom{\'a}{\v{s}} Pluskal, Josef Sivic, Karsten Kreis,
+  Arash Vahdat, Shamayeeta Ray, Jonathan~T. Goldstein, Andrew Savinov, Jacob~A.
+  Hambalek, Anshika Gupta, Diego~A. Taquiri-Diaz, Yaotian Zhang, A.~Katherine
+  Hatstat, Angelika Arada, Nam~Hyeong Kim, Ethel Tackie-Yarboi, Dylan Boselli,
+  Lee Schnaider, Chang~C. Liu, Gene-Wei Li, Denes Hnisz, David~M. Sabatini,
+  William~F. DeGrado, Jeremy Wohlwend, Gabriele Corso, Regina Barzilay, and
+  Tommi Jaakkola.
+\newblock {BoltzGen}: Toward universal binder design.
+\newblock \emph{bioRxiv}, 2025.
+\newblock \doi{10.1101/2025.11.20.689494}.
+\newblock URL
+  \url{https://www.biorxiv.org/content/10.1101/2025.11.20.689494v1}.
+
+\bibitem[Van~der Maaten \& Hinton(2008)Van~der Maaten and
+  Hinton]{van2008visualizing}
+Laurens Van~der Maaten and Geoffrey Hinton.
+\newblock Visualizing data using t-sne.
+\newblock \emph{Journal of machine learning research}, 9\penalty0 (11), 2008.
+
+\bibitem[Vignac et~al.(2023)Vignac, Osman, Toni, and Frossard]{vignac2023midi}
+Cl{\'e}ment Vignac, Nagham Osman, Laura Toni, and Pascal Frossard.
+\newblock {MiDi}: Mixed graph and {3D} denoising diffusion for molecule
+  generation, 2023.
+\newblock URL \url{https://arxiv.org/abs/2302.09048}.
+
+\bibitem[Vonessen et~al.(2026)Vonessen, Harris, Cretu, and Li{\`o}]{tabasco}
+Carlos Vonessen, Charles Harris, Miruna Cretu, and Pietro Li{\`o}.
+\newblock {TABASCO}: A fast, simplified model for molecular generation with
+  improved physical quality.
+\newblock \emph{Transactions on Machine Learning Research}, February 2026.
+\newblock URL \url{https://openreview.net/forum?id=Kg6CSrbXl4}.
+
+\bibitem[Wang et~al.(2025)Wang, Lu, Jaitly, Susskind, and Bautista]{simplefold}
+Yuyang Wang, Jiarui Lu, Navdeep Jaitly, Josh Susskind, and Miguel~Angel
+  Bautista.
+\newblock {SimpleFold}: Folding proteins is simpler than you think.
+\newblock \emph{arXiv preprint arXiv:2509.18480}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2509.18480}.
+
+\bibitem[Wedig et~al.(2025{\natexlab{a}})Wedig, Elijo{\v{s}}ius, Schran, and
+  Schaaf]{wedig2025rem3di}
+Steffen Wedig, Rokas Elijo{\v{s}}ius, Christoph Schran, and Lars~Leon Schaaf.
+\newblock {REM3DI}: Learning smooth, chiral {3D} molecular representations from
+  equivariant atomistic foundation models.
+\newblock In \emph{NeurIPS 2025 Workshop on Symmetry and Geometry in Neural
+  Representations}, 2025{\natexlab{a}}.
+\newblock URL \url{https://openreview.net/forum?id=jOmZsvXoK5}.
+
+\bibitem[Wedig et~al.(2025{\natexlab{b}})Wedig, Elijo{\v{s}}ius, Schran, and
+  Schaaf]{wedig2025remdi}
+Steffen Wedig, Rokas Elijo{\v{s}}ius, Christoph Schran, and Lars~Leon Schaaf.
+\newblock {REM}3{DI}: Learning smooth, chiral {3D} molecular representations
+  from equivariant atomistic foundation models.
+\newblock In \emph{NeurIPS 2025 Workshop on Symmetry and Geometry in Neural
+  Representations}, 2025{\natexlab{b}}.
+\newblock URL \url{https://openreview.net/forum?id=jOmZsvXoK5}.
+
+\bibitem[Williams et~al.(2026)Williams, Haddadin, Ferla, Schneider, Woodall,
+  Sedgwick, Madsen, Hopkins, Pires, and Pyzer-Knapp]{williams2026emyx}
+Nicholas~J. Williams, Ward Haddadin, Matteo~P. Ferla, Constantin Schneider,
+  Nicholas~B. Woodall, Ruby Sedgwick, Christian~D. Madsen, Andrew~L. Hopkins,
+  Douglas E.~V. Pires, and Edward~O. Pyzer-Knapp.
+\newblock {Emyx}: Fast and efficient all-atom protein generation, 2026.
+\newblock URL \url{https://arxiv.org/abs/2606.19377}.
+
+\bibitem[Wood et~al.(2025)Wood, Dzamba, Fu, Gao, Shuaibi, Barroso-Luque,
+  Abdelmaqsoud, Gharakhanyan, Kitchin, Levine, Michel, Sriram, Cohen, Das,
+  Rizvi, Sahoo, Ulissi, and Zitnick]{wood2025uma}
+Brandon~M. Wood, Misko Dzamba, Xiang Fu, Meng Gao, Muhammed Shuaibi, Luis
+  Barroso-Luque, Kareem Abdelmaqsoud, Vahe Gharakhanyan, John~R. Kitchin,
+  Daniel~S. Levine, Kyle Michel, Anuroop Sriram, Taco Cohen, Abhishek Das,
+  Ammar Rizvi, Sushree~Jagriti Sahoo, Zachary~W. Ulissi, and C.~Lawrence
+  Zitnick.
+\newblock {UMA}: A family of universal models for atoms.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.23971}.
+
+\bibitem[Xie et~al.(2022)Xie, Fu, Ganea, Barzilay, and
+  Jaakkola]{xie2022crystal}
+Tian Xie, Xiang Fu, Octavian-Eugen Ganea, Regina Barzilay, and Tommi~S.
+  Jaakkola.
+\newblock Crystal diffusion variational autoencoder for periodic material
+  generation.
+\newblock In \emph{International Conference on Learning Representations}, 2022.
+\newblock URL \url{https://openreview.net/forum?id=03RLpj-tc_}.
+
+\bibitem[Yan et~al.(2026)Yan, Li, Zhou, Huang, Liu, and
+  Zhang]{yan2026bettergeometricrepresentationsmolecule}
+Shaoheng Yan, Zian Li, Cai Zhou, Qiaojing Huang, Kai Liu, and Muhan Zhang.
+\newblock Toward better geometric representations for molecule generative
+  models, 2026.
+\newblock URL \url{https://arxiv.org/abs/2605.07693}.
+
+\bibitem[Yu et~al.(2025)Yu, Kwak, Jang, Jeong, Huang, Shin, and
+  Xie]{yu2025representation}
+Sihyun Yu, Sangkyung Kwak, Huiwon Jang, Jongheon Jeong, Jonathan Huang, Jinwoo
+  Shin, and Saining Xie.
+\newblock Representation alignment for generation: Training diffusion
+  transformers is easier than you think.
+\newblock In \emph{The Thirteenth International Conference on Learning
+  Representations}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=DJSZGGZYVi}.
+
+\bibitem[Zaidi et~al.(2023)Zaidi, Schaarschmidt, Martens, Kim, Teh,
+  Sanchez-Gonzalez, Battaglia, Pascanu, and Godwin]{zaidi2023pretraining}
+Sheheryar Zaidi, Michael Schaarschmidt, James Martens, Hyunjik Kim, Yee~Whye
+  Teh, Alvaro Sanchez-Gonzalez, Peter Battaglia, Razvan Pascanu, and Jonathan
+  Godwin.
+\newblock Pre-training via denoising for molecular property prediction.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock URL \url{https://openreview.net/forum?id=tYIMtogyee}.
+
+\bibitem[Zeni et~al.(2025)Zeni, Pinsler, Z{\"u}gner, Fowler, Horton, Fu, Wang,
+  Shysheya, Crabb{\'e}, Ueda, Sordillo, Sun, Smith, Nguyen, Schulz, Lewis,
+  Huang, Lu, Zhou, Yang, Hao, Li, Yang, Li, Tomioka, and
+  Xie]{zeni2025generative}
+Claudio Zeni, Robert Pinsler, Daniel Z{\"u}gner, Andrew Fowler, Matthew Horton,
+  Xiang Fu, Zilong Wang, Aliaksandra Shysheya, Jonathan Crabb{\'e}, Shoko Ueda,
+  Roberto Sordillo, Lixin Sun, Jake Smith, Bichlien Nguyen, Hannes Schulz,
+  Sarah Lewis, Chin-Wei Huang, Ziheng Lu, Yichi Zhou, Han Yang, Hongxia Hao,
+  Jielan Li, Chunlei Yang, Wenjie Li, Ryota Tomioka, and Tian Xie.
+\newblock A generative model for inorganic materials design.
+\newblock \emph{Nature}, 639:\penalty0 624--632, 2025.
+\newblock \doi{10.1038/s41586-025-08628-5}.
+\newblock URL \url{https://www.nature.com/articles/s41586-025-08628-5}.
+
+\bibitem[Zhang et~al.(2026)Zhang, Jin, Zhang, Li, and
+  Wang]{zhang2026crystalrepatransferringphysicalpriors}
+Chengqian Zhang, Yucheng Jin, Duo Zhang, Tiejun Li, and Han Wang.
+\newblock {CrystalREPA}: {Transferring Physical Priors from Universal} {MLIPs}
+  to {Crystal Generative Models}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2605.08960}.
+
+\bibitem[Zhang \& Skolnick(2005)Zhang and Skolnick]{zhang2005tmalign}
+Yang Zhang and Jeffrey Skolnick.
+\newblock {TM-align}: A protein structure alignment algorithm based on the
+  {TM-score}.
+\newblock \emph{Nucleic Acids Research}, 33\penalty0 (7):\penalty0 2302--2309,
+  2005.
+\newblock \doi{10.1093/nar/gki524}.
+
+\bibitem[Zhou et~al.(2023)Zhou, Gao, Ding, Zheng, Xu, Wei, Zhang, and
+  Ke]{zhou2023unimol}
+Gengmo Zhou, Zhifeng Gao, Qiankun Ding, Hang Zheng, Hongteng Xu, Zhewei Wei,
+  Linfeng Zhang, and Guolin Ke.
+\newblock {Uni-Mol}: A universal {3D} molecular representation learning
+  framework.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock URL \url{https://openreview.net/forum?id=6K2RM6wVqKu}.
+
+\end{thebibliography}

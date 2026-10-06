@@ -1,0 +1,57 @@
+defaults:
+  - transforms/geom_drugs@train.geom.dataset.transform
+  - transforms/geom_drugs@val.geom.dataset.transform
+  - conditions/unconditional@global_transform_args.train_conditions.unconditional
+  - _self_
+
+data_dir: ${paths.data.geom_dir}
+inference_json: ${paths.root_dir}/models/zatom2/docs/examples/geom_drugs_unconditional_1000.json
+remove_hydrogens: false
+diffusion_batch_size_train: 4
+diffusion_batch_size_inference: 1
+randomly_augment: true
+max_num_tokens: 6144
+crop_size: 256
+max_atoms_in_crop: 256
+
+train:
+  geom:
+    probability: 1.0
+    dataset:
+      _target_: nucleus.utils.geom.build_geom_dataset
+      data_dir: ${datasets.data_dir}
+      split: train
+      remove_hydrogens: ${datasets.remove_hydrogens}
+
+val:
+  geom:
+    dataset:
+      _target_: nucleus.utils.geom.build_geom_inference_dataset
+      data: ${datasets.inference_json}
+      # Keep the first 1000 sampled generation requests before distributing ranks.
+      max_samples: 1000
+      transform:
+        _target_: nucleus.transforms.pipelines.build_atom14_base_pipeline
+        is_inference: true
+        return_atom_array: true
+        diffusion_batch_size: ${datasets.diffusion_batch_size_inference}
+        randomly_augment: false
+
+global_transform_args:
+  association_scheme: dense
+  train_conditions:
+    unconditional:
+      frequency: 1.0
+  meta_conditioning_probabilities:
+    calculate_hbonds: 0.0
+    calculate_rasa: 0.0
+    keep_protein_motif_rasa: 0.0
+    hbond_subsample: 0.0
+    unindex_leak_global_index: 0.0
+    unindex_insert_random_break: 0.0
+    unindex_remove_random_break: 0.0
+    add_1d_ss_features: 0.0
+    featurize_plddt: 0.0
+    add_global_is_non_loopy_feature: 0.0
+    add_ppi_hotspots: 0.0
+    full_binder_crop: 0.0

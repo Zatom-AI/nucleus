@@ -1,0 +1,8 @@
+# Table 2 QM9 scoring only. Apply with `uv run --no-sync --with-requirements`
+# to avoid changing the environment used by other generation evaluations.
+# Zatom-1 pyproject.toml at 0d4676571d9958e1bc072fe57144451474d2e3ac:
+# https://github.com/Zatom-AI/zatom/blob/0d4676571d9958e1bc072fe57144451474d2e3ac/pyproject.toml
+rdkit==2025.3.5
+openbabel-wheel==3.1.1.22
+posebusters==0.5.1
+pymatgen==2024.11.13

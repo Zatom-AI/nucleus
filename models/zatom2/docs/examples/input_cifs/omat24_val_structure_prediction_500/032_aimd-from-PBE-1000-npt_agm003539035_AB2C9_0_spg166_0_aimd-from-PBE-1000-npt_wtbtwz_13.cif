@@ -1,0 +1,59 @@
+data_omat24_val_032_agm003539035_AB2C9_0_spg166_0_aimd-from-PBE-1000-npt_wtbtwz_13
+#
+_entry.id       omat24_val_032_agm003539035_AB2C9_0_spg166_0_aimd-from-PBE-1000-npt_wtbtwz_13
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Ho Ho1 . LIG A 1 1 . 1 LIG A Ho1 0.0 1.0 ? 0.8814487100000002  0.85530626           0.41487086            7.4077954 4.2031665 3.3663478   1 1
+HETATM Ho Ho2 . LIG A 1 1 . 1 LIG A Ho2 0.0 1.0 ? 0.11722714999999999 0.14480334           0.59398801            2.3769956 1.4501286 4.8197412   1 2
+HETATM Zr Zr1 . LIG A 1 1 . 1 LIG A Zr1 0.0 1.0 ? 0.9859670899999999  0.013880239999999924 0.9848470200000001    7.2553616 1.4474349 7.991252    1 3
+HETATM Ni Ni1 . LIG A 1 1 . 1 LIG A Ni1 0.0 1.0 ? 0.66669363          0.65600435           0.0034939700000000003 4.8673015 2.7799923 0.028350795 1 4
+HETATM Ni Ni2 . LIG A 1 1 . 1 LIG A Ni2 0.0 1.0 ? 0.34464403          0.33281358999999994  0.98138129            4.893184  2.7917173 7.9631305   1 5
+HETATM Ni Ni3 . LIG A 1 1 . 1 LIG A Ni3 0.0 1.0 ? 0.5084514500000001  0.5069371            0.50515455            4.955492  2.8567839 4.0989285   1 6
+HETATM Ni Ni4 . LIG A 1 1 . 1 LIG A Ni4 0.0 1.0 ? 0.39092805          0.45390716           0.2323065             3.5855236 2.2477148 1.884983    1 7
+HETATM Ni Ni5 . LIG A 1 1 . 1 LIG A Ni5 0.0 1.0 ? 0.9555538000000001  0.37471509           0.25504584            6.205662  1.9447767 2.0694947   1 8
+HETATM Ni Ni6 . LIG A 1 1 . 1 LIG A Ni6 0.0 1.0 ? 0.43811991          0.9347619300000001   0.24871043000000004   5.0305147 4.304984  2.0180879   1 9
+HETATM Ni Ni7 . LIG A 1 1 . 1 LIG A Ni7 0.0 1.0 ? 0.5883065200000002  0.54692914           0.75736755            6.0592217 3.3816023 6.145437    1 10
+HETATM Ni Ni8 . LIG A 1 1 . 1 LIG A Ni8 0.0 1.0 ? 0.55578231          0.08512236999999999  0.75804528            4.7741184 1.4289975 6.150936    1 11
+HETATM Ni Ni9 . LIG A 1 1 . 1 LIG A Ni9 0.0 1.0 ? 0.07705325000000002 0.58692673           0.7571523000000001    3.6590765 3.5504987 6.14369     1 12
+#
+_cell.length_a      4.88467748
+_cell.length_b      4.8846774826208055
+_cell.length_c      8.590326329868567
+_cell.angle_alpha   73.48223117095728
+_cell.angle_beta    73.48223117399606
+_cell.angle_gamma   60.00000001774847
+_cell.volume        167.66734216547468
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

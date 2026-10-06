@@ -1,0 +1,28 @@
+# @package _global_
+# Table 1: Zatom-2-S OMol25 unconditional generation pretraining.
+
+defaults:
+  - paper-table1-zatom2-s-omol25-joint-force-conditioned
+  - _self_
+
+name: paper-table1-zatom2-s-omol25-unconditional-force-conditioned
+tags: [paper, table-1, pretrain, zatom2-s, omol25, unconditional, force-conditioned]
+
+datasets:
+  global_transform_args:
+    mean_force_norm_conditioning_tasks: [unconditional]
+    train_conditions:
+      unconditional:
+        frequency: 1.0
+      structure_prediction:
+        frequency: 0.0
+  val:
+    omol25_structure_prediction: null
+
+trainer:
+  validate_loader_every_n_epochs:
+    omol25_structure_prediction: null
+
+callbacks:
+  log_grouped_zevals_structure_prediction_metrics_callback:
+    enabled: false

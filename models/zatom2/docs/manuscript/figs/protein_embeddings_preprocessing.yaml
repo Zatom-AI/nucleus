@@ -1,0 +1,202 @@
+transform:
+  _target_: nucleus.transforms.pipelines.build_atom14_base_pipeline
+  is_inference: false
+  return_atom_array: true
+  sigma_perturb: 0.0
+  sigma_perturb_com: 0.0
+  sigma_data: 16.0
+  noise_process: flow_matching
+  diffusion_batch_size: 1
+  randomly_augment: false
+  central_atom: CB
+  n_atoms_per_token: 14
+  association_scheme: dense
+  center_option: all
+  generate_conformers: true
+  generate_conformers_for_non_protein_only: true
+  provide_reference_conformer_when_unmasked: true
+  ground_truth_conformer_policy: IGNORE
+  provide_elements_for_unindexed_components: true
+  use_element_for_atom_names_of_atomized_tokens: true
+  residue_cache_dir: null
+  train_conditions:
+    unconditional:
+      _target_: nucleus.transforms.training_conditions.LigandAwareIslandCondition
+      frequency: 1.0
+      name: unconditional
+      molecule_conditioning_mode: unconditional_design
+      p_protein_conditioned_molecule_design: 0.5
+      island_sampling_kwargs:
+        island_len_min: 0
+        island_len_max: 0
+        n_islands_min: 0
+        n_islands_max: 0
+      p_diffuse_motif_sidechains: 0.0
+      p_diffuse_subgraph_atoms: 0.0
+      subgraph_sampling_kwargs:
+        residue_p_seed_furthest_from_o: null
+        residue_n_bond_expectation: null
+        residue_p_fix_all: null
+        hetatom_n_bond_expectation: null
+        hetatom_p_fix_all: null
+      p_fix_motif_sequence: 0.0
+      p_fix_motif_coordinates: 0.0
+      p_unindex_motif_tokens: 0.0
+    island:
+      _target_: nucleus.transforms.training_conditions.LigandAwareIslandCondition
+      frequency: 0.0
+      name: island
+      molecule_conditioning_mode: protein_conditioned_molecule_design
+      p_protein_conditioned_molecule_design: 0.5
+      island_sampling_kwargs:
+        island_len_min: 1
+        island_len_max: 12
+        n_islands_min: 2
+        n_islands_max: 5
+      p_diffuse_motif_sidechains: 0.8
+      p_diffuse_subgraph_atoms: 0.0
+      subgraph_sampling_kwargs:
+        residue_p_seed_furthest_from_o: null
+        residue_n_bond_expectation: null
+        residue_p_fix_all: null
+        hetatom_n_bond_expectation: null
+        hetatom_p_fix_all: null
+      p_fix_motif_sequence: 0.2
+      p_fix_motif_coordinates: 0.8
+      p_unindex_motif_tokens: 0.5
+    sequence_design:
+      _target_: nucleus.transforms.training_conditions.LigandAwareIslandCondition
+      frequency: 0.0
+      name: sequence_design
+      molecule_conditioning_mode: structure_fixed_sequence_design
+      p_protein_conditioned_molecule_design: 0.5
+      island_sampling_kwargs:
+        island_len_min: 99999
+        island_len_max: 999999999
+        n_islands_min: 2
+        n_islands_max: 5
+      p_diffuse_motif_sidechains: 1.0
+      p_diffuse_subgraph_atoms: 0.0
+      subgraph_sampling_kwargs:
+        residue_p_seed_furthest_from_o: null
+        residue_n_bond_expectation: null
+        residue_p_fix_all: null
+        hetatom_n_bond_expectation: null
+        hetatom_p_fix_all: null
+      p_fix_motif_sequence: 0.1
+      p_fix_motif_coordinates: 0.8
+      p_unindex_motif_tokens: 0.0
+    structure_prediction:
+      _target_: nucleus.transforms.training_conditions.LigandAwareIslandCondition
+      frequency: 0.0
+      name: structure_prediction
+      molecule_conditioning_mode: sequence_fixed_structure_design
+      p_protein_conditioned_molecule_design: 0.5
+      island_sampling_kwargs:
+        island_len_min: 99999
+        island_len_max: 999999999
+        n_islands_min: 2
+        n_islands_max: 5
+      p_diffuse_motif_sidechains: 1.0
+      p_diffuse_subgraph_atoms: 0.0
+      subgraph_sampling_kwargs:
+        residue_p_seed_furthest_from_o: null
+        residue_n_bond_expectation: null
+        residue_p_fix_all: null
+        hetatom_n_bond_expectation: null
+        hetatom_p_fix_all: null
+      p_fix_motif_sequence: 0.8
+      p_fix_motif_coordinates: 0.1
+      p_unindex_motif_tokens: 0.0
+  meta_conditioning_probabilities:
+    calculate_hbonds: 0.0
+    calculate_rasa: 0.0
+    keep_protein_motif_rasa: 0.0
+    hbond_subsample: 0.0
+    unindex_leak_global_index: 0.0
+    unindex_insert_random_break: 0.0
+    unindex_remove_random_break: 0.0
+    add_1d_ss_features: 0.0
+    featurize_plddt: 0.0
+    add_global_is_non_loopy_feature: 0.0
+    add_ppi_hotspots: 0.0
+    full_binder_crop: 0.0
+  mean_force_norm_conditioning_probability: 0.0
+  mean_force_norm_conditioning_tasks: null
+  keep_full_binder_in_spatial_crop: false
+  max_binder_length: 170
+  max_ppi_hotspots_frac_to_provide: 0.2
+  ppi_hotspot_max_distance: 4.5
+  max_ss_frac_to_provide: 0.4
+  min_ss_island_len: 1
+  max_ss_island_len: 10
+  crop_size: 128
+  max_atoms_in_crop: 1792
+  allowed_types:
+  - is_protein
+  - is_ligand
+  crop_spatial_probability: 0.0
+  crop_contiguous_probability: 1.0
+  dna_contact_crop_probability: 0.0
+  crop_center_cutoff_distance: 15.0
+  zero_occ_on_exposure_after_cropping: false
+  b_factor_min: null
+  atom_1d_features:
+    ref_atom_name_chars: 256
+    ref_element: 128
+    ref_charge: 1
+    ref_mask: 1
+    ref_is_motif_atom_with_fixed_coord: 1
+    ref_is_motif_atom_unindexed: 1
+    has_zero_occupancy: 1
+    ref_pos: 3
+    is_material_atom: 1
+    ref_atomwise_rasa: 3
+    active_donor: 1
+    active_acceptor: 1
+    is_atom_level_hotspot: 1
+  token_1d_features:
+    ref_motif_token_type: 3
+    restype: 32
+    ref_plddt: 1
+    is_non_loopy: 1
+    is_material_token: 1
+    mean_force_norm: 1
+    has_mean_force_norm: 1
+    total_charge: 1
+    spin_multiplicity: 1
+    has_total_charge: 1
+    has_spin_multiplicity: 1
+    force_rms_p95: null
+    has_force_rms_p95: null
+_target_: atomworks.ml.datasets.StructuralDatasetWrapper
+save_failed_examples_to_dir: null
+cif_parser_args:
+  cache_dir: null
+  load_from_cache: false
+  save_to_cache: false
+  ccd_mirror_path: null
+dataset:
+  _target_: atomworks.ml.datasets.PandasDataset
+  id_column: example_id
+  name: scope_seed0_2000
+  data: data/scope/rungs/seed0/scope_4000.csv
+  columns_to_load:
+  - example_id
+  - pdb_id
+  - domain_id
+  - scope_class
+  - scope_fold
+  - scope_superfamily
+  - scope_family
+  - length
+  - split
+  - path
+dataset_parser:
+  _target_: atomworks.ml.datasets.parsers.GenericDFParser
+  example_id_colname: example_id
+  path_colname: path
+  pn_unit_iid_colnames: null
+  assembly_id_colname: null
+  base_path: data/scope/rungs/seed0/pdb_4000
+  extension: .pdb

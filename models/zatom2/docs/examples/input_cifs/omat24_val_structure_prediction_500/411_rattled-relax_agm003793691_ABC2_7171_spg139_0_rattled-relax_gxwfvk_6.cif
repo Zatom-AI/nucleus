@@ -1,0 +1,51 @@
+data_omat24_val_411_agm003793691_ABC2_7171_spg139_0_rattled-relax_gxwfvk_6
+#
+_entry.id       omat24_val_411_agm003793691_ABC2_7171_spg139_0_rattled-relax_gxwfvk_6
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Sr Sr1 . LIG A 1 1 . 1 LIG A Sr1 0.0 1.0 ? 0.01975780000000007 0.9866896899999998  0.01314157         4.1303363 4.0870137 0.3464899 1 1
+HETATM Sr Sr2 . LIG A 1 1 . 1 LIG A Sr2 0.0 1.0 ? 0.50654098          0.47821828999999993 0.5205861300000001 5.952797  2.1450112 2.6238844 1 2
+HETATM Tc Tc1 . LIG A 1 1 . 1 LIG A Tc1 0.0 1.0 ? 0.74735542          0.7482597299999999  0.7615507500000002 8.941844  3.3367145 3.85397   1 3
+HETATM Sb Sb1 . LIG A 1 1 . 1 LIG A Sb1 0.0 1.0 ? 0.26201360999999995 0.22547040999999998 0.27135817         2.994964  1.0204133 1.3603859 1 4
+#
+_cell.length_a      5.826182323745384
+_cell.length_b      5.79388893977076
+_cell.length_c      5.032271819496434
+_cell.angle_alpha   64.06799999812954
+_cell.angle_beta    63.91368218772819
+_cell.angle_gamma   49.94462168780908
+_cell.volume        113.79705987285311
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

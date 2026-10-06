@@ -1,0 +1,52 @@
+data_omat24_val_483_agm005015413_ABCD2_1563_spg119_0_rattled-relax_h605to_19
+#
+_entry.id       omat24_val_483_agm005015413_ABCD2_1563_spg119_0_rattled-relax_h605to_19
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM La La1 . LIG A 1 1 . 1 LIG A La1 0.0 1.0 ? 0.8185143799999999 0.83826694          0.7007813199999998   1.7990794   1.9526843    4.4061804   1 1
+HETATM Pa Pa1 . LIG A 1 1 . 1 LIG A Pa1 0.0 1.0 ? 0.10574591         0.16673581          0.32637949           -0.25007907 0.027043745  2.0669503   1 2
+HETATM Se Se1 . LIG A 1 1 . 1 LIG A Se1 0.0 1.0 ? 0.4740292199999999 0.50219007          0.014632869999999997 1.842108    1.9531544    0.073757246 1 3
+HETATM N  N1  . LIG A 1 1 . 1 LIG A N1  0.0 1.0 ? 0.69463851         0.23489791000000002 0.47821731           1.7658371   0.0012930679 2.9744518   1 4
+HETATM N  N2  . LIG A 1 1 . 1 LIG A N2  0.0 1.0 ? 0.19544517         0.73515396          0.47885612           -0.20844553 1.9760255    3.056004    1 5
+#
+_cell.length_a      3.9520577413651643
+_cell.length_b      3.9480932586090116
+_cell.length_c      6.933479828024191
+_cell.angle_alpha   105.41052161241441
+_cell.angle_beta    108.52484116531025
+_cell.angle_gamma   90.07451217287657
+_cell.volume        98.45440106200974
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

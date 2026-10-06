@@ -1,0 +1,277 @@
+{
+  "omol25_geom_repr_000_atoms60_hydrogens27": {
+    "contig": "60m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 0,
+      "num_atoms_with_hydrogens": 60,
+      "num_hydrogens": 27,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_001_atoms49_hydrogens30": {
+    "contig": "49m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 1,
+      "num_atoms_with_hydrogens": 49,
+      "num_hydrogens": 30,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_002_atoms49_hydrogens19": {
+    "contig": "49m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 2,
+      "num_atoms_with_hydrogens": 49,
+      "num_hydrogens": 19,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_003_atoms21_hydrogens6": {
+    "contig": "21m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 3,
+      "num_atoms_with_hydrogens": 21,
+      "num_hydrogens": 6,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_004_atoms57_hydrogens32": {
+    "contig": "57m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 4,
+      "num_atoms_with_hydrogens": 57,
+      "num_hydrogens": 32,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_005_atoms47_hydrogens22": {
+    "contig": "47m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 5,
+      "num_atoms_with_hydrogens": 47,
+      "num_hydrogens": 22,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_006_atoms48_hydrogens26": {
+    "contig": "48m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 6,
+      "num_atoms_with_hydrogens": 48,
+      "num_hydrogens": 26,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_007_atoms48_hydrogens21": {
+    "contig": "48m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 7,
+      "num_atoms_with_hydrogens": 48,
+      "num_hydrogens": 21,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_008_atoms36_hydrogens16": {
+    "contig": "36m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 8,
+      "num_atoms_with_hydrogens": 36,
+      "num_hydrogens": 16,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_009_atoms69_hydrogens36": {
+    "contig": "69m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 9,
+      "num_atoms_with_hydrogens": 69,
+      "num_hydrogens": 36,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_010_atoms51_hydrogens20": {
+    "contig": "51m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 10,
+      "num_atoms_with_hydrogens": 51,
+      "num_hydrogens": 20,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_011_atoms42_hydrogens20": {
+    "contig": "42m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 11,
+      "num_atoms_with_hydrogens": 42,
+      "num_hydrogens": 20,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_012_atoms41_hydrogens17": {
+    "contig": "41m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 12,
+      "num_atoms_with_hydrogens": 41,
+      "num_hydrogens": 17,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_013_atoms57_hydrogens27": {
+    "contig": "57m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 13,
+      "num_atoms_with_hydrogens": 57,
+      "num_hydrogens": 27,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_014_atoms53_hydrogens24": {
+    "contig": "53m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 14,
+      "num_atoms_with_hydrogens": 53,
+      "num_hydrogens": 24,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_015_atoms52_hydrogens24": {
+    "contig": "52m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 15,
+      "num_atoms_with_hydrogens": 52,
+      "num_hydrogens": 24,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_016_atoms43_hydrogens20": {
+    "contig": "43m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 16,
+      "num_atoms_with_hydrogens": 43,
+      "num_hydrogens": 20,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_017_atoms54_hydrogens30": {
+    "contig": "54m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 17,
+      "num_atoms_with_hydrogens": 54,
+      "num_hydrogens": 30,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_018_atoms52_hydrogens25": {
+    "contig": "52m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 18,
+      "num_atoms_with_hydrogens": 52,
+      "num_hydrogens": 25,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_019_atoms59_hydrogens31": {
+    "contig": "59m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 19,
+      "num_atoms_with_hydrogens": 59,
+      "num_hydrogens": 31,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_020_atoms38_hydrogens19": {
+    "contig": "38m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 20,
+      "num_atoms_with_hydrogens": 38,
+      "num_hydrogens": 19,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_021_atoms54_hydrogens24": {
+    "contig": "54m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 21,
+      "num_atoms_with_hydrogens": 54,
+      "num_hydrogens": 24,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_022_atoms52_hydrogens25": {
+    "contig": "52m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 22,
+      "num_atoms_with_hydrogens": 52,
+      "num_hydrogens": 25,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_023_atoms48_hydrogens24": {
+    "contig": "48m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 23,
+      "num_atoms_with_hydrogens": 48,
+      "num_hydrogens": 24,
+      "has_mean_force_norm": false
+    }
+  },
+  "omol25_geom_repr_024_atoms64_hydrogens29": {
+    "contig": "64m",
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_rdkit_conformers_explicit_h_weighted_by_conformer_count",
+      "sample_seed": 42,
+      "sample_index": 24,
+      "num_atoms_with_hydrogens": 64,
+      "num_hydrogens": 29,
+      "has_mean_force_norm": false
+    }
+  }
+}

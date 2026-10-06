@@ -1,0 +1,14 @@
+structure_prediction_metrics:
+  _target_: nucleus.metrics.structure_prediction.ZevalsStructurePredictionMetrics
+  molecule_top_k: [1]
+  structure_ltol: 0.3
+  structure_stol: 0.5
+  structure_angle_tol: 10.0
+  material_top_k: [1]
+  scale: true
+  compute_uma_forces: false
+  uma_checkpoint: uma-s-1p2
+  uma_molecule_task: omol
+  uma_material_task: omat
+  uma_device: null
+  uma_batch_size: 8

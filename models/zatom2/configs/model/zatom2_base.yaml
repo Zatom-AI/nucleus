@@ -1,0 +1,9 @@
+defaults:
+  - optimizers/adam@optimizer
+  - schedulers@lr_scheduler: af3
+  - samplers/edm@net.inference_sampler
+  - components/ema@ema
+  - components/zatom2_net@net
+  - _self_
+
+compile_model: False

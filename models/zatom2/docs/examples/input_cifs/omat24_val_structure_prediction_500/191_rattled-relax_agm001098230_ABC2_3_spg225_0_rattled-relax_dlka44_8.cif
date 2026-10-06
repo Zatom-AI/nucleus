@@ -1,0 +1,51 @@
+data_omat24_val_191_agm001098230_ABC2_3_spg225_0_rattled-relax_dlka44_8
+#
+_entry.id       omat24_val_191_agm001098230_ABC2_3_spg225_0_rattled-relax_dlka44_8
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Pa Pa1 . LIG A 1 1 . 1 LIG A Pa1 0.0 1.0 ? 0.21358072         0.2940450399999999  0.27178927          2.5467744 1.247056  1.1861076 1 1
+HETATM Pa Pa2 . LIG A 1 1 . 1 LIG A Pa2 0.0 1.0 ? 0.7092082900000001 0.8162922799999999  0.76133623          7.6909328 3.4218755 3.3740036 1 2
+HETATM Cu Cu1 . LIG A 1 1 . 1 LIG A Cu1 0.0 1.0 ? 0.9910970100000001 0.04310818000000002 0.9902368900000001  2.948985  0.9915586 4.082821  1 3
+HETATM Si Si1 . LIG A 1 1 . 1 LIG A Si1 0.0 1.0 ? 0.47772091         0.54839788          0.49931870999999994 5.137809  2.288228  2.2170413 1 4
+#
+_cell.length_a      5.202106338302467
+_cell.length_b      4.354623082276822
+_cell.length_c      5.133134470474183
+_cell.angle_alpha   65.99027871470237
+_cell.angle_beta    51.31582986290244
+_cell.angle_gamma   64.24908079627073
+_cell.volume        80.22675564413525
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

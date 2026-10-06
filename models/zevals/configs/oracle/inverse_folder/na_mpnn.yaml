@@ -1,0 +1,15 @@
+# @package oracle.inverse_folder
+# NA-MPNN — runs in-process (no subprocess/conda env). Joint protein +
+# DNA/RNA inverse folding; every chain in the input PDB is designable.
+
+_target_:        zevals.oracles.inverse_folders.na_mpnn.NAMPNNFolder
+checkpoint_path: null          # /path/to/s_19137.pt (design-mode checkpoint)
+                                # null falls back to `zevals setup --checkpoints
+                                # na_mpnn_design`'s default cache location before raising an error
+num_sequences:   8
+temperature:     0.1
+backbone_noise:  0.0
+batch_size:      null          # null = sample all num_sequences in one forward pass
+device:          null          # null = cuda if available, else cpu
+seed:            20260812      # stable per-backbone derived seed for fair comparisons
+expected_checkpoint_sha256: 5fb12951a0ad3ee44b91f33b7dd19114e755b49eb577d9eb1be71b24b7e49e4c

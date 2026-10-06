@@ -1,0 +1,12 @@
+# @package oracle.structure_predictor
+# ESMFold v1 — runs in-process via HuggingFace `transformers.EsmForProteinFolding`.
+# No conda env / cloned repo needed; only the zevals[proteins] extra.
+
+_target_:        zevals.oracles.structure_predictors.esmfold.ESMFoldPredictor
+model_name:      facebook/esmfold_v1
+num_recycles:    4              # null = model config default (max_recycles)
+chunk_size:      null           # int (e.g. 64) to cut VRAM on long sequences / <=16GB GPUs
+half_precision:  null           # null = auto (fp16 ESM stem on CUDA, fp32 on CPU)
+batch_size:      1
+device:          null           # null = cuda if available, else cpu
+tmp_dir:         /tmp/zevals/esmfold

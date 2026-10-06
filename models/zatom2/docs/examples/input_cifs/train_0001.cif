@@ -1,0 +1,61 @@
+data_train_0001
+#
+_entry.id       train_0001
+_entry.author   root
+_entry.date     2026-06-09
+_entry.time     12:47:32
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Dy DY1 . LIG A 1 1 . 1 LIG A DY1 nan 1.0 ? 0.3803437645719114   0.799869560340916  0.9304172557009592  1.5879396   6.914275   8.013024   1 1
+HETATM Dy DY2 . LIG A 1 1 . 1 LIG A DY2 nan 1.0 ? 0.0335852545325821   0.449954054926323  0.5804734906748976  0.14021882  3.8895168  4.9992065  1 2
+HETATM Si SI1 . LIG A 1 1 . 1 LIG A SI1 nan 1.0 ? 0.0382442302626629   0.1247632433664165 0.8136927459064012  0.15967011  1.0784851  7.007759   1 3
+HETATM Si SI2 . LIG A 1 1 . 1 LIG A SI2 nan 1.0 ? 0.029121654936154998 0.697183786030223  0.23343083046233906 0.12158325  6.0266333  2.0103743  1 4
+HETATM Si SI3 . LIG A 1 1 . 1 LIG A SI3 nan 1.0 ? 0.40649995759955     0.7147325610332231 0.6869228168998234  1.6971421   6.1783295  5.9159794  1 5
+HETATM Si SI4 . LIG A 1 1 . 1 LIG A SI4 nan 1.0 ? 0.4650316154416458   0.1991718449286566 0.1548643004245207  1.9415125   1.7216918  1.3337364  1 6
+HETATM Rh RH1 . LIG A 1 1 . 1 LIG A RH1 nan 1.0 ? 0.9843493578294299   0.0845967998106829 0.1982257554119755  4.10967     0.73127615 1.707178   1 7
+HETATM Rh RH2 . LIG A 1 1 . 1 LIG A RH2 nan 1.0 ? 0.014948232777598498 0.90087709443889   0.662299362774597   0.062409047 7.78741    5.703915   1 8
+HETATM Rh RH3 . LIG A 1 1 . 1 LIG A RH3 nan 1.0 ? 0.5142024438396291   0.2747320614518642 0.6509588541056104  2.1468012   2.3748536  5.6062474  1 9
+HETATM Rh RH4 . LIG A 1 1 . 1 LIG A RH4 nan 1.0 ? 0.5642631464347474   0.8775197754995503 0.409645821274637   2.3558052   7.585503   3.5279891  1 10
+HETATM Rh RH5 . LIG A 1 1 . 1 LIG A RH5 nan 1.0 ? 0.6351451507987207   0.403504141895894  0.9016913928259385  2.6517384   3.487992   7.765629   1 11
+HETATM Rh RH6 . LIG A 1 1 . 1 LIG A RH6 nan 1.0 ? 0.6222288897996009   0.512446798913963  0.2223139544806898  2.597813    4.42972    1.9146326  1 12
+HETATM Rh RH7 . LIG A 1 1 . 1 LIG A RH7 nan 1.0 ? 0.9281712293906564   0.3122500390083331 0.0832122581327965  3.8751256   2.6991684  0.7166482  1 13
+HETATM Rh RH8 . LIG A 1 1 . 1 LIG A RH8 nan 1.0 ? 0.9586753691190495   0.6318344171454129 0.0184828300083382  4.002481    5.4617367  0.15917951 1 14
+#
+_cell.length_a      4.175011712089709
+_cell.length_b      8.644253437173171
+_cell.length_c      8.612291241753345
+_cell.angle_alpha   90.0
+_cell.angle_beta    90.0
+_cell.angle_gamma   90.0
+_cell.volume        310.81637953126204
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

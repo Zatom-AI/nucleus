@@ -1,0 +1,17 @@
+# @package _global_
+# Table 3: OMol25 + OMat24 generation/structure representation pretraining.
+
+defaults:
+  - paper-pretrain-base
+  - _self_
+
+name: paper-table3-omol25-omat24-joint-force-conditioned
+tags: [paper, table-3, pretrain, omol25, omat24, unconditional, structure-prediction, force-conditioned]
+
+datasets:
+  global_transform_args:
+    train_conditions:
+      unconditional:
+        frequency: 0.5
+      structure_prediction:
+        frequency: 0.5

@@ -1,0 +1,55 @@
+{
+  "checkpoints": {
+    "without_properties": {
+      "global_step": 97500,
+      "current_epoch": 79,
+      "batches_completed_in_epoch": 1120,
+      "frequencies": {
+        "unconditional": 0.5,
+        "island": 0.0,
+        "sequence_design": 0.0,
+        "structure_prediction": 0.5
+      },
+      "latent_equivariance_weight": 0.0
+    },
+    "with_properties": {
+      "global_step": 97500,
+      "current_epoch": 79,
+      "batches_completed_in_epoch": 1120,
+      "frequencies": {
+        "unconditional": 0.34,
+        "island": 0.0,
+        "sequence_design": 0.0,
+        "structure_prediction": 0.33,
+        "mlip": 0.33
+      },
+      "latent_equivariance_weight": 0.1
+    }
+  },
+  "model_config_differences": {
+    ".diffusion_module.atomistic_property_head.enabled": [
+      null,
+      true
+    ],
+    ".diffusion_module.atomistic_property_head.energy_hidden_dim": [
+      null,
+      768
+    ],
+    ".diffusion_module.atomistic_property_head.latent_equivariance.enabled": [
+      null,
+      true
+    ],
+    ".diffusion_module.atomistic_property_head.latent_equivariance.hidden_multiplier": [
+      null,
+      2.0
+    ],
+    ".diffusion_module.atomistic_property_head.statistics_path": [
+      null,
+      "data/atomistic_property_statistics.v1.json"
+    ],
+    ".inference_sampler.cfg_feature_mode": [
+      null,
+      "configured"
+    ]
+  }
+}

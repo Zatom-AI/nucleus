@@ -1,0 +1,31 @@
+# @package _global_
+# Protein design evaluation — structure predictor: ESMFold v1 (default).
+# Switch forward folder via: oracle/structure_predictor=esmfold2 (ESMFold2,
+#   diffusion-based, all-atom; needs the zevals[proteins-esmfold2] extra)
+# Switch inverse folder via: oracle/inverse_folder=soluble_mpnn (SolubleMPNN)
+#                         or: oracle/inverse_folder=ligand_mpnn (ligand/metal-context-aware)
+# (no leading `+` — these config groups are already in `defaults:` below;
+# `+` is only for adding a group that ISN'T already listed, and errors otherwise)
+
+defaults:
+  - oracle/structure_predictor: esmfold
+  - oracle/inverse_folder: protein_mpnn
+  - oracle/structure_search: foldseek
+  - _self_
+
+pipeline:
+  _target_: zevals.pipeline.proteins.ProteinEvalPipeline
+  structure_predictor: ${oracle.structure_predictor}
+  inverse_folder: ${oracle.inverse_folder}
+  structure_searcher: ${oracle.structure_search}
+  sc_rmsd_threshold: 2.0          # Å cutoff for designability (FrameDiff convention)
+  plddt_threshold: null           # optional mean ESMFold pLDDT gate; null preserves scRMSD-only designability
+  sc_atom: CA                     # per-residue atom the self-consistency RMSD is measured on
+                                  # (CA for proteins; e.g. C1'/C4' for nucleic-acid backbones)
+  run_co_designability: false
+  run_tmalign_diversity: false  # opt-in all-vs-all TMalign complete-linkage AUC
+  tmalign_bin: TMalign
+  tmalign_diversity_query_set: designable  # designable or all
+  target_db: null                  # /path/to/foldseek_pdb_afdb_db; null disables novelty
+  output_dir: /tmp/zevals/proteins
+  mmseqs_bin: mmseqs

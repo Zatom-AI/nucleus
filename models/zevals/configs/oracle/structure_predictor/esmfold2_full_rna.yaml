@@ -1,0 +1,11 @@
+# @package oracle.structure_predictor
+_target_: zevals.oracles.structure_predictors.esmfold2.ESMFold2Predictor
+entity_type: rna
+model_name: biohub/ESMFold2
+model_revision: 8fc3ff471022fdce52c77030685eb775de0c00a3
+num_loops: 3
+num_sampling_steps: 50
+num_samples: 1
+seed: 42
+device: cuda
+tmp_dir: /tmp/zevals/esmfold2-full-rna

@@ -1,0 +1,16 @@
+defaults:
+  - design_validation_base
+  - _self_
+
+dataset:
+  _target_: nucleus.utils.datasets.LigandContigJsonDataset
+  data: ${paths.root_dir}/models/zatom2/docs/examples/omat24_overfit_1.json
+  name: omat24-overfit-inference
+  eval_every_n: 1
+  transform:
+    diffusion_batch_size: ${datasets.diffusion_batch_size_inference}
+    randomly_augment: false
+    remove_hydrogens: false
+    generate_conformers: false
+    generate_conformers_for_non_protein_only: false
+    provide_reference_conformer_when_unmasked: false

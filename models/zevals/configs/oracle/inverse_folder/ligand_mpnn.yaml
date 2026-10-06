@@ -1,0 +1,16 @@
+# @package oracle.inverse_folder
+# LigandMPNN — runs in-process (no subprocess/conda env). Conditions
+# sequence design on nearby ligand/metal/nucleic-acid context atoms already
+# present in the input PDB. For plain ProteinMPNN/SolubleMPNN checkpoints
+# from the same repo bundle, use protein_mpnn.yaml / soluble_mpnn.yaml
+# instead — no ligand-context code is needed for those.
+
+_target_:        zevals.oracles.inverse_folders.ligand_mpnn.LigandMPNNFolder
+checkpoint_path: null          # /path/to/ligandmpnn_v_32_010_25.pt (from get_model_params.sh)
+                                # null falls back to `zevals setup --checkpoints
+                                # ligand_mpnn`'s default cache location before raising an error
+num_sequences:   8
+temperature:     0.1
+batch_size:      null          # null = sample all num_sequences in one forward pass
+device:          null          # null = cuda if available, else cpu
+tmp_dir:         /tmp/zevals/ligand_mpnn

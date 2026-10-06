@@ -1,0 +1,397 @@
+% Zatom-2 overview with warm section panels and a teal computational backbone.
+% Requires amsmath, amssymb, graphicx, tikz, and the arrows.meta and calc libraries.
+\begin{figure*}[t]
+  \centering
+  \begingroup
+  \definecolor{zInk}{HTML}{253A3C}
+  \definecolor{zMuted}{HTML}{62676B}
+  \definecolor{zGray}{HTML}{C8CCC8}
+  \definecolor{zTeal}{HTML}{387E80}
+  \definecolor{zTealFill}{HTML}{E4F0ED}
+  \definecolor{zClay}{HTML}{AE6B51}
+  \definecolor{zClayFill}{HTML}{F5E8DF}
+  \definecolor{zOchre}{HTML}{A28038}
+  \definecolor{zOchreFill}{HTML}{F4EDDA}
+  \definecolor{zPanel}{HTML}{F8F7F3}
+  \definecolor{zBackbonePanel}{HTML}{F4F8F6}
+
+  \tikzset{
+    zBox/.style={
+      draw=zGray, fill=white, line width=0.55pt,
+      rounded corners=3pt, inner xsep=6pt, inner ysep=4pt,
+      align=center, text=zInk
+    },
+    zInput/.style={
+      zBox, minimum width=3.80cm, minimum height=1.18cm,
+      font=\sffamily\fontsize{10.5}{12}\selectfont
+    },
+    zTaskMark/.style={
+      font=\fontsize{12}{12}\selectfont, inner sep=0pt, outer sep=0pt
+    },
+    zMaterialMark/.style={
+      font=\sffamily\bfseries\fontsize{10}{11}\selectfont, inner sep=0pt
+    },
+    zFlow/.style={
+      -{Latex[length=1.8mm,width=1.2mm]},
+      draw=zInk!85!white, line width=0.75pt, rounded corners=3pt
+    },
+    zCondition/.style={
+      zFlow, draw=zTeal, dash pattern=on 0.4pt off 2.2pt,
+      line cap=round, line width=0.7pt
+    },
+    zFeedback/.style={
+      zFlow, draw=zClay, dashed, line width=0.75pt
+    },
+    zStack/.style={
+      zBox, draw=zTeal!70!white, fill=zTealFill,
+      minimum width=2.80cm, minimum height=1.70cm,
+      font=\sffamily\fontsize{10.8}{12.5}\selectfont
+    },
+    zHead/.style={
+      zBox, draw=zTeal!65!white, fill=white,
+      minimum width=4.15cm, minimum height=0.74cm,
+      font=\sffamily\fontsize{10.8}{12.5}\selectfont
+    },
+    zProperty/.style={zHead, draw=zOchre!75!white, fill=zOchreFill},
+    zAtomDot/.style={
+      circle, draw=white, line width=0.35pt, fill=zTeal,
+      minimum size=4.8pt, inner sep=0pt
+    },
+    zHeading/.style={
+      font=\sffamily\bfseries\fontsize{12}{13.5}\selectfont,
+      text=zInk
+    },
+    zNote/.style={
+      font=\sffamily\fontsize{9.5}{11}\selectfont,
+      text=zMuted, align=center, inner sep=1.5pt
+    },
+    zDatasetTitle/.style={
+      zNote, text=black, font=\sffamily\bfseries\fontsize{10}{11.5}\selectfont
+    },
+    zDatasetLabel/.style={
+      zNote, text=zInk, font=\sffamily\fontsize{8.5}{10}\selectfont
+    },
+    zDatasetIcon/.style={y=1cm,scale=0.90,transform shape}
+  }
+
+  \resizebox{\textwidth}{!}{%
+  \begin{tikzpicture}[
+    % Expand vertical spacing while keeping text and dataset icons proportional.
+    x=1cm, y=1.25cm,
+    font=\sffamily\fontsize{10}{11.5}\selectfont,
+    text=zInk
+  ]
+    % Symmetric about x=9.225, the center of the token trunk.
+    \useasboundingbox (-4.80,0.30) rectangle (23.25,9.40);
+
+    % Split the existing left-hand space without changing overall proportions.
+    % Quiet panels separate dataset coverage, inputs, computation, and readouts.
+    \path[fill=zPanel,rounded corners=6pt]
+      (-4.65,0.80) rectangle (-1.45,8.50);
+    \path[fill=zPanel,rounded corners=6pt]
+      (-1.15,0.80) rectangle (3.55,8.50);
+    \path[fill=zBackbonePanel,rounded corners=6pt]
+      (4.50,0.80) rectangle (13.95,8.50);
+    \path[fill=zPanel,rounded corners=6pt]
+      (14.90,0.80) rectangle (23.10,8.50);
+    \node[zHeading] at (-3.05,9.00) {Datasets};
+    \node[zHeading] at (1.20,9.00) {Conditioning inputs};
+    \node[zHeading] at (9.225,9.00) {Multitask transformer backbone};
+    \node[zHeading] at (19.00,9.00) {Task-specific readouts};
+    \draw[zMuted,line width=1.3pt] (-4.40,8.65) -- (-1.70,8.65);
+    \draw[zClay,line width=1.3pt] (-0.95,8.65) -- (3.15,8.65);
+    \draw[zTeal,line width=1.3pt] (4.90,8.65) -- (13.55,8.65);
+    \draw[zOchre,line width=1.3pt] (15.30,8.65) -- (22.70,8.65);
+
+    % Schematic coverage examples, not additional model conditioning labels.
+    \node[zDatasetTitle] at (-3.05,8.18) {OMol25 (4M)};
+
+    % Biomolecule: a single cropped protein ribbon around a small ligand.
+    \begin{scope}[shift={(-3.05,7.66)},zDatasetIcon]
+      \clip (-1.12,-0.44) rectangle (1.12,0.33);
+      \path[fill=zTeal!55!white,draw=zTeal,line width=0.5pt]
+        (-1.30,0.30) .. controls (-0.83,0.43) and (-0.55,0.29) .. (-0.55,0.06)
+        .. controls (-0.58,-0.28) and (-0.31,-0.37) .. (0.08,-0.37)
+        .. controls (0.49,-0.37) and (0.68,-0.17) .. (1.30,-0.15)
+        --(1.30,-0.30)
+        .. controls (0.79,-0.30) and (0.56,-0.54) .. (0.05,-0.52)
+        .. controls (-0.49,-0.52) and (-0.75,-0.26) .. (-0.74,0.02)
+        .. controls (-0.73,0.20) and (-0.94,0.19) .. (-1.30,0.13)--cycle;
+      % A clear gap separates the warm ligand from the teal binding pocket.
+      \draw[zOchre,line width=0.95pt]
+        (-0.27,0.10)--(-0.06,0.21)--(0.15,0.10)--(0.15,-0.10)
+        --(-0.06,-0.21)--(-0.27,-0.10)--cycle
+        (0.15,0.10)--(0.41,0.18);
+      \foreach \x/\y in {-0.27/0.10,-0.06/0.21,0.15/0.10,-0.06/-0.21,-0.27/-0.10} {
+        \node[zAtomDot,fill=zOchre,minimum size=3.8pt,line width=0.25pt] at (\x,\y) {};
+      }
+      \node[zAtomDot,fill=zClay,minimum size=4.2pt,line width=0.25pt] at (0.15,-0.10) {};
+      \node[zAtomDot,fill=zClay,minimum size=4.2pt,line width=0.25pt] at (0.41,0.18) {};
+    \end{scope}
+    \node[zDatasetLabel] at (-3.05,7.08) {Biomolecules};
+
+    % Drug-like molecule: a substituted heterocycle.
+    \begin{scope}[shift={(-3.05,6.47)},zDatasetIcon,scale=0.90]
+      \coordinate (m1) at (-0.35,0.34);
+      \coordinate (m2) at (-0.05,0.17);
+      \coordinate (m3) at (-0.05,-0.17);
+      \coordinate (m4) at (-0.35,-0.34);
+      \coordinate (m5) at (-0.65,-0.17);
+      \coordinate (m6) at (-0.65,0.17);
+      \draw[zMuted,line width=0.9pt]
+        (m1)--(m2)--(m3)--(m4)--(m5)--(m6)--cycle
+        (m2)--(0.28,0.32)--(0.59,0.12)--(0.89,0.28);
+      \foreach \atom in {m1,m2,m3,m4,m6} {
+        \node[zAtomDot] at (\atom) {};
+      }
+      \node[zAtomDot,fill=zClay] at (m5) {};
+      \node[zAtomDot] at (0.28,0.32) {};
+      \node[zAtomDot,fill=zClay] at (0.59,0.12) {};
+      \node[zAtomDot,fill=zOchre] at (0.89,0.28) {};
+    \end{scope}
+    \node[zDatasetLabel] at (-3.05,5.94) {Drug-like molecules};
+
+    % Electrolyte: separated ions surrounded by small solvent motifs.
+    \begin{scope}[shift={(-3.05,5.33)},zDatasetIcon]
+      \node[circle,draw=zTeal,fill=zTealFill,inner sep=1pt,
+        minimum size=0.36cm,font=\fontsize{10}{10}\selectfont] at (-0.35,0) {$+$};
+      \node[circle,draw=zClay,fill=zClayFill,inner sep=1pt,
+        minimum size=0.36cm,font=\fontsize{10}{10}\selectfont] at (0.40,0) {$-$};
+      \foreach \x/\y/\angle in {-0.87/0.17/30,-0.60/-0.28/160,0.02/0.27/-20,0.91/-0.16/200} {
+        \begin{scope}[shift={(\x,\y)},rotate=\angle]
+          \draw[zMuted,line width=0.7pt] (-0.13,0.10)--(0,0)--(0.13,0.10);
+          \node[zAtomDot,fill=zClay,minimum size=3.5pt] at (0,0) {};
+        \end{scope}
+      }
+    \end{scope}
+    \node[zDatasetLabel] at (-3.05,4.80) {Electrolytes};
+
+    % Metal complex: a central metal coordinated by four donor groups.
+    \begin{scope}[shift={(-3.05,4.19)},zDatasetIcon]
+      \foreach \x/\y in {-0.58/0.24,0.58/0.24,-0.58/-0.24,0.58/-0.24} {
+        \draw[zMuted,line width=0.8pt] (0,0)--(\x,\y);
+        \node[zAtomDot,fill=zClay] at (\x,\y) {};
+      }
+      \draw[zMuted,line width=0.8pt]
+        (-0.58,0.24)--(-0.90,0.11) (0.58,0.24)--(0.90,0.11)
+        (-0.58,-0.24)--(-0.90,-0.11) (0.58,-0.24)--(0.90,-0.11);
+      \node[zAtomDot,fill=zOchre,minimum size=7pt] at (0,0) {};
+    \end{scope}
+    \node[zDatasetLabel] at (-3.05,3.66) {Metal complexes};
+
+    % Transition state: partial bonds and the conventional double dagger.
+    \begin{scope}[shift={(-3.05,3.05)},zDatasetIcon]
+      \draw[zMuted,line width=0.9pt,dash pattern=on 2pt off 1.5pt]
+        (-0.68,0)--(0,0.14)--(0.68,0);
+      \node[zAtomDot,fill=zClay,minimum size=6pt] at (-0.68,0) {};
+      \node[zAtomDot,minimum size=5.4pt] at (0,0.14) {};
+      \node[zAtomDot,fill=zClay,minimum size=6pt] at (0.68,0) {};
+      \draw[zMuted,line width=0.6pt]
+        (-0.85,0.32)--(-1.00,0.32)--(-1.00,-0.23)--(-0.85,-0.23)
+        (0.85,0.32)--(1.00,0.32)--(1.00,-0.23)--(0.85,-0.23);
+      \node[inner sep=0pt,font=\fontsize{10}{10}\selectfont] at (1.15,0.30) {$\ddagger$};
+    \end{scope}
+    \node[zDatasetLabel] at (-3.05,2.52) {Transition states};
+
+    \draw[zGray,line width=0.5pt] (-4.35,2.28)--(-1.75,2.28);
+    \node[zDatasetTitle] at (-3.05,2.04) {OMat24 (1M)};
+
+    % Periodic material: a projected unit cell with repeated lattice sites.
+    \begin{scope}[shift={(-3.17,1.46)},zDatasetIcon]
+      \coordinate (c1) at (-0.48,-0.147);
+      \coordinate (c2) at (0.30,-0.147);
+      \coordinate (c3) at (0.30,0.175);
+      \coordinate (c4) at (-0.48,0.175);
+      \coordinate (d1) at (-0.18,-0.014);
+      \coordinate (d2) at (0.60,-0.014);
+      \coordinate (d3) at (0.60,0.308);
+      \coordinate (d4) at (-0.18,0.308);
+      \draw[zGray,line width=0.7pt] (d1)--(d2)--(d3)--(d4)--cycle
+        (c1)--(d1) (c2)--(d2) (c3)--(d3) (c4)--(d4);
+      \draw[zMuted,line width=0.8pt] (c1)--(c2)--(c3)--(c4)--cycle;
+      \foreach \atom in {c1,c3,d2,d4} {
+        \node[zAtomDot,minimum size=4.2pt] at (\atom) {};
+      }
+      \foreach \atom in {c2,c4,d1,d3} {
+        \node[zAtomDot,fill=zClay,minimum size=4.2pt] at (\atom) {};
+      }
+    \end{scope}
+    \node[zDatasetLabel] at (-3.05,1.00) {Periodic materials};
+
+    % Task strips expose which metadata the initializer receives.
+    % Atom identities and molecular bonds have different MLIP masks.
+    \node[zNote] at (1.20,8.22)
+      {$\checkmark$ on\quad -- off};
+    \foreach \inputnode/\inputlabel/\height/\genmark/\structmark/\mlipmark in {
+      domain/{Molecule / material}/7.45/\checkmark/\checkmark/\checkmark,
+      electronic/{Charge \& spin (Mol.)}/6.31/\checkmark/\checkmark/\checkmark,
+      forcecond/{System force}/5.17/\checkmark/\checkmark/{-},
+      chemistry/{Atom types}/4.03/{-}/\checkmark/\checkmark,
+      bonds/{Bonds (Mol.)}/2.89/{-}/\checkmark/{-}} {
+      \node[zInput] (\inputnode) at (0.95,\height) {};
+      \node[font=\sffamily\fontsize{10.5}{12}\selectfont,inner sep=0pt]
+        at (0.95,\height+0.20) {\inputlabel};
+      \node[text=zTeal,font=\sffamily\fontsize{8.5}{10}\selectfont,inner sep=0pt]
+        at (-0.25,\height-0.22) {Gen.\ $\genmark$};
+      \node[text=zClay,font=\sffamily\fontsize{8.5}{10}\selectfont,inner sep=0pt]
+        at (0.95,\height-0.22) {Struct.\ $\structmark$};
+      \node[text=zOchre,font=\sffamily\fontsize{8.5}{10}\selectfont,inner sep=0pt]
+        at (2.15,\height-0.22) {MLIP\ $\mlipmark$};
+    }
+
+    % Diffusion-state input; clean MLIP coordinates are specified in the caption.
+    \node[zBox, draw=zClay!75!white, fill=zClayFill,
+      minimum width=3.80cm, minimum height=0.96cm,
+      font=\sffamily\fontsize{10.5}{12}\selectfont]
+      (flowstate) at (0.95,1.63)
+      {\textbf{Noisy coordinates}\\[2pt]
+       $\mathbf{x}_t$ \& $t$};
+
+    \node[zNote] at (1.20,0.53) {Mol.: molecule only};
+    \node[zNote] at (21.40,0.53) {Mat.: materials only};
+
+    % Lift the backbone and readout contents together within the fixed panels.
+    \begin{scope}[shift={(0,0.25)}]
+    % The initializer supplies the atom/token conditioning and pair features.
+    \node[zBox, draw=zClay!75!white, fill=zClayFill,
+      minimum width=8.50cm, minimum height=1.20cm]
+      (initializer) at (9.25,7.00) {};
+    \node[anchor=west, align=left,
+      font=\sffamily\bfseries\fontsize{10.8}{12.5}\selectfont]
+      at (5.20,7.00) {Input initializer};
+    \node[align=center, inner sep=3pt,
+      font=\sffamily\fontsize{9.5}{11}\selectfont]
+      (atomContext) at (9.50,7.00) {Atom features\\[3pt]$C_L,\,P_{LL}$};
+    \node[align=center, inner sep=3pt,
+      font=\sffamily\fontsize{9.5}{11}\selectfont]
+      (tokenContext) at (12.20,7.00) {Token features\\[3pt]$S_I,\,Z_{II}$};
+    \draw[zClay!35!white,line width=0.5pt] (8.30,6.65) -- (8.30,7.35);
+
+    % Available conditioning inputs enter the initializer together.
+    \foreach \inputnode in {domain,electronic,forcecond,chemistry,bonds} {
+      \draw[draw=zInk,line width=0.65pt]
+        (\inputnode.east) -- (3.25,0 |- \inputnode.east);
+    }
+    \draw[draw=zInk,line width=0.65pt]
+      (3.25,0 |- bonds.east) -- (3.25,0 |- domain.east);
+    \draw[zFlow] (3.25,7.00) -- (initializer.west);
+
+    % Flat cards retain explicit depth labels; the trunk anchors the U.
+    \node[zStack] (atomEncoder) at (6.10,4.90)
+      {\textbf{Atom encoder}\\[5pt]
+       $3$ layers\\[3pt]
+       {\color{zMuted}Local attention}};
+    \node[zStack,minimum width=3.60cm,minimum height=1.85cm,
+      draw=zTeal,fill=zTeal,text=white]
+      (tokenTrunk) at (9.225,2.65)
+      {\textbf{Token trunk}\\[5pt]
+       $N$ layers\\[3pt]
+       Global attention};
+    \node[zStack] (atomDecoder) at (12.25,4.90)
+      {\textbf{Atom decoder}\\[5pt]
+       $3$ layers\\[3pt]
+       {\color{zMuted}Local attention}};
+
+    \draw[zCondition] (atomContext.south) -- (9.50,6.12) -| (atomEncoder.north);
+    \draw[zCondition] (9.50,6.12) -| (atomDecoder.north);
+    \draw[draw=zBackbonePanel,line width=2.5pt,rounded corners=3pt]
+      (tokenContext.south) -- (12.20,6.32) --
+      (9.95,6.32) -- (9.95,3.98) -| (tokenTrunk.north);
+    \draw[zCondition]
+      (tokenContext.south) -- (12.20,6.32) --
+      (9.95,6.32) -- (9.95,3.98) -| (tokenTrunk.north);
+
+    % Residual cross-attention carries information down and back up the U.
+    \draw[zFlow] (atomEncoder.south) -- (tokenTrunk.west);
+    \draw[zFlow] (tokenTrunk.east) -- (atomDecoder.south);
+
+    % Coordinates and time enter at both atom and pooled-token resolution.
+    \draw[zFlow] (flowstate.east) -- (3.00,0 |- flowstate.east)
+      .. controls ($(flowstate.east)+(1.25,0)$) and (4.30,2.90) .. (4.30,4.40)
+      .. controls (4.30,4.75) and (4.35,4.90) .. (atomEncoder.west);
+    \draw[zFlow] ([yshift=-5pt]flowstate.east)
+      .. controls (4.00,1.15) and (6.20,1.30) .. (tokenTrunk.west);
+    \node[zNote] at (5.85,0.99) {Pooled $\mathbf{x}_t$, $t$};
+
+    % Readout color distinguishes geometry/identity from optional properties.
+    % Separate buses, not the colors, indicate atom versus token features.
+    \node[zHead,minimum height=0.98cm] (velocityHead) at (17.30,6.95)
+      {Euclidean geometry\\[1pt]
+       {\fontsize{9.2}{10.6}\selectfont ($\hat{v}_\theta$ prediction)}};
+    \node[zHead] (fractionalHead) at (17.30,5.88)
+      {Fractional coordinates};
+    \node[zProperty] (forceHead) at (17.30,4.81)
+      {Force vectors};
+    \node[zHead] (identityHead) at (17.30,3.67)
+      {Atom types / sequence};
+    \node[zHead] (latticeHead) at (17.30,2.60)
+      {Lattice parameters};
+    \node[zProperty] (energyHead) at (17.30,1.53)
+      {Energy};
+
+    % Pale task contours share the readout rows, without extra connectors.
+    % Checkmarks apply to molecules and materials; Mat. marks materials only.
+    \foreach \x/\taskcolor/\taskfill/\tasklabel in {
+      20.30/zTeal/zTealFill/Gen.,
+      21.40/zClay/zClayFill/Struct.,
+      22.50/zOchre/zOchreFill/MLIP} {
+      \path[draw=\taskcolor!50!white,fill=\taskfill!65!white,
+        line width=0.55pt,rounded corners=4pt]
+        (\x-0.46,1.02) rectangle (\x+0.46,7.51);
+      \node[zNote,text=\taskcolor,
+        font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont]
+        at (\x,7.88) {\tasklabel};
+    }
+    \foreach \head in {velocityHead,identityHead} {
+      \node[zTaskMark,text=zTeal] at (20.30,0 |- \head.center) {$\checkmark$};
+    }
+    \node[zTaskMark,text=zClay] at (21.40,0 |- velocityHead.center) {$\checkmark$};
+    \foreach \head in {fractionalHead,latticeHead} {
+      \node[zMaterialMark,text=zTeal] at (20.30,0 |- \head.center) {Mat.};
+      \node[zMaterialMark,text=zClay] at (21.40,0 |- \head.center) {Mat.};
+    }
+    \foreach \head in {forceHead,energyHead} {
+      \node[zTaskMark,text=zOchre] at (22.50,0 |- \head.center) {$\checkmark$};
+    }
+    \coordinate (atomReadout) at (14.50,0 |- forceHead.west);
+    \draw[zFlow,-] (atomDecoder.east |- forceHead.west) --
+      node[above,inner sep=2pt] {$Q_L$} (atomReadout);
+    \draw[draw=zInk,line width=0.7pt] (14.50,4.81) -- (14.50,6.95);
+    \foreach \head/\height in {velocityHead/6.95,fractionalHead/5.88,forceHead/4.81} {
+      \draw[zFlow] (14.50,\height) -- (\head.west);
+    }
+
+    \coordinate (tokenReadout) at (14.50,0 |- latticeHead.west);
+    \draw[zFlow,-] (tokenTrunk.east |- latticeHead.west) --
+      node[pos=0.60,below,inner sep=2pt] {$Q_I$} (tokenReadout);
+    \draw[draw=zInk,line width=0.7pt] (14.50,1.53) -- (14.50,3.67);
+    \foreach \head/\height in {identityHead/3.67,latticeHead/2.60,energyHead/1.53} {
+      \draw[zFlow] (14.50,\height) -- (\head.west);
+    }
+
+    % The recycled signal is the endpoint distogram, not hidden features.
+    \draw[zFeedback] (velocityHead.north) -- (17.30,7.82) --
+      node[pos=0.50,above,inner sep=2pt,text=zClay,
+        font=\sffamily\fontsize{9.5}{11}\selectfont]
+        {Distogram recycling}
+      (12.20,7.82) -- (tokenContext.north);
+    \end{scope}
+
+  \end{tikzpicture}%
+  }
+
+  \caption{\textbf{Zatom-2 multitask pretraining across domains.}
+  Zatom-2 is jointly trained on OMol25 (4M) and OMat24 (1M) as a generative model. Its input initializer receives task-dependent conditioning, summarized by task strips: checkmarks indicate enabled inputs and dashes indicate disabled inputs. 
+  % Mol.\ denotes molecule-specific inputs. 
+  % Domain labels are supplied for all tasks, as are charges and spin multiplicities for OMol25. System force conditioning is optional for generation and structure prediction in both domains. Atom types are supplied for structure prediction and MLIP; molecular bonds are supplied only for structure prediction. 
+  MLIP task supervision (force and energy prediction) uses clean coordinates at $t=1$ and known atom types, without bond or system force conditioning. The initializer provides atom $(C_L,P_{LL})$ and token $(S_I,Z_{II})$ conditioning through the dotted connections. Noisy coordinates $\mathbf{x}_t$ and flow time $t$ enter the U-shaped atom encoder---token trunk---atom decoder.
+  % Readouts from atom features $Q_L$ predict normalized Cartesian velocities
+  % $\widehat{\mathbf{v}}_\theta$, fractional coordinates, and force vectors.
+  % Readouts from token features $Q_I$ predict atom types/sequences, lattice
+  % parameters, and energy. 
+  Atom features $Q_L$ and token features $Q_I$ feed task-specific readout heads. 
+  % The outlined task columns mark primary readouts; Mat.\ denotes material-specific outputs. Materials also use the Cartesian velocity prediction for sampling. 
+  The recycling path converts the clean-coordinate estimate obtained from $\widehat{\mathbf{v}}_\theta$ into a token-level distogram, updating token-pair conditioning for a second forward pass. In this work, we experiment with $N=9/18/36$ trunk layers.}
+  \label{fig:zatom2-overview}
+  \endgroup
+\end{figure*}

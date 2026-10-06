@@ -1,0 +1,37 @@
+log_af3_training_losses_callback:
+    _target_: nucleus.callbacks.train_logging.LogAF3TrainingLossesCallback
+    log_every_n: 10
+    log_full_batch_losses: true
+
+log_learning_rate_callback:
+    _target_: foundry.callbacks.train_logging.LogLearningRateCallback
+    log_every_n: 10
+
+log_model_parameters_callback:
+    _target_: foundry.callbacks.train_logging.LogModelParametersCallback
+
+log_dataset_sampling_ratios_callback:
+    _target_: nucleus.callbacks.train_logging.LogDatasetSamplingRatiosCallback
+
+log_throughput_callback:
+    _target_: nucleus.callbacks.throughput_logging.LogThroughputCallback
+    log_every_n: 25
+    window: 50
+
+# Opt in with:
+# callbacks.log_conditioning_gradient_norms_callback.enabled=true
+log_conditioning_gradient_norms_callback:
+    _target_: nucleus.callbacks.train_logging.LogConditioningGradientNormsCallback
+    enabled: false
+    log_every_n: 100
+
+# Optional health logging
+# log_model_diagnostics_callback:
+#     _target_: nucleus.callbacks.train_logging.LogModelDiagnosticsCallback
+#     log_every_n: 25
+#     prefix: train/activation_scale
+
+# activations_tracking_callback:
+#     _target_: foundry.callbacks.health_logging.ActivationsGradientsWeightsTracker
+#     log_freq: 100
+#     keep_cache: True  # --> WARNING: Do not run this in a production run, this will lead to a memory leak! Meant for debugging.

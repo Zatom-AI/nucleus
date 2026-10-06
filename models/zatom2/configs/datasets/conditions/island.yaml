@@ -1,0 +1,29 @@
+_target_: nucleus.transforms.training_conditions.LigandAwareIslandCondition
+frequency: 1.0
+name: island
+molecule_conditioning_mode: protein_conditioned_molecule_design # options: "unconditional_design", "structure_fixed_sequence_design", "sequence_fixed_structure_design", "protein_conditioned_molecule_design"
+p_protein_conditioned_molecule_design: 0.5  # probability of generating a protein-conditioned molecule when conditions are met
+
+# Island sampling (`is_motif_token` assignment)
+island_sampling_kwargs:
+  island_len_min: 1
+  island_len_max: 12 # Rec 25, kept lower because unindexed motifs get sampled too and create more tokens.
+  n_islands_min: 2
+  n_islands_max: 5
+
+# Subgraph / within-token sampling (`is_motif_atom` assignment)
+p_diffuse_motif_sidechains: 0.80  # 80% probability of diffusing sidechains
+p_diffuse_subgraph_atoms: 0.0      # 0% probability of sampling subgraph atoms (defaults to fully fixed)
+subgraph_sampling_kwargs:
+  residue_p_seed_furthest_from_o: null
+  residue_n_bond_expectation: null
+  residue_p_fix_all: null
+  hetatom_n_bond_expectation: null
+  hetatom_p_fix_all: null
+
+# Sets `is_motif_atom_with_fixed_seq`
+p_fix_motif_sequence: 0.2       # probability that sequence is fixed for all motifs during training
+# Sets `is_motif_atom_with_fixed_coord`
+p_fix_motif_coordinates: 0.8    # Of the atoms that are sampled, should their coordinates be fixed?
+# Sets `is_motif_atom_with_unindexed`
+p_unindex_motif_tokens: 0.5     # probability of unindexing all motif atoms

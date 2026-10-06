@@ -1,0 +1,51 @@
+data_omat24_val_247_agm004023029_ABC2_6851_spg65_0_aimd-from-PBE-1000-npt_he6mgk_3
+#
+_entry.id       omat24_val_247_agm004023029_ABC2_6851_spg65_0_aimd-from-PBE-1000-npt_he6mgk_3
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Hg Hg1 . LIG A 1 1 . 1 LIG A Hg1 0.0 1.0 ? 0.0011231899999999567 0.50146129            0.49880302000000004   -0.8541134 3.181738   1.4279665   1 1
+HETATM Sb Sb1 . LIG A 1 1 . 1 LIG A Sb1 0.0 1.0 ? 0.0026393800000000245 0.99575055            0.0017520799999999892 -2.8850656 5.452363   -0.11602836 1 2
+HETATM Sb Sb2 . LIG A 1 1 . 1 LIG A Sb2 0.0 1.0 ? 0.50350357            0.0009946100000000067 0.4965601599999999    4.1413226  0.47775626 1.6103638   1 3
+HETATM Pb Pb1 . LIG A 1 1 . 1 LIG A Pb1 0.0 1.0 ? 0.49530306            0.50049786            0.002150520000000001  2.0299158  2.77851    0.07114364  1 4
+#
+_cell.length_a      7.0468563747477715
+_cell.length_b      6.204368375501882
+_cell.length_c      3.3364576762139038
+_cell.angle_alpha   87.48333515964777
+_cell.angle_beta    66.66247105101748
+_cell.angle_gamma   117.47609594498485
+_cell.volume        114.13838441086136
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

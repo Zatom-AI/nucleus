@@ -1,0 +1,7 @@
+# @package trainer
+strategy: auto
+
+accelerator: mps
+devices_per_node: 1
+num_nodes: 1
+precision: 32-true

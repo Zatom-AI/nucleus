@@ -1,0 +1,19 @@
+# @package oracle.structure_predictor
+# RhoFold+ RNA structure predictor; single-sequence is the benchmark default.
+
+_target_: zevals.oracles.structure_predictors.rhofold.RhoFoldPredictor
+conda_env: ${oc.env:ZEVALS_RHOFOLD_ENV,null}
+repo_path: ${oc.env:ZEVALS_RHOFOLD_REPO,null}
+checkpoint_path: ${oc.env:ZEVALS_RHOFOLD_CHECKPOINT,null}
+singularity_image: null
+device: null
+relax_steps: 0
+single_sequence: true
+# With single_sequence=false, provide msa_paths (record ID -> A3M), or both
+# database_path and binary_path to run upstream BLASTN MSA generation.
+msa_paths: null
+database_path: ${oc.env:ZEVALS_RHOFOLD_DATABASE,null}
+binary_path: ${oc.env:ZEVALS_RHOFOLD_BINARY_DIR,null}
+expected_repo_revision: 6bdfbda720184409eb682ce08c05d258162ddc48
+expected_checkpoint_sha256: 3adb621978dfcd7ea0dc0edeb520d249f423d61530df85ff58a1fad2f33e5608
+tmp_dir: /tmp/zevals/rhofold

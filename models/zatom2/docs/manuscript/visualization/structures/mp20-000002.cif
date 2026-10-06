@@ -1,0 +1,52 @@
+data_mp20-000002
+#
+_entry.id       mp20-000002
+_entry.author   unknown_user
+_entry.date     2026-09-13
+_entry.time     02:09:29
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.is_motif_atom_with_fixed_seq 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+ATOM LI LI1 . LIG A 0 1 . 1 LIG A LI1 0 3.465735912322998 1.0 ? False 0.7783203125 0.7626953125 0.783203125  3.138734   3.3066654 4.2720585 1
+ATOM SB SB2 . LIG A 0 1 . 1 LIG A SB2 1 3.465735912322998 1.0 ? False 0.2080078125 0.2412109375 0.220703125  0.8329288  1.039937  1.2038469 1
+ATOM S  S3  . LIG A 0 1 . 1 LIG A S3  2 3.465735912322998 1.0 ? False 0.7763671875 0.7587890625 0.1845703125 3.129598   3.161241  1.0067569 1
+ATOM S  S4  . LIG A 0 1 . 1 LIG A S4  3 3.465735912322998 1.0 ? False 0.2197265625 0.236328125  0.8193359375 0.88433576 1.1492066 4.4691486 1
+#
+_cell.length_a      4.18563230328816
+_cell.length_b      4.116667489461658
+_cell.length_c      5.458877513663903
+_cell.angle_alpha   87.73416137695312
+_cell.angle_beta    89.97227478027344
+_cell.angle_gamma   92.21038818359375
+_cell.volume        93.9174700620119
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

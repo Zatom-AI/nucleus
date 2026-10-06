@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zatom-2: Multitask Pretraining on Atomistic Data for Generative Modeling across Domains</title>
+
+  <!-- Meta tags for social media & academic indexing -->
+  <meta name="description" content="Zatom-2: Unified atomistic foundation model for generative modeling across small molecules, periodic materials, and proteins with multitask pretraining on OMol25 and OMat24.">
+  <meta name="keywords" content="Zatom-2, Atomistic Foundation Models, Flow Matching, OMol25, OMat24, Generative Modeling, MolStar, Protein Design, Materials Science, Quantum Chemistry">
+  <meta name="author" content="Miruna Cretu, Alex Abrudan, Antonia Panescu, Tynan Perez, Rishabh Anand, N. Benjamin Erichson, Michael W. Mahoney, Samuel Blau, Joseph Jacobson, Rafael Gómez-Bombarelli, Rex Ying, Tuomas Knowles, Pietro Lio, Alex Morehead">
+
+  <!-- OpenGraph / Twitter Cards -->
+  <meta property="og:title" content="Zatom-2: Multitask Pretraining on Atomistic Data for Generative Modeling across Domains">
+  <meta property="og:description" content="Unified generative foundation model unifying molecules, periodic materials, and proteins with multitask flow matching and interatomic potential pretraining.">
+  <meta property="og:image" content="static/images/figure1_architecture.png">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/molstar.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+
+        <!-- Venue Badge -->
+        <div class="mb-4">
+          <span class="tag is-info is-light is-medium" style="font-weight: 600;">
+            <i class="fas fa-file-alt mr-2"></i> <a href="https://arxiv.org/abs/XXXX.XXXXX">arXiv submission pending (placeholder)</a>
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="title publication-title">
+          Zatom-2: Multitask Pretraining on Atomistic Data for Generative Modeling across Domains
+        </h1>
+
+        <!-- Authors -->
+        <div class="is-size-5 publication-authors mb-2">
+          <span class="author-block">
+            <a href="https://www.cst.cam.ac.uk/people/mtc49" target="_blank">Miruna Cretu</a><sup>* &Dagger; 1</sup>
+            <span class="contribution-pill lead">Lead Author</span>
+          </span>
+          <span class="author-block">
+            Alex Abrudan<sup>&dagger; 1</sup>
+            <span class="contribution-pill comp">Core Computational Contributor</span>
+          </span>
+          <span class="author-block">
+            Antonia Panescu<sup>&dagger; 2</sup>
+            <span class="contribution-pill comp">Core Computational Contributor</span>
+          </span>
+          <span class="author-block">
+            Tynan Perez<sup>&dagger; 3</sup>
+            <span class="contribution-pill comp">Core Computational Contributor</span>
+          </span>
+          <span class="author-block">
+            Rishabh Anand<sup>&dagger; 3</sup>
+            <span class="contribution-pill comp">Core Computational Contributor</span>
+          </span>
+          <span class="author-block">N. Benjamin Erichson<sup>4,5</sup></span>
+          <span class="author-block">Michael W. Mahoney<sup>4,5,6</sup></span>
+          <span class="author-block">Samuel Blau<sup>4</sup></span>
+          <span class="author-block">Joseph Jacobson<sup>3</sup></span>
+          <span class="author-block">Rafael G&oacute;mez-Bombarelli<sup>3</sup></span>
+          <span class="author-block">Rex Ying<sup>2</sup></span>
+          <span class="author-block">Tuomas Knowles<sup>1</sup></span>
+          <span class="author-block">Pietro Lio<sup>1</sup></span>
+          <span class="author-block">
+            <a href="https://amorehead.github.io/" target="_blank">Alex Morehead</a><sup>* &Dagger; 4,5</sup>
+            <span class="contribution-pill senior">Senior Author</span>
+          </span>
+        </div>
+
+        <!-- Affiliations -->
+        <div class="is-size-6 publication-affiliations mb-3">
+          <span class="author-block"><sup>1</sup> University of Cambridge</span> &bull;
+          <span class="author-block"><sup>2</sup> Yale University</span> &bull;
+          <span class="author-block"><sup>3</sup> MIT</span> &bull;
+          <span class="author-block"><sup>4</sup> Lawrence Berkeley National Laboratory</span> &bull;
+          <span class="author-block"><sup>5</sup> ICSI</span> &bull;
+          <span class="author-block"><sup>6</sup> UC Berkeley</span>
+        </div>
+
+        <!-- Footnote -->
+        <div class="author-notes mb-4">
+          <p class="mb-1">
+            <span><sup>*</sup> <strong>Equal contribution:</strong> Miruna Cretu (Lead Author) &bull; Alex Morehead (Senior Author)</span>
+          </p>
+          <p class="mb-1">
+            <span><sup>&dagger;</sup> <strong>Equal core computational contributors:</strong> Alex Abrudan &bull; Antonia Panescu &bull; Tynan Perez &bull; Rishabh Anand</span>
+          </p>
+          <p>
+            <span><sup>&Dagger;</sup> <strong>Corresponding authors:</strong> Miruna Cretu (<code>mtc49@cam.ac.uk</code>) &bull; Alex Morehead (<code>acmwhb@lbl.gov</code>)</span>
+          </p>
+        </div>
+
+        <!-- Publication Links -->
+        <div class="publication-links">
+          <div>
+            <a href="static/zatom2_paper.pdf" class="button is-dark is-rounded" target="_blank">
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
+              <span>Paper (PDF)</span>
+            </a>
+            <a href="https://github.com/Zatom-AI/nucleus" class="button is-dark is-rounded" target="_blank">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code (GitHub)</span>
+            </a>
+            <a href="https://huggingface.co/Zatom-AI/Zatom-2" class="button is-dark is-rounded" target="_blank">
+              <span class="icon"><i class="fas fa-cube"></i></span>
+              <span>Models (Hugging Face)</span>
+            </a>
+          </div>
+          <div>
+            <a href="#interactive-demo" class="button is-primary is-rounded">
+              <span class="icon"><i class="fas fa-cube"></i></span>
+              <span>Interactive MolStar 3D</span>
+            </a>
+            <a href="#results" class="button is-dark is-rounded">
+              <span class="icon"><i class="fas fa-chart-line"></i></span>
+              <span>Results & Scaling</span>
+            </a>
+            <a href="#bibtex" class="button is-dark is-rounded">
+              <span class="icon"><i class="fas fa-quote-right"></i></span>
+              <span>BibTeX</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive MolStar Trajectory Section -->
+  <section class="molstar-section" id="interactive-demo">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered mb-5">
+        <h2 class="title is-3 is-spaced section-title">
+          Interactive Flow Matching Trajectories
+        </h2>
+        <p class="subtitle is-6 has-text-grey mt-2">
+          Interactive 3D visualization of denoising flow matching sample trajectories generated by Zatom-2.
+        </p>
+      </div>
+
+      <!-- Viewer Container -->
+      <div class="molstar-container" id="molstar-container">
+        <!-- Viewer Header / Domain Tabs -->
+        <div class="viewer-header">
+          <div class="domain-tabs">
+            <button class="domain-tab-btn is-active" data-domain="molecule">
+              <i class="fas fa-flask"></i> <span>Molecule (OMol25)</span>
+            </button>
+            <button class="domain-tab-btn" data-domain="material">
+              <i class="fas fa-gem"></i> <span>Periodic Material (OMat24)</span>
+            </button>
+            <button class="domain-tab-btn" data-domain="protein">
+              <i class="fas fa-dna"></i> <span>Protein Biomolecule (SCOPe)</span>
+            </button>
+          </div>
+
+          <!-- Utility tools -->
+          <div style="display: flex; gap: 0.4rem;">
+            <button class="ctrl-btn" id="btn-refresh" title="Refresh Trajectory" aria-label="Refresh Trajectory">
+              <i class="fas fa-sync-alt" id="icon-refresh"></i>
+            </button>
+            <button class="ctrl-btn" id="btn-fullscreen" title="Toggle Fullscreen" aria-label="Toggle Fullscreen">
+              <i class="fas fa-expand" id="icon-fullscreen"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3D Viewport Frame -->
+        <div class="viewer-frame-container">
+          <!-- MolStar Canvas Mount Point -->
+          <div id="molstar-app"></div>
+
+          <!-- Live Overlay Badge -->
+          <div class="viewer-overlay-badge">
+            <div class="badge-title" id="badge-title">
+              <i class="fas fa-flask mr-1"></i> Molecule (OMol25)
+            </div>
+            <div class="badge-info" id="badge-info">
+              Denoised (x̂₀|ₜ) &bull; C₉H₂₀N₂ (31 atoms)
+            </div>
+            <div class="badge-info has-text-weight-bold" id="badge-step" style="color: #2563eb;">
+              t = 0.00 (Step 1/49)
+            </div>
+          </div>
+
+          <!-- Loading Indicator -->
+          <div class="loading-spinner-overlay" id="viewer-loading">
+            <span class="icon is-large has-text-primary mb-2">
+              <i class="fas fa-spinner fa-spin fa-2x"></i>
+            </span>
+            <p class="has-text-weight-semibold is-size-6">Loading trajectory structure...</p>
+          </div>
+        </div>
+
+        <!-- Player Controls Bar -->
+        <div class="player-controls">
+          <!-- Top Row: Playback & Timeline Slider -->
+          <div class="controls-row-top">
+            <div class="playback-buttons">
+              <button class="ctrl-btn is-active" id="btn-play" title="Pause Animation" aria-label="Play or Pause Animation">
+                <i class="fas fa-pause" id="icon-play"></i>
+              </button>
+              <button class="ctrl-btn" id="btn-stop" title="Stop Animation &amp; Reset" aria-label="Stop Animation &amp; Reset">
+                <i class="fas fa-stop" id="icon-stop"></i>
+              </button>
+              <button class="ctrl-btn" id="btn-prev" title="Previous Frame" aria-label="Previous Frame">
+                <i class="fas fa-step-backward"></i>
+              </button>
+              <button class="ctrl-btn" id="btn-next" title="Next Frame" aria-label="Next Frame">
+                <i class="fas fa-step-forward"></i>
+              </button>
+            </div>
+
+            <!-- Flow Matching Timeline Scrubber -->
+            <div class="timeline-container">
+              <input type="range" class="timeline-slider" id="timeline-slider" min="0" max="48" value="0" step="1">
+              <span class="timeline-label" id="timeline-label">t = 0.00 (1/49)</span>
+            </div>
+          </div>
+
+          <!-- Bottom Row: Modes, Speeds, and Info -->
+          <div class="controls-row-bottom">
+            <!-- Trajectory Mode Selector -->
+            <div>
+              <span class="has-text-grey mr-2 has-text-weight-semibold">Trajectory:</span>
+              <div class="button-group-pills">
+                <button class="pill-btn mode-pill-btn is-active" data-mode="denoised" title="Clean endpoint prediction x̂₀|ₜ at each step">
+                  Denoised (x̂₀|ₜ)
+                </button>
+                <button class="pill-btn mode-pill-btn" data-mode="noisy" title="Noisy Cartesian state xₜ along the transport path">
+                  Noisy (xₜ)
+                </button>
+                <button class="pill-btn mode-pill-btn" data-mode="final" title="Equilibrium ground state geometry">
+                  Final Structure
+                </button>
+              </div>
+            </div>
+
+            <!-- Speed Selector -->
+            <div>
+              <span class="has-text-grey mr-2 has-text-weight-semibold">Speed:</span>
+              <div class="button-group-pills">
+                <button class="pill-btn speed-pill-btn" data-speed="0.5">0.5&times;</button>
+                <button class="pill-btn speed-pill-btn is-active" data-speed="1.0">1.0&times;</button>
+                <button class="pill-btn speed-pill-btn" data-speed="2.0">2.0&times;</button>
+                <button class="pill-btn speed-pill-btn" data-speed="4.0">4.0&times;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trajectory Context & Details -->
+        <div class="player-info-card">
+          <h4 class="has-text-weight-bold has-text-dark mb-1" id="card-domain-title">
+            Molecule (OMol25): C₉H₂₀N₂ (31 atoms)
+          </h4>
+          <p id="card-domain-desc" class="mb-2">
+            Flow matching generation of a biomolecule sampled from the OMol25 distribution. Starting from Gaussian coordinate noise at t = 0, Zatom-2 transports mass along continuous velocity fields to form stable chemical valence at t = 1.
+          </p>
+          <p class="is-size-7 has-text-grey-dark" id="card-domain-ckpt">
+            Checkpoint: <a href="https://huggingface.co/Zatom-AI/Zatom-2/tree/main/paper-ready-checkpoints/paper-table1-omol25-omat24-joint-properties-force-conditioned" target="_blank" rel="noopener noreferrer" class="has-text-link">paper-table1-omol25-omat24-joint-properties-force-conditioned</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered section-title">Abstract</h2>
+          <div class="content has-text-justified is-size-5" style="line-height: 1.7;">
+            <p>
+              Atomistic machine learning models are typically tailored to specific domains, such as small molecules, crystals, or proteins. In this work, we introduce <strong>Zatom-2</strong>, a unified atomistic generative model across these domains. Uniquely, Zatom-2 is pretrained on the large-scale OMol25 and OMat24 datasets using a multitask objective that combines flow matching generation and structure prediction with auxiliary machine learning interatomic potential (MLIP) tasks predicting energies and forces.
+            </p>
+            <p>
+              This multitask pretraining leverages the rich geometric information in quantum-chemical calculations to shape the model's internal representations. In generation benchmarks, Zatom-2 establishes strong performance on QM9, GEOM-Drugs, MP20, OMat24, and OMol25. When transferring to proteins with as few as 2,000 training examples, Zatom-2 generates designable backbones and shows strong extrapolation to sequence lengths beyond the training distribution, where domain-specific models struggle. Furthermore, we demonstrate that conditioning on atomic forces enables control over the degree of geometric relaxation in generated structures. Through comprehensive analysis of internal representations, scaling behavior, and generation quality, our results show that joint pretraining across molecular and materials data improves generative modeling and representation transfer, pointing toward general-purpose generative models for atomistic systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Highlights / Feature Cards -->
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered section-title">Key Contributions</h2>
+      <div class="columns is-multiline">
+
+        <!-- Card 1 -->
+        <div class="column is-6">
+          <div class="feature-card">
+            <div class="feature-icon blue">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h3>Unified Multiscale Architecture</h3>
+            <p class="has-text-grey">
+              Employs a unified <code>atom1</code> + <code>atom14</code> tokenization scheme within a single Transformer architecture, supporting small molecules, periodic inorganic crystals, and all-atom protein structures under standardized coordinate diffusion.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="column is-6">
+          <div class="feature-card">
+            <div class="feature-icon green">
+              <i class="fas fa-atom"></i>
+            </div>
+            <h3>Multitask Quantum-Chemical Pretraining</h3>
+            <p class="has-text-grey">
+              Pretrained on over 5 million high-fidelity DFT calculations from OMol25 (4M) and OMat24 (1M), uniting generative flow matching with structure prediction and auxiliary MLIP energy and force regression to learn physics-informed geometric representations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="column is-6">
+          <div class="feature-card">
+            <div class="feature-icon purple">
+              <i class="fas fa-sliders-h"></i>
+            </div>
+            <h3>Controllable Force Conditioning</h3>
+            <p class="has-text-grey">
+              Introduces conditioning on atomic force magnitudes, providing direct user control over the geometric relaxation state of generated structures without expensive post-hoc DFT minimization or external relaxation oracles.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="column is-6">
+          <div class="feature-card">
+            <div class="feature-icon amber">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <h3>Few-Shot Protein Transfer & Extrapolation</h3>
+            <p class="has-text-grey">
+              Transfers molecular and materials representations to de novo protein design with as few as 2,000 training examples, yielding high self-consistency designability (scRMSD &lt; 1.5 &Aring;) and unprecedented extrapolation to unseen sequence lengths.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture & Method Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered section-title">Architecture & Multitask Pretraining</h2>
+
+      <!-- Architecture Figure -->
+      <div class="figure-container">
+        <div class="figure-zoomable gallery-zoomable" data-zoom-src="static/images/figure1_architecture.png" data-caption="<strong>Figure 1: Zatom-2 multitask pretraining across domains.</strong> Multitask curriculum combining molecule and material flow matching, structure prediction, and auxiliary MLIP prediction of energies and forces.">
+          <img src="static/images/figure1_architecture.png" alt="Figure 1: Zatom-2 Multitask Architecture" class="figure-image">
+          <div class="zoom-overlay">
+            <span class="icon is-medium"><i class="fas fa-search-plus fa-lg"></i></span>
+            <span>Click to zoom</span>
+          </div>
+        </div>
+        <p class="figure-caption">
+          <strong>Figure 1: Zatom-2 multitask pretraining across domains.</strong> Zatom-2 is jointly trained on OMol25 (molecules) and OMat24 (periodic materials) using a multitask curriculum combining generative flow matching, structure prediction, and auxiliary MLIP prediction of energies and forces. Clean coordinates, noisy diffusion states, or corrupted configurations enter a multiscale Transformer backbone with unified <code>atom1</code> and <code>atom14</code> tokenization. Domain- and task-specific heads map internal geometric latents to continuous 3D coordinates and lattice parameters, scalar potential energies, vector atomic forces, and discrete atom types.
+        </p>
+      </div>
+
+      <div class="content is-size-6 mt-5">
+        <h3 class="title is-4">Conditional Flow Matching & Velocity ODE Formulation</h3>
+        <p>
+          Zatom-2 parameterizes generative modeling through continuous flow matching between a standard Gaussian prior at $t=0$ and clean atomistic geometries at $t=1$:
+        </p>
+        <div class="notification is-white has-text-centered" style="border: 1px solid #e2e8f0;">
+          $$\mathbf{x}_t = (1-t)\mathbf{x}_0 + t\mathbf{x}_1, \qquad \mathbf{v}_t = \frac{\mathbf{x}_1 - \mathbf{x}_0}{\sigma_{\mathrm{data}}}$$
+        </div>
+        <p>
+          The network learns a normalized Cartesian velocity field $\widehat{\mathbf{v}}_\theta(\mathbf{x}_t, t)$ via the objective $\mathbb{E}_{t, \mathbf{x}_0, \mathbf{x}_1}[\|\widehat{\mathbf{v}}_\theta(\mathbf{x}_t, t) - \mathbf{v}_t\|_2^2]$. At inference time, coordinates are mapped through an EDM noise-schedule adapter, enabling fast, stable ODE integration while retaining clean endpoint estimates $\widehat{\mathbf{x}}_1 = \mathbf{x}_t + (1-t)\sigma_{\mathrm{data}}\widehat{\mathbf{v}}_\theta(\mathbf{x}_t, t)$.
+        </p>
+
+        <h3 class="title is-4 mt-5">Overall Loss Function</h3>
+        <p>
+          To jointly learn generation, structure prediction, and quantum-chemical property prediction across molecular and material systems, Zatom-2 minimizes a weighted multitask objective:
+        </p>
+        <div class="notification is-white has-text-centered" style="border: 1px solid #e2e8f0;">
+          $$\mathcal{L} = \lambda_{\mathrm{FM}}\mathcal{L}_{\mathrm{FM}} + \lambda_{\mathrm{lDDT}}\mathcal{L}_{\mathrm{lDDT}} + g_{1\,\text{Å}}(t) \sum_{k \in \mathcal{K}} \lambda_k \mathcal{L}_k + m_E \lambda_E \mathcal{L}_E + m_F \lambda_F \mathcal{L}_F + \mathbf{1}_{\mathrm{MLIP}} \lambda_{\mathrm{eq}} \mathcal{L}_{\mathrm{eq}}$$
+        </div>
+        <p>
+          The overall loss integrates three primary supervision components:
+        </p>
+        <ul>
+          <li>
+            <strong>Generative Coordinate Modeling ($\mathcal{L}_{\mathrm{FM}}, \mathcal{L}_{\mathrm{lDDT}}$):</strong> Minimizes Cartesian velocity error $\mathcal{L}_{\mathrm{FM}}$ along the flow matching trajectory, complemented by a smoothed lDDT auxiliary loss $\mathcal{L}_{\mathrm{lDDT}}$ to enforce local pairwise distance fidelity and stereochemical validity.
+          </li>
+          <li>
+            <strong>Time-Gated Discrete &amp; Material Geometry ($\mathcal{L}_k$):</strong> Supervised near the clean endpoint through the time gate $g_\delta(t) = \mathbf{1}[\sigma_{\mathrm{data}}(1-t)/t \lt \delta]$ (with $\delta = 1\,\text{Å}$) across $\mathcal{K} = \{\text{element}, \text{sequence}, \text{fractional}, \text{lattice}\}$ for discrete atom/token identities and periodic crystal unit cell parameters.
+          </li>
+          <li>
+            <strong>Auxiliary Interatomic Potential (MLIP) Supervision ($\mathcal{L}_E, \mathcal{L}_F, \mathcal{L}_{\mathrm{eq}}$):</strong> Huber losses regress potential energies ($\mathcal{L}_E$) and atomic forces ($\mathcal{L}_F$). Adaptive gates $(m_E, m_F)$ prevent target-force leakage during force-conditioned generation, while an auxiliary latent equivariance loss $\mathcal{L}_{\mathrm{eq}}$ aligns pooled representations across independently rotated views of the same system to stabilize force learning during joint pretraining.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Empirical Results & Scaling Laws -->
+  <section class="section has-background-light" id="results">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 is-spaced has-text-centered section-title">Empirical Results & Representation Analysis</h2>
+
+      <!-- Results Tabs Navigation -->
+      <div class="tabs is-centered is-boxed results-tabs">
+        <ul>
+          <li class="results-tab-item is-active" data-target="tab-scaling">
+            <a><span class="icon is-small"><i class="fas fa-chart-line"></i></span><span>Multitask Scaling</span></a>
+          </li>
+          <li class="results-tab-item" data-target="tab-force">
+            <a><span class="icon is-small"><i class="fas fa-tachometer-alt"></i></span><span>Force Conditioning</span></a>
+          </li>
+          <li class="results-tab-item" data-target="tab-representations">
+            <a><span class="icon is-small"><i class="fas fa-project-diagram"></i></span><span>Representation Analysis</span></a>
+          </li>
+          <li class="results-tab-item" data-target="tab-protein">
+            <a><span class="icon is-small"><i class="fas fa-dna"></i></span><span>Protein Extrapolation</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab 1: Scaling Laws -->
+      <div id="tab-scaling" class="results-tab-content is-active">
+        <div class="card p-5">
+          <div class="figure-container">
+            <div class="figure-zoomable gallery-zoomable" data-zoom-src="static/images/figure3_scaling.png" data-caption="<strong>Figure 3: Model and data scaling across training epochs.</strong> Validation performance across parameter scales and data regimes for OMol25 (AFD, force MAE) and OMat24 (top-1 match rate, force MAE).">
+              <img src="static/images/figure3_scaling.png" alt="Figure 3: Model and data scaling across training epochs" class="figure-image" style="max-height: 480px;">
+              <div class="zoom-overlay">
+                <span class="icon is-medium"><i class="fas fa-search-plus fa-lg"></i></span>
+                <span>Click to zoom</span>
+              </div>
+            </div>
+            <p class="figure-caption">
+              <strong>Figure 3: Model and data scaling across training epochs.</strong> We evaluate Zatom-2 models trained either on 500k examples per dataset or on the full OMol25 and OMat24 datasets across model parameter scales. We report (a) OMol25 molecular generation quality measured by Atomistic Fr&eacute;chet Distance (AFD), (b) OMat24 structure prediction measured by top-1 match rate, and force prediction MAE on (c) OMol25 and (d) OMat24. Training on the full dataset with more model parameters consistently improves validation performance across tasks.
+            </p>
+          </div>
+          <div class="content is-size-6 mt-3">
+            <p>
+              At an equal number of epochs, across all four validation metrics, training on the full dataset consistently outperforms restricting each dataset domain to 500k examples. Parameter scaling provides <strong>complementary</strong> gains under both data regimes, with the largest effect observed on OMat24 structure prediction top-1 match rate, alongside consistent improvements in molecular generation fidelity (lower AFD) and MLIP force prediction MAE.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Force Conditioning -->
+      <div id="tab-force" class="results-tab-content">
+        <div class="card p-5">
+          <div class="figure-container">
+            <div class="figure-zoomable gallery-zoomable" data-zoom-src="static/images/force_conditioning_self_consistency.png" data-caption="<strong>Figure 2: Force-conditioning consistency.</strong> Conditioned vs. UMA-evaluated mean force norms for unconditional generation and structure prediction with OMol25, GEOM ORCA6, and ANI2x.">
+              <img src="static/images/force_conditioning_self_consistency.png" alt="Figure 2: Force-conditioning consistency" class="figure-image" style="max-height: 480px;">
+              <div class="zoom-overlay">
+                <span class="icon is-medium"><i class="fas fa-search-plus fa-lg"></i></span>
+                <span>Click to zoom</span>
+              </div>
+            </div>
+            <p class="figure-caption">
+              <strong>Figure 2: Force-conditioning consistency.</strong> Panel (a) compares the conditioned mean force norm with the mean force norm evaluated by UMA for unconditional OMol25 molecule generation. Panels (b) and (c) give the corresponding comparison for OMol25 structure prediction on the GEOM ORCA6 and ANI2x subsets, respectively. Red dotted lines mark the AUROC cutoff ($1\,\mathrm{eV}\,\text{Å}^{-1}$ in (a)–(b), and $2.5\,\mathrm{eV}\,\text{Å}^{-1}$ in (c)).
+            </p>
+          </div>
+          <div class="content is-size-6 mt-3">
+            <p>
+              Generated structures exhibit mean absolute errors (MAE) between $0.69$ and $0.93\,\mathrm{eV}\,\text{Å}^{-1}$ relative to target conditioning values. Furthermore, Zatom-2 reliably distinguishes low-force from high-force regimes, achieving AUROC values between <strong>0.76 and 1.00</strong> across evaluated settings. This demonstrates that force conditioning provides effective separation between relaxed near-equilibrium configurations and high-force geometries.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Representation Analysis -->
+      <div id="tab-representations" class="results-tab-content">
+        <div class="card p-5">
+          <div class="buttons has-addons is-centered mb-4">
+            <button class="button is-small is-primary is-selected" id="btn-rep-omol25">
+              <span>OMol25 Subsets (Figure 16)</span>
+            </button>
+            <button class="button is-small" id="btn-rep-joint">
+              <span>Joint OMol25 &amp; OMat24 (Figure 15)</span>
+            </button>
+          </div>
+
+          <!-- View 1: Figure 16 (OMol25 Subsets) - Active by default -->
+          <div id="rep-view-omol25">
+            <div class="figure-container">
+              <div class="figure-zoomable gallery-zoomable" data-zoom-src="static/images/element_embeddings_omol25_pca.png" data-caption="<strong>Figure 16: Base Zatom-2 atom embeddings within OMol25.</strong> Atom-level counterpart of system embeddings for H, C, N, and O without vs. with MLIP supervision across OMol25 subsets.">
+                <img src="static/images/element_embeddings_omol25_pca.png" alt="Figure 16: Base Zatom-2 atom embeddings within OMol25" class="figure-image" style="max-height: 480px;">
+                <div class="zoom-overlay">
+                  <span class="icon is-medium"><i class="fas fa-search-plus fa-lg"></i></span>
+                  <span>Click to zoom</span>
+                </div>
+              </div>
+              <p class="figure-caption">
+                <strong>Figure 16: Base Zatom-2 atom embeddings within OMol25.</strong> Atom-level counterpart of system embeddings for H, C, N, and O, the four elements present in the most sampled molecules. Left: without MLIP supervision; right: with it. Colors indicate the same OMol25 subsets as in system embeddings (Biomolecules, Electrolytes, Metal complexes, Neutral organics, Reactivity, and SPICE). Each point is an individual atom, with an independent PCA fit per panel.
+              </p>
+            </div>
+            <div class="content is-size-6 mt-3">
+              <p>
+                The clearest pretraining effect appears within OMol25 (Figure 16), where energy and force prediction pretraining produces more distinct subset-associated regions for H, C, N, and O. In the original 128-dimensional latent space, the fraction of ten nearest neighbors sharing an atom's subset label increases by <strong>12.6–14.9%</strong> for these elements (from 33.6% to 47.5% for H, 32.3% to 47.2% for C, 37.3% to 52.1% for N, and 33.5% to 46.1% for O, compared to random chance expectations of 17.4–18.2%). Across all 12 eligible OMol25 elements, 11 improve, with an equal-element mean increase of <strong>9.3 percentage points</strong>, showing that predictive MLIP pretraining substantially sharpens within-element representation structure.
+              </p>
+            </div>
+          </div>
+
+          <!-- View 2: Figure 15 (Joint OMol25 & OMat24) -->
+          <div id="rep-view-joint" style="display: none;">
+            <div class="figure-container">
+              <div class="figure-zoomable gallery-zoomable" data-zoom-src="static/images/element_embeddings_joint_pca.png" data-caption="<strong>Figure 15: Base Zatom-2 atom embeddings across OMol25 and OMat24.</strong> Shared element representations (O, P, N, Br) across molecular and material domains.">
+                <img src="static/images/element_embeddings_joint_pca.png" alt="Figure 15: Base Zatom-2 atom embeddings across OMol25 and OMat24" class="figure-image" style="max-height: 480px;">
+                <div class="zoom-overlay">
+                  <span class="icon is-medium"><i class="fas fa-search-plus fa-lg"></i></span>
+                  <span>Click to zoom</span>
+                </div>
+              </div>
+              <p class="figure-caption">
+                <strong>Figure 15: Base Zatom-2 atom embeddings across OMol25 and OMat24.</strong> Atom-level counterpart of system embeddings, separately for O, P, N, and Br, selected by shared structure coverage. Left: Zatom-2 (IV), without MLIP supervision; right: Zatom-2 (V), with it. Each point is one atom, colored by domain (OMat24 in blue, OMol25 in orange/red), with identical atoms in both columns. Titles give sampled atom and structure counts. Each panel fits centered PCA independently; axis percentages report explained variance, and axes are not aligned between models.
+              </p>
+            </div>
+            <div class="content is-size-6 mt-3">
+              <p>
+                In the joint dataset projections of Figure 15, molecular and material atom representations partially overlap, with the degree of overlap varying by element type and pretraining configuration. Energy and force prediction pretraining concentrates more variance in the first principal component. However, most molecular and material atoms remain largely distinguishable in the full representation space <strong>with</strong> energy/force supervision, indicating that MLIP supervision preserves domain distinguishability while learning unified atomistic features across molecular and material domains.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: Protein Transfer -->
+      <div id="tab-protein" class="results-tab-content">
+        <div class="card p-5">
+          <div class="figure-container">
+            <div class="figure-zoomable gallery-zoomable" data-zoom-src="static/images/protein_embeddings.png" data-caption="<strong>Figure 4: Protein latent space organization and localized decoding responses.</strong> $t$-SNE of token representations and localized token perturbation responses.">
+              <img src="static/images/protein_embeddings.png" alt="Figure 4: Protein latent space organization" class="figure-image" style="max-height: 420px;">
+              <div class="zoom-overlay">
+                <span class="icon is-medium"><i class="fas fa-search-plus fa-lg"></i></span>
+                <span>Click to zoom</span>
+              </div>
+            </div>
+            <p class="figure-caption">
+              <strong>Figure 4: Protein latent space organization and localized decoding responses.</strong> Left two: t-SNE views of final token features, colored by amino acid. Right two: increases in sequence and structure reconstruction losses after final-token perturbation; solid/dashed lines denote the target/other amino acids. Bands show 95% intervals from 2,000 protein bootstrap resamples. Pretrained Zatom-2 is notably more sensitive to local amino acid-specific perturbations than without pretraining.
+            </p>
+          </div>
+
+          <h4 class="title is-5 mt-5 mb-2">SCOPe-2k Backbone Generation &amp; Length Extrapolation Benchmark</h4>
+          <p class="is-size-6 has-text-grey mb-3">
+            Evaluation across 1,027 generated backbones using the SolubleMPNN variant of ProteinMPNN for sequence design and ESMFold2 for refolding (means &plusmn; standard deviations over 3 random seeds). Models were finetuned on short fragments (50–128 residues) and evaluated for length <strong>extrapolation</strong> capabilities (129–256 residues).
+          </p>
+
+          <div class="benchmark-table-container">
+            <table class="benchmark-table">
+              <thead>
+                <tr>
+                  <th>Model / Initialization</th>
+                  <th>Designability (%) &uarr;</th>
+                  <th>Per-Sequence Success (%) &uarr;</th>
+                  <th>Diversity (# clusters) &uarr;</th>
+                  <th>Novelty (%) &uarr;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="subhead-row">
+                  <td colspan="5">(a) In-Distribution: 50–128 Residues</td>
+                </tr>
+                <tr>
+                  <td>RFdiffusion3</td>
+                  <td><strong>91.07 &plusmn; 0.63</strong></td>
+                  <td><strong>67.61 &plusmn; 1.18</strong></td>
+                  <td>435.0 &plusmn; 11.5</td>
+                  <td>13.33 &plusmn; 1.25</td>
+                </tr>
+                <tr>
+                  <td>Unpretrained Baseline (None)</td>
+                  <td>88.22 &plusmn; 0.26</td>
+                  <td>61.35 &plusmn; 0.14</td>
+                  <td>400.3 &plusmn; 5.0</td>
+                  <td>11.41 &plusmn; 0.77</td>
+                </tr>
+                <tr>
+                  <td>Zatom-2 (IV): Gen + Struct (w/o FC)</td>
+                  <td>86.30 &plusmn; 1.12</td>
+                  <td>59.99 &plusmn; 1.61</td>
+                  <td>432.0 &plusmn; 6.1</td>
+                  <td>16.11 &plusmn; 1.32</td>
+                </tr>
+                <tr>
+                  <td>Zatom-2 (IV): Gen + Struct</td>
+                  <td>89.68 &plusmn; 0.84</td>
+                  <td>62.40 &plusmn; 2.08</td>
+                  <td>439.0 &plusmn; 5.0</td>
+                  <td>14.26 &plusmn; 0.71</td>
+                </tr>
+                <tr>
+                  <td>Zatom-2 (V): Gen + Struct + F/E pred.</td>
+                  <td>89.09 &plusmn; 1.61</td>
+                  <td>63.39 &plusmn; 1.98</td>
+                  <td><strong>453.7 &plusmn; 9.0</strong></td>
+                  <td><strong>16.77 &plusmn; 1.04</strong></td>
+                </tr>
+                <tr class="subhead-row">
+                  <td colspan="5">(b) Length Extrapolation: 129–256 Residues</td>
+                </tr>
+                <tr>
+                  <td>RFdiffusion3</td>
+                  <td>54.04 &plusmn; 1.81</td>
+                  <td>28.37 &plusmn; 1.19</td>
+                  <td>455.3 &plusmn; 8.3</td>
+                  <td>90.44 &plusmn; 1.11</td>
+                </tr>
+                <tr>
+                  <td>Unpretrained Baseline (None)</td>
+                  <td>67.81 &plusmn; 1.33</td>
+                  <td>34.68 &plusmn; 0.20</td>
+                  <td>470.7 &plusmn; 17.6</td>
+                  <td>88.81 &plusmn; 1.66</td>
+                </tr>
+                <tr>
+                  <td>Zatom-2 (IV): Gen + Struct (w/o FC)</td>
+                  <td>62.96 &plusmn; 1.18</td>
+                  <td>33.91 &plusmn; 0.67</td>
+                  <td>498.3 &plusmn; 7.4</td>
+                  <td>94.63 &plusmn; 1.59</td>
+                </tr>
+                <tr>
+                  <td>Zatom-2 (IV): Gen + Struct</td>
+                  <td>68.00 &plusmn; 2.22</td>
+                  <td>37.69 &plusmn; 0.86</td>
+                  <td>539.3 &plusmn; 20.4</td>
+                  <td>93.89 &plusmn; 0.90</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td>Zatom-2 (V): Gen + Struct + F/E pred.</td>
+                  <td><strong>74.80 &plusmn; 1.06</strong></td>
+                  <td><strong>45.79 &plusmn; 0.82</strong></td>
+                  <td><strong>618.7 &plusmn; 3.2</strong></td>
+                  <td><strong>95.17 &plusmn; 0.25</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="is-size-7 has-text-grey mt-2">
+            Designability represents the percentage of backbones where at least one of eight designed sequences refolds with CA scRMSD &lt; 1.5 &Aring; under ESMFold2.
+          </p>
+          <div class="content is-size-6 mt-3">
+            <p>
+              Pretraining gains are most pronounced in the length extrapolation regime (129–256 residues): Zatom-2 (V) improves designability from <strong>67.81% to 74.80%</strong> compared to random initialization, while producing <strong>618.7</strong> distinct designable clusters (surpassing RFdiffusion3 at 455.3 and the from-scratch baseline at 470.7). Crucially, pretraining benefits designability specifically when force conditioning is enabled, supporting the hypothesis that force-aware pretraining is particularly advantageous when learning from data with high configurational diversity.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Qualitative Galleries (Appendix C Renders) -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 is-spaced has-text-centered section-title">Generated Samples Gallery</h2>
+      <p class="has-text-centered subtitle is-6 has-text-grey mb-5">
+        High-resolution Mol* renderings depicting unrelaxed Zatom-2 samples of molecules, materials, and proteins.
+      </p>
+
+      <div class="columns is-multiline">
+        <!-- Molecule Gallery -->
+        <div class="column is-4">
+          <div class="card" style="height: 100%; display: flex; flex-direction: column;">
+            <div class="card-image gallery-zoomable" data-zoom-src="static/images/generated_omol25_molstar_full.png" data-caption="<strong>Molecules (OMol25)</strong> &mdash; Force-conditioned molecules across several OMol25 subset categories.">
+              <figure class="image">
+                <img src="static/images/generated_omol25_molstar.png" alt="Generated OMol25 Molecules Gallery">
+                <div class="zoom-overlay">
+                  <span class="icon is-medium"><i class="fas fa-search-plus fa-lg"></i></span>
+                  <span>Click to zoom</span>
+                </div>
+              </figure>
+            </div>
+            <div class="card-content p-4" style="flex: 1;">
+              <p class="title is-6 mb-1">Molecules (OMol25)</p>
+              <p class="is-size-7 has-text-grey">
+                Diverse force-conditioned molecules spanning biomolecules, electrolytes, metal complexes, and reactivity categories.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Material Gallery -->
+        <div class="column is-4">
+          <div class="card" style="height: 100%; display: flex; flex-direction: column;">
+            <div class="card-image gallery-zoomable" data-zoom-src="static/images/generated_omat24_molstar.png" data-caption="<strong>Materials (OMat24)</strong> &mdash; Force-conditioned inorganic crystal lattices across 2&times;2&times;2 supercells.">
+              <figure class="image">
+                <img src="static/images/generated_omat24_molstar.png" alt="Generated OMat24 Materials Gallery">
+                <div class="zoom-overlay">
+                  <span class="icon is-medium"><i class="fas fa-search-plus fa-lg"></i></span>
+                  <span>Click to zoom</span>
+                </div>
+              </figure>
+            </div>
+            <div class="card-content p-4" style="flex: 1;">
+              <p class="title is-6 mb-1">Materials (OMat24)</p>
+              <p class="is-size-7 has-text-grey">
+                Force-conditioned inorganic crystal lattices visualized across $2\times2\times2$ supercells with unit-cell boundaries.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCOPe Protein Gallery -->
+        <div class="column is-4">
+          <div class="card" style="height: 100%; display: flex; flex-direction: column;">
+            <div class="card-image gallery-zoomable" data-zoom-src="static/images/generated_proteins_molstar.png" data-caption="<strong>Proteins (SCOPe)</strong> &mdash; Designable <em>de novo</em> backbones across helix-rich, mixed, and sheet-rich folds.">
+              <figure class="image">
+                <img src="static/images/generated_proteins_molstar.png" alt="Generated SCOPe Proteins Gallery">
+                <div class="zoom-overlay">
+                  <span class="icon is-medium"><i class="fas fa-search-plus fa-lg"></i></span>
+                  <span>Click to zoom</span>
+                </div>
+              </figure>
+            </div>
+            <div class="card-content p-4" style="flex: 1;">
+              <p class="title is-6 mb-1">Proteins (SCOPe)</p>
+              <p class="is-size-7 has-text-grey">
+                Designable monomer folds spanning $\alpha$-helical bundles, $\alpha/\beta$ mixed topologies, and antiparallel $\beta$-sheets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Zoom Lightbox Modal -->
+  <div class="modal gallery-modal" id="image-zoom-modal">
+    <div class="modal-background" id="modal-bg-close"></div>
+    <div class="modal-content gallery-modal-content">
+      <div class="box p-3 has-text-centered gallery-modal-box">
+        <button class="modal-close-custom" id="modal-btn-close" aria-label="close" title="Close (Esc)">
+          <i class="fas fa-times"></i>
+        </button>
+        <figure class="image">
+          <img id="zoom-modal-img" src="" alt="Enlarged gallery view" style="max-height: 80vh; width: auto; max-width: 100%; margin: 0 auto; object-fit: contain; border-radius: 8px;">
+        </figure>
+        <p class="is-size-6 has-text-dark mt-3 mb-1" id="zoom-modal-caption"></p>
+        <p class="is-size-7 has-text-grey mb-1">Click outside or press Esc to close</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BibTeX Section -->
+  <section class="section has-background-light" id="bibtex">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 is-spaced has-text-centered section-title">BibTeX Citation</h2>
+      <div class="bibtex-box">
+        <button class="copy-bibtex-btn" id="btn-copy-bibtex">
+          <i class="far fa-copy mr-1"></i> Copy
+        </button>
+        <pre id="bibtex-code"><code>@article{cretu2026zatom2,
+  title   = {Zatom-2: Multitask Pretraining on Atomistic Data for Generative Modeling across Domains},
+  author  = {Cretu, Miruna and Abrudan, Alex and Panescu, Antonia and Perez, Tynan and Anand, Rishabh and Erichson, N. Benjamin and Mahoney, Michael W. and Blau, Samuel and Jacobson, Joseph and G{\'o}mez-Bombarelli, Rafael and Ying, Rex and Knowles, Tuomas and Lio, Pietro and Morehead, Alex},
+  journal = {arXiv preprint arXiv identifier pending},
+  year    = {2026}
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Acknowledgements -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h3 class="title is-4 has-text-centered mb-3">Acknowledgements</h3>
+      <p class="has-text-grey is-size-6 has-text-centered" style="max-width: 800px; margin: 0 auto;">
+        This research used resources of the National Energy Research Scientific Computing Center (NERSC), a DOE Office of Science User Facility supported by the Office of Science of the U.S. Department of Energy (DOE) under Contract No. DE-AC02-05CH11231 using AI4Sci@NERSC award NERSC DDRERCAP0036206 awarded to AM. Additionally, NBE would like to acknowledge support from the U.S. Department of Energy, Office of Science, Office of Advanced Scientific Computing Research, EXPRESS: 2025 Exploratory Research for Extreme-Scale Science program, and the Scientific Discovery through Advanced Computing (SciDAC) program, under Contract Number DE-AC02-05CH11231 at Berkeley Lab.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container has-text-centered">
+      <p>
+        This webpage template is adapted from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> by <a href="https://horwitz.ai/" target="_blank">Eliahu Horwitz</a>, licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+      </p>
+      <p class="mt-2">
+        <a href="https://github.com/Zatom-AI/nucleus" target="_blank" class="has-text-grey mr-3">
+          <i class="fab fa-github mr-1"></i> GitHub (Zatom-AI/nucleus)
+        </a>
+        <a href="https://huggingface.co/Zatom-AI/Zatom-2" target="_blank" class="has-text-grey">
+          <i class="fas fa-cube mr-1"></i> Hugging Face (Zatom-AI)
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- MathJax for KaTeX/LaTeX math formatting -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        macros: {
+          AA: '{\\text{Å}}'
+        }
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- MolStar Viewer Bundle -->
+  <script src="static/js/molstar.js"></script>
+
+  <!-- Project Scripts -->
+  <script src="static/js/trajectory_player.js"></script>
+  <script src="static/js/index.js"></script>
+
+</body>
+</html>

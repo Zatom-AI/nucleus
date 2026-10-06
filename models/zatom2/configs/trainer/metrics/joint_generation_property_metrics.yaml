@@ -1,0 +1,18 @@
+molecule_generation_metrics:
+  _target_: nucleus.metrics.molecule_generation.MoleculeGenerationMetrics
+  required_tags_all: [omol25, unconditional]
+  reference_fingerprint_path: ${paths.data.omol25_train_fpsim2}
+  use_ground_truth_as_reference: false
+  compute_posebusters: true
+
+material_generation_metrics:
+  _target_: nucleus.metrics.material_generation.MaterialGenerationMetrics
+  required_tags_all: [omat24, unconditional]
+  reference_structures_path: null
+  reference_fingerprints_path: ${paths.data.omat24_train_fingerprints}
+  use_ground_truth_as_reference: false
+  novelty_use_fingerprint: true
+
+atomistic_property_metrics:
+  _target_: nucleus.metrics.atomistic_properties.AtomisticPropertyMetrics
+  required_tags_all: [mlip]

@@ -1,0 +1,12 @@
+name: omat24_unconditional
+domain: omat24
+task: unconditional
+inputs: ${oc.env:PROJECT_ROOT}/models/zatom2/docs/examples/omat24_train_1m_mean_force_norm_1000_with_forces.json
+n_batches: 1
+
+reference_fingerprint_path: null
+reference_fingerprints_path: ${oc.env:PROJECT_ROOT}/data/omat24/subsets/train_1M_fingerprints.npy
+
+afd:
+  reference: mp20
+  model_name: Ty-Perez/ct-scd-amp20

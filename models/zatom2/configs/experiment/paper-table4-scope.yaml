@@ -1,0 +1,35 @@
+# @package _global_
+
+defaults:
+  - train-pdb-scope-rung
+  - _self_
+
+dataloader:
+  train:
+    dataloader_params:
+      batch_size: 4
+
+# Match the seed-0 2k dataset and protein conditioning of the baseline SCOPe run.
+datasets:
+  train:
+    scope:
+      dataset:
+        dataset:
+          name: ${oc.env:SCOPE_DATASET_NAME,scope_seed0_2000}
+          data: ${oc.env:SCOPE_SPLIT_CSV,${paths.data.data_dir}/scope/rungs/seed0/scope_2000.csv}
+        dataset_parser:
+          base_path: ${oc.env:SCOPE_PDB_BASE_PATH,${paths.data.data_dir}/scope/rungs/seed0/pdb_2000}
+  global_transform_args:
+    meta_conditioning_probabilities:
+      calculate_hbonds: 0.0
+      hbond_subsample: 0.0
+      calculate_rasa: 0.6
+      keep_protein_motif_rasa: 0.1
+      unindex_leak_global_index: 0.1
+      unindex_insert_random_break: 0.1
+      unindex_remove_random_break: 0.1
+      add_1d_ss_features: 0.1
+      featurize_plddt: 0.9
+      add_global_is_non_loopy_feature: 0.99
+      add_ppi_hotspots: 0.75
+      full_binder_crop: 0.75

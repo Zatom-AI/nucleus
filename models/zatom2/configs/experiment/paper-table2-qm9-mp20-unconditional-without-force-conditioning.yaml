@@ -1,0 +1,56 @@
+# @package _global_
+# Table 2: joint QM9 + MP20 unconditional pretraining for established benchmarks.
+
+defaults:
+  - paper-pretrain-base
+  - /datasets/train/qm9/qm9@datasets.train.qm9
+  - /datasets/train/mp20/mp20@datasets.train.mp20
+  - _self_
+
+name: paper-table2-qm9-mp20-unconditional-without-force-conditioning
+tags: [paper, table-2, pretrain, qm9, mp20, unconditional, no-force-conditioning]
+
+datasets:
+  # The QM9/MP20 candidate window packs many small systems, and the resulting
+  # rank-local batches exhausted 80 GiB A100s at the shared 7,168-token cap.
+  # Halve the cap for comfortable activation-memory headroom; the launcher
+  # doubles gradient accumulation to preserve the optimizer token budget.
+  max_num_tokens: 3584
+  global_transform_args:
+    mean_force_norm_conditioning_probability: 0.0
+    mean_force_norm_conditioning_tasks: [unconditional]
+    train_conditions:
+      unconditional:
+        frequency: 1.0
+      structure_prediction:
+        frequency: 0.0
+  train:
+    omol25: null
+    omat24: null
+    qm9:
+      probability: 0.5
+    mp20:
+      probability: 0.5
+  # Benchmark evaluation is run from the generated samples. Canonical QM9 and
+  # MP20 validation-input JSON files are deliberately not fabricated here.
+  val: null
+
+trainer:
+  # Exact Zatom-1 training-set cardinality sum: QM9 100,000 + MP20 27,138.
+  n_examples_per_epoch: 127138
+  max_epochs: 10000
+  # This experiment has no in-training validation, so checkpoint explicitly at
+  # epoch boundaries instead of relying on checkpoint-before-validation.
+  checkpoint_every_n_epochs: 25
+  checkpoint_every_n_steps: null
+  checkpoint_keep_last_n: null # Retain all checkpoints, including previous saves.
+  metrics: null
+  validate_loader_every_n_epochs: {}
+
+callbacks:
+  log_grouped_zevals_structure_prediction_metrics_callback:
+    enabled: false
+  log_molecule_afd_validation_metrics_callback:
+    enabled: false
+  log_materials_afd_validation_metrics_callback:
+    enabled: false

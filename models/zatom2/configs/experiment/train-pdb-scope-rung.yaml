@@ -1,0 +1,75 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - /datasets/train/pdb/scope_rung@datasets.train.scope
+
+name: train-pdb-scope-rung
+tags: [pdb, train, scope, domain-size]
+
+ckpt_path: null
+
+model:
+  ema:
+    decay: 0.999
+  optimizer:
+    lr: 1.0e-4
+  lr_scheduler: null
+
+datasets:
+  train:
+    omol25: null
+    omat24: null
+    scope:
+      probability: 1.0
+  val: null
+  diffusion_batch_size_train: 4
+  crop_size: 128
+  max_atoms_in_crop: 1792
+  randomly_augment: True
+  randomly_translate_fractional_coordinates: False
+  global_transform_args:
+    center_option: all
+    sigma_perturb: 2.0
+    sigma_perturb_com: 1.0
+    mean_force_norm_conditioning_probability: 0.0
+    train_conditions:
+      unconditional:
+        frequency: 1.0
+      sequence_design:
+        frequency: 0.0
+      structure_prediction:
+        frequency: 0.0
+      island:
+        frequency: 0.0
+    meta_conditioning_probabilities:
+      calculate_hbonds: 0.0
+      hbond_subsample: 0.0
+      calculate_rasa: 0.0
+      keep_protein_motif_rasa: 0.0
+      unindex_leak_global_index: 0.0
+      unindex_insert_random_break: 0.0
+      unindex_remove_random_break: 0.0
+      add_1d_ss_features: 0.0
+      featurize_plddt: 0.0
+      add_global_is_non_loopy_feature: 0.0
+      add_ppi_hotspots: 0.0
+      full_binder_crop: 0.0
+
+trainer:
+  metrics: null
+  grad_accum_steps: 1
+  n_examples_per_epoch: 100000
+  max_epochs: 1
+  limit_train_batches: 50000
+  prevalidate: False
+  validate_every_n_epochs: 999
+  checkpoint_every_n_epochs: 1
+  checkpoint_every_n_steps: 5000
+  loss:
+    sequence_loss:
+      max_t: 1.0
+
+callbacks:
+  log_dataset_sampling_ratios_callback:
+    _target_: nucleus.callbacks.train_logging.LogDatasetSamplingRatiosCallback

@@ -1,0 +1,21 @@
+# @package oracle.structure_predictor
+# ESMFold2 — runs in-process via Biohub `esm` + HuggingFace
+# `transformers.models.esmfold2.ESMFold2Model`.
+# No conda env / cloned repo needed at runtime, but needs the git-installed
+# `esm` package: `pip install esm@git+https://github.com/Biohub/esm.git@main`
+# (or the `zevals[proteins-esmfold2]` extra).
+# Diffusion model → stochastic: num_samples > 1 yields distinct structures.
+
+_target_:            zevals.oracles.structure_predictors.esmfold2.ESMFold2Predictor
+entity_type:         protein
+model_name:          biohub/ESMFold2-Fast   # single-seq, fast; or biohub/ESMFold2 (larger, MSA-capable)
+model_revision:      c6c7958d63f5f2f1f0fed0bb9462316f8ccceea6
+num_loops:           3               # ESMFold2 trunk loops (accuracy vs. speed)
+num_sampling_steps:  50              # diffusion sampling steps
+num_samples:         1               # independent diffusion samples per sequence
+seed:                0               # base seed; sample i uses seed + i
+device:              null            # null = cuda if available, else cpu
+# No dtype knob: ESMFold2 loads fp32 master weights and autocasts to bf16
+# internally. Casting the weights to bf16 breaks folding (fp32 processor
+# inputs vs bf16 Linear weights). ~24 GB of weights → use an 80 GB GPU.
+tmp_dir:             /tmp/zevals/esmfold2

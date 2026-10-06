@@ -1,0 +1,76 @@
+# @package _global_
+
+defaults:
+  - inference_engine: zatom2
+  - _self_
+  - evaluation: omol25_unconditional
+  - override /classifier_free_guidance: force_only
+
+# The checkpoint and artifact directory are deliberately explicit CLI inputs.
+ckpt_path: ???
+out_dir: ???
+inputs: ${evaluation.inputs}
+n_batches: ${evaluation.n_batches}
+bond_sidecar_path: ${oc.select:evaluation.bond_sidecar_path,null}
+
+# Keep all outputs in the process so metrics can consume them, then the
+# evaluator writes every CIF and metadata JSON itself under out_dir/samples.
+num_nodes: 1
+devices_per_node: 1
+diffusion_batch_size: 1
+global_prefix: ""
+skip_existing: false
+save_cifs: true
+save_molecules: false
+dump_prediction_metadata_json: true
+output_full_json: true
+dump_trajectories: false
+
+inference_sampler:
+  cfg_scale: 2.0
+
+evaluation:
+  overwrite: false
+  # Skip checkpoint inference and recompute metrics from sample_manifest.json
+  # plus the saved CIF/metadata pairs already present under out_dir/samples.
+  reuse_saved_samples: false
+  # Also limits the inference JSON before sampling. For structure prediction,
+  # this must be divisible by n_batches * diffusion_batch_size.
+  expected_num_samples: 1000
+  novelty_n_threads: 8
+
+  afd:
+    enabled: true
+    reference: null
+    reference_records_path: null
+    model_name: null
+    batch_size: 256
+    device: null
+    feature_cache_dir: null
+    ref_sample_size: null
+    match_reference_size: true
+    seed: 0
+    show_progress: true
+
+  uma:
+    enabled: true
+    checkpoint: uma-s-1p2
+    device: null
+    batch_size: 8
+
+  force_consistency:
+    cutoff: 1.0
+    # When non-null, use only this AUROC threshold and skip auroc_cutoffs.
+    auroc_cutoff_override: null
+    # Ground-truth target >= cutoff is the high-force class; the continuous UMA
+    # mean force norm is the classification score.
+    auroc_cutoffs: [0.5, 0.75, 1.0]
+    require_targets: true
+
+  structure_prediction:
+    enabled: false
+    top_k: [1]
+    ltol: 0.3
+    stol: 0.5
+    angle_tol: 10.0
+    scale: true

@@ -1,0 +1,20 @@
+# @package _global_
+# Table 1: Zatom-2-S OMol25-only unconditional generation without force input.
+
+defaults:
+  - paper-table1-zatom2-s-omol25-unconditional-force-conditioned
+  - _self_
+
+name: paper-table1-zatom2-s-omol25-unconditional-without-force-conditioning
+tags: [paper, table-1, pretrain, zatom2-s, omol25, unconditional, no-force-conditioning]
+
+datasets:
+  global_transform_args:
+    mean_force_norm_conditioning_probability: 0.0
+    mean_force_norm_conditioning_tasks: []
+  val:
+    omol25_generation:
+      dataset:
+        transform:
+          mean_force_norm_conditioning_probability: 0.0
+          mean_force_norm_conditioning_tasks: []

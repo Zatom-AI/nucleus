@@ -1,0 +1,32 @@
+defaults:
+  - base_no_weights
+  - _self_
+
+probability: 1.0
+
+dataset:
+  transform:
+    crop_contiguous_probability: 1.0
+    crop_spatial_probability: 0.0
+  dataset:
+    name: ${oc.env:SCOPE_DATASET_NAME,scope_seed0_1000}
+    data: ${oc.env:SCOPE_SPLIT_CSV,${paths.data.data_dir}/scope/rungs/seed0/scope_1000.csv}
+    columns_to_load:
+      - example_id
+      - pdb_id
+      - domain_id
+      - scope_class
+      - scope_fold
+      - scope_superfamily
+      - scope_family
+      - length
+      - split
+      - path
+  dataset_parser:
+    _target_: atomworks.ml.datasets.parsers.GenericDFParser
+    example_id_colname: example_id
+    path_colname: path
+    pn_unit_iid_colnames: null
+    assembly_id_colname: null
+    base_path: ${oc.env:SCOPE_PDB_BASE_PATH,${paths.data.data_dir}/scope/rungs/seed0/pdb_1000}
+    extension: .pdb

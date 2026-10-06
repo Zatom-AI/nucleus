@@ -1,0 +1,61 @@
+# @package _global_
+# Crystal and periodic materials evaluation.
+
+pipeline:
+  _target_: zevals.pipeline.materials.MaterialEvalPipeline
+  reference_structures: null            # provide a list of pymatgen Structure objects in code
+  # LeMat-GenBench runs in its own pinned uv environment because its
+  # torch/PyG/MLIP stack conflicts with some Nucleus training environments.
+  # See docs/LeMat-GenBench-guide.md. It uses LeMat-Bulk as its reference;
+  # "mp20" is the training benchmark, not a selectable reference_set.
+  run_lematgenbench: false
+  lematgenbench_repo_path: ${oc.env:ZEVALS_LEMAT_GENBENCH_REPO,null}
+  lematgenbench_output_dir: ${oc.env:ZEVALS_LEMAT_GENBENCH_OUTPUT_DIR,null}
+  lematgenbench_run_name: zevals-materials
+  lematgenbench_config_name: comprehensive_multi_mlip_hull
+  # Validity is mandatory upstream and runs even though it is not listed here.
+  lematgenbench_families:
+    [distribution, diversity, novelty, uniqueness, stability, sun]
+  lematgenbench_fingerprint_method: structure-matcher
+  lematgenbench_runner_command: [uv, run, --frozen, python]
+  lematgenbench_expected_commit: 58e6eae3e4a6c87c22171cf069123ecc4e2fa7e6
+  lematgenbench_expected_lock_sha256: 74970323f6697d50e60251de9182e7a559031bce67ab2f693986742e7c286850
+  lematgenbench_verify_mace_checkpoint: true
+  lematgenbench_expected_mace_checkpoint_sha256: 75428afe3a1d7d8062e19bcaabd5c433623cabf308242ec9fb493e38604fb638
+  lematgenbench_verify_orb_checkpoint: true
+  lematgenbench_expected_orb_checkpoint_sha256: 0a41ef1132ad9c41ee0c7b9d855fccabfefb97abe04625c97ec0d07930b6c0f0
+  lematgenbench_verify_uma_checkpoint: true
+  lematgenbench_expected_uma_checkpoint_sha256: 02f83e20547294d3d47dd9dfbe4a4ee51eebca21b2e1febe63210e55b764cc78
+  lematgenbench_enforce_reference_revisions: true
+  # Upstream ignores its YAML device and auto-selects CUDA. Freeze the backend;
+  # null preserves the scheduler-provided visibility mask, which is archived.
+  lematgenbench_runtime_device: cuda
+  lematgenbench_cuda_visible_devices: null
+  # When true, upstream CIF parse drops remain invalid generation attempts.
+  lematgenbench_parse_failures_as_invalid: false
+  # Fail if stability final scores do not cover every valid structure with all
+  # three canonical oracles, despite upstream's permissive min_mlips_required=2.
+  lematgenbench_require_complete_oracle_coverage: true
+  lematgenbench_require_clean_repo: true
+  lematgenbench_timeout_seconds: null
+  lematgenbench_fail_on_family_error: true
+  # Reuse hash-verified oracle/family work across allocation time limits.
+  lematgenbench_resume: false
+  # Propagate LeMat protocol failures instead of silently returning partial evals.
+  lematgenbench_strict: true
+  # Crystal structure-prediction MR. Requires generated/<target_id>/*.cif and
+  # matching ground_truth/<target_id>/*.cif directories passed to Zevals.
+  compute_structure_prediction_metrics: false
+  structure_matcher_ltol: 0.3
+  structure_matcher_stol: 0.5
+  structure_matcher_angle_tol: 10.0
+  structure_matcher_scale: true  # standard CDVAE/DiffCSP volume-scaling policy
+  structure_prediction_top_k: [1]  # override with [1, 20] when every target has 20 candidates
+
+  # UMA near-DFT force check (optional). Off by default: it needs the `uma`
+  # extra (fairchem-core) and gated Hugging Face weights. See docs/UMA-guide.md.
+  compute_uma_forces: false
+  uma_checkpoint: uma-s-1p2            # or uma-s-1p1, uma-m-1p1, or a local .pt path
+  uma_task: omat                       # periodic heads only: omat | omc | odac | oc20. omol is rejected.
+  uma_device: null                     # null/"auto" picks CUDA when available; "cuda" or "cpu" to force
+  uma_batch_size: 8                    # structures per forward pass; lower it on GPU OOM

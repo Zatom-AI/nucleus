@@ -1,0 +1,123 @@
+_target_: zatom2.model.Zatom2
+
+c_s: 768
+c_z: 256
+c_atom: 128
+attn_backend: cueq # NOTE: must be one of ("manual", "cueq")
+
+token_initializer:
+  _target_: nucleus.model.layers.encoders.ZatomInitializer
+
+  c_bottleneck: 32
+  # If true, force statistics bypass the shared token-feature bottleneck and
+  # enter through a dedicated residual projection.
+  force_conditioning_residual_embedding: false
+  # Set false for the legacy linear charge/spin embedding ablation.
+  use_allscaip_charge_spin_embeddings: true
+  n_token_head: ${model.net.diffusion_module.token_trunk.n_head}
+  n_atom_head: ${model.net.diffusion_module.atom_encoder.n_head}
+
+  relative_position_encoding:
+    r_max: 32
+    s_max: 2
+
+  token_1d_features:
+    ref_motif_token_type: 3
+    restype: 32
+    ref_plddt: 1
+    is_non_loopy: 1
+    is_material_token: 1
+    mean_force_norm: 1
+    has_mean_force_norm: 1
+    total_charge: 1
+    spin_multiplicity: 1
+    has_total_charge: 1
+    has_spin_multiplicity: 1
+
+  atom_1d_features:
+    ref_atom_name_chars: 256
+    ref_element: 128
+    ref_charge: 1
+    ref_mask: 1
+    ref_is_motif_atom_with_fixed_coord: 1
+    ref_is_motif_atom_unindexed: 1
+    has_zero_occupancy: 1
+    ref_pos: 3
+    is_material_atom: 1
+    
+    # Guided features
+    ref_atomwise_rasa: 3
+    active_donor: 1
+    active_acceptor: 1
+    is_atom_level_hotspot: 1
+
+diffusion_module:
+  _target_: zatom2.model.Zatom2_diffusion_module.Zatom2DiffusionModule
+  c_t_embed: 32  # Time embedding dimension
+  n_token_head: ${model.net.diffusion_module.token_trunk.n_head}
+  sigma_data: 16
+  f_pred: flow_matching  # NOTE: must be one of ("edm", "flow_matching", "noise_pred", or "unconditioned")
+  n_token_attn_seq_neighbours: 32  # include self + n flanking neighbours
+  n_token_attn_keys: 128
+  n_atom_attn_seq_neighbours: 2  # include self + n flanking neighbours
+  n_atom_attn_keys: 128
+  n_recycle: 2  # NOTE: corresponds to one recycling step, as the first pass is not counted as a recycling step
+  use_local_token_attention: false # NOTE: if true, then token attention is restricted to a local window of size n_token_attn_seq_neighbours + 32 kNN neighbours, otherwise it is global attention
+  token_head_architecture: adaln_zero  # linear or adaln_zero
+  self_embedding_guidance_enabled: false
+  self_embedding_guidance_probability: 0.25
+  self_embedding_atom_condition_probability: 0.5
+  self_embedding_condition_dropout: 0.2
+  activation_scale_diagnostics: false
+
+  ########################################################################
+  # UNet level processing
+  ########################################################################
+  atom_encoder:
+    n_blocks: 3
+    n_head: 4
+    c_bottleneck: 16
+    mlp_ratio: 2.67  # = 8 / 3
+    dropout: 0.1
+    drop_path: 0.1
+    attn_backend: ${model.net.attn_backend}
+
+  downcast:
+    method: residual_cross_attention
+    cross_attention_block:
+      n_head: 4
+      c_model: ${model.net.c_atom}
+      dropout: 0.0
+      kq_norm: False  # TODO: investigate whether this helps
+
+  token_trunk:
+    n_blocks: 18
+    n_head: 12
+    c_bottleneck: 64
+    mlp_ratio: 2.67  # = 8 / 3
+    dropout: 0.1
+    drop_path: 0.1
+    attn_backend: ${model.net.attn_backend}
+
+  upcast:
+    method: residual_cross_attention
+    n_split: 24  # NOTE: this creates enough duplicates to allow for full cross-attention between all (e.g., 23) atoms per token
+    cross_attention_block:
+      n_head: 4
+      c_model: ${model.net.c_atom}
+      dropout: 0.0
+      kq_norm: False  # TODO: investigate whether this helps
+      kv_residual_connection: True
+
+  atom_decoder:
+    n_blocks: 3
+    n_head: 4
+    c_bottleneck: 16
+    mlp_ratio: 2.67  # = 8 / 3
+    dropout: 0.1
+    drop_path: 0.1
+    attn_backend: ${model.net.attn_backend}
+
+  ########################################################################
+  # 
+  ########################################################################

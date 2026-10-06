@@ -1,0 +1,35 @@
+# @package _global_
+# Table 3: OMol25 + OMat24 generation/structure pretraining without force input.
+
+defaults:
+  - paper-table3-joint-force-conditioned
+  - _self_
+
+name: paper-table3-omol25-omat24-joint-without-force-conditioning
+tags: [paper, table-3, pretrain, omol25, omat24, unconditional, structure-prediction, no-force-conditioning]
+
+datasets:
+  global_transform_args:
+    mean_force_norm_conditioning_probability: 0.0
+    mean_force_norm_conditioning_tasks: []
+  val:
+    omol25_generation:
+      dataset:
+        transform:
+          mean_force_norm_conditioning_probability: 0.0
+          mean_force_norm_conditioning_tasks: []
+    omat24_generation:
+      dataset:
+        transform:
+          mean_force_norm_conditioning_probability: 0.0
+          mean_force_norm_conditioning_tasks: []
+    omol25_structure_prediction:
+      dataset:
+        transform:
+          mean_force_norm_conditioning_probability: 0.0
+          mean_force_norm_conditioning_tasks: []
+    omat24_structure_prediction:
+      dataset:
+        transform:
+          mean_force_norm_conditioning_probability: 0.0
+          mean_force_norm_conditioning_tasks: []

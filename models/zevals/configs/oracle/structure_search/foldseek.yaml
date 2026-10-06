@@ -1,0 +1,10 @@
+# @package oracle.structure_search
+# FoldSeek structure search and clustering oracle.
+# Pure binary — no conda_env or repo_path needed.
+# Install: conda install -c bioconda foldseek
+
+_target_:     zevals.oracles.structure_search.foldseek.FoldSeekSearcher
+binary_path:  null        # null = use 'foldseek' from PATH
+tmp_dir:      /tmp/zevals/foldseek
+sensitivity:  9.5         # -s parameter; higher = more sensitive but slower
+max_seqs:     1000        # max hits per query

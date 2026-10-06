@@ -1,0 +1,6 @@
+# @package trainer
+strategy: auto
+
+accelerator: cpu
+devices_per_node: 1
+num_nodes: 1

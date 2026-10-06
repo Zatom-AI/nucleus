@@ -1,0 +1,10 @@
+{
+  "omat24_rattled_300_train_0001_structure_prediction": {
+    "input": "input_cifs/omat24_rattled_300_train_0001.cif",
+    "contig": "A1",
+    "select_fixed_atoms": false,
+    "select_unfixed_sequence": false,
+    "mean_force_norm": 1.3231431893640304,
+    "has_mean_force_norm": true
+  }
+}

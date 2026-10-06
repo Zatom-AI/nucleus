@@ -1,0 +1,50 @@
+defaults:
+  - loss/losses/diffusion_loss@loss.diffusion_loss
+  - loss/losses/sequence_loss@loss.sequence_loss
+  - loss/losses/material_geometry_loss@loss.material_geometry_loss
+  - metrics: design_metrics
+  - _self_
+
+_target_: nucleus.trainers.zatom.ZatomDesignTrainer
+
+# ZatomDesign specific (atom-array related):
+output_full_json: False  # saves additional metadata in the output json
+allow_sequence_outputs: True
+cleanup_guideposts: False
+cleanup_virtual_atoms: False
+read_sequence_from_sequence_head: True
+compute_non_clash_metrics_for_diffused_region_only: False
+association_scheme: ${datasets.global_transform_args.association_scheme}
+material_coordinate_output_source: fractional  # euclidean or fractional
+wrap_material_euclidean_coordinates: true  # wrap euclidean coords back into the predicted unit cell
+
+# Other:
+n_examples_per_epoch: 2400 # 24000 # 10x as many epochs
+checkpoint_every_n_epochs: 10 #  Less often checkpointing for fewer epochs
+checkpoint_every_n_steps: null # Set to an integer for step-based checkpointing
+checkpoint_before_validation: false
+checkpoint_keep_last_n: null
+checkpoint_retention_root: null
+validate_every_n_epochs: 4  # Validate often
+validate_loader_every_n_epochs: {}
+
+max_epochs: 100_000
+prevalidate: False
+
+clip_grad_max_norm: 10.0
+output_dir: ${paths.output_dir}
+n_recycles_train: 2
+grad_accum_steps: 3
+tensor_validation_every_n_steps: null
+coordinate_sanitization_log_every_n_steps: 100
+skip_optimizer_loading: False
+allow_world_size_change_on_resume: False
+find_unused_parameters: False
+log_loss_output_gradient_norms: False
+loss_output_gradient_norm_log_every_n_steps: 1
+log_shared_backbone_gradient_cosines: False
+shared_backbone_gradient_cosine_log_every_n_steps: 250
+
+# Precision
+error_if_grad_nonfinite: False
+precision: bf16-mixed

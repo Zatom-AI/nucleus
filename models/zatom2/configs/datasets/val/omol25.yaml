@@ -1,0 +1,17 @@
+defaults:
+  - design_validation_base
+  - _self_
+
+dataset:
+  _target_: nucleus.utils.datasets.LigandContigJsonDataset
+  data: ${paths.root_dir}/models/zatom2/docs/examples/omol25_geom_overfit_1_with_hydrogens.json
+  name: omol25-geom-overfit-inference
+  eval_every_n: 1
+  bond_sidecar_path: null # When null, molecule inputs use on-the-fly Open Babel perception for structure prediction.
+  transform:
+    diffusion_batch_size: ${datasets.diffusion_batch_size_inference}
+    randomly_augment: false
+    remove_hydrogens: false
+    generate_conformers: false
+    generate_conformers_for_non_protein_only: false
+    provide_reference_conformer_when_unmasked: false

@@ -1,0 +1,20 @@
+defaults:
+  - island
+  - _self_
+
+frequency: 1.0
+name: unconditional
+molecule_conditioning_mode: unconditional_design
+
+island_sampling_kwargs:
+  island_len_min: 0
+  island_len_max: 0
+  n_islands_min: 0
+  n_islands_max: 0
+
+# Conditional assignments won't matter for molecule/material/protein regions since always diffused:
+p_diffuse_motif_sidechains: 0.0
+p_diffuse_subgraph_atoms: 0.0
+p_fix_motif_sequence: 0.0
+p_fix_motif_coordinates: 0.0
+p_unindex_motif_tokens: 0.0

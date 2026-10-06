@@ -1,0 +1,8 @@
+# @package _global_
+
+# Force statistics bypass the shared bottleneck through a residual projection,
+# then follow the legacy token-initializer route.
+model:
+  net:
+    token_initializer:
+      force_conditioning_residual_embedding: true

@@ -1,0 +1,3 @@
+# Official Zatom-AI/geom processed release, extracted by scripts/download_geom.py.
+data_dir: ${paths.root_dir}/data
+geom_dir: ${oc.env:GEOM_DATA_DIR,${paths.data.data_dir}/geom}

@@ -1,0 +1,18 @@
+# @package oracle.inverse_folder
+# ProteinMPNN / SolubleMPNN / CA-ProteinMPNN — runs in-process (no subprocess
+# or conda env; needs only the zevals[proteins] extra). Switch variants
+# via model_variant: vanilla | soluble | ca_only.
+
+_target_:        zevals.oracles.inverse_folders.protein_mpnn.ProteinMPNNFolder
+weights_dir:     null          # /path/to/{vanilla,soluble,ca}_model_weights (folder holding v_48_0XX.pt)
+                                # null falls back to `zevals setup --checkpoints
+                                # protein_mpnn_{vanilla,soluble,ca}`'s default cache
+                                # location (variant-aware) before raising an error
+model_name:      v_48_020      # v_48_002 | v_48_010 | v_48_020 | v_48_030
+model_variant:   vanilla       # vanilla | soluble | ca_only
+num_sequences:   8
+temperature:     0.1
+backbone_noise:  0.02
+batch_size:      null          # null = sample all num_sequences in one forward pass
+device:          null          # null = cuda if available, else cpu
+tmp_dir:         /tmp/zevals/protein_mpnn

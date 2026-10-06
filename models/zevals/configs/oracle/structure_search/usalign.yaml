@@ -1,0 +1,11 @@
+# @package oracle.structure_search
+# USalign (TMalign + qTMclust) structure search/clustering oracle — the RNA
+# equivalent of FoldSeek (which doesn't understand nucleic acids). Every call
+# hardcodes -mol RNA -atom " C1'" to match oracle/inverse_folder/na_mpnn.yaml's
+# structural reference atom. Pure binary — no conda_env or repo_path needed.
+# Install: zevals setup --tools usalign (compiles from source, needs g++)
+
+_target_:     zevals.oracles.structure_search.usalign.USalignSearcher
+binary_path:  null        # null = 'TMalign'/'qTMclust' from PATH
+tmp_dir:      /tmp/zevals/usalign
+search_workers: 1         # exact query shards; increase on CPU-rich batch jobs

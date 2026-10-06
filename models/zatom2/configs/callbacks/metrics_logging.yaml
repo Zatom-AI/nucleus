@@ -1,0 +1,149 @@
+store_validation_metrics_in_df_callback:
+    _target_: nucleus.callbacks.metrics_logging.StoreValidationMetricsInDFCallback
+    save_dir: ${paths.output_dir}/val_metrics
+    metrics_to_save: "all"
+
+dump_validation_structures_callback:
+  _target_: nucleus.callbacks.dump_validation_structures.DumpValidationStructuresCallback
+  save_dir: ${paths.output_dir}/val_structures
+  dump_predictions: True
+  dump_prediction_metadata_json: True
+  dump_trajectories: False
+  dump_denoised_trajectories_only: False
+  
+  one_model_per_file: True
+  dump_every_n: 5
+  align_trajectories: False
+  verbose: False
+
+log_molecule_afd_validation_metrics_callback:
+  _target_: nucleus.callbacks.metrics_logging.LogMoleculeAFDValidationMetricsCallback
+  enabled: False
+  compute_afd: True
+  compute_atom_fractions: True
+  afd_reference_records_path: null
+  afd_model_name: null
+  afd_feature_cache_dir: null
+  dataset_names: null
+
+log_materials_afd_validation_metrics_callback:
+  _target_: nucleus.callbacks.metrics_logging.LogMaterialsAFDValidationMetricsCallback
+  enabled: False
+  afd_reference_records_path: null
+  afd_model_name: Ty-Perez/ct-scd-amp20
+  afd_feature_cache_dir: null
+  dataset_names: null
+
+log_grouped_zevals_structure_prediction_metrics_callback:
+  _target_: nucleus.callbacks.metrics_logging.LogGroupedZevalsStructurePredictionMetricsCallback
+  enabled: false
+  molecule_top_k: [1]
+  material_matcher_scales: [true]
+  # Fixed candidate budgets for match rate, alongside the full-budget keys.
+  # top1 is the one-shot number CDVAE/DiffCSP report next to best-of-20.
+  material_top_k: [1]
+  structure_ltol: 0.3
+  structure_stol: 0.5
+  structure_angle_tol: 10.0
+  dataset_names: null
+  append_to_validation_results: true
+  log_to_fabric: true
+
+log_design_validation_metrics_callback:
+  _target_: nucleus.callbacks.metrics_logging.LogDesignValidationMetricsCallback
+
+# Fixed, validation-suite-specific anchors map heterogeneous metrics to [0, 1].
+# Keep changes to these anchors versioned: changing them changes the meaning of
+# the checkpoint-selection score. Missing tasks/metrics are skipped and exposed
+# through val/composite/coverage; val/composite/full is logged only at 100% active
+# task/metric coverage.
+log_composite_validation_metrics_callback:
+  _target_: nucleus.callbacks.metrics_logging.LogCompositeValidationMetricsCallback
+  enabled: true
+  active_tasks: null  # Infer from positive training-condition frequencies.
+  task_weights:
+    generation: 1.0
+    structure_prediction: 1.0
+    mlip: 1.0
+  task_metrics:
+    generation:
+      - dataset: omol25_generation
+        metric: afd_score
+        direction: lower
+        bad: 0.35
+        good: 0.25
+        weight: 1.0
+      - dataset: omol25_generation
+        metric: molecule_generation_metrics.posebusters_rate
+        direction: higher
+        bad: 0.0
+        good: 0.5
+        weight: 1.0
+      - dataset: omol25_generation
+        metric: molecule_generation_metrics.novel_rate
+        direction: higher
+        bad: 0.1
+        good: 0.5
+        weight: 0.5
+      - dataset: omat24_generation
+        metric: afd_score
+        direction: lower
+        bad: 0.95
+        good: 0.80
+        weight: 1.0
+      - dataset: omat24_generation
+        metric: material_generation_metrics.valid_rate
+        direction: higher
+        bad: 0.70
+        good: 0.90
+        weight: 1.0
+      - dataset: omat24_generation
+        metric: material_generation_metrics.novelty_rate
+        direction: higher
+        bad: 0.1
+        good: 0.4
+        weight: 0.5
+    structure_prediction:
+      - dataset: omol25_structure_prediction
+        metric: zevals_epoch.molecule_best_rmsd_median_top1
+        direction: lower
+        bad: 4.0
+        good: 1.5
+        weight: 1.0
+      - dataset: omat24_structure_prediction
+        metric: zevals_epoch.material_match_rate_top1_at_1_scale_true
+        direction: higher
+        bad: 0.0
+        good: 0.4
+        weight: 0.75
+      - dataset: omat24_structure_prediction
+        metric: zevals_epoch.material_normalized_rms_dist_mean_top1_at_1_scale_true
+        direction: lower
+        bad: 0.5
+        good: 0.3
+        weight: 0.25
+    mlip:
+      - dataset: omol25_mlip
+        metric: atomistic_property_metrics.energy_per_atom_mae_eV
+        direction: lower
+        bad: 0.11
+        good: 0.012
+        weight: 0.5
+      - dataset: omol25_mlip
+        metric: atomistic_property_metrics.force_component_mae_eV_per_angstrom
+        direction: lower
+        bad: 0.18
+        good: 0.098
+        weight: 0.5
+      - dataset: omat24_mlip
+        metric: atomistic_property_metrics.energy_per_atom_mae_eV
+        direction: lower
+        bad: 0.56
+        good: 0.104
+        weight: 0.5
+      - dataset: omat24_mlip
+        metric: atomistic_property_metrics.force_component_mae_eV_per_angstrom
+        direction: lower
+        bad: 1.87
+        good: 1.15
+        weight: 0.5

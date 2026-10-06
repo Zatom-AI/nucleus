@@ -1,0 +1,68 @@
+data_mp20-000007
+#
+_entry.id       mp20-000007
+_entry.author   unknown_user
+_entry.date     2026-09-13
+_entry.time     02:47:06
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.is_motif_atom_with_fixed_seq 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+ATOM CA CA1 . LIG A 0 1 . 1 LIG A CA1 0  3.465735912322998 1.0 ? False 0.578125      0.556640625   0.57421875       1.2301528   1.6032263    2.9891658   1
+ATOM CU CU2 . LIG A 0 1 . 1 LIG A CU2 1  3.465735912322998 1.0 ? False 0.09423828125 0.591796875   0.05126953125    -0.83130807 3.381083     0.2668898   1
+ATOM V  V3  . LIG A 0 1 . 1 LIG A V3  2  3.465735912322998 1.0 ? False 0.560546875   0.625         0.0269775390625  2.1391447   3.6522355    0.14043488  1
+ATOM CU CU4 . LIG A 0 1 . 1 LIG A CU4 3  3.465735912322998 1.0 ? False 0.59375       0.1376953125  0.013671875      3.4727046   0.78146243   0.07117061  1
+ATOM V  V5  . LIG A 0 1 . 1 LIG A V5  4  3.465735912322998 1.0 ? False 0.08740234375 0.083984375   0.04931640625    0.26686427  0.35378078   0.25672257  1
+ATOM V  V6  . LIG A 0 1 . 1 LIG A V6  5  3.465735912322998 1.0 ? False 0.5703125     0.0400390625  0.521484375      2.4507835   -1.3243243   2.7146506   1
+ATOM V  V7  . LIG A 0 1 . 1 LIG A V7  6  3.465735912322998 1.0 ? False 0.1357421875  0.552734375   0.546875         -1.5415267  1.6618744    2.8468246   1
+ATOM CU CU8 . LIG A 0 1 . 1 LIG A CU8 7  3.465735912322998 1.0 ? False 0.19921875    0.11962890625 0.5703125        -0.21401137 -0.99532807  2.9688313   1
+ATOM O  O9  . LIG A 0 1 . 1 LIG A O9  8  3.465735912322998 1.0 ? False 0.88134765625 0.0283203125  0.70703125       4.0748286   -1.9506135   3.6805375   1
+ATOM O  O10 . LIG A 0 1 . 1 LIG A O10 9  3.465735912322998 1.0 ? False 0.283203125   0.1953125     0.38671875       0.54959613  0.0071668033 2.0131116   1
+ATOM O  O11 . LIG A 0 1 . 1 LIG A O11 10 3.465735912322998 1.0 ? False 0.375         0.41796875    0.67578125       0.019185908 0.4704435    3.5178618   1
+ATOM O  O12 . LIG A 0 1 . 1 LIG A O12 11 3.465735912322998 1.0 ? False 0.8466796875  0.8037109375  0.392578125      2.7900848   3.6235564    2.0436134   1
+ATOM O  O13 . LIG A 0 1 . 1 LIG A O13 12 3.465735912322998 1.0 ? False 0.439453125   0.294921875   0.07958984375    1.9886241   1.5229443    0.41431466  1
+ATOM O  O14 . LIG A 0 1 . 1 LIG A O14 13 3.465735912322998 1.0 ? False 0.76171875    0.369140625   0.39453125       3.2143633   1.0220172    2.0537806   1
+ATOM O  O15 . LIG A 0 1 . 1 LIG A O15 14 3.465735912322998 1.0 ? False 0.419921875   0.845703125   0.708984375      -0.7222234  2.9257486    3.6907048   1
+ATOM O  O16 . LIG A 0 1 . 1 LIG A O16 15 3.465735912322998 1.0 ? False 0.7724609375  0.92919921875 0.01287841796875 2.847831    5.5114846    0.067040175 1
+ATOM O  O17 . LIG A 0 1 . 1 LIG A O17 16 3.465735912322998 1.0 ? False 0.439453125   0.78515625    0.31640625       0.38169357  3.7411025    1.6470914   1
+ATOM O  O18 . LIG A 0 1 . 1 LIG A O18 17 3.465735912322998 1.0 ? False 0.1171875     0.455078125   0.19921875       -0.69534    2.120893     1.0370575   1
+ATOM O  O19 . LIG A 0 1 . 1 LIG A O19 18 3.465735912322998 1.0 ? False 0.07373046875 0.7705078125  0.88427734375    -3.151905   1.9510571    4.603214    1
+ATOM O  O20 . LIG A 0 1 . 1 LIG A O20 19 3.465735912322998 1.0 ? False 0.748046875   0.42578125    0.7900390625     2.1505132   0.17454785   4.1126447   1
+#
+_cell.length_a      6.417839334788266
+_cell.length_b      6.379442234432596
+_cell.length_c      6.379442234432596
+_cell.angle_alpha   108.77245330810547
+_cell.angle_beta    109.66769409179688
+_cell.angle_gamma   110.56294250488281
+_cell.volume        199.5506452337836
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

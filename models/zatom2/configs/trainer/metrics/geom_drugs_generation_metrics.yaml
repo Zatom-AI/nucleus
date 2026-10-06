@@ -1,0 +1,8 @@
+molecule_generation_metrics:
+  _target_: nucleus.metrics.molecule_generation.MoleculeGenerationMetrics
+  reference_smiles_path: null
+  reference_fingerprint_path: null
+  use_ground_truth_as_reference: false
+  compute_posebusters: true
+  compute_uff_force_norm: false
+  compute_uma_forces: false

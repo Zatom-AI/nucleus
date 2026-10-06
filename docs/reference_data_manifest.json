@@ -1,0 +1,20 @@
+{
+  "description": "Original Zatom-2 AFD and novelty reference caches",
+  "archive": "zatom2-reference-data.tar.gz",
+  "files": {
+    "omol25/geom_orca6_rdkit_conformers.pt": {
+      "size": 329747339,
+      "sha256": "fc7e554d0ab1960ce68e57bab4eb918fb3b691bec4a14f7a000b5fa9f833a802"
+    },
+    "omol25/subsets/omol25_train_4M_smiles_obabel_fpsim2.h5": {
+      "size": 495864957,
+      "sha256": "5ebee273c06a125416cabc8f05f895cee022822fd9af61a84035b1e2b5866670"
+    },
+    "omat24/subsets/train_1M_fingerprints.npy": {
+      "size": 246388400,
+      "sha256": "be8cb506a7a6e9e5531dd94876ba83bf6e1e5baf0b33119df03f1ddd05e21fdd"
+    }
+  },
+  "archive_sha256": "90e43cbbeba5eabe7c62f59b28e645d518d621320f1150b440dfb1110a2602bd",
+  "archive_size": 603979331
+}

@@ -1,0 +1,11 @@
+_target_: nucleus.metrics.losses.AtomisticPropertyLoss
+statistics_path: ${model.net.diffusion_module.atomistic_property_head.statistics_path}
+objective: ${model.net.diffusion_module.f_pred}
+sigma_data: ${model.net.diffusion_module.sigma_data}
+energy_max_sigma: 1.0
+force_max_sigma: 0.25
+energy_weight: 0.1
+force_weight: 0.3
+latent_equivariance_weight: 0.0
+warmup_steps: 10_000
+huber_delta: 1.0

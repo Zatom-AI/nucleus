@@ -1,0 +1,21 @@
+# @package _global_
+# OMol25 + OMat24 fixed-cardinality unconditional generation pretraining.
+
+defaults:
+  - pretrain
+  - _self_
+
+name: pretrain-omol25-omat24-unconditional
+tags: [pretrain, omol25, omat24, unconditional]
+
+datasets:
+  global_transform_args:
+    train_conditions:
+      unconditional:
+        frequency: 1.0
+      island:
+        frequency: 0.0
+      sequence_design:
+        frequency: 0.0
+      structure_prediction:
+        frequency: 0.0

@@ -1,0 +1,56 @@
+data_omat24_val_413_agm005728190_AB2C6_1362_spg12_0_aimd-from-PBE-1000-npt_15agl8_4
+#
+_entry.id       omat24_val_413_agm005728190_AB2C6_1362_spg12_0_aimd-from-PBE-1000-npt_15agl8_4
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Al Al1 . LIG A 1 1 . 1 LIG A Al1 0.0 1.0 ? 0.4865103599999999    0.7955117499999999  0.06528335000000007 1.2726028   4.9338107  -3.7823944    1 1
+HETATM Al Al2 . LIG A 1 1 . 1 LIG A Al2 0.0 1.0 ? 0.52344503            0.18398189          0.9219908600000001  1.9374449   0.33425674 8.046332      1 2
+HETATM Zn Zn1 . LIG A 1 1 . 1 LIG A Zn1 0.0 1.0 ? 0.86083607            0.62460081          0.20643814000000005 2.3690088   3.8552043  -1.4088628    1 3
+HETATM Zn Zn2 . LIG A 1 1 . 1 LIG A Zn2 0.0 1.0 ? 0.12127602999999997   0.3797361           0.7972945700000001  0.77481276  1.5396208  5.692353      1 4
+HETATM Zn Zn3 . LIG A 1 1 . 1 LIG A Zn3 0.0 1.0 ? 0.6504612000000001    0.68213487          0.66265978          2.0795488   3.6787467  2.7210922     1 5
+HETATM Zn Zn4 . LIG A 1 1 . 1 LIG A Zn4 0.0 1.0 ? 0.80965818            0.12099343          0.44183221000000006 2.4149652   0.5240441  3.7188075     1 6
+HETATM Zn Zn5 . LIG A 1 1 . 1 LIG A Zn5 0.0 1.0 ? 0.19943288            0.8747876399999999  0.56208625          0.80154264  4.8262277  0.6167747     1 7
+HETATM Zn Zn6 . LIG A 1 1 . 1 LIG A Zn6 0.0 1.0 ? 0.35206492            0.31471040999999994 0.3286368           1.1117518   1.6890062  1.4842868     1 8
+HETATM Cu Cu1 . LIG A 1 1 . 1 LIG A Cu1 0.0 1.0 ? 0.0022257400000000004 0.01183166          0.00648644          0.008909835 0.06627827 -0.0026320408 1 9
+#
+_cell.length_a      2.6821007985173715
+_cell.length_b      8.293296174689601
+_cell.length_c      9.870540009864788
+_cell.angle_alpha   138.4533539793657
+_cell.angle_beta    85.3707869315118
+_cell.angle_gamma   87.1622121453041
+_cell.volume        143.1201513451676
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

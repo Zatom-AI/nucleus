@@ -1,0 +1,36 @@
+# @package _global_
+
+defaults:
+  - inference_engine: zatom2
+  - _self_
+
+# The evaluator uses the same checkpoint loading, EMA dispatch, and feature
+# pipeline as `zatom2 design`, but streams ASE-LMDB validation records instead
+# of materializing one JSON/CIF per structure.
+ckpt_path: ???
+inputs: null
+out_dir: ???
+n_batches: 1
+diffusion_batch_size: 1
+dump_prediction_metadata_json: false
+dump_trajectories: false
+save_cifs: false
+save_molecules: false
+prevalidate_inputs: false
+skip_existing: false
+
+evaluation:
+  domains: [omol25, omat24]
+  datasets:
+    omol25:
+      path: ${oc.env:OMOL25_VAL_DIR,${oc.env:OMOL25_DATA_DIR}/../val}
+    omat24:
+      path: ${oc.env:OMAT24_VAL_DIR,${oc.env:OMAT24_DATA_DIR}/../val}
+  batch_size: 1
+  num_workers: 8
+  prefetch_factor: 2
+  part_size: 1024
+  max_system_atoms: 4096
+  max_examples_per_domain: null
+  resume: true
+  progress_every: 100

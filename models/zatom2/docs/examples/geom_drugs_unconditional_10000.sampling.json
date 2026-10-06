@@ -1,0 +1,959 @@
+{
+  "source_repo": "Zatom-AI/geom",
+  "source_revision": "855cd36632b30787b913743ec21903283dba41c8",
+  "source_split": "train",
+  "source_file": "train_num_nodes.pt",
+  "source_file_sha256": "d9f86cfdfe975602de96ad09ac4dae7002b502cf070e2c45a80cbd773212d9a4",
+  "training_conformers": 1172577,
+  "includes_hydrogens": true,
+  "weighting": "one_observation_per_training_conformer",
+  "sampling": "torch.multinomial",
+  "replacement": true,
+  "seed": 42,
+  "torch_version": "2.13.0+cu132",
+  "num_requests": 10000,
+  "atom_count_distribution": [
+    {
+      "num_atoms": 3,
+      "training_frequency": 2,
+      "probability": 1.7056449171355058e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 5,
+      "training_frequency": 3,
+      "probability": 2.558467375703259e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 6,
+      "training_frequency": 2,
+      "probability": 1.7056449171355058e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 7,
+      "training_frequency": 3,
+      "probability": 2.558467375703259e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 8,
+      "training_frequency": 7,
+      "probability": 5.96975720997427e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 9,
+      "training_frequency": 16,
+      "probability": 1.3645159337084046e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 10,
+      "training_frequency": 34,
+      "probability": 2.8995963591303597e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 11,
+      "training_frequency": 27,
+      "probability": 2.302620638132933e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 12,
+      "training_frequency": 65,
+      "probability": 5.543345980690394e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 13,
+      "training_frequency": 117,
+      "probability": 9.978022765242708e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 14,
+      "training_frequency": 131,
+      "probability": 0.00011171974207237563,
+      "sampled_frequency": 2
+    },
+    {
+      "num_atoms": 15,
+      "training_frequency": 217,
+      "probability": 0.00018506247350920239,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 16,
+      "training_frequency": 260,
+      "probability": 0.00022173383922761576,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 17,
+      "training_frequency": 331,
+      "probability": 0.0002822842337859262,
+      "sampled_frequency": 3
+    },
+    {
+      "num_atoms": 18,
+      "training_frequency": 674,
+      "probability": 0.0005748023370746655,
+      "sampled_frequency": 8
+    },
+    {
+      "num_atoms": 19,
+      "training_frequency": 824,
+      "probability": 0.0007027257058598283,
+      "sampled_frequency": 7
+    },
+    {
+      "num_atoms": 20,
+      "training_frequency": 1066,
+      "probability": 0.0009091087408332246,
+      "sampled_frequency": 4
+    },
+    {
+      "num_atoms": 21,
+      "training_frequency": 1741,
+      "probability": 0.0014847639003664579,
+      "sampled_frequency": 10
+    },
+    {
+      "num_atoms": 22,
+      "training_frequency": 2660,
+      "probability": 0.002268507739790223,
+      "sampled_frequency": 22
+    },
+    {
+      "num_atoms": 23,
+      "training_frequency": 3614,
+      "probability": 0.003082100365263859,
+      "sampled_frequency": 27
+    },
+    {
+      "num_atoms": 24,
+      "training_frequency": 5345,
+      "probability": 0.0045583360410446395,
+      "sampled_frequency": 42
+    },
+    {
+      "num_atoms": 25,
+      "training_frequency": 6716,
+      "probability": 0.005727555631741029,
+      "sampled_frequency": 62
+    },
+    {
+      "num_atoms": 26,
+      "training_frequency": 8783,
+      "probability": 0.007490339653600574,
+      "sampled_frequency": 72
+    },
+    {
+      "num_atoms": 27,
+      "training_frequency": 10541,
+      "probability": 0.008989601535762684,
+      "sampled_frequency": 95
+    },
+    {
+      "num_atoms": 28,
+      "training_frequency": 13440,
+      "probability": 0.011461933843150598,
+      "sampled_frequency": 98
+    },
+    {
+      "num_atoms": 29,
+      "training_frequency": 16061,
+      "probability": 0.013697181507056679,
+      "sampled_frequency": 126
+    },
+    {
+      "num_atoms": 30,
+      "training_frequency": 19191,
+      "probability": 0.016366515802373745,
+      "sampled_frequency": 161
+    },
+    {
+      "num_atoms": 31,
+      "training_frequency": 21684,
+      "probability": 0.018492602191583152,
+      "sampled_frequency": 168
+    },
+    {
+      "num_atoms": 32,
+      "training_frequency": 24585,
+      "probability": 0.020966640143888205,
+      "sampled_frequency": 234
+    },
+    {
+      "num_atoms": 33,
+      "training_frequency": 27933,
+      "probability": 0.023821889735173043,
+      "sampled_frequency": 262
+    },
+    {
+      "num_atoms": 34,
+      "training_frequency": 30340,
+      "probability": 0.02587463339294562,
+      "sampled_frequency": 261
+    },
+    {
+      "num_atoms": 35,
+      "training_frequency": 34097,
+      "probability": 0.02907868736978467,
+      "sampled_frequency": 288
+    },
+    {
+      "num_atoms": 36,
+      "training_frequency": 36571,
+      "probability": 0.031188570132281292,
+      "sampled_frequency": 304
+    },
+    {
+      "num_atoms": 37,
+      "training_frequency": 37148,
+      "probability": 0.031680648690874884,
+      "sampled_frequency": 304
+    },
+    {
+      "num_atoms": 38,
+      "training_frequency": 39973,
+      "probability": 0.03408987213632879,
+      "sampled_frequency": 329
+    },
+    {
+      "num_atoms": 39,
+      "training_frequency": 40871,
+      "probability": 0.03485570670412263,
+      "sampled_frequency": 358
+    },
+    {
+      "num_atoms": 40,
+      "training_frequency": 40984,
+      "probability": 0.034952075641940784,
+      "sampled_frequency": 322
+    },
+    {
+      "num_atoms": 41,
+      "training_frequency": 42690,
+      "probability": 0.03640699075625737,
+      "sampled_frequency": 384
+    },
+    {
+      "num_atoms": 42,
+      "training_frequency": 43690,
+      "probability": 0.037259813214825126,
+      "sampled_frequency": 375
+    },
+    {
+      "num_atoms": 43,
+      "training_frequency": 43648,
+      "probability": 0.03722399467156528,
+      "sampled_frequency": 356
+    },
+    {
+      "num_atoms": 44,
+      "training_frequency": 43688,
+      "probability": 0.03725810756990799,
+      "sampled_frequency": 388
+    },
+    {
+      "num_atoms": 45,
+      "training_frequency": 42552,
+      "probability": 0.03628930125697502,
+      "sampled_frequency": 337
+    },
+    {
+      "num_atoms": 46,
+      "training_frequency": 42597,
+      "probability": 0.03632767826761057,
+      "sampled_frequency": 369
+    },
+    {
+      "num_atoms": 47,
+      "training_frequency": 41442,
+      "probability": 0.035342668327964816,
+      "sampled_frequency": 352
+    },
+    {
+      "num_atoms": 48,
+      "training_frequency": 38967,
+      "probability": 0.033231932743009625,
+      "sampled_frequency": 366
+    },
+    {
+      "num_atoms": 49,
+      "training_frequency": 37054,
+      "probability": 0.03160048337976951,
+      "sampled_frequency": 325
+    },
+    {
+      "num_atoms": 50,
+      "training_frequency": 35798,
+      "probability": 0.030529338371808417,
+      "sampled_frequency": 280
+    },
+    {
+      "num_atoms": 51,
+      "training_frequency": 33620,
+      "probability": 0.028671891057047854,
+      "sampled_frequency": 303
+    },
+    {
+      "num_atoms": 52,
+      "training_frequency": 31607,
+      "probability": 0.026955159447950967,
+      "sampled_frequency": 238
+    },
+    {
+      "num_atoms": 53,
+      "training_frequency": 29977,
+      "probability": 0.02556505884048553,
+      "sampled_frequency": 262
+    },
+    {
+      "num_atoms": 54,
+      "training_frequency": 27944,
+      "probability": 0.023831270782217286,
+      "sampled_frequency": 279
+    },
+    {
+      "num_atoms": 55,
+      "training_frequency": 25882,
+      "probability": 0.022072750872650582,
+      "sampled_frequency": 212
+    },
+    {
+      "num_atoms": 56,
+      "training_frequency": 23344,
+      "probability": 0.019908287472805625,
+      "sampled_frequency": 189
+    },
+    {
+      "num_atoms": 57,
+      "training_frequency": 22102,
+      "probability": 0.018849081979264475,
+      "sampled_frequency": 198
+    },
+    {
+      "num_atoms": 58,
+      "training_frequency": 19794,
+      "probability": 0.016880767744890102,
+      "sampled_frequency": 163
+    },
+    {
+      "num_atoms": 59,
+      "training_frequency": 16962,
+      "probability": 0.014465574542226224,
+      "sampled_frequency": 135
+    },
+    {
+      "num_atoms": 60,
+      "training_frequency": 15474,
+      "probability": 0.013196574723877409,
+      "sampled_frequency": 172
+    },
+    {
+      "num_atoms": 61,
+      "training_frequency": 13457,
+      "probability": 0.01147643182494625,
+      "sampled_frequency": 108
+    },
+    {
+      "num_atoms": 62,
+      "training_frequency": 11918,
+      "probability": 0.010163938061210478,
+      "sampled_frequency": 114
+    },
+    {
+      "num_atoms": 63,
+      "training_frequency": 9582,
+      "probability": 0.008171744797996209,
+      "sampled_frequency": 92
+    },
+    {
+      "num_atoms": 64,
+      "training_frequency": 8880,
+      "probability": 0.007573063432081646,
+      "sampled_frequency": 80
+    },
+    {
+      "num_atoms": 65,
+      "training_frequency": 7197,
+      "probability": 0.0061377632343121175,
+      "sampled_frequency": 51
+    },
+    {
+      "num_atoms": 66,
+      "training_frequency": 5576,
+      "probability": 0.00475533802897379,
+      "sampled_frequency": 49
+    },
+    {
+      "num_atoms": 67,
+      "training_frequency": 4840,
+      "probability": 0.004127660699467924,
+      "sampled_frequency": 33
+    },
+    {
+      "num_atoms": 68,
+      "training_frequency": 3940,
+      "probability": 0.0033601204867569462,
+      "sampled_frequency": 36
+    },
+    {
+      "num_atoms": 69,
+      "training_frequency": 2945,
+      "probability": 0.0025115621404820324,
+      "sampled_frequency": 27
+    },
+    {
+      "num_atoms": 70,
+      "training_frequency": 2850,
+      "probability": 0.0024305440069180956,
+      "sampled_frequency": 21
+    },
+    {
+      "num_atoms": 71,
+      "training_frequency": 2275,
+      "probability": 0.0019401710932416378,
+      "sampled_frequency": 13
+    },
+    {
+      "num_atoms": 72,
+      "training_frequency": 1785,
+      "probability": 0.001522288088543439,
+      "sampled_frequency": 12
+    },
+    {
+      "num_atoms": 73,
+      "training_frequency": 1460,
+      "probability": 0.0012451207895089193,
+      "sampled_frequency": 14
+    },
+    {
+      "num_atoms": 74,
+      "training_frequency": 1350,
+      "probability": 0.0011513103190664664,
+      "sampled_frequency": 19
+    },
+    {
+      "num_atoms": 75,
+      "training_frequency": 1005,
+      "probability": 0.0008570865708605917,
+      "sampled_frequency": 4
+    },
+    {
+      "num_atoms": 76,
+      "training_frequency": 985,
+      "probability": 0.0008400301216892366,
+      "sampled_frequency": 4
+    },
+    {
+      "num_atoms": 77,
+      "training_frequency": 665,
+      "probability": 0.0005671269349475557,
+      "sampled_frequency": 6
+    },
+    {
+      "num_atoms": 78,
+      "training_frequency": 625,
+      "probability": 0.0005330140366048455,
+      "sampled_frequency": 4
+    },
+    {
+      "num_atoms": 79,
+      "training_frequency": 595,
+      "probability": 0.000507429362847813,
+      "sampled_frequency": 3
+    },
+    {
+      "num_atoms": 80,
+      "training_frequency": 510,
+      "probability": 0.000434939453869554,
+      "sampled_frequency": 4
+    },
+    {
+      "num_atoms": 81,
+      "training_frequency": 420,
+      "probability": 0.0003581854325984562,
+      "sampled_frequency": 5
+    },
+    {
+      "num_atoms": 82,
+      "training_frequency": 360,
+      "probability": 0.00030701608508439105,
+      "sampled_frequency": 4
+    },
+    {
+      "num_atoms": 83,
+      "training_frequency": 280,
+      "probability": 0.0002387902883989708,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 84,
+      "training_frequency": 245,
+      "probability": 0.00020894150234909947,
+      "sampled_frequency": 3
+    },
+    {
+      "num_atoms": 85,
+      "training_frequency": 215,
+      "probability": 0.00018335682859206686,
+      "sampled_frequency": 4
+    },
+    {
+      "num_atoms": 86,
+      "training_frequency": 240,
+      "probability": 0.0002046773900562607,
+      "sampled_frequency": 5
+    },
+    {
+      "num_atoms": 87,
+      "training_frequency": 200,
+      "probability": 0.00017056449171355058,
+      "sampled_frequency": 2
+    },
+    {
+      "num_atoms": 88,
+      "training_frequency": 205,
+      "probability": 0.00017482860400638934,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 89,
+      "training_frequency": 110,
+      "probability": 9.381047044245281e-05,
+      "sampled_frequency": 2
+    },
+    {
+      "num_atoms": 90,
+      "training_frequency": 80,
+      "probability": 6.822579668542024e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 91,
+      "training_frequency": 125,
+      "probability": 0.00010660280732096912,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 92,
+      "training_frequency": 120,
+      "probability": 0.00010233869502813035,
+      "sampled_frequency": 2
+    },
+    {
+      "num_atoms": 93,
+      "training_frequency": 80,
+      "probability": 6.822579668542024e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 94,
+      "training_frequency": 126,
+      "probability": 0.00010745562977953686,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 95,
+      "training_frequency": 100,
+      "probability": 8.528224585677529e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 96,
+      "training_frequency": 70,
+      "probability": 5.96975720997427e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 97,
+      "training_frequency": 95,
+      "probability": 8.101813356393652e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 98,
+      "training_frequency": 25,
+      "probability": 2.1320561464193822e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 99,
+      "training_frequency": 100,
+      "probability": 8.528224585677529e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 100,
+      "training_frequency": 60,
+      "probability": 5.116934751406518e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 101,
+      "training_frequency": 30,
+      "probability": 2.558467375703259e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 102,
+      "training_frequency": 25,
+      "probability": 2.1320561464193822e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 103,
+      "training_frequency": 30,
+      "probability": 2.558467375703259e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 104,
+      "training_frequency": 30,
+      "probability": 2.558467375703259e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 105,
+      "training_frequency": 30,
+      "probability": 2.558467375703259e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 106,
+      "training_frequency": 50,
+      "probability": 4.2641122928387644e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 107,
+      "training_frequency": 95,
+      "probability": 8.101813356393652e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 108,
+      "training_frequency": 45,
+      "probability": 3.837701063554888e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 109,
+      "training_frequency": 20,
+      "probability": 1.705644917135506e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 110,
+      "training_frequency": 40,
+      "probability": 3.411289834271012e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 111,
+      "training_frequency": 65,
+      "probability": 5.543345980690394e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 112,
+      "training_frequency": 30,
+      "probability": 2.558467375703259e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 113,
+      "training_frequency": 35,
+      "probability": 2.984878604987135e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 114,
+      "training_frequency": 10,
+      "probability": 8.52822458567753e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 115,
+      "training_frequency": 10,
+      "probability": 8.52822458567753e-06,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 116,
+      "training_frequency": 30,
+      "probability": 2.558467375703259e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 117,
+      "training_frequency": 65,
+      "probability": 5.543345980690394e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 118,
+      "training_frequency": 120,
+      "probability": 0.00010233869502813035,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 119,
+      "training_frequency": 60,
+      "probability": 5.116934751406518e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 120,
+      "training_frequency": 40,
+      "probability": 3.411289834271012e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 121,
+      "training_frequency": 30,
+      "probability": 2.558467375703259e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 122,
+      "training_frequency": 25,
+      "probability": 2.1320561464193822e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 123,
+      "training_frequency": 80,
+      "probability": 6.822579668542024e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 124,
+      "training_frequency": 55,
+      "probability": 4.690523522122641e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 125,
+      "training_frequency": 30,
+      "probability": 2.558467375703259e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 126,
+      "training_frequency": 42,
+      "probability": 3.581854325984562e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 127,
+      "training_frequency": 35,
+      "probability": 2.984878604987135e-05,
+      "sampled_frequency": 2
+    },
+    {
+      "num_atoms": 128,
+      "training_frequency": 10,
+      "probability": 8.52822458567753e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 129,
+      "training_frequency": 5,
+      "probability": 4.264112292838765e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 130,
+      "training_frequency": 25,
+      "probability": 2.1320561464193822e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 131,
+      "training_frequency": 5,
+      "probability": 4.264112292838765e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 132,
+      "training_frequency": 30,
+      "probability": 2.558467375703259e-05,
+      "sampled_frequency": 2
+    },
+    {
+      "num_atoms": 133,
+      "training_frequency": 30,
+      "probability": 2.558467375703259e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 134,
+      "training_frequency": 55,
+      "probability": 4.690523522122641e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 135,
+      "training_frequency": 40,
+      "probability": 3.411289834271012e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 136,
+      "training_frequency": 45,
+      "probability": 3.837701063554888e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 138,
+      "training_frequency": 50,
+      "probability": 4.2641122928387644e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 139,
+      "training_frequency": 20,
+      "probability": 1.705644917135506e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 140,
+      "training_frequency": 105,
+      "probability": 8.954635814961405e-05,
+      "sampled_frequency": 2
+    },
+    {
+      "num_atoms": 141,
+      "training_frequency": 20,
+      "probability": 1.705644917135506e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 142,
+      "training_frequency": 35,
+      "probability": 2.984878604987135e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 143,
+      "training_frequency": 20,
+      "probability": 1.705644917135506e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 144,
+      "training_frequency": 20,
+      "probability": 1.705644917135506e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 145,
+      "training_frequency": 70,
+      "probability": 5.96975720997427e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 146,
+      "training_frequency": 20,
+      "probability": 1.705644917135506e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 147,
+      "training_frequency": 20,
+      "probability": 1.705644917135506e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 148,
+      "training_frequency": 55,
+      "probability": 4.690523522122641e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 150,
+      "training_frequency": 50,
+      "probability": 4.2641122928387644e-05,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 151,
+      "training_frequency": 10,
+      "probability": 8.52822458567753e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 152,
+      "training_frequency": 10,
+      "probability": 8.52822458567753e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 153,
+      "training_frequency": 10,
+      "probability": 8.52822458567753e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 155,
+      "training_frequency": 15,
+      "probability": 1.2792336878516294e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 156,
+      "training_frequency": 10,
+      "probability": 8.52822458567753e-06,
+      "sampled_frequency": 1
+    },
+    {
+      "num_atoms": 158,
+      "training_frequency": 10,
+      "probability": 8.52822458567753e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 159,
+      "training_frequency": 5,
+      "probability": 4.264112292838765e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 160,
+      "training_frequency": 5,
+      "probability": 4.264112292838765e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 162,
+      "training_frequency": 5,
+      "probability": 4.264112292838765e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 169,
+      "training_frequency": 5,
+      "probability": 4.264112292838765e-06,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 176,
+      "training_frequency": 15,
+      "probability": 1.2792336878516294e-05,
+      "sampled_frequency": 0
+    },
+    {
+      "num_atoms": 181,
+      "training_frequency": 5,
+      "probability": 4.264112292838765e-06,
+      "sampled_frequency": 0
+    }
+  ]
+}

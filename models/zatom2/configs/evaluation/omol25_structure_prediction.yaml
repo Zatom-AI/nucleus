@@ -1,0 +1,23 @@
+name: omol25_structure_prediction
+domain: omol25
+task: structure_prediction
+inputs: ${oc.env:PROJECT_ROOT}/models/zatom2/docs/examples/omol25_val_structure_prediction_500.json
+# Use the validation molecular graph during inference. Structure metrics also
+# rebuild both reference and candidate conformers from this shared conditioned
+# graph, matching trainer validation instead of perceiving candidate bonds from
+# generated coordinates.
+bond_sidecar_path: ${oc.env:PROJECT_ROOT}/data/omol25/sidecars/val_all_bonds.lmdb
+# One candidate for each of 500 targets gives 500 saved samples.
+n_batches: 1
+
+reference_fingerprint_path: ${oc.env:PROJECT_ROOT}/data/omol25/subsets/omol25_train_4M_smiles_obabel_fpsim2.h5
+reference_fingerprints_path: null
+
+afd:
+  reference_records_path: ${oc.env:PROJECT_ROOT}/data/omol25/geom_orca6_rdkit_conformers.pt
+  model_name: Ty-Perez/ct-scd-omol25
+  feature_cache_dir: ${oc.env:PROJECT_ROOT}/data/omol25/afd_feature_cache
+
+structure_prediction:
+  enabled: true
+  top_k: [1]

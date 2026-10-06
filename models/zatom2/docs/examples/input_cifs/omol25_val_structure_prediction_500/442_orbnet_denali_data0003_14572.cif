@@ -1,0 +1,69 @@
+data_omol25_val_orbnet_denali_442_data0003_14572
+#
+_entry.id       omol25_val_orbnet_denali_442_data0003_14572
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM O  O1  . LIG A 1 1 . 1 LIG A O1  nan 1.0 ? -0.753866 -3.826069 -1.69528  1 1
+HETATM C  C1  . LIG A 1 1 . 1 LIG A C1  nan 1.0 ? -0.224084 -3.087377 -0.935733 1 2
+HETATM O  O2  . LIG A 1 1 . 1 LIG A O2  nan 1.0 ? 1.105652  -3.066962 -0.771292 1 3
+HETATM C  C2  . LIG A 1 1 . 1 LIG A C2  nan 1.0 ? 1.917215  -3.980115 -1.502228 1 4
+HETATM C  C3  . LIG A 1 1 . 1 LIG A C3  nan 1.0 ? 2.569437  -4.963708 -0.469495 1 5
+HETATM Cl CL1 . LIG A 1 1 . 1 LIG A CL1 nan 1.0 ? 3.388594  -4.096368 0.824988  1 6
+HETATM Cl CL2 . LIG A 1 1 . 1 LIG A CL2 nan 1.0 ? 3.76981   -5.998443 -1.33787  1 7
+HETATM Cl CL3 . LIG A 1 1 . 1 LIG A CL3 nan 1.0 ? 1.298907  -5.909839 0.222178  1 8
+HETATM N  N1  . LIG A 1 1 . 1 LIG A N1  nan 1.0 ? -0.831811 -2.1133   -0.227868 1 9
+HETATM C  C4  . LIG A 1 1 . 1 LIG A C4  nan 1.0 ? 0.062005  -1.055223 0.29769   1 10
+HETATM C  C5  . LIG A 1 1 . 1 LIG A C5  nan 1.0 ? 0.506586  2.109899  -0.461656 1 11
+HETATM C  C6  . LIG A 1 1 . 1 LIG A C6  nan 1.0 ? -2.055087 -0.068029 -0.452013 1 12
+HETATM C  C7  . LIG A 1 1 . 1 LIG A C7  nan 1.0 ? -0.942071 0.122674  0.58063   1 13
+HETATM C  C8  . LIG A 1 1 . 1 LIG A C8  nan 1.0 ? -0.273743 1.55864   0.735101  1 14
+HETATM C  C9  . LIG A 1 1 . 1 LIG A C9  nan 1.0 ? -0.686539 3.865309  1.599809  1 15
+HETATM C  C10 . LIG A 1 1 . 1 LIG A C10 nan 1.0 ? 0.707891  4.145533  0.978763  1 16
+HETATM C  C11 . LIG A 1 1 . 1 LIG A C11 nan 1.0 ? 0.631721  3.66769   -0.457344 1 17
+HETATM C  C12 . LIG A 1 1 . 1 LIG A C12 nan 1.0 ? -1.34937  2.53537   1.240891  1 18
+HETATM C  C13 . LIG A 1 1 . 1 LIG A C13 nan 1.0 ? -2.250359 -1.605094 -0.427092 1 19
+HETATM H  H1  . LIG A 1 1 . 1 LIG A H1  nan 1.0 ? 1.300075  -4.493039 -2.284887 1 20
+HETATM H  H2  . LIG A 1 1 . 1 LIG A H2  nan 1.0 ? 2.727585  -3.486358 -2.048244 1 21
+HETATM H  H3  . LIG A 1 1 . 1 LIG A H3  nan 1.0 ? -2.661129 -2.205211 -1.353359 1 22
+HETATM H  H4  . LIG A 1 1 . 1 LIG A H4  nan 1.0 ? 0.856002  -0.801308 -0.419666 1 23
+HETATM H  H5  . LIG A 1 1 . 1 LIG A H5  nan 1.0 ? -1.70602  0.243874  -1.533653 1 24
+HETATM H  H6  . LIG A 1 1 . 1 LIG A H6  nan 1.0 ? -2.873654 -2.010286 0.425329  1 25
+HETATM H  H7  . LIG A 1 1 . 1 LIG A H7  nan 1.0 ? -2.974774 0.527638  -0.213613 1 26
+HETATM H  H8  . LIG A 1 1 . 1 LIG A H8  nan 1.0 ? -0.636874 3.917739  2.691943  1 27
+HETATM H  H9  . LIG A 1 1 . 1 LIG A H9  nan 1.0 ? -0.077002 1.791281  -1.335611 1 28
+HETATM H  H10 . LIG A 1 1 . 1 LIG A H10 nan 1.0 ? 1.51479   1.688759  -0.570523 1 29
+HETATM H  H11 . LIG A 1 1 . 1 LIG A H11 nan 1.0 ? 1.413917  3.989035  -1.114665 1 30
+HETATM H  H12 . LIG A 1 1 . 1 LIG A H12 nan 1.0 ? 0.479294  1.392209  1.500187  1 31
+HETATM H  H13 . LIG A 1 1 . 1 LIG A H13 nan 1.0 ? 1.455765  3.463139  1.560811  1 32
+HETATM H  H14 . LIG A 1 1 . 1 LIG A H14 nan 1.0 ? 1.023859  5.243589  1.085734  1 33
+HETATM H  H15 . LIG A 1 1 . 1 LIG A H15 nan 1.0 ? -0.331897 4.094705  -0.921    1 34
+HETATM H  H16 . LIG A 1 1 . 1 LIG A H16 nan 1.0 ? -1.414356 4.610654  1.362538  1 35
+HETATM H  H17 . LIG A 1 1 . 1 LIG A H17 nan 1.0 ? -1.87469  2.031834  2.048885  1 36
+HETATM H  H18 . LIG A 1 1 . 1 LIG A H18 nan 1.0 ? -2.16538  2.760839  0.458397  1 37
+HETATM H  H19 . LIG A 1 1 . 1 LIG A H19 nan 1.0 ? -1.385077 -0.032103 1.56898   1 38
+HETATM H  H20 . LIG A 1 1 . 1 LIG A H20 nan 1.0 ? 0.513829  -1.364349 1.28606   1 39
+#

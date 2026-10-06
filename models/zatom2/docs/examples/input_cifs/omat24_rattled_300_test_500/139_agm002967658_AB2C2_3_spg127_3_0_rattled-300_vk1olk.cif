@@ -1,0 +1,57 @@
+data_139_agm002967658_AB2C2_3_spg127_3_0_rattled-300_vk1olk
+#
+_entry.id       139_agm002967658_AB2C2_3_spg127_3_0_rattled-300_vk1olk
+_entry.author   Zatom-AI
+_entry.date     2026-08-05
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Hf Hf1 . LIG A 1 1 . 1 LIG A Hf1 0.0 1.0 ? 0.37274708510425103 0.8976595339472624   0.9919327810550413 3.2284548 7.742551   3.9756203  1 1
+HETATM Hf Hf2 . LIG A 1 1 . 1 LIG A Hf2 0.0 1.0 ? 0.869978878384039   0.5749412133528153   0.0194162604031263 7.5351024 4.95902    0.07781947 1 2
+HETATM Hf Hf3 . LIG A 1 1 . 1 LIG A Hf3 0.0 1.0 ? 0.6015266303211462  0.18410371619403781  0.1711640204020597 5.209971  1.5879432  0.6860174  1 3
+HETATM Hf Hf4 . LIG A 1 1 . 1 LIG A Hf4 0.0 1.0 ? 0.1706788683296168  0.3364487048954246   0.9762197483292354 1.4782919 2.901959   3.9126432  1 4
+HETATM Cd Cd1 . LIG A 1 1 . 1 LIG A Cd1 0.0 1.0 ? 0.1602694198702252  0.7147490555248766   0.4280550543871655 1.388133  6.1648993  1.7156247  1 5
+HETATM Cd Cd2 . LIG A 1 1 . 1 LIG A Cd2 0.0 1.0 ? 0.6713481867904179  0.8851804793366115   0.5435606158045729 5.8147125 7.634916   2.1785655  1 6
+HETATM Cd Cd3 . LIG A 1 1 . 1 LIG A Cd3 0.0 1.0 ? 0.8395063462483847  0.2730423582237833   0.5243127723826859 7.271172  2.3550625  2.101421   1 7
+HETATM Cd Cd4 . LIG A 1 1 . 1 LIG A Cd4 0.0 1.0 ? 0.32011506818530927 0.1626418025061795   0.5068013733702372 2.772596  1.4028286  2.0312362  1 8
+HETATM Pb Pb1 . LIG A 1 1 . 1 LIG A Pb1 0.0 1.0 ? 0.9045741951346854  0.022476848725702304 0.8206362091553459 7.834741  0.19386876 3.2890716  1 9
+HETATM Pb Pb2 . LIG A 1 1 . 1 LIG A Pb2 0.0 1.0 ? 0.5963329300449658  0.5746786490894352   0.0437230063770215 5.164987  4.956755   0.17523977 1 10
+#
+_cell.length_a      8.661247412654445
+_cell.length_b      8.625264323945672
+_cell.length_c      4.0079533218414936
+_cell.angle_alpha   90.0
+_cell.angle_beta    90.0
+_cell.angle_gamma   90.0
+_cell.volume        299.41635050598916
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

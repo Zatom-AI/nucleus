@@ -1,0 +1,55 @@
+data_omat24_val_077_agm002860866_ABC2_33_spg122_0_aimd-from-PBE-1000-nvt_xz43a2_4
+#
+_entry.id       omat24_val_077_agm002860866_ABC2_33_spg122_0_aimd-from-PBE-1000-nvt_xz43a2_4
+_entry.author   Zatom-AI
+_entry.date     2026-08-30
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.fract_x 
+_atom_site.fract_y 
+_atom_site.fract_z 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM Na Na1 . LIG A 1 1 . 1 LIG A Na1 0.0 1.0 ? 0.99757392          0.00756541          0.00375991 7.4192324 0.07011565 0.01800618 1 1
+HETATM Na Na2 . LIG A 1 1 . 1 LIG A Na2 0.0 1.0 ? 0.75026117          0.23957395          0.50088794 7.428521  3.6375434  2.3987484  1 2
+HETATM La La1 . LIG A 1 1 . 1 LIG A La1 0.0 1.0 ? 0.48897091000000004 0.12625537000000003 0.24957094 4.5560894 1.863548   1.1951933  1 3
+HETATM La La2 . LIG A 1 1 . 1 LIG A La2 0.0 1.0 ? 0.25861009          0.62363029          0.24612093 2.8332498 5.5428996  1.1786712  1 4
+HETATM La La3 . LIG A 1 1 . 1 LIG A La3 0.0 1.0 ? 0.37497328          0.5184568799999999  0.74698033 5.5560584 6.6211786  3.577283   1 5
+HETATM La La4 . LIG A 1 1 . 1 LIG A La4 0.0 1.0 ? 0.8773125099999999  0.7354509           0.75414876 9.311673  8.258594   3.6116126  1 6
+HETATM N  N1  . LIG A 1 1 . 1 LIG A N1  0.0 1.0 ? 0.50411756          0.49616735          0.01117229 3.7836766 3.72466    0.05350401 1 7
+HETATM N  N2  . LIG A 1 1 . 1 LIG A N2  0.0 1.0 ? 0.25075882          0.72089628          0.51273419 3.764541  7.254506   2.45548    1 8
+#
+_cell.length_a      7.42328652
+_cell.length_b      7.42328652
+_cell.length_c      7.105423103454713
+_cell.angle_alpha   58.5087959410326
+_cell.angle_beta    58.5087959410326
+_cell.angle_gamma   90.0
+_cell.volume        263.89828930559855
+#
+_space_group.name_H-M_alt   'P 1'
+_space_group.IT_number      1
+#
+_symmetry.space_group_name_H-M   'P 1'
+_symmetry.Int_Tables_number      1
+#

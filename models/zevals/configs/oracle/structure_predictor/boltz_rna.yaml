@@ -1,0 +1,17 @@
+_target_: zevals.oracles.structure_predictors.boltz.BoltzPredictor
+entity_type: rna
+repo_path: ${oc.env:ZEVALS_BOLTZ_REPO,null}
+executable: ${oc.env:ZEVALS_BOLTZ_EXECUTABLE,null}
+cache_dir: ${oc.env:ZEVALS_BOLTZ_CACHE,null}
+num_samples: 1
+num_recycles: 3
+sampling_steps: 200
+seed: 42
+no_kernels: true  # portable A100 path; avoids optional fused-kernel ABI issues
+output_format: mmcif
+devices: 1
+num_workers: 0
+# Native Boltz CLI options not managed above can be passed without narrowing
+# predictor functionality, e.g. use_msa_server or sampling_steps_affinity.
+cli_options: {}
+expected_repo_revision: cb04aeccdd480fd4db707f0bbafde538397fa2ac
