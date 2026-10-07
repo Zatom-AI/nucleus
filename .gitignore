@@ -27,6 +27,7 @@ data/**/pdb_*/
 data/geom/
 data/*/processed.tar.gz
 data/pdbstyle-*/
+data/pdbstyle-sel-gs-bib-40-2.08.tgz
 src/nucleus/version.py
 models/*/src/*/version.py
 *.aux
