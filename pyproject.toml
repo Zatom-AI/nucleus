@@ -110,7 +110,7 @@ dev = [
     "atomworks[ase,dev,ml,openbabel] @ git+https://github.com/amorehead/atomworks.git@b2e3576a12943639cd2234c9097b70302e6e8f56",
 ]
 [project.urls]
-Homepage = "https://zatom-ai.github.io/nucleus/"
+Homepage = "https://zatomai.github.io/nucleus"
 Repository = "https://github.com/Zatom-AI/nucleus"
 Issues = "https://github.com/Zatom-AI/nucleus/issues"
 

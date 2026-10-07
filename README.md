@@ -5,7 +5,7 @@ molecules, materials, and protein generation, and **Zevals**, its evaluation
 pipelines. It includes training code, paper configurations, data preparation
 tools, the inference CLI, and Zatom-2's project page.
 
-[Project page](https://zatom-ai.github.io/nucleus/) ·
+[Project page](https://zatomai.github.io/nucleus) ·
 [Preprint PDF](models/zatom2/docs/static/zatom2_paper.pdf) ·
 [arXiv (placeholder; submission pending)](https://arxiv.org/abs/XXXX.XXXXX) ·
 [Weights](https://huggingface.co/Zatom-AI/Zatom-2)
