@@ -9,9 +9,21 @@ from jaxtyping import install_import_hook
 # Load environment variables from `.env` file
 _env = Env()
 _env.read_env()
-should_typecheck = _env.bool("TYPE_CHECK", default=False)
-should_debug = _env.bool("DEBUG", default=False)
-should_check_nans = _env.bool("NAN_CHECK", default=True)
+
+
+def _safe_bool(name: str, default: bool = False) -> bool:
+    try:
+        return _env.bool(name, default=default)
+    except Exception:
+        val = os.getenv(name)
+        if val is None:
+            return default
+        return val.strip().lower() in ("1", "true", "yes", "on", "t")
+
+
+should_typecheck = _safe_bool("TYPE_CHECK", default=False)
+should_debug = _safe_bool("DEBUG", default=False)
+should_check_nans = _safe_bool("NAN_CHECK", default=True)
 
 # Set up logger
 logger = logging.getLogger("nucleus")
@@ -32,7 +44,7 @@ SHOULD_USE_CUEQUIVARIANCE = False
 
 try:
     if torch.cuda.is_available():
-        if _env.bool("DISABLE_CUEQUIVARIANCE", default=False):
+        if _safe_bool("DISABLE_CUEQUIVARIANCE", default=False):
             logger.info("cuEquivariance usage disabled via DISABLE_CUEQUIVARIANCE")
         else:
             import cuequivariance_torch as cuet  # noqa: I001, F401
@@ -54,11 +66,11 @@ except ImportError:
 DISABLE_CHECKPOINTING = False
 DEBUG_ANOMALIES = False
 
-if _env.bool("DISABLE_CHECKPOINTING", default=False):
+if _safe_bool("DISABLE_CHECKPOINTING", default=False):
     DISABLE_CHECKPOINTING = True
     logger.info("Checkpointing is globally disabled via DISABLE_CHECKPOINTING")
 
-if _env.bool("DEBUG_ANOMALIES", default=False):
+if _safe_bool("DEBUG_ANOMALIES", default=False):
     DEBUG_ANOMALIES = True
     logger.info("Debug anomalies is globally enabled via DEBUG_ANOMALIES")
 

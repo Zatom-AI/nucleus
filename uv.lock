@@ -348,7 +348,7 @@ name = "build"
 version = "1.6.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "os_name == 'nt'" },
+    { name = "colorama", marker = "os_name == 'nt' and sys_platform != 'linux'" },
     { name = "packaging" },
     { name = "pyproject-hooks" },
 ]
@@ -588,7 +588,7 @@ name = "cuda-bindings"
 version = "13.4.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cuda-pathfinder", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "cuda-pathfinder", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/65/11/1293429c1c3a3e19b551275e65efddd122a905bbe7e368816a59f3ef2a41/cuda_bindings-13.4.3-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:bfbd3f7d4ac04dd41dc49121b9e408c8283992f47124c2290ecb79bbbadcca8e", size = 6488226, upload-time = "2026-09-23T02:22:00.578Z" },
@@ -613,43 +613,43 @@ wheels = [
 
 [package.optional-dependencies]
 cublas = [
-    { name = "nvidia-cublas", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
-    { name = "nvidia-cuda-nvrtc", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "nvidia-cublas", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
+    { name = "nvidia-cuda-nvrtc", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 cudart = [
-    { name = "nvidia-cuda-runtime", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "nvidia-cuda-runtime", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 cufft = [
-    { name = "nvidia-cufft", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
-    { name = "nvidia-nvjitlink", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "nvidia-cufft", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
+    { name = "nvidia-nvjitlink", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 cufile = [
     { name = "nvidia-cufile", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 cupti = [
-    { name = "nvidia-cuda-cupti", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "nvidia-cuda-cupti", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 curand = [
-    { name = "nvidia-curand", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "nvidia-curand", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 cusolver = [
-    { name = "nvidia-cublas", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
-    { name = "nvidia-cusolver", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
-    { name = "nvidia-cusparse", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
-    { name = "nvidia-nvjitlink", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "nvidia-cublas", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
+    { name = "nvidia-cusolver", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
+    { name = "nvidia-cusparse", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
+    { name = "nvidia-nvjitlink", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 cusparse = [
-    { name = "nvidia-cusparse", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
-    { name = "nvidia-nvjitlink", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "nvidia-cusparse", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
+    { name = "nvidia-nvjitlink", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 nvjitlink = [
-    { name = "nvidia-nvjitlink", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "nvidia-nvjitlink", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 nvrtc = [
-    { name = "nvidia-cuda-nvrtc", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "nvidia-cuda-nvrtc", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 nvtx = [
-    { name = "nvidia-nvtx", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "nvidia-nvtx", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux')" },
 ]
 
 [[package]]
@@ -657,11 +657,11 @@ name = "cuequivariance"
 version = "0.10.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "networkx", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-    { name = "numpy", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-    { name = "opt-einsum", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-    { name = "scipy", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-    { name = "sympy", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "networkx", marker = "sys_platform == 'linux'" },
+    { name = "numpy", marker = "sys_platform == 'linux'" },
+    { name = "opt-einsum", marker = "sys_platform == 'linux'" },
+    { name = "scipy", marker = "sys_platform == 'linux'" },
+    { name = "sympy", marker = "sys_platform == 'linux'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/9e/df/eaad918ad320805c08ec29ca5f3df8f89b1d0b6c828668d0c10e94ae6b6e/cuequivariance-0.10.0.tar.gz", hash = "sha256:8be785f84a0c25b6b3e927e551078be261f0900c583a7c8c95744bcd5fa1967d", size = 214826, upload-time = "2026-04-22T01:20:40.317Z" }
 wheels = [
@@ -673,10 +673,10 @@ name = "cuequivariance-ops-cu13"
 version = "0.10.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-    { name = "nvidia-ml-py", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-    { name = "platformdirs", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-    { name = "tqdm", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "nvidia-cublas", marker = "sys_platform == 'linux'" },
+    { name = "nvidia-ml-py", marker = "sys_platform == 'linux'" },
+    { name = "platformdirs", marker = "sys_platform == 'linux'" },
+    { name = "tqdm", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/32/a0/ef1e3b1ffa2bb7dfc9066d8d4291707c72b2e355da3dd2bcd4d70293d1fd/cuequivariance_ops_cu13-0.10.0-py3-none-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:839b6df3f5e8353d6fb7ed5e68da021b4c011a0627f25cd9ede7b77aaf545123", size = 31933768, upload-time = "2026-04-22T01:14:26.024Z" },
@@ -688,8 +688,8 @@ name = "cuequivariance-ops-torch-cu13"
 version = "0.10.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cuequivariance-ops-cu13", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-    { name = "scipy", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "cuequivariance-ops-cu13", marker = "sys_platform == 'linux'" },
+    { name = "scipy", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/27/c3/ebef52bcf5b6ff90e45cfe4c375b8dd9e9a46370963a3cad85e6a4fd77d1/cuequivariance_ops_torch_cu13-0.10.0-cp312-cp312-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:cfe828719878c0ba3265e7cae375e74d4b7acfcb5b43836c90b6f05ec9e92247", size = 387554, upload-time = "2026-04-22T01:14:56.365Z" },
@@ -701,7 +701,7 @@ name = "cuequivariance-torch"
 version = "0.10.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cuequivariance", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "cuequivariance", marker = "sys_platform == 'linux'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/35/d6/b2e18f0c7f176741804ecdaec1821b954988b952f668b619ae463ea31818/cuequivariance_torch-0.10.0.tar.gz", hash = "sha256:90af8143f3b8f6e97beeca2853a31fd67f1de9c1820a0547465f82d78b423df8", size = 167365, upload-time = "2026-04-22T01:20:46.178Z" }
 wheels = [
@@ -1741,7 +1741,7 @@ name = "nvidia-cublas"
 version = "13.4.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cuda-nvrtc", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "nvidia-cuda-nvrtc", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d0/48/8571e55aaabbd112f06a39a71fbc3abf0b8a0d450921816a13a6d5e8fa0b/nvidia_cublas-13.4.0.1-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:705d7d214fbb20f134415ecadc488abf74f444c155a6555dec5687404afb18a9", size = 513051304, upload-time = "2026-04-13T09:49:32.758Z" },
@@ -1780,7 +1780,7 @@ name = "nvidia-cudnn-cu13"
 version = "9.20.0.48"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "nvidia-cublas", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/56/c5/83384d846b2fd17c44bd499b36c75a45ed4f095fbbb2252294e89cea5c5c/nvidia_cudnn_cu13-9.20.0.48-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:e31454ae00094b0c55319d9d15b6fa2fc50a9e1c0f5c8c80fb75258234e731e1", size = 444574296, upload-time = "2026-03-09T19:28:27.751Z" },
@@ -1792,7 +1792,7 @@ name = "nvidia-cufft"
 version = "12.2.0.46"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-nvjitlink", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "nvidia-nvjitlink", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/be/b1/6e36381739b51e692d91646298ad5685c562929b899331c2bb6e9722a176/nvidia_cufft-12.2.0.46-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:2e8f3a22c2745f95327b7639ba2868ea2cbd5d3131ebe6313394e24164054f41", size = 218244743, upload-time = "2026-04-13T09:51:24.75Z" },
@@ -1822,9 +1822,9 @@ name = "nvidia-cusolver"
 version = "12.2.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-    { name = "nvidia-cusparse", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-    { name = "nvidia-nvjitlink", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "nvidia-cublas", marker = "sys_platform == 'linux'" },
+    { name = "nvidia-cusparse", marker = "sys_platform == 'linux'" },
+    { name = "nvidia-nvjitlink", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/94/21/21e5c491a8285a6ed039cbb8c60ec13ff3aff60c669e1caa4adaeb71f997/nvidia_cusolver-12.2.0.1-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:c9def09fcf300b9465cdf800142abf10149df28c4290bdf9e7b4a700480d31d7", size = 249744985, upload-time = "2026-04-13T09:54:33.757Z" },
@@ -1836,7 +1836,7 @@ name = "nvidia-cusparse"
 version = "12.7.10.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-nvjitlink", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+    { name = "nvidia-nvjitlink", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b5/09/9f1fa88dd305e838b71f2ca4e50064e7cbdf2e15cd6410d9e1b74066cc41/nvidia_cusparse-12.7.10.1-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:80cc98b38fdcf054a80bd9782fe2e63c66f90e202cac269f641357ccac5fe7e3", size = 168860233, upload-time = "2026-04-13T09:55:48.891Z" },
@@ -2768,8 +2768,8 @@ wheels = [
 
 [[package]]
 name = "rc-foundry"
-version = "0.1.11.dev36+gcd4d94fb0"
-source = { git = "https://github.com/RosettaCommons/foundry.git?rev=cd4d94fb0c2c86e77412b32fa2b7c651abefa471#cd4d94fb0c2c86e77412b32fa2b7c651abefa471" }
+version = "0.2.0"
+source = { git = "https://github.com/RosettaCommons/foundry.git?rev=39671441e609aa178ac4ee64a161cd94bc4a8330#39671441e609aa178ac4ee64a161cd94bc4a8330" }
 dependencies = [
     { name = "assertpy" },
     { name = "atomworks", extra = ["ml"] },
@@ -3626,18 +3626,34 @@ all = [
     { name = "transformers" },
 ]
 dev = [
+    { name = "accelerate" },
     { name = "atomworks", extra = ["ase", "dev", "ml", "openbabel"] },
+    { name = "biopython" },
+    { name = "biotite" },
     { name = "debugpy" },
+    { name = "fpsim2" },
+    { name = "huggingface-hub" },
     { name = "ipdb" },
     { name = "ipykernel" },
+    { name = "matminer" },
+    { name = "posebusters" },
     { name = "pre-commit" },
+    { name = "prody" },
+    { name = "pydantic" },
+    { name = "pymatgen" },
     { name = "pytest" },
     { name = "pytest-benchmark" },
     { name = "pytest-cov" },
     { name = "pytest-dotenv" },
     { name = "pytest-testmon" },
     { name = "pytest-xdist" },
+    { name = "rdkit" },
+    { name = "riboseek" },
     { name = "ruff" },
+    { name = "smact" },
+    { name = "torch-geometric" },
+    { name = "tqdm" },
+    { name = "transformers" },
 ]
 zatom2 = [
     { name = "pydantic" },
@@ -3663,20 +3679,51 @@ zevals = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "accelerate" },
+    { name = "atomworks", extra = ["ase", "dev", "ml", "openbabel"] },
+    { name = "biopython" },
+    { name = "biotite" },
     { name = "build" },
+    { name = "debugpy" },
+    { name = "fpsim2" },
     { name = "hatchling" },
+    { name = "huggingface-hub" },
+    { name = "ipdb" },
+    { name = "ipykernel" },
+    { name = "matminer" },
+    { name = "posebusters" },
+    { name = "pre-commit" },
+    { name = "prody" },
+    { name = "pydantic" },
+    { name = "pymatgen" },
+    { name = "pytest" },
+    { name = "pytest-benchmark" },
+    { name = "pytest-cov" },
+    { name = "pytest-dotenv" },
+    { name = "pytest-testmon" },
+    { name = "pytest-xdist" },
+    { name = "rdkit" },
+    { name = "riboseek" },
+    { name = "ruff" },
+    { name = "smact" },
+    { name = "torch-geometric" },
+    { name = "tqdm" },
+    { name = "transformers" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "accelerate", marker = "extra == 'all'" },
+    { name = "accelerate", marker = "extra == 'dev'" },
     { name = "accelerate", marker = "extra == 'zevals'" },
     { name = "atomworks", extras = ["ase", "dev", "ml", "openbabel"], marker = "extra == 'dev'", git = "https://github.com/amorehead/atomworks.git?rev=b2e3576a12943639cd2234c9097b70302e6e8f56" },
     { name = "atomworks", extras = ["ase", "ml", "openbabel"], git = "https://github.com/amorehead/atomworks.git?rev=b2e3576a12943639cd2234c9097b70302e6e8f56" },
     { name = "beartype", specifier = ">=0.18.0,<1" },
     { name = "biopython", marker = "extra == 'all'" },
+    { name = "biopython", marker = "extra == 'dev'" },
     { name = "biopython", marker = "extra == 'zevals'" },
     { name = "biotite", marker = "extra == 'all'" },
+    { name = "biotite", marker = "extra == 'dev'" },
     { name = "biotite", marker = "extra == 'zevals'" },
     { name = "cuequivariance", marker = "sys_platform == 'linux'", specifier = "==0.10.0" },
     { name = "cuequivariance-ops-cu13", marker = "sys_platform == 'linux'", specifier = "==0.10.0" },
@@ -3688,9 +3735,11 @@ requires-dist = [
     { name = "einx", specifier = ">=0.1.0,<1" },
     { name = "environs", specifier = ">=11.0.0,<12" },
     { name = "fpsim2", marker = "extra == 'all'" },
+    { name = "fpsim2", marker = "extra == 'dev'" },
     { name = "fpsim2", marker = "extra == 'zevals'" },
     { name = "huggingface-hub", specifier = ">=1.0.0,<2" },
     { name = "huggingface-hub", marker = "extra == 'all'" },
+    { name = "huggingface-hub", marker = "extra == 'dev'" },
     { name = "huggingface-hub", marker = "extra == 'zevals'" },
     { name = "hydra-colorlog", specifier = ">=1.2.0" },
     { name = "hydra-core", specifier = ">=1.3.0,<1.4" },
@@ -3700,20 +3749,25 @@ requires-dist = [
     { name = "lightning", specifier = ">=2.5.0" },
     { name = "loralib", specifier = ">=0.1.1" },
     { name = "matminer", marker = "extra == 'all'", specifier = ">=0.10" },
+    { name = "matminer", marker = "extra == 'dev'", specifier = ">=0.10" },
     { name = "matminer", marker = "extra == 'zevals'", specifier = ">=0.10" },
     { name = "opt-einsum", specifier = ">=3.4.0,<4" },
     { name = "pandas" },
     { name = "posebusters", marker = "extra == 'all'" },
+    { name = "posebusters", marker = "extra == 'dev'" },
     { name = "posebusters", marker = "extra == 'zevals'" },
     { name = "pre-commit", marker = "extra == 'dev'" },
     { name = "prody", marker = "extra == 'all'" },
+    { name = "prody", marker = "extra == 'dev'" },
     { name = "prody", marker = "extra == 'zevals'" },
     { name = "pyarrow" },
     { name = "pydantic" },
     { name = "pydantic", marker = "extra == 'all'", specifier = ">=2.8" },
+    { name = "pydantic", marker = "extra == 'dev'", specifier = ">=2.8" },
     { name = "pydantic", marker = "extra == 'zatom2'", specifier = ">=2.8" },
     { name = "pydantic", marker = "extra == 'zevals'", specifier = ">=2.8" },
     { name = "pymatgen", marker = "extra == 'all'" },
+    { name = "pymatgen", marker = "extra == 'dev'" },
     { name = "pymatgen", marker = "extra == 'zevals'" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.2.0,<9" },
     { name = "pytest-benchmark", marker = "extra == 'dev'", specifier = ">=5.0.0,<6" },
@@ -3721,25 +3775,31 @@ requires-dist = [
     { name = "pytest-dotenv", marker = "extra == 'dev'", specifier = ">=0.5.2,<1" },
     { name = "pytest-testmon", marker = "extra == 'dev'", specifier = ">=2.1.1,<3" },
     { name = "pytest-xdist", marker = "extra == 'dev'", specifier = ">=3.6.1,<4" },
-    { name = "rc-foundry", git = "https://github.com/RosettaCommons/foundry.git?rev=cd4d94fb0c2c86e77412b32fa2b7c651abefa471" },
+    { name = "rc-foundry", git = "https://github.com/RosettaCommons/foundry.git?rev=39671441e609aa178ac4ee64a161cd94bc4a8330" },
     { name = "rdkit", marker = "extra == 'all'" },
+    { name = "rdkit", marker = "extra == 'dev'" },
     { name = "rdkit", marker = "extra == 'zevals'" },
     { name = "riboseek", marker = "extra == 'all'", specifier = "==0.1.0" },
+    { name = "riboseek", marker = "extra == 'dev'", specifier = "==0.1.0" },
     { name = "riboseek", marker = "extra == 'zevals'", specifier = "==0.1.0" },
     { name = "rich", specifier = ">=13.9.4" },
     { name = "rootutils", specifier = ">=1.0.7,<1.1" },
     { name = "ruff", marker = "extra == 'dev'", specifier = "==0.8.3" },
     { name = "smact", marker = "extra == 'all'" },
+    { name = "smact", marker = "extra == 'dev'" },
     { name = "smact", marker = "extra == 'zevals'" },
     { name = "toolz" },
     { name = "torch", marker = "sys_platform != 'linux' and sys_platform != 'win32'", specifier = "==2.13.0" },
     { name = "torch", marker = "sys_platform == 'linux' or sys_platform == 'win32'", specifier = "==2.13.0", index = "https://download.pytorch.org/whl/cu132" },
     { name = "torch-geometric", marker = "extra == 'all'" },
+    { name = "torch-geometric", marker = "extra == 'dev'" },
     { name = "torch-geometric", marker = "extra == 'zevals'" },
     { name = "torchdata", git = "https://github.com/meta-pytorch/data.git?rev=e640e6fc91792e1c92cdabb603ee5be63919934a" },
     { name = "tqdm", marker = "extra == 'all'" },
+    { name = "tqdm", marker = "extra == 'dev'" },
     { name = "tqdm", marker = "extra == 'zevals'" },
     { name = "transformers", marker = "extra == 'all'", specifier = ">=4.51" },
+    { name = "transformers", marker = "extra == 'dev'", specifier = ">=4.51" },
     { name = "transformers", marker = "extra == 'zevals'", specifier = ">=4.51" },
     { name = "typer", specifier = ">=0.20.0,<1" },
     { name = "wandb", specifier = ">=0.15.10,<1" },
@@ -3749,8 +3809,36 @@ provides-extras = ["all", "dev", "zatom2", "zevals"]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "accelerate" },
+    { name = "atomworks", extras = ["ase", "dev", "ml", "openbabel"], git = "https://github.com/amorehead/atomworks.git?rev=b2e3576a12943639cd2234c9097b70302e6e8f56" },
+    { name = "biopython" },
+    { name = "biotite" },
     { name = "build", specifier = ">=1.3.0" },
+    { name = "debugpy", specifier = ">=1.8.5,<2" },
+    { name = "fpsim2" },
     { name = "hatchling", specifier = ">=1.28.0" },
+    { name = "huggingface-hub" },
+    { name = "ipdb" },
+    { name = "ipykernel", specifier = ">=6.29.4,<7" },
+    { name = "matminer", specifier = ">=0.10" },
+    { name = "posebusters" },
+    { name = "pre-commit" },
+    { name = "prody" },
+    { name = "pydantic", specifier = ">=2.8" },
+    { name = "pymatgen" },
+    { name = "pytest", specifier = ">=8.2.0,<9" },
+    { name = "pytest-benchmark", specifier = ">=5.0.0,<6" },
+    { name = "pytest-cov", specifier = ">=4.1.0,<5" },
+    { name = "pytest-dotenv", specifier = ">=0.5.2,<1" },
+    { name = "pytest-testmon", specifier = ">=2.1.1,<3" },
+    { name = "pytest-xdist", specifier = ">=3.6.1,<4" },
+    { name = "rdkit" },
+    { name = "riboseek", specifier = "==0.1.0" },
+    { name = "ruff", specifier = "==0.8.3" },
+    { name = "smact" },
+    { name = "torch-geometric" },
+    { name = "tqdm" },
+    { name = "transformers", specifier = ">=4.51" },
 ]
 
 [[package]]

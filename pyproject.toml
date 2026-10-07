@@ -108,6 +108,7 @@ dev = [
     "pre-commit",
     # custom dependencies
     "atomworks[ase,dev,ml,openbabel]>=2.2.1,<3.0.0",
+    "zatom-nucleus[all]",
 ]
 [project.urls]
 Homepage = "https://zatomai.github.io/nucleus"
@@ -131,7 +132,7 @@ torch = [
 ]
 torchdata = { git = "https://github.com/meta-pytorch/data.git", rev = "e640e6fc91792e1c92cdabb603ee5be63919934a" }
 atomworks = { git = "https://github.com/amorehead/atomworks.git", rev = "b2e3576a12943639cd2234c9097b70302e6e8f56" }
-rc-foundry = { git = "https://github.com/RosettaCommons/foundry.git", rev = "cd4d94fb0c2c86e77412b32fa2b7c651abefa471" }
+rc-foundry = { git = "https://github.com/RosettaCommons/foundry.git", rev = "39671441e609aa178ac4ee64a161cd94bc4a8330" }
 
 [[tool.uv.index]]
 name = "pytorch-cu132"
@@ -249,10 +250,48 @@ ignore = [
 typeCheckingMode = "off"
 
 [tool.pytest.ini_options]
+pythonpath = [
+    "src",
+    "models/zatom2/src",
+    "models/zevals/src",
+]
 norecursedirs = ["logs"]
 
 [dependency-groups]
 dev = [
     "build>=1.3.0",
     "hatchling>=1.28.0",
+    # Linters & formatters
+    "ruff==0.8.3",
+    "ipdb",
+    # Debugger/interactive
+    "debugpy>=1.8.5,<2",
+    "ipykernel>=6.29.4,<7",
+    # Testing tools
+    "pytest>=8.2.0,<9",
+    "pytest-testmon>=2.1.1,<3",
+    "pytest-xdist>=3.6.1,<4",
+    "pytest-dotenv>=0.5.2,<1",
+    "pytest-cov>=4.1.0,<5",
+    "pytest-benchmark>=5.0.0,<6",
+    "pre-commit",
+    # custom dependencies
+    "atomworks[ase,dev,ml,openbabel]>=2.2.1,<3.0.0",
+    # Vendored model test dependencies
+    "fpsim2",
+    "huggingface-hub",
+    "posebusters",
+    "pydantic>=2.8",
+    "rdkit",
+    "torch-geometric",
+    "tqdm",
+    "pymatgen",
+    "smact",
+    "matminer>=0.10",
+    "transformers>=4.51",
+    "accelerate",
+    "prody",
+    "biopython",
+    "biotite",
+    "riboseek==0.1.0",
 ]
