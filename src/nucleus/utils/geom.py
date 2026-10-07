@@ -15,7 +15,14 @@ from ase import Atoms
 from atomworks.io.parser import parse_atom_array
 from atomworks.io.tools.rdkit import atom_array_from_rdkit
 from atomworks.ml.datasets import PandasDataset
-from atomworks.ml.datasets.loaders.ase import create_ase_atoms_loader
+
+try:
+    from atomworks.ml.datasets.loaders.ase import create_ase_atoms_loader
+except ImportError:
+    try:
+        from atomworks.ml.datasets.loaders import create_ase_atoms_loader
+    except ImportError:
+        from nucleus.utils.ase_loader import create_ase_atoms_loader
 from biotite import structure as struc
 from rdkit import Chem
 

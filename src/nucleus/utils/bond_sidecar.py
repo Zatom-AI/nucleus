@@ -15,7 +15,11 @@ import biotite.structure as struc
 import lmdb
 import numpy as np
 from atomworks.enums import ChainType
-from atomworks.ml.datasets.loaders import create_ase_atoms_loader
+
+try:
+    from atomworks.ml.datasets.loaders import create_ase_atoms_loader
+except ImportError:
+    from nucleus.utils.ase_loader import create_ase_atoms_loader
 
 from nucleus.utils.atom_array import (
     _atomic_numbers_from_atom_array,
