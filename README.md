@@ -12,7 +12,8 @@ tools, the inference CLI, and Zatom-2's project page.
 [Project page](https://zatomai.github.io/nucleus) ·
 [Preprint PDF](models/zatom2/docs/static/zatom2_paper.pdf) ·
 [arXiv (placeholder; submission pending)](https://arxiv.org/abs/XXXX.XXXXX) ·
-[Weights](https://huggingface.co/Zatom-AI/Zatom-2)
+[Weights](https://huggingface.co/Zatom-AI/Zatom-2) ·
+[PyPI](https://pypi.org/project/zatom-nucleus/)
 
 ## Install
 
