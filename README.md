@@ -16,6 +16,18 @@ tools, the inference CLI, and Zatom-2's project page.
 
 ## Install
 
+### From PyPI
+
+Once uploaded to PyPI, `nucleus` and `zatom2` can be installed via `pip`:
+
+```bash
+pip install nucleus zatom2
+```
+
+*(or `pip install zatom-nucleus zatom2`, or `pip install "zatom-nucleus[all]"` to include `zevals`)*
+
+### From source
+
 Use Python 3.12 and [uv](https://docs.astral.sh/uv/). The paper environment uses
 Linux, NVIDIA A100 80 GB GPUs, PyTorch 2.13, and CUDA 13.2. A compatible NVIDIA
 driver is required for GPU execution. The lockfile pins public AtomWorks and
