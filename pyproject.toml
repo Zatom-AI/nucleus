@@ -50,8 +50,8 @@ dependencies = [
     # "biotite",
     "toolz",
     # custom dependencies
-    "atomworks[ase,ml,openbabel]",
-    "rc-foundry",
+    "atomworks[ase,ml,openbabel]>=2.2.1,<3.0.0",
+    "rc-foundry>=0.1.11,<0.2.0",
     "pydantic",
     "cuequivariance==0.10.0; sys_platform == 'linux'",
     "cuequivariance-torch==0.10.0; sys_platform == 'linux'",
@@ -107,7 +107,7 @@ dev = [
     "pytest-benchmark>=5.0.0,<6", # benchmark tests for speed
     "pre-commit",
     # custom dependencies
-    "atomworks[ase,dev,ml,openbabel]",
+    "atomworks[ase,dev,ml,openbabel]>=2.2.1,<3.0.0",
 ]
 [project.urls]
 Homepage = "https://zatomai.github.io/nucleus"
