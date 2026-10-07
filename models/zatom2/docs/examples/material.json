@@ -1,1 +1,35 @@
-{"material_12": {"contig": "12M"}}
+{
+    "omat24_val_rattled_relax_atom_count_repr_000_atoms4": {
+        "contig": "4M",
+        "extra": {
+            "source_distribution": "omat24_val_rattled_relax_atom_count_multinomial_over_all_rows",
+            "sample_seed": 42,
+            "sample_index": 0,
+            "sample_size": 1000,
+            "sample_with_replacement": true,
+            "source_subsets": [
+                "rattled-relax"
+            ],
+            "source_subset": "rattled-relax",
+            "source_shard": "rattled-relax/val.aselmdb",
+            "source_global_index": 6437,
+            "source_row_index": 6437,
+            "source_db_id": 6438,
+            "num_reference_rows": 9996,
+            "num_atom_count_bins": 51,
+            "num_atoms": 4,
+            "num_hydrogens": 0,
+            "parent_id": "agm004203950_ABC2_19_spg166",
+            "sid": "agm004203950_ABC2_19_spg166_0_rattled-relax_47ld24_3",
+            "calc_id": "rattled-relax",
+            "task_type": "Structure Optimization",
+            "composition_reduced": "Li2 Zr1 Pb1",
+            "has_mean_force_norm": true,
+            "mean_force_norm": 0.26802569689324596,
+            "mean_force_norm_units": "eV/angstrom",
+            "force_rms": 0.2682331645448871,
+            "force_p95": 0.28212832996556925,
+            "has_force_rms_p95": true
+        }
+    }
+}

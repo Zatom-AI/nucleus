@@ -1,1 +1,6 @@
-{"protein_100": {"length": 100, "plddt_enhanced": false}}
+{
+    "protein_100": {
+        "length": 100,
+        "plddt_enhanced": false
+    }
+}
