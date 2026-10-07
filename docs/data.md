@@ -45,8 +45,16 @@ The 500k/domain scaling selections use separate NumPy PCG64 generators with seed
 ### Molecular bond conditioning
 
 The paper infers bonds with Open Babel and excludes disconnected examples from
-the structure-prediction task (60.32% of the OMol25 training pool). Generate
-sidecars for both source splits, using the pinned environment:
+the structure-prediction task (60.32% of the OMol25 training pool). The reference
+release attachment includes the original training and validation bond sidecars
+(see [Reference data release attachment (Release 1.0.0)](#reference-data-release-attachment-release-100)).
+Install them with:
+
+```bash
+python scripts/install_reference_data.py --archive zatom2-reference-data.tar.gz
+```
+
+To regenerate sidecars for both source splits, use the pinned environment:
 
 ```bash
 python scripts/prepare_omol25_bonds_lmdb.py \
@@ -86,16 +94,81 @@ AFD requires its separate CT checkpoints and reference embeddings; consult the
 [AFD guide](../models/zevals/docs/AFD-guide.md). The OMol25 protocol points to
 `data/omol25/geom_orca6_rdkit_conformers.pt`, a custom reference artifact. Its
 file size and SHA-256 are recorded in the
-[reference manifest](reference_data_manifest.json). Install the release attachment
-containing this file and the original novelty caches with:
+[reference manifest](reference_data_manifest.json). The release attachment includes
+this file, both OMol25 bond sidecars, the original OMol25/OMat24 novelty caches,
+the GEOM-subset training SMILES and fingerprints, and the cached `ct-scd-geom10`
+and `ct-scd-omol25` AFD reference features. The latter includes the checksum and
+protocol metadata required by the manuscript figure scripts.
 
+Do not silently substitute QM9 or MP20 reference features for this molecular reference.
+Materials AFD uses the `Ty-Perez/ct-scd-amp20` model and MP20 reference.
+
+### Reference data release attachment (Release 1.0.0)
+
+Because GitHub Releases enforces a 2 GB per-file asset limit, the 2.26 GB
+(2,255,986,830 bytes) reference archive `zatom2-reference-data.tar.gz` is published
+for release **`1.0.0`** (tag: `1.0.0`) split into two equal parts:
+- `zatom2-reference-data.tar.gz.part00` (1,127,993,415 bytes)
+- `zatom2-reference-data.tar.gz.part01` (1,127,993,415 bytes)
+accompanied by `checksums.sha256`.
+
+#### 1. Download
+
+Download the split parts and checksums from release `1.0.0`:
+
+Using GitHub CLI:
 ```bash
-python scripts/install_reference_data.py --archive /path/to/zatom2-reference-data.tar.gz
+gh release download 1.0.0 -R Zatom-AI/nucleus \
+  -p "zatom2-reference-data.tar.gz.part*" \
+  -p "checksums.sha256"
 ```
 
-See [release status](release_status.md) for attachment publication status. Do not silently substitute QM9 or MP20
-reference features for this molecular reference. Materials AFD uses the
-`Ty-Perez/ct-scd-amp20` model and MP20 reference.
+Or using `curl`:
+```bash
+curl -LO https://github.com/Zatom-AI/nucleus/releases/download/1.0.0/zatom2-reference-data.tar.gz.part00
+curl -LO https://github.com/Zatom-AI/nucleus/releases/download/1.0.0/zatom2-reference-data.tar.gz.part01
+curl -LO https://github.com/Zatom-AI/nucleus/releases/download/1.0.0/checksums.sha256
+```
+
+#### 2. Verify and reassemble
+
+Verify the downloaded part checksums:
+```bash
+sha256sum -c checksums.sha256 --ignore-missing
+```
+
+Reassemble the parts into the complete archive:
+- **Linux / macOS**:
+  ```bash
+  cat zatom2-reference-data.tar.gz.part* > zatom2-reference-data.tar.gz
+  ```
+- **Windows (Command Prompt)**:
+  ```cmd
+  copy /b zatom2-reference-data.tar.gz.part00 + zatom2-reference-data.tar.gz.part01 zatom2-reference-data.tar.gz
+  ```
+
+Verify the reassembled archive matches the expected checksum:
+```bash
+sha256sum -c checksums.sha256
+```
+
+#### 3. Process and install
+
+Install the verified reference artifacts into the project `data/` directory:
+```bash
+python scripts/install_reference_data.py --archive zatom2-reference-data.tar.gz
+```
+
+The script extracts the archive into `data/` (or `--destination /path/to/data`) and
+strictly verifies each file's size and SHA-256 against
+[reference_data_manifest.json](reference_data_manifest.json). Existing identical
+reference files are preserved; any differing files will abort installation.
+
+The archive supplies derived reference artifacts; obtain the raw ASE-LMDB
+datasets and external model checkpoints separately as described above. Frozen
+selection indices and normalization statistics are already included in Git.
+
+See [release status](release_status.md) for attachment publication status.
 
 ## QM9 and MP20
 

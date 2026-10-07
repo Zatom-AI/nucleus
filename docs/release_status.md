@@ -17,12 +17,38 @@ experiments, unfinished oracle wrappers, and LaTeX build intermediates.
    uploaded by this preparation task.
 2. **Reference data:** release preparation produced and verified
    `dist/zatom2-reference-data.tar.gz` for attachment to the GitHub release.
-   The archive is 603,979,331 bytes; its SHA-256 and individual file hashes are in
-   `docs/reference_data_manifest.json`. It contains the
-   original custom molecular AFD records and molecular/material novelty caches.
-   These large artifacts belong in a release attachment, not Git history. Users
-   can install a downloaded copy with `python scripts/install_reference_data.py
-   --archive /path/to/zatom2-reference-data.tar.gz`.
+   Its size (2,255,986,830 bytes), SHA-256, and individual file hashes are recorded in
+   `docs/reference_data_manifest.json`. It contains the original OMol25 training
+   and validation bond sidecars, custom molecular AFD records and cached features
+   (including the audited OMol25 feature metadata), molecular/material novelty
+   caches, and GEOM-subset training SMILES and fingerprints.
+   These large artifacts belong in a release attachment, not Git history.
+   Because GitHub Releases enforces a 2 GB per-file asset limit, the archive for
+   release `1.0.0` (tag: `1.0.0`) is published as two equal parts:
+   - `zatom2-reference-data.tar.gz.part00` (1,127,993,415 bytes)
+   - `zatom2-reference-data.tar.gz.part01` (1,127,993,415 bytes)
+   accompanied by `checksums.sha256`.
+
+   Users can download and reassemble the release data using the GitHub CLI:
+   ```bash
+   gh release download 1.0.0 -R Zatom-AI/nucleus \
+     -p "zatom2-reference-data.tar.gz.part*" \
+     -p "checksums.sha256"
+   sha256sum -c checksums.sha256 --ignore-missing
+   cat zatom2-reference-data.tar.gz.part* > zatom2-reference-data.tar.gz
+   sha256sum -c checksums.sha256
+   ```
+   or via direct download:
+   ```bash
+   curl -LO https://github.com/Zatom-AI/nucleus/releases/download/1.0.0/zatom2-reference-data.tar.gz.part00
+   curl -LO https://github.com/Zatom-AI/nucleus/releases/download/1.0.0/zatom2-reference-data.tar.gz.part01
+   curl -LO https://github.com/Zatom-AI/nucleus/releases/download/1.0.0/checksums.sha256
+   cat zatom2-reference-data.tar.gz.part* > zatom2-reference-data.tar.gz
+   ```
+   Users then install the reassembled reference data with:
+   ```bash
+   python scripts/install_reference_data.py --archive zatom2-reference-data.tar.gz
+   ```
 3. **arXiv:** `https://arxiv.org/abs/XXXX.XXXXX` is an intentional placeholder
    requested by the authors. Replace it after submission. The preprint PDF is
    included and linked independently. Its project URL was corrected to the public
@@ -59,6 +85,8 @@ passed, including the three documented quickstart inputs and checkpoint
 normalization-path relocation. The installed-wheel smoke check ran outside the
 checkout, bypassing editable installs: package imports, all three CLIs, Hydra
 configuration, the inference target, and bundled normalization statistics
-passed. The 604 MB reference archive was installed into an empty directory and
-every file checksum matched. Both Python distribution formats built successfully;
-`uv lock --check` passed. The manuscript was built with TeX Live 2024; the bibliography was unchanged and all references resolved.
+passed. The reference archive was installed into an empty directory and
+every file checksum matched. Both split parts (`part00`, `part01`) and the reassembled
+archive were verified against `dist/checksums.sha256` and `docs/reference_data_manifest.json`.
+Both Python distribution formats built successfully; `uv lock --check` passed. The
+manuscript was built with TeX Live 2024; the bibliography was unchanged and all references resolved.

@@ -1,20 +1,58 @@
 {
-  "description": "Original Zatom-2 AFD and novelty reference caches",
+  "description": "Original Zatom-2 OMol25 bond sidecars, AFD references, and OMol25/OMat24 novelty caches",
   "archive": "zatom2-reference-data.tar.gz",
   "files": {
     "omol25/geom_orca6_rdkit_conformers.pt": {
       "size": 329747339,
       "sha256": "fc7e554d0ab1960ce68e57bab4eb918fb3b691bec4a14f7a000b5fa9f833a802"
     },
+    "omol25/afd_feature_cache/Ty-Perez__ct-scd-geom10_reference_features.pt": {
+      "size": 193294238,
+      "sha256": "8d0a3fa121de4a35459ab7fa66b1905c18f3abe74131292bb119687a031df4bd"
+    },
+    "omol25/afd_feature_cache/Ty-Perez__ct-scd-omol25_reference_features.pt": {
+      "size": 193294259,
+      "sha256": "0c61f6a56cccb8d8ad404dfd653df7745e25425ad99c40c332078767e4e04b4a"
+    },
+    "omol25/afd_feature_cache/Ty-Perez__ct-scd-omol25_reference_features.metadata.json": {
+      "size": 1208,
+      "sha256": "4843d7f904eeac5bbf40b79c570ab3e86e618d064dbba58a4d167a1713c4b90d"
+    },
+    "omol25/sidecars/train_4M_all_bonds.lmdb": {
+      "size": 3596812288,
+      "sha256": "d6ef2a96c437db6757f955e5a40cbbfe07667a8bbf0b4ffe8fd125cb086efe0a"
+    },
+    "omol25/sidecars/val_all_bonds.lmdb": {
+      "size": 5469433856,
+      "sha256": "25136367d459ca2ea1b4a8551658720c423cfa753775de25ed162ffb3d4f9bc6"
+    },
     "omol25/subsets/omol25_train_4M_smiles_obabel_fpsim2.h5": {
       "size": 495864957,
       "sha256": "5ebee273c06a125416cabc8f05f895cee022822fd9af61a84035b1e2b5866670"
+    },
+    "omol25/subsets/train_4M_geom_orca6_train_smiles.txt": {
+      "size": 26414213,
+      "sha256": "446a578eefcd179ed5dcfca34f3d6040d61a001d368949c717ca2be3cb4cf3b3"
+    },
+    "omol25/subsets/train_4M_geom_orca6_train_smiles_fpsim2.h5": {
+      "size": 26251213,
+      "sha256": "c28743b99c6d64fa7d20b2cc269a0ef89f7496e02ba75e2d41b02c7e272f6a0a"
     },
     "omat24/subsets/train_1M_fingerprints.npy": {
       "size": 246388400,
       "sha256": "be8cb506a7a6e9e5531dd94876ba83bf6e1e5baf0b33119df03f1ddd05e21fdd"
     }
   },
-  "archive_sha256": "90e43cbbeba5eabe7c62f59b28e645d518d621320f1150b440dfb1110a2602bd",
-  "archive_size": 603979331
+  "archive_sha256": "23b0595d621371d33bfd0011e686264cf7fc26c4337ac6872c4a03af82f57465",
+  "archive_size": 2255986830,
+  "archive_parts": {
+    "zatom2-reference-data.tar.gz.part00": {
+      "size": 1127993415,
+      "sha256": "a03bd42f00a7f3b9f1e0d27cb1a465e333525501bb454e48945ab2e9f8c0ad74"
+    },
+    "zatom2-reference-data.tar.gz.part01": {
+      "size": 1127993415,
+      "sha256": "acc857823796c697549316a2cf55c2a2efd7bd05d8b98f9f07cb4a260870df09"
+    }
+  }
 }
