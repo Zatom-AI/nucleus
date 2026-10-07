@@ -25,6 +25,10 @@ should_typecheck = _safe_bool("TYPE_CHECK", default=False)
 should_debug = _safe_bool("DEBUG", default=False)
 should_check_nans = _safe_bool("NAN_CHECK", default=True)
 
+# Normalize DEBUG in os.environ for dependencies like foundry that parse it strictly
+if "DEBUG" in os.environ:
+    os.environ["DEBUG"] = "true" if should_debug else "false"
+
 # Set up logger
 logger = logging.getLogger("nucleus")
 # ... set logging level based on `DEBUG` environment variable
