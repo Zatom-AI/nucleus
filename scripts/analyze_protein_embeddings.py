@@ -317,7 +317,9 @@ def analyze(args):
     ):
         axis.axhline(0, color="0.8", linewidth=0.6)
         for variant, color, label in zip(
-            VARIANTS, ("#67758c", "#c24739"), ("SCOPe-only", "V transfer")
+            VARIANTS,
+            ("#67758c", "#c24739"),
+            ("SCOPe-only", "Zatom-2 (V)\npretraining + SCOPe"),
         ):
             values = results["reconstruction_loss_changes"][variant]
             xs = sorted(map(float, values))
@@ -346,9 +348,13 @@ def analyze(args):
     handles, _ = axes[3].get_legend_handles_labels()
     axes[3].legend(
         handles[::2],
-        ("SCOPe-only", "V transfer"),
+        ("SCOPe-only", "Zatom-2 (V)\npretraining + SCOPe"),
         frameon=False,
-        fontsize=8,
+        fontsize=6.5,
+        handlelength=0.8,
+        handletextpad=0.2,
+        labelspacing=0.18,
+        borderaxespad=0.08,
         loc="upper left",
     )
     fig.legend(

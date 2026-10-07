@@ -551,7 +551,7 @@
       <div id="tab-protein" class="results-tab-content">
         <div class="card p-5">
           <div class="figure-container">
-            <div class="figure-zoomable gallery-zoomable" data-zoom-src="static/images/protein_embeddings.png" data-caption="<strong>Figure 4: Protein latent space organization and localized decoding responses.</strong> $t$-SNE of token representations and localized token perturbation responses.">
+            <div class="figure-zoomable gallery-zoomable" data-zoom-src="static/images/protein_embeddings.png" data-caption="<strong>Figure 4: Protein latent space organization and localized decoding responses.</strong> $t$-SNE of token representations and localized token perturbation responses (SCOPe-only training vs. Zatom-2 (V) pretraining + SCOPe).">
               <img src="static/images/protein_embeddings.png" alt="Figure 4: Protein latent space organization" class="figure-image" style="max-height: 420px;">
               <div class="zoom-overlay">
                 <span class="icon is-medium"><i class="fas fa-search-plus fa-lg"></i></span>
@@ -559,7 +559,12 @@
               </div>
             </div>
             <p class="figure-caption">
-              <strong>Figure 4: Protein latent space organization and localized decoding responses.</strong> Left two: t-SNE views of final token features, colored by amino acid. Right two: increases in sequence and structure reconstruction losses after final-token perturbation; solid/dashed lines denote the target/other amino acids. Bands show 95% intervals from 2,000 protein bootstrap resamples. Pretrained Zatom-2 is notably more sensitive to local amino acid-specific perturbations than without pretraining.
+              <strong>Figure 4: Protein latent space organization and localized decoding responses.</strong> Left two: $t$-SNE views of final token features, colored by amino acid (SCOPe-only training vs. Zatom-2 (V) pretraining + SCOPe). Right two: increases in sequence and structure reconstruction losses after final-token perturbation; solid/dashed lines denote target/other amino acids for SCOPe-only training and Zatom-2 (V) pretraining + SCOPe. Bands show 95% intervals from 2,000 protein bootstrap resamples. Pretrained Zatom-2 is notably more sensitive to local amino acid-specific perturbations than without pretraining.
+            </p>
+          </div>
+          <div class="is-size-6 has-text-grey mb-3">
+            <p>
+              In Figure 4, amino acid representations of unseen proteins excluded from the SCOPe-2k finetuning set naturally cluster by amino acid type. However, <strong>Zatom-2 (V) pretraining + SCOPe</strong> produces clearer separation between amino acid clusters while preserving structurally and chemically related groupings (e.g., ASN/ASP, GLN/GLU, and PHE/TRP/TYR) compared to <strong>SCOPe-only training</strong>. Quantitatively, Zatom-2 (V) pretraining increases cross-protein amino acid 10-nearest-neighbor purity from 84.8% to <strong>88.1%</strong> and improves the Calinski-Harabasz clustering index from 228.1 to <strong>374.9</strong>. Furthermore, single-token perturbation analysis shows that atom decoder sensitivity is sharply localized to the perturbed target amino acid token (solid lines) without non-local corruption across other tokens (dashed lines).
             </p>
           </div>
 

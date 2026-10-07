@@ -61,5 +61,4 @@ checkout, bypassing editable installs: package imports, all three CLIs, Hydra
 configuration, the inference target, and bundled normalization statistics
 passed. The 604 MB reference archive was installed into an empty directory and
 every file checksum matched. Both Python distribution formats built successfully;
-`uv lock --check` passed. A LaTeX toolchain was unavailable, so the manuscript
-source was not rebuilt into PDF during this preparation.
+`uv lock --check` passed. The manuscript was built with TeX Live 2024; the bibliography was unchanged and all references resolved.

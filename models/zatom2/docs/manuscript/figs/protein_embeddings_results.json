@@ -5,7 +5,7 @@
     "distance": "Euclidean, unscaled original representation",
     "weighting": "mean over residues within each protein, then over proteins",
     "uncertainty": "2000 paired protein bootstrap draws, fixed neighbor pools and checkpoints",
-    "analysis_sha256": "db4abc4e560ac77ac288304939b4e91ddc6fae2e1a267ed1271b5bbda43c37da",
+    "analysis_sha256": "540617546a307c0ac07745929a0ac06051c51e56585144d41910b95374f0c6f6",
     "software": {
       "numpy": "2.4.6",
       "scikit-learn": "1.9.0",
