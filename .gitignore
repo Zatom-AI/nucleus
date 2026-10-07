@@ -25,6 +25,7 @@ data/**/sidecars/
 data/**/afd_feature_cache/
 data/**/pdb_*/
 data/geom/
+data/*/processed.tar.gz
 data/pdbstyle-*/
 src/nucleus/version.py
 models/*/src/*/version.py
