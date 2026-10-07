@@ -19,13 +19,18 @@ tools, the inference CLI, and Zatom-2's project page.
 
 ### From PyPI
 
-`zatom-nucleus` and `zatom2` can be installed via `pip`:
+`zatom-nucleus` and `zatom2` can be installed using [uv](https://docs.astral.sh/uv/) (recommended) or `pip`:
 
 ```bash
-pip install zatom-nucleus zatom2
+uv venv
+source .venv/bin/activate
+uv pip install zatom-nucleus zatom2
 ```
 
-*(or `pip install "zatom-nucleus[all]"` to include `zevals`)*
+*(or `uv pip install "zatom-nucleus[all]"` to include `zevals`)*
+
+> [!TIP]
+> When managing environments with `uv venv`, install packages with `uv pip install` rather than bare `pip install`. Because `uv venv` does not install `pip` inside the virtual environment by default, running `pip` directly can invoke an outer Python or Conda environment on your `PATH` and cause dynamic library conflicts (such as duplicate OpenMP runtime initializations on macOS). Alternatively, create your virtual environment with `uv venv --seed` if you require standard `pip`.
 
 ### From source
 
