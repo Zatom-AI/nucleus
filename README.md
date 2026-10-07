@@ -18,13 +18,13 @@ tools, the inference CLI, and Zatom-2's project page.
 
 ### From PyPI
 
-Once uploaded to PyPI, `nucleus` and `zatom2` can be installed via `pip`:
+`zatom-nucleus` and `zatom2` can be installed via `pip`:
 
 ```bash
-pip install nucleus zatom2
+pip install zatom-nucleus zatom2
 ```
 
-*(or `pip install zatom-nucleus zatom2`, or `pip install "zatom-nucleus[all]"` to include `zevals`)*
+*(or `pip install "zatom-nucleus[all]"` to include `zevals`)*
 
 ### From source
 

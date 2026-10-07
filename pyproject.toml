@@ -37,7 +37,7 @@ dependencies = [
     "huggingface-hub>=1.0.0,<2",
     # ... ml tools (core)
     "torch==2.13.0",
-    "torchdata @ git+https://github.com/meta-pytorch/data.git@e640e6fc91792e1c92cdabb603ee5be63919934a",
+    "torchdata",
     "lightning>=2.5.0",
     "loralib>=0.1.1",
     "einops>=0.8.0,<1",
@@ -50,8 +50,8 @@ dependencies = [
     # "biotite",
     "toolz",
     # custom dependencies
-    "atomworks[ase,ml,openbabel] @ git+https://github.com/amorehead/atomworks.git@b2e3576a12943639cd2234c9097b70302e6e8f56",
-    "rc-foundry @ git+https://github.com/RosettaCommons/foundry.git@cd4d94fb0c2c86e77412b32fa2b7c651abefa471",
+    "atomworks[ase,ml,openbabel]",
+    "rc-foundry",
     "pydantic",
     "cuequivariance==0.10.0; sys_platform == 'linux'",
     "cuequivariance-torch==0.10.0; sys_platform == 'linux'",
@@ -107,7 +107,7 @@ dev = [
     "pytest-benchmark>=5.0.0,<6", # benchmark tests for speed
     "pre-commit",
     # custom dependencies
-    "atomworks[ase,dev,ml,openbabel] @ git+https://github.com/amorehead/atomworks.git@b2e3576a12943639cd2234c9097b70302e6e8f56",
+    "atomworks[ase,dev,ml,openbabel]",
 ]
 [project.urls]
 Homepage = "https://zatomai.github.io/nucleus"
@@ -129,6 +129,9 @@ override-dependencies = [
 torch = [
     { index = "pytorch-cu132", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
 ]
+torchdata = { git = "https://github.com/meta-pytorch/data.git", rev = "e640e6fc91792e1c92cdabb603ee5be63919934a" }
+atomworks = { git = "https://github.com/amorehead/atomworks.git", rev = "b2e3576a12943639cd2234c9097b70302e6e8f56" }
+rc-foundry = { git = "https://github.com/RosettaCommons/foundry.git", rev = "cd4d94fb0c2c86e77412b32fa2b7c651abefa471" }
 
 [[tool.uv.index]]
 name = "pytorch-cu132"
@@ -146,14 +149,13 @@ build-backend = "hatchling.build"
 [tool.hatch.version]
 source = "vcs"
 fallback-version = "0.0.0"
-local-scheme = "no-local-version"
+
+[tool.hatch.version.raw-options]
+local_scheme = "no-local-version"
 
 [tool.hatch.build.hooks.vcs]
 version-file = "src/nucleus/version.py"
-tag-pattern = "^v(?P<version>.*)$"
-
-[tool.hatch.metadata]
-allow-direct-references = true
+tag-pattern = "^v?(?P<version>.*)$"
 
 [tool.hatch.build.targets.wheel]
 packages = [

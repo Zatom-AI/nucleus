@@ -47,14 +47,14 @@ build-backend = "hatchling.build"
 [tool.hatch.version]
 source = "vcs"
 fallback-version = "0.0.0"
-local-scheme = "no-local-version"
+
+[tool.hatch.version.raw-options]
+root = "../.."
+local_scheme = "no-local-version"
 
 [tool.hatch.build.hooks.vcs]
 version-file = "src/zatom2/version.py"
-tag-pattern = "^v(?P<version>.*)$"
-
-[tool.hatch.metadata]
-allow-direct-references = true
+tag-pattern = "^v?(?P<version>.*)$"
 
 [tool.hatch.build.targets.wheel]
 packages = [

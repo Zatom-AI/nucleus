@@ -63,8 +63,8 @@ proteins = [
 # stock `transformers>=4.51` pin (the direct URL wins and satisfies the range).
 proteins-esmfold2 = [
     "zevals[proteins]",
-    "esm @ git+https://github.com/Biohub/esm.git@26b0bc2b771e3e419ea74f445a5f35cc094a1509",
-    "transformers @ git+https://github.com/Biohub/transformers.git@ef32577f55da19a4989cd7b22e004dc43a4998cb",
+    "esm",
+    "transformers",
 ]
 # RNA structural-alphabet prefilter. Boltz/USalign remain separately staged
 # subprocess tools; Biopython is inherited from the protein-domain utilities.
@@ -124,6 +124,10 @@ override-dependencies = [
     "pandarallel>=1.6.5"
 ]
 
+[tool.uv.sources]
+esm = { git = "https://github.com/Biohub/esm.git", rev = "26b0bc2b771e3e419ea74f445a5f35cc094a1509" }
+transformers = { git = "https://github.com/Biohub/transformers.git", rev = "ef32577f55da19a4989cd7b22e004dc43a4998cb" }
+
 # Build settings ----------------------------------------------------------------------
 [build-system]
 requires = [
@@ -135,14 +139,14 @@ build-backend = "hatchling.build"
 [tool.hatch.version]
 source = "vcs"
 fallback-version = "0.0.0"
-local-scheme = "no-local-version"
+
+[tool.hatch.version.raw-options]
+root = "../.."
+local_scheme = "no-local-version"
 
 [tool.hatch.build.hooks.vcs]
 version-file = "src/zevals/version.py"
-tag-pattern = "^v(?P<version>.*)$"
-
-[tool.hatch.metadata]
-allow-direct-references = true
+tag-pattern = "^v?(?P<version>.*)$"
 
 [tool.hatch.build.targets.wheel]
 packages = [
