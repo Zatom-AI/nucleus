@@ -1,5 +1,23 @@
 {
-  "mol_unconditional_length7-9": {
-    "contig": "7-9m"
+  "omol25_geom_orca6_val_repr_0004_atoms38_hydrogens16": {
+    "contig": "38m",
+    "total_charge": 0,
+    "spin_multiplicity": 1,
+    "extra": {
+      "source_distribution": "omol25_geom_orca6_val_explicit_h_atom_count_multinomial_over_filtered_rows",
+      "sample_seed": 42,
+      "sample_index": 4,
+      "sample_size": 1000,
+      "sample_with_replacement": true,
+      "source_split": "val",
+      "source_row_index": 578190,
+      "num_atoms_with_hydrogens": 38,
+      "num_hydrogens": 16,
+      "mean_force_norm": 5.894741628020988,
+      "has_mean_force_norm": true,
+      "force_rms": 7.327974365099769,
+      "force_p95": 14.202573356809996,
+      "has_force_rms_p95": true
+    }
   }
 }
