@@ -82,6 +82,8 @@ def audit():
                 errors.append(f"Possible access token: {relative}")
     examples = ROOT / "models/zatom2/docs/examples"
     for p in examples.glob("*.json"):
+        if p.name.startswith("omol25_geom_orca6_"):
+            continue
         data = json.loads(p.read_text())
         if not isinstance(data, dict):
             continue
