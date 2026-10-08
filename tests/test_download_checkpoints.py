@@ -192,6 +192,7 @@ def test_download_checkpoint_uses_hub_client_and_verifies_hash(
                 "paper-ready-checkpoints/paper-table1-omol25-omat24-joint-"
                 "force-conditioned/step-00097500.ckpt"
             ),
+            "revision": None,
             "local_dir": tmp_path,
             "force_download": True,
         }

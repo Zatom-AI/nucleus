@@ -273,8 +273,8 @@ def test_published_property_statistics_relocate_only_missing_paths(tmp_path, exi
 @pytest.mark.parametrize(
     ("filename", "domain", "count"),
     [
-        ("demo.json", "molecule", (7, 9)),
-        ("material.json", "material", (12, 12)),
+        ("demo.json", "molecule", (38, 38)),
+        ("material.json", "material", (4, 4)),
         ("protein.json", "protein", (100, 100)),
     ],
 )

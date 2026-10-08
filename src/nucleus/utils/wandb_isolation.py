@@ -14,8 +14,10 @@ def _disable_inherited_service_calls() -> None:
     except ImportError:
         return
 
-    ServiceConnection.api_cleanup_request = lambda self, api_id: None
-    ServiceConnection.teardown = lambda self, exit_code: None
+    if hasattr(ServiceConnection, "api_cleanup_request"):
+        ServiceConnection.api_cleanup_request = lambda self, api_id: None
+    if hasattr(ServiceConnection, "teardown"):
+        ServiceConnection.teardown = lambda self, exit_code=0: None
 
 
 def isolate_wandb_service_from_forked_children() -> None:

@@ -13,7 +13,8 @@ def _report_cleanup_blocks(queue) -> None:
     connection = service_connection.ServiceConnection.__new__(
         service_connection.ServiceConnection
     )
-    connection.api_cleanup_request("api-id")
+    if hasattr(connection, "api_cleanup_request"):
+        connection.api_cleanup_request("api-id")
     connection.teardown(0)
     queue.put("returned")
 
@@ -25,7 +26,10 @@ def test_forked_children_do_not_wait_on_the_service(monkeypatch):
         raise AssertionError("the child sent a request to the parent's service")
 
     monkeypatch.setattr(
-        service_connection.ServiceConnection, "api_cleanup_request", _hang
+        service_connection.ServiceConnection,
+        "api_cleanup_request",
+        _hang,
+        raising=False,
     )
     monkeypatch.setattr(service_connection.ServiceConnection, "teardown", _hang)
     monkeypatch.setattr(wandb_isolation, "_installed", False)
@@ -44,8 +48,20 @@ def test_forked_children_do_not_wait_on_the_service(monkeypatch):
 def test_parent_behaviour_is_unchanged(monkeypatch):
     """Only children are neutralised; the parent keeps its real connection."""
     monkeypatch.setattr(wandb_isolation, "_installed", False)
-    original = service_connection.ServiceConnection.api_cleanup_request
+    original_teardown = getattr(
+        service_connection.ServiceConnection, "teardown", None
+    )
+    original_cleanup = getattr(
+        service_connection.ServiceConnection, "api_cleanup_request", None
+    )
 
     wandb_isolation.isolate_wandb_service_from_forked_children()
 
-    assert service_connection.ServiceConnection.api_cleanup_request is original
+    assert (
+        getattr(service_connection.ServiceConnection, "teardown", None)
+        is original_teardown
+    )
+    assert (
+        getattr(service_connection.ServiceConnection, "api_cleanup_request", None)
+        is original_cleanup
+    )

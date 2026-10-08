@@ -1,0 +1,57 @@
+data_omol25_geom_orca6_val_047_data0046_383
+#
+_entry.id       omol25_geom_orca6_val_047_data0046_383
+_entry.author   Zatom-AI
+_entry.date     2026-08-05
+_entry.time     00:00:00
+#
+loop_
+_atom_site.group_PDB 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.B_iso_or_equiv 
+_atom_site.occupancy 
+_atom_site.pdbx_formal_charge 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.pdbx_PDB_model_num 
+_atom_site.id 
+HETATM O  O1  . LIG A 1 1 . 1 LIG A O1  nan 1.0 ? -0.081331 -1.940249 0.412403  1 1
+HETATM C  C1  . LIG A 1 1 . 1 LIG A C1  nan 1.0 ? 1.09035   -1.294596 0.260669  1 2
+HETATM C  C2  . LIG A 1 1 . 1 LIG A C2  nan 1.0 ? 2.194579  -1.584027 1.063483  1 3
+HETATM C  C3  . LIG A 1 1 . 1 LIG A C3  nan 1.0 ? 3.400182  -0.929913 0.901161  1 4
+HETATM C  C4  . LIG A 1 1 . 1 LIG A C4  nan 1.0 ? 3.512807  0.033902  -0.0864   1 5
+HETATM C  C5  . LIG A 1 1 . 1 LIG A C5  nan 1.0 ? 2.420473  0.34024   -0.895771 1 6
+HETATM C  C6  . LIG A 1 1 . 1 LIG A C6  nan 1.0 ? 1.20264   -0.311976 -0.730412 1 7
+HETATM C  C7  . LIG A 1 1 . 1 LIG A C7  nan 1.0 ? -0.001614 -0.00282  -1.576418 1 8
+HETATM C  C8  . LIG A 1 1 . 1 LIG A C8  nan 1.0 ? -1.204471 0.309865  -0.729246 1 9
+HETATM C  C9  . LIG A 1 1 . 1 LIG A C9  nan 1.0 ? -2.424797 -0.337539 -0.894227 1 10
+HETATM C  C10 . LIG A 1 1 . 1 LIG A C10 nan 1.0 ? -3.515246 -0.028189 -0.083514 1 11
+HETATM C  C11 . LIG A 1 1 . 1 LIG A C11 nan 1.0 ? -3.397647 0.932514  0.906213  1 12
+HETATM C  C12 . LIG A 1 1 . 1 LIG A C12 nan 1.0 ? -2.189322 1.580826  1.069275  1 13
+HETATM C  C13 . LIG A 1 1 . 1 LIG A C13 nan 1.0 ? -1.087257 1.28984   0.263933  1 14
+HETATM O  O2  . LIG A 1 1 . 1 LIG A O2  nan 1.0 ? 0.08685   1.930883  0.415849  1 15
+HETATM H  H1  . LIG A 1 1 . 1 LIG A H1  nan 1.0 ? -0.00402  2.581894  1.131297  1 16
+HETATM Cl CL1 . LIG A 1 1 . 1 LIG A CL1 nan 1.0 ? -2.013053 2.793701  2.301685  1 17
+HETATM H  H2  . LIG A 1 1 . 1 LIG A H2  nan 1.0 ? -4.23926  1.167526  1.536648  1 18
+HETATM Cl CL2 . LIG A 1 1 . 1 LIG A CL2 nan 1.0 ? -5.019341 -0.837463 -0.297138 1 19
+HETATM Cl CL3 . LIG A 1 1 . 1 LIG A CL3 nan 1.0 ? -2.615231 -1.538571 -2.106364 1 20
+HETATM H  H3  . LIG A 1 1 . 1 LIG A H3  nan 1.0 ? 0.219373  0.856142  -2.211196 1 21
+HETATM H  H4  . LIG A 1 1 . 1 LIG A H4  nan 1.0 ? -0.224134 -0.863307 -2.208653 1 22
+HETATM Cl CL4 . LIG A 1 1 . 1 LIG A CL4 nan 1.0 ? 2.60496   1.54374   -2.105834 1 23
+HETATM Cl CL5 . LIG A 1 1 . 1 LIG A CL5 nan 1.0 ? 5.013352  0.848715  -0.301327 1 24
+HETATM H  H5  . LIG A 1 1 . 1 LIG A H5  nan 1.0 ? 4.243468  -1.163304 1.530097  1 25
+HETATM Cl CL6 . LIG A 1 1 . 1 LIG A CL6 nan 1.0 ? 2.026342  -2.804833 2.289512  1 26
+HETATM H  H6  . LIG A 1 1 . 1 LIG A H6  nan 1.0 ? 0.013373  -2.594011 1.124759  1 27
+#
