@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="docs/assets/nucleus_header.jpg" alt="Nucleus — Atomistic Foundation Modeling across Molecules, Materials & Proteins" width="100%">
-</p>
-
 # Nucleus
 
 Nucleus is the shared monorepo for **Zatom-2**, an atomistic foundation model for
