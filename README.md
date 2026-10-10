@@ -10,8 +10,7 @@ pipelines. It includes training code, paper configurations, data preparation
 tools, the inference CLI, and Zatom-2's project page.
 
 [Project page](https://zatomai.github.io/nucleus) ·
-[Preprint PDF](models/zatom2/docs/static/zatom2_paper.pdf) ·
-[arXiv (placeholder; submission pending)](https://arxiv.org/abs/XXXX.XXXXX) ·
+[arXiv](https://arxiv.org/abs/2610.11454) ·
 [Weights](https://huggingface.co/Zatom-AI/Zatom-2) ·
 [PyPI](https://pypi.org/project/zatom-nucleus/)
 
@@ -99,4 +98,4 @@ the [release status](docs/release_status.md).
 Code is distributed under the [Nucleus license](LICENSE.md). Dataset, model,
 oracle, and webpage licenses are described in
 [third-party notices](THIRD_PARTY_NOTICES.md). Citation metadata is in
-[CITATION.cff](CITATION.cff); the arXiv identifier will be updated after submission.
+[CITATION.cff](CITATION.cff).

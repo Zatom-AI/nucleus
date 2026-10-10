@@ -160,5 +160,5 @@ need the outputs of your reproduction run or the original archived histories;
 those histories are not fabricated from manuscript tables.
 
 Build the paper with `latexmk -pdf arxiv_preprint.tex` in its manuscript
-directory. The current PDF is shipped with the project page. To preview the
+directory. The preprint is available on [arXiv](https://arxiv.org/abs/2610.11454). To preview the
 page, run `python -m http.server 8000 --directory models/zatom2/docs`.

@@ -49,10 +49,9 @@ experiments, unfinished oracle wrappers, and LaTeX build intermediates.
    ```bash
    python scripts/install_reference_data.py --archive zatom2-reference-data.tar.gz
    ```
-3. **arXiv:** `https://arxiv.org/abs/XXXX.XXXXX` is an intentional placeholder
-   requested by the authors. Replace it after submission. The preprint PDF is
-   included and linked independently. Its project URL was corrected to the public
-   site, with all other extracted text verified unchanged across all 49 pages.
+3. **arXiv:** the preprint is available at `https://arxiv.org/abs/2610.11454`.
+   Its project URL was corrected to the public site, with all other extracted
+   text verified unchanged across all 49 pages.
 4. **Remaining reproducibility gaps in the source snapshot:** the manuscript's
    separate ConfGF/GO-Flow GEOM conformer-generation and Crystalite MP20
    structure-prediction experiments do not have a complete matched set of

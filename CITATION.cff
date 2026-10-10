@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the Zatom-2 preprint. arXiv identifier pending."
+message: "Please cite the Zatom-2 preprint (arXiv:2610.11454)."
 type: software
 title: "Nucleus: Zatom-2 and Zevals"
 authors:
@@ -7,9 +7,11 @@ authors:
 repository-code: https://github.com/Zatom-AI/nucleus
 url: https://zatomai.github.io/nucleus
 preferred-citation:
-  type: unpublished
+  type: article
   title: "Zatom-2: Multitask Pretraining on Atomistic Data for Generative Modeling across Domains"
   year: 2026
+  journal: "arXiv preprint arXiv:2610.11454"
+  url: https://arxiv.org/abs/2610.11454
   authors:
     - family-names: Cretu
       given-names: Miruna

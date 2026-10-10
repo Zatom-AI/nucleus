@@ -6,9 +6,9 @@ Install the shared [Nucleus monorepo](../../README.md), then follow the
 [paper reproduction guide](../../docs/reproducibility.md), and
 [data preparation guide](../../docs/data.md).
 
-The [project page](docs/index.html), [preprint PDF](docs/static/zatom2_paper.pdf),
-and [LaTeX source](docs/manuscript/arxiv_preprint.tex) are included.
-[arXiv URL placeholder](https://arxiv.org/abs/XXXX.XXXXX) — submission pending.
+The [project page](docs/index.html) and
+[LaTeX source](docs/manuscript/arxiv_preprint.tex) are included.
+[arXiv preprint](https://arxiv.org/abs/2610.11454).
 
 ## Model Architecture
 
