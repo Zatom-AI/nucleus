@@ -111,7 +111,7 @@ dev = [
     "zatom-nucleus[all]",
 ]
 [project.urls]
-Homepage = "https://zatomai.github.io/nucleus"
+Homepage = "https://zatom-ai.github.io/nucleus"
 Repository = "https://github.com/Zatom-AI/nucleus"
 Issues = "https://github.com/Zatom-AI/nucleus/issues"
 

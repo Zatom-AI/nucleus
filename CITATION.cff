@@ -5,7 +5,7 @@ title: "Nucleus: Zatom-2 and Zevals"
 authors:
   - name: Zatom-AI
 repository-code: https://github.com/Zatom-AI/nucleus
-url: https://zatomai.github.io/nucleus
+url: https://zatom-ai.github.io/nucleus
 preferred-citation:
   type: article
   title: "Zatom-2: Multitask Pretraining on Atomistic Data for Generative Modeling across Domains"
