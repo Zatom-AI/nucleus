@@ -39,7 +39,7 @@ from nucleus.inference_input_parsing import (
 )
 from nucleus.utils.bond_sidecar import (
     BondSidecarASEAtomsLoader,
-    perceive_and_attach_bonds,
+    perceive_ligand_bonds_from_native_coordinates,
 )
 
 ranked_logger = RankedLogger(__name__, rank_zero_only=True)
@@ -69,39 +69,6 @@ def _coerce_ligand_design_specification(spec):
         specification_cls = ZatomDesignInputSpecification
 
     return specification_cls.safe_init(**spec)
-
-
-def _can_perceive_ligand_bonds(atom_array, native_coordinates) -> bool:
-    """Return whether native coordinates define a complete non-material ligand."""
-    if native_coordinates is None:
-        return False
-
-    native_coordinates = np.asarray(native_coordinates)
-    if native_coordinates.shape != atom_array.coord.shape:
-        return False
-    if not np.isfinite(native_coordinates).all():
-        return False
-
-    categories = set(atom_array.get_annotation_categories())
-    if "is_ligand" in categories:
-        if not np.asarray(atom_array.is_ligand, dtype=bool).all():
-            return False
-    elif not np.asarray(atom_array.res_name == "LIG", dtype=bool).all():
-        # The generic inference parser assigns ``is_ligand`` later in the
-        # transform pipeline. At this boundary, molecule-only inputs are the
-        # non-polymer LIG residue produced by the contig parser.
-        return False
-    if (
-        "is_polymer" in categories
-        and np.asarray(atom_array.is_polymer, dtype=bool).any()
-    ):
-        return False
-    if (
-        "is_material" in categories
-        and np.asarray(atom_array.is_material, dtype=bool).any()
-    ):
-        return False
-    return True
 
 
 class ZatomContigJsonDataset:
@@ -172,14 +139,15 @@ class ZatomContigJsonDataset:
                 data["atom_array"],
                 example_id=str(source_example_id),
             )
-        elif _can_perceive_ligand_bonds(data["atom_array"], native_coordinates):
-            perception_atom_array = data["atom_array"].copy()
-            perception_atom_array.coord = np.asarray(native_coordinates).copy()
-            data["has_disconnected_fragments"] = perceive_and_attach_bonds(
-                perception_atom_array,
+        elif "has_disconnected_fragments" not in data:
+            # The rfd3 backend already perceives bonds in to_pipeline_input.
+            has_disconnected_fragments = perceive_ligand_bonds_from_native_coordinates(
+                data["atom_array"],
+                native_coordinates,
                 example_id=str(source_example_id),
             )
-            data["atom_array"].bonds = perception_atom_array.bonds
+            if has_disconnected_fragments is not None:
+                data["has_disconnected_fragments"] = has_disconnected_fragments
         data = self._dataset.transform(data)
 
         if native_coordinates is not None and "ground_truth" in data:

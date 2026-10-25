@@ -23,6 +23,7 @@ from foundry.utils.components import (
     fetch_mask_from_idx,
 )
 
+from nucleus.utils.bond_sidecar import perceive_ligand_bonds_from_native_coordinates
 from nucleus.utils.materials import (
     annotate_material_properties,
     cartesian_to_fractional,
@@ -1012,6 +1013,16 @@ def design_input_to_pipeline_input_preserving_hydrogens(self, example_id):
     # ... Forward into
     data = prepare_pipeline_input_preserving_hydrogens(atom_array)
     data["example_id"] = example_id
+
+    # ... Perceive molecule bonds from native coordinates; build() has zeroed them.
+    # A bond sidecar, when configured, replaces these bonds downstream.
+    has_disconnected_fragments = perceive_ligand_bonds_from_native_coordinates(
+        data["atom_array"],
+        getattr(self, "_nucleus_native_coordinates", None),
+        example_id=str(getattr(self, "example_id", None) or example_id),
+    )
+    if has_disconnected_fragments is not None:
+        data["has_disconnected_fragments"] = has_disconnected_fragments
 
     # ... Wrap up with additional features
     if "extra" not in spec_dict:

@@ -320,6 +320,63 @@ def perceive_and_attach_bonds(atom_array: Any, *, example_id: str) -> bool:
     return bool(record["has_disconnected_fragments"])
 
 
+def _can_perceive_ligand_bonds(atom_array, native_coordinates) -> bool:
+    """Return whether native coordinates define a complete non-material ligand."""
+    if native_coordinates is None:
+        return False
+
+    native_coordinates = np.asarray(native_coordinates)
+    if native_coordinates.shape != atom_array.coord.shape:
+        return False
+    if not np.isfinite(native_coordinates).all():
+        return False
+
+    categories = set(atom_array.get_annotation_categories())
+    if "is_ligand" in categories:
+        if not np.asarray(atom_array.is_ligand, dtype=bool).all():
+            return False
+    elif not np.asarray(atom_array.res_name == "LIG", dtype=bool).all():
+        # The generic inference parser assigns ``is_ligand`` later in the
+        # transform pipeline. At this boundary, molecule-only inputs are the
+        # non-polymer LIG residue produced by the contig parser.
+        return False
+    if (
+        "is_polymer" in categories
+        and np.asarray(atom_array.is_polymer, dtype=bool).any()
+    ):
+        return False
+    if (
+        "is_material" in categories
+        and np.asarray(atom_array.is_material, dtype=bool).any()
+    ):
+        return False
+    return True
+
+
+def perceive_ligand_bonds_from_native_coordinates(
+    atom_array: Any, native_coordinates: Any, *, example_id: str
+) -> bool | None:
+    """Attach bonds perceived from native coordinates to a molecule-only input.
+
+    Inference zeroes generated coordinates before the pipeline runs, so bonds are
+    perceived on a copy carrying the preserved native coordinates.
+
+    Returns:
+        Whether the perceived graph contains disconnected fragments, or ``None``
+        when the input is not a fully resolved non-material ligand.
+    """
+    if not _can_perceive_ligand_bonds(atom_array, native_coordinates):
+        return None
+    perception_atom_array = atom_array.copy()
+    perception_atom_array.coord = np.asarray(native_coordinates).copy()
+    has_disconnected_fragments = perceive_and_attach_bonds(
+        perception_atom_array,
+        example_id=example_id,
+    )
+    atom_array.bonds = perception_atom_array.bonds
+    return has_disconnected_fragments
+
+
 def encode_bond_record(record: dict[str, Any]) -> bytes:
     """Serialize one sidecar record."""
     return pickle.dumps(record, protocol=pickle.HIGHEST_PROTOCOL)
