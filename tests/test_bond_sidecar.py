@@ -340,6 +340,51 @@ def test_contig_validation_perceives_bonds_without_sidecar() -> None:
 
 
 @pytest.mark.skipif(openbabel is None, reason="Open Babel is not installed")
+def test_contig_inference_perceives_bonds_without_sidecar() -> None:
+    # `zatom2 design` loads specs through RFD3's ContigJsonDataset rather than
+    # ZatomContigJsonDataset, so perception must happen in to_pipeline_input.
+    from nucleus.inference_input_parsing import (
+        ZatomDesignInputSpecification,
+        install_molecule_contig_support,
+    )
+    from rfd3.inference.datasets import ContigJsonDataset
+
+    install_molecule_contig_support()
+    native_atom_array = _ligand_atom_array()
+    expected_record = openbabel_bond_record(
+        native_atom_array,
+        example_id="on-the-fly-example",
+    )
+    specification = ZatomDesignInputSpecification.safe_init(
+        input=None,
+        atom_array_input=native_atom_array,
+        contig="A1",
+        select_fixed_atoms=False,
+        select_unfixed_sequence=False,
+    )
+    dataset = ContigJsonDataset(
+        data={"on-the-fly-example": specification},
+        cif_parser_args={},
+        transform=_add_structure_prediction_token_bonds,
+        name="on-the-fly-bond-inference-test",
+        subset_to_keys=None,
+        eval_every_n=1,
+    )
+
+    data = dataset[0]
+
+    np.testing.assert_allclose(data["atom_array"].coord, 0.0)
+    np.testing.assert_array_equal(
+        data["atom_array"].bonds.as_array()[:, :2],
+        expected_record["bond_edges"],
+    )
+    assert data["has_disconnected_fragments"] is bool(
+        expected_record["has_disconnected_fragments"]
+    )
+    assert data["feats"]["token_bonds"].sum() == 2 * len(expected_record["bond_edges"])
+
+
+@pytest.mark.skipif(openbabel is None, reason="Open Babel is not installed")
 def test_openbabel_bond_record_stores_edges_without_bond_types() -> None:
     record = openbabel_bond_record(_water_atom_array(), example_id="water")
 
